@@ -1,0 +1,248 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"SEGGER_RTT_Syscalls_GCC.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._write,"ax",%progbits
+  19              		.align	1
+  20              		.global	_write
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_write:
+  26              	.LFB0:
+  27              		.file 1 "Src/SEGGER_RTT_Syscalls_GCC.c"
+   1:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+   2:Src/SEGGER_RTT_Syscalls_GCC.c **** *                    SEGGER Microcontroller GmbH                     *
+   3:Src/SEGGER_RTT_Syscalls_GCC.c **** *                        The Embedded Experts                        *
+   4:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+   5:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+   6:Src/SEGGER_RTT_Syscalls_GCC.c **** *            (c) 1995 - 2019 SEGGER Microcontroller GmbH             *
+   7:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+   8:Src/SEGGER_RTT_Syscalls_GCC.c **** *       www.segger.com     Support: support@segger.com               *
+   9:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  10:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  11:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  12:Src/SEGGER_RTT_Syscalls_GCC.c **** *       SEGGER RTT * Real Time Transfer for embedded targets         *
+  13:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  14:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  15:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  16:Src/SEGGER_RTT_Syscalls_GCC.c **** * All rights reserved.                                               *
+  17:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  18:Src/SEGGER_RTT_Syscalls_GCC.c **** * SEGGER strongly recommends to not make any changes                 *
+  19:Src/SEGGER_RTT_Syscalls_GCC.c **** * to or modify the source code of this software in order to stay     *
+  20:Src/SEGGER_RTT_Syscalls_GCC.c **** * compatible with the RTT protocol and J-Link.                       *
+  21:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  22:Src/SEGGER_RTT_Syscalls_GCC.c **** * Redistribution and use in source and binary forms, with or         *
+  23:Src/SEGGER_RTT_Syscalls_GCC.c **** * without modification, are permitted provided that the following    *
+  24:Src/SEGGER_RTT_Syscalls_GCC.c **** * condition is met:                                                  *
+  25:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  26:Src/SEGGER_RTT_Syscalls_GCC.c **** * o Redistributions of source code must retain the above copyright   *
+  27:Src/SEGGER_RTT_Syscalls_GCC.c **** *   notice, this condition and the following disclaimer.             *
+  28:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  29:Src/SEGGER_RTT_Syscalls_GCC.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND             *
+  30:Src/SEGGER_RTT_Syscalls_GCC.c **** * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,        *
+  31:Src/SEGGER_RTT_Syscalls_GCC.c **** * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           *
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s 			page 2
+
+
+  32:Src/SEGGER_RTT_Syscalls_GCC.c **** * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE           *
+  33:Src/SEGGER_RTT_Syscalls_GCC.c **** * DISCLAIMED. IN NO EVENT SHALL SEGGER Microcontroller BE LIABLE FOR *
+  34:Src/SEGGER_RTT_Syscalls_GCC.c **** * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR           *
+  35:Src/SEGGER_RTT_Syscalls_GCC.c **** * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT  *
+  36:Src/SEGGER_RTT_Syscalls_GCC.c **** * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;    *
+  37:Src/SEGGER_RTT_Syscalls_GCC.c **** * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF      *
+  38:Src/SEGGER_RTT_Syscalls_GCC.c **** * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT          *
+  39:Src/SEGGER_RTT_Syscalls_GCC.c **** * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE  *
+  40:Src/SEGGER_RTT_Syscalls_GCC.c **** * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH   *
+  41:Src/SEGGER_RTT_Syscalls_GCC.c **** * DAMAGE.                                                            *
+  42:Src/SEGGER_RTT_Syscalls_GCC.c **** *                                                                    *
+  43:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  44:Src/SEGGER_RTT_Syscalls_GCC.c **** ---------------------------END-OF-HEADER------------------------------
+  45:Src/SEGGER_RTT_Syscalls_GCC.c **** File    : SEGGER_RTT_Syscalls_GCC.c
+  46:Src/SEGGER_RTT_Syscalls_GCC.c **** Purpose : Low-level functions for using printf() via RTT in GCC.
+  47:Src/SEGGER_RTT_Syscalls_GCC.c ****           To use RTT for printf output, include this file in your 
+  48:Src/SEGGER_RTT_Syscalls_GCC.c ****           application.
+  49:Src/SEGGER_RTT_Syscalls_GCC.c **** Revision: $Rev: 24316 $
+  50:Src/SEGGER_RTT_Syscalls_GCC.c **** ----------------------------------------------------------------------
+  51:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+  52:Src/SEGGER_RTT_Syscalls_GCC.c **** #if (defined __GNUC__) && !(defined __SES_ARM) && !(defined __CROSSWORKS_ARM) && !(defined __ARMCC_
+  53:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  54:Src/SEGGER_RTT_Syscalls_GCC.c **** #include <reent.h>  // required for _write_r
+  55:Src/SEGGER_RTT_Syscalls_GCC.c **** #include "SEGGER_RTT.h"
+  56:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  57:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  58:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+  59:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  60:Src/SEGGER_RTT_Syscalls_GCC.c **** *       Types
+  61:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  62:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  63:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+  64:Src/SEGGER_RTT_Syscalls_GCC.c **** //
+  65:Src/SEGGER_RTT_Syscalls_GCC.c **** // If necessary define the _reent struct
+  66:Src/SEGGER_RTT_Syscalls_GCC.c **** // to match the one passed by the used standard library.
+  67:Src/SEGGER_RTT_Syscalls_GCC.c **** //
+  68:Src/SEGGER_RTT_Syscalls_GCC.c **** struct _reent;
+  69:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  70:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+  71:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  72:Src/SEGGER_RTT_Syscalls_GCC.c **** *       Function prototypes
+  73:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  74:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  75:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+  76:Src/SEGGER_RTT_Syscalls_GCC.c **** _ssize_t _write  (int file, const void *ptr, size_t len);
+  77:Src/SEGGER_RTT_Syscalls_GCC.c **** _ssize_t _write_r(struct _reent *r, int file, const void *ptr, size_t len);
+  78:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  79:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+  80:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  81:Src/SEGGER_RTT_Syscalls_GCC.c **** *       Global functions
+  82:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  83:Src/SEGGER_RTT_Syscalls_GCC.c **** **********************************************************************
+  84:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+  85:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+  86:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+  87:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  88:Src/SEGGER_RTT_Syscalls_GCC.c **** *       _write()
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s 			page 3
+
+
+  89:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+  90:Src/SEGGER_RTT_Syscalls_GCC.c **** * Function description
+  91:Src/SEGGER_RTT_Syscalls_GCC.c **** *   Low-level write function.
+  92:Src/SEGGER_RTT_Syscalls_GCC.c **** *   libc subroutines will use this system routine for output to all files,
+  93:Src/SEGGER_RTT_Syscalls_GCC.c **** *   including stdout.
+  94:Src/SEGGER_RTT_Syscalls_GCC.c **** *   Write data via RTT.
+  95:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+  96:Src/SEGGER_RTT_Syscalls_GCC.c **** _ssize_t _write(int file, const void *ptr, size_t len) {
+  28              		.loc 1 96 56
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 84B0     		sub	sp, sp, #16
+  37              		.cfi_def_cfa_offset 24
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40 0006 F860     		str	r0, [r7, #12]
+  41 0008 B960     		str	r1, [r7, #8]
+  42 000a 7A60     		str	r2, [r7, #4]
+  97:Src/SEGGER_RTT_Syscalls_GCC.c ****   (void) file;  /* Not used, avoid warning */
+  98:Src/SEGGER_RTT_Syscalls_GCC.c ****   SEGGER_RTT_Write(0, ptr, len);
+  43              		.loc 1 98 3
+  44 000c 7A68     		ldr	r2, [r7, #4]
+  45 000e B968     		ldr	r1, [r7, #8]
+  46 0010 0020     		movs	r0, #0
+  47 0012 FFF7FEFF 		bl	SEGGER_RTT_Write
+  99:Src/SEGGER_RTT_Syscalls_GCC.c ****   return len;
+  48              		.loc 1 99 10
+  49 0016 7B68     		ldr	r3, [r7, #4]
+ 100:Src/SEGGER_RTT_Syscalls_GCC.c **** }
+  50              		.loc 1 100 1
+  51 0018 1846     		mov	r0, r3
+  52 001a 1037     		adds	r7, r7, #16
+  53              		.cfi_def_cfa_offset 8
+  54 001c BD46     		mov	sp, r7
+  55              		.cfi_def_cfa_register 13
+  56              		@ sp needed
+  57 001e 80BD     		pop	{r7, pc}
+  58              		.cfi_endproc
+  59              	.LFE0:
+  61              		.section	.text._write_r,"ax",%progbits
+  62              		.align	1
+  63              		.global	_write_r
+  64              		.syntax unified
+  65              		.thumb
+  66              		.thumb_func
+  68              	_write_r:
+  69              	.LFB1:
+ 101:Src/SEGGER_RTT_Syscalls_GCC.c **** 
+ 102:Src/SEGGER_RTT_Syscalls_GCC.c **** /*********************************************************************
+ 103:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+ 104:Src/SEGGER_RTT_Syscalls_GCC.c **** *       _write_r()
+ 105:Src/SEGGER_RTT_Syscalls_GCC.c **** *
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s 			page 4
+
+
+ 106:Src/SEGGER_RTT_Syscalls_GCC.c **** * Function description
+ 107:Src/SEGGER_RTT_Syscalls_GCC.c **** *   Low-level reentrant write function.
+ 108:Src/SEGGER_RTT_Syscalls_GCC.c **** *   libc subroutines will use this system routine for output to all files,
+ 109:Src/SEGGER_RTT_Syscalls_GCC.c **** *   including stdout.
+ 110:Src/SEGGER_RTT_Syscalls_GCC.c **** *   Write data via RTT.
+ 111:Src/SEGGER_RTT_Syscalls_GCC.c **** */
+ 112:Src/SEGGER_RTT_Syscalls_GCC.c **** _ssize_t _write_r(struct _reent *r, int file, const void *ptr, size_t len) {
+  70              		.loc 1 112 76
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 16
+  73              		@ frame_needed = 1, uses_anonymous_args = 0
+  74 0000 80B5     		push	{r7, lr}
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 7, -8
+  77              		.cfi_offset 14, -4
+  78 0002 84B0     		sub	sp, sp, #16
+  79              		.cfi_def_cfa_offset 24
+  80 0004 00AF     		add	r7, sp, #0
+  81              		.cfi_def_cfa_register 7
+  82 0006 F860     		str	r0, [r7, #12]
+  83 0008 B960     		str	r1, [r7, #8]
+  84 000a 7A60     		str	r2, [r7, #4]
+  85 000c 3B60     		str	r3, [r7]
+ 113:Src/SEGGER_RTT_Syscalls_GCC.c ****   (void) file;  /* Not used, avoid warning */
+ 114:Src/SEGGER_RTT_Syscalls_GCC.c ****   (void) r;     /* Not used, avoid warning */
+ 115:Src/SEGGER_RTT_Syscalls_GCC.c ****   SEGGER_RTT_Write(0, ptr, len);
+  86              		.loc 1 115 3
+  87 000e 3A68     		ldr	r2, [r7]
+  88 0010 7968     		ldr	r1, [r7, #4]
+  89 0012 0020     		movs	r0, #0
+  90 0014 FFF7FEFF 		bl	SEGGER_RTT_Write
+ 116:Src/SEGGER_RTT_Syscalls_GCC.c ****   return len;
+  91              		.loc 1 116 10
+  92 0018 3B68     		ldr	r3, [r7]
+ 117:Src/SEGGER_RTT_Syscalls_GCC.c **** }
+  93              		.loc 1 117 1
+  94 001a 1846     		mov	r0, r3
+  95 001c 1037     		adds	r7, r7, #16
+  96              		.cfi_def_cfa_offset 8
+  97 001e BD46     		mov	sp, r7
+  98              		.cfi_def_cfa_register 13
+  99              		@ sp needed
+ 100 0020 80BD     		pop	{r7, pc}
+ 101              		.cfi_endproc
+ 102              	.LFE1:
+ 104              		.text
+ 105              	.Letext0:
+ 106              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 107              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 108              		.file 4 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 109              		.file 5 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 110              		.file 6 "Inc/SEGGER_RTT.h"
+ 111              		.file 7 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 SEGGER_RTT_Syscalls_GCC.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s:19     .text._write:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s:25     .text._write:0000000000000000 _write
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s:62     .text._write_r:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchzljHQ.s:68     .text._write_r:0000000000000000 _write_r
+
+UNDEFINED SYMBOLS
+SEGGER_RTT_Write

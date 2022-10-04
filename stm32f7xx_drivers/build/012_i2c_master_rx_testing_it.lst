@@ -1,0 +1,852 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"012_i2c_master_rx_testing_it.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	rxComplt
+  19              		.section	.bss.rxComplt,"aw",%nobits
+  22              	rxComplt:
+  23 0000 00       		.space	1
+  24              		.section	.text.delay,"ax",%progbits
+  25              		.align	1
+  26              		.global	delay
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	delay:
+  32              	.LFB3:
+  33              		.file 1 "Src/012_i2c_master_rx_testing_it.c"
+   1:Src/012_i2c_master_rx_testing_it.c **** /**
+   2:Src/012_i2c_master_rx_testing_it.c ****  * @file 012_i2c_master_rx_testing_it.c
+   3:Src/012_i2c_master_rx_testing_it.c ****  * @author johannes regnier
+   4:Src/012_i2c_master_rx_testing_it.c ****  * @brief 
+   5:Src/012_i2c_master_rx_testing_it.c ****  * @version 0.1
+   6:Src/012_i2c_master_rx_testing_it.c ****  * @date 2022-09-30
+   7:Src/012_i2c_master_rx_testing_it.c ****  * 
+   8:Src/012_i2c_master_rx_testing_it.c ****  * @copyright Copyright (c) 2022
+   9:Src/012_i2c_master_rx_testing_it.c ****  * 
+  10:Src/012_i2c_master_rx_testing_it.c ****  */
+  11:Src/012_i2c_master_rx_testing_it.c **** 
+  12:Src/012_i2c_master_rx_testing_it.c **** 
+  13:Src/012_i2c_master_rx_testing_it.c **** #include <string.h>
+  14:Src/012_i2c_master_rx_testing_it.c **** #include "stm32f767xx.h"
+  15:Src/012_i2c_master_rx_testing_it.c **** #include <stdio.h>
+  16:Src/012_i2c_master_rx_testing_it.c **** #include "SEGGER_RTT.h"
+  17:Src/012_i2c_master_rx_testing_it.c **** 
+  18:Src/012_i2c_master_rx_testing_it.c **** 
+  19:Src/012_i2c_master_rx_testing_it.c **** #define MY_ADDR     0x61
+  20:Src/012_i2c_master_rx_testing_it.c **** #define SLAVE_ADDR  0x68
+  21:Src/012_i2c_master_rx_testing_it.c **** 
+  22:Src/012_i2c_master_rx_testing_it.c **** uint8_t rxComplt = RESET;
+  23:Src/012_i2c_master_rx_testing_it.c **** 
+  24:Src/012_i2c_master_rx_testing_it.c **** void delay(void){
+  34              		.loc 1 24 17
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 2
+
+
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 80B4     		push	{r7}
+  40              		.cfi_def_cfa_offset 4
+  41              		.cfi_offset 7, -4
+  42 0002 83B0     		sub	sp, sp, #12
+  43              		.cfi_def_cfa_offset 16
+  44 0004 00AF     		add	r7, sp, #0
+  45              		.cfi_def_cfa_register 7
+  46              	.LBB2:
+  25:Src/012_i2c_master_rx_testing_it.c ****   for (uint32_t i = 0; i < 200000; i++)
+  47              		.loc 1 25 17
+  48 0006 0023     		movs	r3, #0
+  49 0008 7B60     		str	r3, [r7, #4]
+  50              		.loc 1 25 3
+  51 000a 02E0     		b	.L2
+  52              	.L3:
+  53              		.loc 1 25 37 discriminator 3
+  54 000c 7B68     		ldr	r3, [r7, #4]
+  55 000e 0133     		adds	r3, r3, #1
+  56 0010 7B60     		str	r3, [r7, #4]
+  57              	.L2:
+  58              		.loc 1 25 26 discriminator 1
+  59 0012 7B68     		ldr	r3, [r7, #4]
+  60 0014 044A     		ldr	r2, .L4
+  61 0016 9342     		cmp	r3, r2
+  62 0018 F8D9     		bls	.L3
+  63              	.LBE2:
+  26:Src/012_i2c_master_rx_testing_it.c ****     ;
+  27:Src/012_i2c_master_rx_testing_it.c **** }
+  64              		.loc 1 27 1
+  65 001a 00BF     		nop
+  66 001c 00BF     		nop
+  67 001e 0C37     		adds	r7, r7, #12
+  68              		.cfi_def_cfa_offset 4
+  69 0020 BD46     		mov	sp, r7
+  70              		.cfi_def_cfa_register 13
+  71              		@ sp needed
+  72 0022 5DF8047B 		ldr	r7, [sp], #4
+  73              		.cfi_restore 7
+  74              		.cfi_def_cfa_offset 0
+  75 0026 7047     		bx	lr
+  76              	.L5:
+  77              		.align	2
+  78              	.L4:
+  79 0028 3F0D0300 		.word	199999
+  80              		.cfi_endproc
+  81              	.LFE3:
+  83              		.global	I2C2Handle
+  84              		.section	.bss.I2C2Handle,"aw",%nobits
+  85              		.align	2
+  88              	I2C2Handle:
+  89 0000 00000000 		.space	40
+  89      00000000 
+  89      00000000 
+  89      00000000 
+  89      00000000 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 3
+
+
+  90              		.global	rcv_buf
+  91              		.section	.bss.rcv_buf,"aw",%nobits
+  92              		.align	2
+  95              	rcv_buf:
+  96 0000 00000000 		.space	32
+  96      00000000 
+  96      00000000 
+  96      00000000 
+  96      00000000 
+  97              		.section	.text.I2C2_GPIOInits,"ax",%progbits
+  98              		.align	1
+  99              		.global	I2C2_GPIOInits
+ 100              		.syntax unified
+ 101              		.thumb
+ 102              		.thumb_func
+ 104              	I2C2_GPIOInits:
+ 105              	.LFB4:
+  28:Src/012_i2c_master_rx_testing_it.c **** 
+  29:Src/012_i2c_master_rx_testing_it.c **** 
+  30:Src/012_i2c_master_rx_testing_it.c **** 
+  31:Src/012_i2c_master_rx_testing_it.c **** /* Pins to communicate over I2C1 (Cf. datasheet, alternate function mapping)
+  32:Src/012_i2c_master_rx_testing_it.c ****  * PB8  ---> I2C1_SCL (CN7 pin 2 on NUCLEO F767)
+  33:Src/012_i2c_master_rx_testing_it.c ****  * PB9  ---> I2C1_SDA (CN7 pin 4 on NUCLEO F767)
+  34:Src/012_i2c_master_rx_testing_it.c ****  * ALT function mode: 4
+  35:Src/012_i2c_master_rx_testing_it.c ****  */
+  36:Src/012_i2c_master_rx_testing_it.c **** 
+  37:Src/012_i2c_master_rx_testing_it.c **** /* Pins to communicate over I2C2 (Cf. datasheet, alternate function mapping)
+  38:Src/012_i2c_master_rx_testing_it.c ****  * PF1  ---> I2C2_SCL (CN9 pin 19 on NUCLEO F767)
+  39:Src/012_i2c_master_rx_testing_it.c ****  * PF0  ---> I2C2_SDA (CN9 pin 21 on NUCLEO F767)
+  40:Src/012_i2c_master_rx_testing_it.c ****  * ALT function mode: 4
+  41:Src/012_i2c_master_rx_testing_it.c ****  */
+  42:Src/012_i2c_master_rx_testing_it.c **** 
+  43:Src/012_i2c_master_rx_testing_it.c **** 
+  44:Src/012_i2c_master_rx_testing_it.c **** 
+  45:Src/012_i2c_master_rx_testing_it.c **** I2C_Handle_t I2C2Handle;
+  46:Src/012_i2c_master_rx_testing_it.c **** 
+  47:Src/012_i2c_master_rx_testing_it.c **** 
+  48:Src/012_i2c_master_rx_testing_it.c **** // receive buffer
+  49:Src/012_i2c_master_rx_testing_it.c **** uint8_t rcv_buf[32];
+  50:Src/012_i2c_master_rx_testing_it.c **** 
+  51:Src/012_i2c_master_rx_testing_it.c **** void I2C2_GPIOInits(void)
+  52:Src/012_i2c_master_rx_testing_it.c **** {
+ 106              		.loc 1 52 1
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 16
+ 109              		@ frame_needed = 1, uses_anonymous_args = 0
+ 110 0000 80B5     		push	{r7, lr}
+ 111              		.cfi_def_cfa_offset 8
+ 112              		.cfi_offset 7, -8
+ 113              		.cfi_offset 14, -4
+ 114 0002 84B0     		sub	sp, sp, #16
+ 115              		.cfi_def_cfa_offset 24
+ 116 0004 00AF     		add	r7, sp, #0
+ 117              		.cfi_def_cfa_register 7
+  53:Src/012_i2c_master_rx_testing_it.c ****     GPIO_Handle_t I2CPins;
+  54:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.pGPIOx = GPIOF;
+ 118              		.loc 1 54 20
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 4
+
+
+ 119 0006 0E4B     		ldr	r3, .L7
+ 120 0008 7B60     		str	r3, [r7, #4]
+  55:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
+ 121              		.loc 1 55 41
+ 122 000a 0223     		movs	r3, #2
+ 123 000c 7B72     		strb	r3, [r7, #9]
+  56:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_OD;
+ 124              		.loc 1 56 43
+ 125 000e 0123     		movs	r3, #1
+ 126 0010 3B73     		strb	r3, [r7, #12]
+  57:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+ 127              		.loc 1 57 48
+ 128 0012 0123     		movs	r3, #1
+ 129 0014 FB72     		strb	r3, [r7, #11]
+  58:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinAltFunMode = 4;
+ 130              		.loc 1 58 47
+ 131 0016 0423     		movs	r3, #4
+ 132 0018 7B73     		strb	r3, [r7, #13]
+  59:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+ 133              		.loc 1 59 42
+ 134 001a 0223     		movs	r3, #2
+ 135 001c BB72     		strb	r3, [r7, #10]
+  60:Src/012_i2c_master_rx_testing_it.c **** 
+  61:Src/012_i2c_master_rx_testing_it.c ****     //SCL
+  62:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_1;
+ 136              		.loc 1 62 43
+ 137 001e 0123     		movs	r3, #1
+ 138 0020 3B72     		strb	r3, [r7, #8]
+  63:Src/012_i2c_master_rx_testing_it.c ****     GPIO_Init(&I2CPins);
+ 139              		.loc 1 63 5
+ 140 0022 3B1D     		adds	r3, r7, #4
+ 141 0024 1846     		mov	r0, r3
+ 142 0026 FFF7FEFF 		bl	GPIO_Init
+  64:Src/012_i2c_master_rx_testing_it.c **** 
+  65:Src/012_i2c_master_rx_testing_it.c ****     //SDA
+  66:Src/012_i2c_master_rx_testing_it.c ****     I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
+ 143              		.loc 1 66 43
+ 144 002a 0023     		movs	r3, #0
+ 145 002c 3B72     		strb	r3, [r7, #8]
+  67:Src/012_i2c_master_rx_testing_it.c ****     GPIO_Init(&I2CPins);
+ 146              		.loc 1 67 5
+ 147 002e 3B1D     		adds	r3, r7, #4
+ 148 0030 1846     		mov	r0, r3
+ 149 0032 FFF7FEFF 		bl	GPIO_Init
+  68:Src/012_i2c_master_rx_testing_it.c **** 
+  69:Src/012_i2c_master_rx_testing_it.c **** }
+ 150              		.loc 1 69 1
+ 151 0036 00BF     		nop
+ 152 0038 1037     		adds	r7, r7, #16
+ 153              		.cfi_def_cfa_offset 8
+ 154 003a BD46     		mov	sp, r7
+ 155              		.cfi_def_cfa_register 13
+ 156              		@ sp needed
+ 157 003c 80BD     		pop	{r7, pc}
+ 158              	.L8:
+ 159 003e 00BF     		.align	2
+ 160              	.L7:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 5
+
+
+ 161 0040 00140240 		.word	1073878016
+ 162              		.cfi_endproc
+ 163              	.LFE4:
+ 165              		.section	.text.I2C2_Inits,"ax",%progbits
+ 166              		.align	1
+ 167              		.global	I2C2_Inits
+ 168              		.syntax unified
+ 169              		.thumb
+ 170              		.thumb_func
+ 172              	I2C2_Inits:
+ 173              	.LFB5:
+  70:Src/012_i2c_master_rx_testing_it.c **** 
+  71:Src/012_i2c_master_rx_testing_it.c **** void I2C2_Inits()
+  72:Src/012_i2c_master_rx_testing_it.c **** {
+ 174              		.loc 1 72 1
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 1, uses_anonymous_args = 0
+ 178 0000 80B5     		push	{r7, lr}
+ 179              		.cfi_def_cfa_offset 8
+ 180              		.cfi_offset 7, -8
+ 181              		.cfi_offset 14, -4
+ 182 0002 00AF     		add	r7, sp, #0
+ 183              		.cfi_def_cfa_register 7
+  73:Src/012_i2c_master_rx_testing_it.c ****     I2C2Handle.pI2Cx = I2C2;
+ 184              		.loc 1 73 22
+ 185 0004 064B     		ldr	r3, .L10
+ 186 0006 074A     		ldr	r2, .L10+4
+ 187 0008 1A60     		str	r2, [r3]
+  74:Src/012_i2c_master_rx_testing_it.c ****     I2C2Handle.I2C_Config.I2C_DeviceAddress = MY_ADDR; // only needed if slave mode (@see protocol 
+ 188              		.loc 1 74 45
+ 189 000a 054B     		ldr	r3, .L10
+ 190 000c 6122     		movs	r2, #97
+ 191 000e 1A72     		strb	r2, [r3, #8]
+  75:Src/012_i2c_master_rx_testing_it.c ****     I2C2Handle.I2C_Config.I2C_SCLSpeed = I2C_SCL_SPEED_SM100K;
+ 192              		.loc 1 75 40
+ 193 0010 034B     		ldr	r3, .L10
+ 194 0012 0122     		movs	r2, #1
+ 195 0014 5A60     		str	r2, [r3, #4]
+  76:Src/012_i2c_master_rx_testing_it.c **** 
+  77:Src/012_i2c_master_rx_testing_it.c ****     I2C_Init(&I2C2Handle);
+ 196              		.loc 1 77 5
+ 197 0016 0248     		ldr	r0, .L10
+ 198 0018 FFF7FEFF 		bl	I2C_Init
+  78:Src/012_i2c_master_rx_testing_it.c **** }
+ 199              		.loc 1 78 1
+ 200 001c 00BF     		nop
+ 201 001e 80BD     		pop	{r7, pc}
+ 202              	.L11:
+ 203              		.align	2
+ 204              	.L10:
+ 205 0020 00000000 		.word	I2C2Handle
+ 206 0024 00580040 		.word	1073764352
+ 207              		.cfi_endproc
+ 208              	.LFE5:
+ 210              		.section	.text.GPIO_ButtonInit,"ax",%progbits
+ 211              		.align	1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 6
+
+
+ 212              		.global	GPIO_ButtonInit
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 217              	GPIO_ButtonInit:
+ 218              	.LFB6:
+  79:Src/012_i2c_master_rx_testing_it.c **** 
+  80:Src/012_i2c_master_rx_testing_it.c **** void GPIO_ButtonInit(void)
+  81:Src/012_i2c_master_rx_testing_it.c **** {
+ 219              		.loc 1 81 1
+ 220              		.cfi_startproc
+ 221              		@ args = 0, pretend = 0, frame = 16
+ 222              		@ frame_needed = 1, uses_anonymous_args = 0
+ 223 0000 80B5     		push	{r7, lr}
+ 224              		.cfi_def_cfa_offset 8
+ 225              		.cfi_offset 7, -8
+ 226              		.cfi_offset 14, -4
+ 227 0002 84B0     		sub	sp, sp, #16
+ 228              		.cfi_def_cfa_offset 24
+ 229 0004 00AF     		add	r7, sp, #0
+ 230              		.cfi_def_cfa_register 7
+  82:Src/012_i2c_master_rx_testing_it.c ****     GPIO_Handle_t GPIOBtn;
+  83:Src/012_i2c_master_rx_testing_it.c **** 
+  84:Src/012_i2c_master_rx_testing_it.c ****     GPIOBtn.pGPIOx = GPIOC; // User button is connected to PC13 (Cf. Nucleo User Manual, or check s
+ 231              		.loc 1 84 20
+ 232 0006 094B     		ldr	r3, .L13
+ 233 0008 7B60     		str	r3, [r7, #4]
+  85:Src/012_i2c_master_rx_testing_it.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+ 234              		.loc 1 85 43
+ 235 000a 0D23     		movs	r3, #13
+ 236 000c 3B72     		strb	r3, [r7, #8]
+  86:Src/012_i2c_master_rx_testing_it.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+ 237              		.loc 1 86 41
+ 238 000e 0023     		movs	r3, #0
+ 239 0010 7B72     		strb	r3, [r7, #9]
+  87:Src/012_i2c_master_rx_testing_it.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+ 240              		.loc 1 87 42
+ 241 0012 0023     		movs	r3, #0
+ 242 0014 BB72     		strb	r3, [r7, #10]
+  88:Src/012_i2c_master_rx_testing_it.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+ 243              		.loc 1 88 48
+ 244 0016 0023     		movs	r3, #0
+ 245 0018 FB72     		strb	r3, [r7, #11]
+  89:Src/012_i2c_master_rx_testing_it.c **** 
+  90:Src/012_i2c_master_rx_testing_it.c ****     GPIO_Init(&GPIOBtn);
+ 246              		.loc 1 90 5
+ 247 001a 3B1D     		adds	r3, r7, #4
+ 248 001c 1846     		mov	r0, r3
+ 249 001e FFF7FEFF 		bl	GPIO_Init
+  91:Src/012_i2c_master_rx_testing_it.c **** }
+ 250              		.loc 1 91 1
+ 251 0022 00BF     		nop
+ 252 0024 1037     		adds	r7, r7, #16
+ 253              		.cfi_def_cfa_offset 8
+ 254 0026 BD46     		mov	sp, r7
+ 255              		.cfi_def_cfa_register 13
+ 256              		@ sp needed
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 7
+
+
+ 257 0028 80BD     		pop	{r7, pc}
+ 258              	.L14:
+ 259 002a 00BF     		.align	2
+ 260              	.L13:
+ 261 002c 00080240 		.word	1073874944
+ 262              		.cfi_endproc
+ 263              	.LFE6:
+ 265              		.section	.rodata
+ 266              		.align	2
+ 267              	.LC0:
+ 268 0000 4170706C 		.ascii	"Application is running\000"
+ 268      69636174 
+ 268      696F6E20 
+ 268      69732072 
+ 268      756E6E69 
+ 269 0017 00       		.align	2
+ 270              	.LC1:
+ 271 0018 6C656E3A 		.ascii	"len: %d\012\000"
+ 271      2025640A 
+ 271      00
+ 272 0021 000000   		.align	2
+ 273              	.LC2:
+ 274 0024 62756666 		.ascii	"buffer: %s\012\000"
+ 274      65723A20 
+ 274      25730A00 
+ 275              		.section	.text.main,"ax",%progbits
+ 276              		.align	1
+ 277              		.global	main
+ 278              		.syntax unified
+ 279              		.thumb
+ 280              		.thumb_func
+ 282              	main:
+ 283              	.LFB7:
+  92:Src/012_i2c_master_rx_testing_it.c **** 
+  93:Src/012_i2c_master_rx_testing_it.c **** 
+  94:Src/012_i2c_master_rx_testing_it.c **** int main(void)
+  95:Src/012_i2c_master_rx_testing_it.c **** {
+ 284              		.loc 1 95 1
+ 285              		.cfi_startproc
+ 286              		@ args = 0, pretend = 0, frame = 8
+ 287              		@ frame_needed = 1, uses_anonymous_args = 0
+ 288 0000 80B5     		push	{r7, lr}
+ 289              		.cfi_def_cfa_offset 8
+ 290              		.cfi_offset 7, -8
+ 291              		.cfi_offset 14, -4
+ 292 0002 84B0     		sub	sp, sp, #16
+ 293              		.cfi_def_cfa_offset 24
+ 294 0004 02AF     		add	r7, sp, #8
+ 295              		.cfi_def_cfa 7, 16
+  96:Src/012_i2c_master_rx_testing_it.c **** 
+  97:Src/012_i2c_master_rx_testing_it.c ****     SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+ 296              		.loc 1 97 5
+ 297 0006 0223     		movs	r3, #2
+ 298 0008 0093     		str	r3, [sp]
+ 299 000a 0023     		movs	r3, #0
+ 300 000c 0022     		movs	r2, #0
+ 301 000e 0021     		movs	r1, #0
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 8
+
+
+ 302 0010 0020     		movs	r0, #0
+ 303 0012 FFF7FEFF 		bl	SEGGER_RTT_ConfigUpBuffer
+  98:Src/012_i2c_master_rx_testing_it.c **** 
+  99:Src/012_i2c_master_rx_testing_it.c ****     printf("Application is running\n");
+ 304              		.loc 1 99 5
+ 305 0016 3448     		ldr	r0, .L24
+ 306 0018 FFF7FEFF 		bl	puts
+ 100:Src/012_i2c_master_rx_testing_it.c **** 
+ 101:Src/012_i2c_master_rx_testing_it.c ****     uint8_t commandcode;
+ 102:Src/012_i2c_master_rx_testing_it.c ****     uint8_t len;
+ 103:Src/012_i2c_master_rx_testing_it.c **** 
+ 104:Src/012_i2c_master_rx_testing_it.c ****     // GPIO button init
+ 105:Src/012_i2c_master_rx_testing_it.c ****     GPIO_ButtonInit();
+ 307              		.loc 1 105 5
+ 308 001c FFF7FEFF 		bl	GPIO_ButtonInit
+ 106:Src/012_i2c_master_rx_testing_it.c **** 
+ 107:Src/012_i2c_master_rx_testing_it.c ****     // I2C pin inits
+ 108:Src/012_i2c_master_rx_testing_it.c ****     I2C2_GPIOInits();
+ 309              		.loc 1 108 5
+ 310 0020 FFF7FEFF 		bl	I2C2_GPIOInits
+ 109:Src/012_i2c_master_rx_testing_it.c **** 
+ 110:Src/012_i2c_master_rx_testing_it.c ****     // I2C peripheral configuration
+ 111:Src/012_i2c_master_rx_testing_it.c ****     I2C2_Inits();
+ 311              		.loc 1 111 5
+ 312 0024 FFF7FEFF 		bl	I2C2_Inits
+ 112:Src/012_i2c_master_rx_testing_it.c **** 
+ 113:Src/012_i2c_master_rx_testing_it.c ****     // I2C IRQ config
+ 114:Src/012_i2c_master_rx_testing_it.c ****     I2C_IRQInterruptConfig(IRQ_NO_I2C2_EV, ENABLE);
+ 313              		.loc 1 114 5
+ 314 0028 0121     		movs	r1, #1
+ 315 002a 2120     		movs	r0, #33
+ 316 002c FFF7FEFF 		bl	I2C_IRQInterruptConfig
+ 115:Src/012_i2c_master_rx_testing_it.c ****     // I2C_IRQInterruptConfig(IRQ_NO_I2C2_ER, ENABLE);
+ 116:Src/012_i2c_master_rx_testing_it.c **** 
+ 117:Src/012_i2c_master_rx_testing_it.c ****     // enable the I2C peripheral
+ 118:Src/012_i2c_master_rx_testing_it.c ****     I2C_PeripheralControl(I2C2, ENABLE);
+ 317              		.loc 1 118 5
+ 318 0030 0121     		movs	r1, #1
+ 319 0032 2E48     		ldr	r0, .L24+4
+ 320 0034 FFF7FEFF 		bl	I2C_PeripheralControl
+ 321              	.L23:
+ 119:Src/012_i2c_master_rx_testing_it.c **** 
+ 120:Src/012_i2c_master_rx_testing_it.c ****     while (1)
+ 121:Src/012_i2c_master_rx_testing_it.c ****     {
+ 122:Src/012_i2c_master_rx_testing_it.c ****         // wait for button press
+ 123:Src/012_i2c_master_rx_testing_it.c ****         while( ! GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) );
+ 322              		.loc 1 123 14
+ 323 0038 00BF     		nop
+ 324              	.L16:
+ 325              		.loc 1 123 18 discriminator 1
+ 326 003a 0D21     		movs	r1, #13
+ 327 003c 2C48     		ldr	r0, .L24+8
+ 328 003e FFF7FEFF 		bl	GPIO_ReadFromInputPin
+ 329 0042 0346     		mov	r3, r0
+ 330              		.loc 1 123 16 discriminator 1
+ 331 0044 002B     		cmp	r3, #0
+ 332 0046 F8D0     		beq	.L16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 9
+
+
+ 124:Src/012_i2c_master_rx_testing_it.c **** 
+ 125:Src/012_i2c_master_rx_testing_it.c ****         delay();
+ 333              		.loc 1 125 9
+ 334 0048 FFF7FEFF 		bl	delay
+ 126:Src/012_i2c_master_rx_testing_it.c **** 
+ 127:Src/012_i2c_master_rx_testing_it.c ****         commandcode = 0x51;
+ 335              		.loc 1 127 21
+ 336 004c 5123     		movs	r3, #81
+ 337 004e FB71     		strb	r3, [r7, #7]
+ 128:Src/012_i2c_master_rx_testing_it.c **** 
+ 129:Src/012_i2c_master_rx_testing_it.c ****         while (I2C_MasterSendDataIT(&I2C2Handle, &commandcode, 1, SLAVE_ADDR, I2C_ENABLE_SR) != I2C
+ 338              		.loc 1 129 15
+ 339 0050 00BF     		nop
+ 340              	.L17:
+ 341              		.loc 1 129 16 discriminator 1
+ 342 0052 F91D     		adds	r1, r7, #7
+ 343 0054 0123     		movs	r3, #1
+ 344 0056 0093     		str	r3, [sp]
+ 345 0058 6823     		movs	r3, #104
+ 346 005a 0122     		movs	r2, #1
+ 347 005c 2548     		ldr	r0, .L24+12
+ 348 005e FFF7FEFF 		bl	I2C_MasterSendDataIT
+ 349 0062 0346     		mov	r3, r0
+ 350              		.loc 1 129 94 discriminator 1
+ 351 0064 002B     		cmp	r3, #0
+ 352 0066 F4D1     		bne	.L17
+ 130:Src/012_i2c_master_rx_testing_it.c **** 
+ 131:Src/012_i2c_master_rx_testing_it.c ****         while (I2C_MasterReceiveDataIT(&I2C2Handle, &len, 1, SLAVE_ADDR, I2C_ENABLE_SR) != I2C_READ
+ 353              		.loc 1 131 15
+ 354 0068 00BF     		nop
+ 355              	.L18:
+ 356              		.loc 1 131 16 discriminator 1
+ 357 006a B91D     		adds	r1, r7, #6
+ 358 006c 0123     		movs	r3, #1
+ 359 006e 0093     		str	r3, [sp]
+ 360 0070 6823     		movs	r3, #104
+ 361 0072 0122     		movs	r2, #1
+ 362 0074 1F48     		ldr	r0, .L24+12
+ 363 0076 FFF7FEFF 		bl	I2C_MasterReceiveDataIT
+ 364 007a 0346     		mov	r3, r0
+ 365              		.loc 1 131 89 discriminator 1
+ 366 007c 002B     		cmp	r3, #0
+ 367 007e F4D1     		bne	.L18
+ 132:Src/012_i2c_master_rx_testing_it.c **** 
+ 133:Src/012_i2c_master_rx_testing_it.c ****         // wait for button press
+ 134:Src/012_i2c_master_rx_testing_it.c ****         //while( ! GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) );
+ 135:Src/012_i2c_master_rx_testing_it.c **** 
+ 136:Src/012_i2c_master_rx_testing_it.c ****         // delay();
+ 137:Src/012_i2c_master_rx_testing_it.c **** 
+ 138:Src/012_i2c_master_rx_testing_it.c ****         while (rxComplt != SET);
+ 368              		.loc 1 138 15
+ 369 0080 00BF     		nop
+ 370              	.L19:
+ 371              		.loc 1 138 25 discriminator 1
+ 372 0082 1D4B     		ldr	r3, .L24+16
+ 373 0084 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 374 0086 012B     		cmp	r3, #1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 10
+
+
+ 375 0088 FBD1     		bne	.L19
+ 139:Src/012_i2c_master_rx_testing_it.c **** 
+ 140:Src/012_i2c_master_rx_testing_it.c ****         printf("len: %d\n", len);
+ 376              		.loc 1 140 9
+ 377 008a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 378 008c 1946     		mov	r1, r3
+ 379 008e 1B48     		ldr	r0, .L24+20
+ 380 0090 FFF7FEFF 		bl	printf
+ 141:Src/012_i2c_master_rx_testing_it.c **** 
+ 142:Src/012_i2c_master_rx_testing_it.c ****         rxComplt = RESET;
+ 381              		.loc 1 142 18
+ 382 0094 184B     		ldr	r3, .L24+16
+ 383 0096 0022     		movs	r2, #0
+ 384 0098 1A70     		strb	r2, [r3]
+ 143:Src/012_i2c_master_rx_testing_it.c **** 
+ 144:Src/012_i2c_master_rx_testing_it.c ****         commandcode = 0x52;
+ 385              		.loc 1 144 21
+ 386 009a 5223     		movs	r3, #82
+ 387 009c FB71     		strb	r3, [r7, #7]
+ 145:Src/012_i2c_master_rx_testing_it.c **** 
+ 146:Src/012_i2c_master_rx_testing_it.c ****         while (I2C_MasterSendDataIT(&I2C2Handle, &commandcode, 1, SLAVE_ADDR, I2C_ENABLE_SR) != I2C
+ 388              		.loc 1 146 15
+ 389 009e 00BF     		nop
+ 390              	.L20:
+ 391              		.loc 1 146 16 discriminator 1
+ 392 00a0 F91D     		adds	r1, r7, #7
+ 393 00a2 0123     		movs	r3, #1
+ 394 00a4 0093     		str	r3, [sp]
+ 395 00a6 6823     		movs	r3, #104
+ 396 00a8 0122     		movs	r2, #1
+ 397 00aa 1248     		ldr	r0, .L24+12
+ 398 00ac FFF7FEFF 		bl	I2C_MasterSendDataIT
+ 399 00b0 0346     		mov	r3, r0
+ 400              		.loc 1 146 94 discriminator 1
+ 401 00b2 002B     		cmp	r3, #0
+ 402 00b4 F4D1     		bne	.L20
+ 147:Src/012_i2c_master_rx_testing_it.c **** 
+ 148:Src/012_i2c_master_rx_testing_it.c ****         while (I2C_MasterReceiveDataIT(&I2C2Handle, rcv_buf, len, SLAVE_ADDR, I2C_DISABLE_SR)!= I2C
+ 403              		.loc 1 148 15
+ 404 00b6 00BF     		nop
+ 405              	.L21:
+ 406              		.loc 1 148 16 discriminator 1
+ 407 00b8 BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 408 00ba 0023     		movs	r3, #0
+ 409 00bc 0093     		str	r3, [sp]
+ 410 00be 6823     		movs	r3, #104
+ 411 00c0 0F49     		ldr	r1, .L24+24
+ 412 00c2 0C48     		ldr	r0, .L24+12
+ 413 00c4 FFF7FEFF 		bl	I2C_MasterReceiveDataIT
+ 414 00c8 0346     		mov	r3, r0
+ 415              		.loc 1 148 94 discriminator 1
+ 416 00ca 002B     		cmp	r3, #0
+ 417 00cc F4D1     		bne	.L21
+ 149:Src/012_i2c_master_rx_testing_it.c **** 
+ 150:Src/012_i2c_master_rx_testing_it.c ****         // wait for button press
+ 151:Src/012_i2c_master_rx_testing_it.c ****         // while( ! GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) );
+ 152:Src/012_i2c_master_rx_testing_it.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 11
+
+
+ 153:Src/012_i2c_master_rx_testing_it.c ****         // delay();
+ 154:Src/012_i2c_master_rx_testing_it.c **** 
+ 155:Src/012_i2c_master_rx_testing_it.c ****         while (rxComplt != SET);
+ 418              		.loc 1 155 15
+ 419 00ce 00BF     		nop
+ 420              	.L22:
+ 421              		.loc 1 155 25 discriminator 1
+ 422 00d0 094B     		ldr	r3, .L24+16
+ 423 00d2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 424 00d4 012B     		cmp	r3, #1
+ 425 00d6 FBD1     		bne	.L22
+ 156:Src/012_i2c_master_rx_testing_it.c **** 
+ 157:Src/012_i2c_master_rx_testing_it.c ****         //rcv_buf[len + 1] = "\0";
+ 158:Src/012_i2c_master_rx_testing_it.c ****         printf("buffer: %s\n", rcv_buf);
+ 426              		.loc 1 158 9
+ 427 00d8 0949     		ldr	r1, .L24+24
+ 428 00da 0A48     		ldr	r0, .L24+28
+ 429 00dc FFF7FEFF 		bl	printf
+ 159:Src/012_i2c_master_rx_testing_it.c **** 
+ 160:Src/012_i2c_master_rx_testing_it.c ****         rxComplt = RESET;
+ 430              		.loc 1 160 18
+ 431 00e0 054B     		ldr	r3, .L24+16
+ 432 00e2 0022     		movs	r2, #0
+ 433 00e4 1A70     		strb	r2, [r3]
+ 123:Src/012_i2c_master_rx_testing_it.c **** 
+ 434              		.loc 1 123 14
+ 435 00e6 A7E7     		b	.L23
+ 436              	.L25:
+ 437              		.align	2
+ 438              	.L24:
+ 439 00e8 00000000 		.word	.LC0
+ 440 00ec 00580040 		.word	1073764352
+ 441 00f0 00080240 		.word	1073874944
+ 442 00f4 00000000 		.word	I2C2Handle
+ 443 00f8 00000000 		.word	rxComplt
+ 444 00fc 18000000 		.word	.LC1
+ 445 0100 00000000 		.word	rcv_buf
+ 446 0104 24000000 		.word	.LC2
+ 447              		.cfi_endproc
+ 448              	.LFE7:
+ 450              		.section	.text.I2C2_EV_IRQHandler,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	I2C2_EV_IRQHandler
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	I2C2_EV_IRQHandler:
+ 458              	.LFB8:
+ 161:Src/012_i2c_master_rx_testing_it.c ****     }
+ 162:Src/012_i2c_master_rx_testing_it.c **** }
+ 163:Src/012_i2c_master_rx_testing_it.c **** 
+ 164:Src/012_i2c_master_rx_testing_it.c **** 
+ 165:Src/012_i2c_master_rx_testing_it.c **** 
+ 166:Src/012_i2c_master_rx_testing_it.c **** 
+ 167:Src/012_i2c_master_rx_testing_it.c **** void I2C2_EV_IRQHandler(void)
+ 168:Src/012_i2c_master_rx_testing_it.c **** {
+ 459              		.loc 1 168 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 12
+
+
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 0
+ 462              		@ frame_needed = 1, uses_anonymous_args = 0
+ 463 0000 80B5     		push	{r7, lr}
+ 464              		.cfi_def_cfa_offset 8
+ 465              		.cfi_offset 7, -8
+ 466              		.cfi_offset 14, -4
+ 467 0002 00AF     		add	r7, sp, #0
+ 468              		.cfi_def_cfa_register 7
+ 169:Src/012_i2c_master_rx_testing_it.c ****     I2C_EV_IRQHandling(&I2C2Handle);
+ 469              		.loc 1 169 5
+ 470 0004 0248     		ldr	r0, .L27
+ 471 0006 FFF7FEFF 		bl	I2C_EV_IRQHandling
+ 170:Src/012_i2c_master_rx_testing_it.c **** }
+ 472              		.loc 1 170 1
+ 473 000a 00BF     		nop
+ 474 000c 80BD     		pop	{r7, pc}
+ 475              	.L28:
+ 476 000e 00BF     		.align	2
+ 477              	.L27:
+ 478 0010 00000000 		.word	I2C2Handle
+ 479              		.cfi_endproc
+ 480              	.LFE8:
+ 482              		.section	.text.I2C2_ER_IRQHandler,"ax",%progbits
+ 483              		.align	1
+ 484              		.global	I2C2_ER_IRQHandler
+ 485              		.syntax unified
+ 486              		.thumb
+ 487              		.thumb_func
+ 489              	I2C2_ER_IRQHandler:
+ 490              	.LFB9:
+ 171:Src/012_i2c_master_rx_testing_it.c **** 
+ 172:Src/012_i2c_master_rx_testing_it.c **** void I2C2_ER_IRQHandler(void)
+ 173:Src/012_i2c_master_rx_testing_it.c **** {
+ 491              		.loc 1 173 1
+ 492              		.cfi_startproc
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 1, uses_anonymous_args = 0
+ 495 0000 80B5     		push	{r7, lr}
+ 496              		.cfi_def_cfa_offset 8
+ 497              		.cfi_offset 7, -8
+ 498              		.cfi_offset 14, -4
+ 499 0002 00AF     		add	r7, sp, #0
+ 500              		.cfi_def_cfa_register 7
+ 174:Src/012_i2c_master_rx_testing_it.c ****     I2C_ER_IRQHandling(&I2C2Handle);
+ 501              		.loc 1 174 5
+ 502 0004 0248     		ldr	r0, .L30
+ 503 0006 FFF7FEFF 		bl	I2C_ER_IRQHandling
+ 175:Src/012_i2c_master_rx_testing_it.c **** }   
+ 504              		.loc 1 175 1
+ 505 000a 00BF     		nop
+ 506 000c 80BD     		pop	{r7, pc}
+ 507              	.L31:
+ 508 000e 00BF     		.align	2
+ 509              	.L30:
+ 510 0010 00000000 		.word	I2C2Handle
+ 511              		.cfi_endproc
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 13
+
+
+ 512              	.LFE9:
+ 514              		.section	.text.I2C_ApplicationEventCallback,"ax",%progbits
+ 515              		.align	1
+ 516              		.global	I2C_ApplicationEventCallback
+ 517              		.syntax unified
+ 518              		.thumb
+ 519              		.thumb_func
+ 521              	I2C_ApplicationEventCallback:
+ 522              	.LFB10:
+ 176:Src/012_i2c_master_rx_testing_it.c **** 
+ 177:Src/012_i2c_master_rx_testing_it.c **** 
+ 178:Src/012_i2c_master_rx_testing_it.c **** void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEvent)
+ 179:Src/012_i2c_master_rx_testing_it.c **** {
+ 523              		.loc 1 179 1
+ 524              		.cfi_startproc
+ 525              		@ args = 0, pretend = 0, frame = 8
+ 526              		@ frame_needed = 1, uses_anonymous_args = 0
+ 527              		@ link register save eliminated.
+ 528 0000 80B4     		push	{r7}
+ 529              		.cfi_def_cfa_offset 4
+ 530              		.cfi_offset 7, -4
+ 531 0002 83B0     		sub	sp, sp, #12
+ 532              		.cfi_def_cfa_offset 16
+ 533 0004 00AF     		add	r7, sp, #0
+ 534              		.cfi_def_cfa_register 7
+ 535 0006 7860     		str	r0, [r7, #4]
+ 536 0008 0B46     		mov	r3, r1
+ 537 000a FB70     		strb	r3, [r7, #3]
+ 180:Src/012_i2c_master_rx_testing_it.c ****     if(AppEvent == I2C_EV_TX_CMPLT)
+ 538              		.loc 1 180 7
+ 539 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 540 000e 002B     		cmp	r3, #0
+ 541 0010 05D0     		beq	.L34
+ 181:Src/012_i2c_master_rx_testing_it.c ****     {
+ 182:Src/012_i2c_master_rx_testing_it.c ****         //printf("Transmission complete \n");
+ 183:Src/012_i2c_master_rx_testing_it.c ****     }else if (AppEvent == I2C_EV_RX_CMPLT)
+ 542              		.loc 1 183 14
+ 543 0012 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 544 0014 012B     		cmp	r3, #1
+ 545 0016 02D1     		bne	.L34
+ 184:Src/012_i2c_master_rx_testing_it.c ****     {
+ 185:Src/012_i2c_master_rx_testing_it.c ****         //printf("Reception complete \n");
+ 186:Src/012_i2c_master_rx_testing_it.c ****         rxComplt = SET;
+ 546              		.loc 1 186 18
+ 547 0018 044B     		ldr	r3, .L35
+ 548 001a 0122     		movs	r2, #1
+ 549 001c 1A70     		strb	r2, [r3]
+ 550              	.L34:
+ 187:Src/012_i2c_master_rx_testing_it.c ****     }
+ 188:Src/012_i2c_master_rx_testing_it.c **** }
+ 551              		.loc 1 188 1
+ 552 001e 00BF     		nop
+ 553 0020 0C37     		adds	r7, r7, #12
+ 554              		.cfi_def_cfa_offset 4
+ 555 0022 BD46     		mov	sp, r7
+ 556              		.cfi_def_cfa_register 13
+ 557              		@ sp needed
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 14
+
+
+ 558 0024 5DF8047B 		ldr	r7, [sp], #4
+ 559              		.cfi_restore 7
+ 560              		.cfi_def_cfa_offset 0
+ 561 0028 7047     		bx	lr
+ 562              	.L36:
+ 563 002a 00BF     		.align	2
+ 564              	.L35:
+ 565 002c 00000000 		.word	rxComplt
+ 566              		.cfi_endproc
+ 567              	.LFE10:
+ 569              		.text
+ 570              	.Letext0:
+ 571              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 572              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 573              		.file 4 "drivers/Inc/stm32f767xx.h"
+ 574              		.file 5 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ 575              		.file 6 "drivers/Inc/stm32f767xx_i2c_driver.h"
+ 576              		.file 7 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 577              		.file 8 "Inc/SEGGER_RTT.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 012_i2c_master_rx_testing_it.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:22     .bss.rxComplt:0000000000000000 rxComplt
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:23     .bss.rxComplt:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:25     .text.delay:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:31     .text.delay:0000000000000000 delay
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:79     .text.delay:0000000000000028 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:88     .bss.I2C2Handle:0000000000000000 I2C2Handle
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:85     .bss.I2C2Handle:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:95     .bss.rcv_buf:0000000000000000 rcv_buf
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:92     .bss.rcv_buf:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:98     .text.I2C2_GPIOInits:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:104    .text.I2C2_GPIOInits:0000000000000000 I2C2_GPIOInits
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:161    .text.I2C2_GPIOInits:0000000000000040 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:166    .text.I2C2_Inits:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:172    .text.I2C2_Inits:0000000000000000 I2C2_Inits
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:205    .text.I2C2_Inits:0000000000000020 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:211    .text.GPIO_ButtonInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:217    .text.GPIO_ButtonInit:0000000000000000 GPIO_ButtonInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:261    .text.GPIO_ButtonInit:000000000000002c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:266    .rodata:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:276    .text.main:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:282    .text.main:0000000000000000 main
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:439    .text.main:00000000000000e8 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:451    .text.I2C2_EV_IRQHandler:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:457    .text.I2C2_EV_IRQHandler:0000000000000000 I2C2_EV_IRQHandler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:478    .text.I2C2_EV_IRQHandler:0000000000000010 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:483    .text.I2C2_ER_IRQHandler:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:489    .text.I2C2_ER_IRQHandler:0000000000000000 I2C2_ER_IRQHandler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:510    .text.I2C2_ER_IRQHandler:0000000000000010 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:515    .text.I2C_ApplicationEventCallback:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:521    .text.I2C_ApplicationEventCallback:0000000000000000 I2C_ApplicationEventCallback
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccta79fo.s:565    .text.I2C_ApplicationEventCallback:000000000000002c $d
+
+UNDEFINED SYMBOLS
+GPIO_Init
+I2C_Init
+SEGGER_RTT_ConfigUpBuffer
+puts
+I2C_IRQInterruptConfig
+I2C_PeripheralControl
+GPIO_ReadFromInputPin
+I2C_MasterSendDataIT
+I2C_MasterReceiveDataIT
+printf
+I2C_EV_IRQHandling
+I2C_ER_IRQHandling

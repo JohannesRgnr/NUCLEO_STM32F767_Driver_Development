@@ -1,0 +1,2659 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"stm32f767xx_gpio_driver.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.GPIO_PeriClockControl,"ax",%progbits
+  19              		.align	1
+  20              		.global	GPIO_PeriClockControl
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	GPIO_PeriClockControl:
+  26              	.LFB0:
+  27              		.file 1 "drivers/Src/stm32f767xx_gpio_driver.c"
+   1:drivers/Src/stm32f767xx_gpio_driver.c **** /*
+   2:drivers/Src/stm32f767xx_gpio_driver.c ****  * stm32f767xx_gpio_driver.c
+   3:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+   4:drivers/Src/stm32f767xx_gpio_driver.c ****  *  Created on: August 26, 2022
+   5:drivers/Src/stm32f767xx_gpio_driver.c ****  *      Author: johannes regnier
+   6:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+   7:drivers/Src/stm32f767xx_gpio_driver.c **** 
+   8:drivers/Src/stm32f767xx_gpio_driver.c **** 
+   9:drivers/Src/stm32f767xx_gpio_driver.c **** #include "stm32f767xx_gpio_driver.h"
+  10:drivers/Src/stm32f767xx_gpio_driver.c **** 
+  11:drivers/Src/stm32f767xx_gpio_driver.c **** 
+  12:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+  13:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_PeriClockControl
+  14:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+  15:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             - This function enables or disables peripheral clock for the given GPIO port
+  16:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+  17:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         - base address of the gpio peripheral
+  18:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         - ENABLE or DISABLE macros
+  19:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+  20:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+  21:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -  none
+  22:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+  23:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -  none
+  24:drivers/Src/stm32f767xx_gpio_driver.c **** 
+  25:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+  26:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
+  27:drivers/Src/stm32f767xx_gpio_driver.c **** {
+  28              		.loc 1 27 1
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 2
+
+
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40 0006 7860     		str	r0, [r7, #4]
+  41 0008 0B46     		mov	r3, r1
+  42 000a FB70     		strb	r3, [r7, #3]
+  28:drivers/Src/stm32f767xx_gpio_driver.c ****     if (EnorDi == ENABLE)
+  43              		.loc 1 28 8
+  44 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+  45 000e 012B     		cmp	r3, #1
+  46 0010 78D1     		bne	.L2
+  29:drivers/Src/stm32f767xx_gpio_driver.c ****     {
+  30:drivers/Src/stm32f767xx_gpio_driver.c ****         if(pGPIOx == GPIOA)
+  47              		.loc 1 30 11
+  48 0012 7B68     		ldr	r3, [r7, #4]
+  49 0014 7A4A     		ldr	r2, .L25
+  50 0016 9342     		cmp	r3, r2
+  51 0018 06D1     		bne	.L3
+  31:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  32:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOA_PCLK_EN();
+  52              		.loc 1 32 4
+  53 001a 7A4B     		ldr	r3, .L25+4
+  54 001c 1B6B     		ldr	r3, [r3, #48]
+  55 001e 794A     		ldr	r2, .L25+4
+  56 0020 43F00103 		orr	r3, r3, #1
+  57 0024 1363     		str	r3, [r2, #48]
+  33:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+  34:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  35:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOB_PCLK_EN();
+  36:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+  37:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  38:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOC_PCLK_EN();
+  39:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+  40:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  41:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOD_PCLK_EN();
+  42:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+  43:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  44:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOE_PCLK_EN();
+  45:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+  46:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  47:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOF_PCLK_EN();
+  48:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+  49:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  50:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOG_PCLK_EN();
+  51:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+  52:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  53:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOH_PCLK_EN();
+  54:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+  55:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  56:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOI_PCLK_EN();
+  57:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+  58:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 3
+
+
+  59:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOJ_PCLK_EN();
+  60:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+  61:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  62:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOK_PCLK_EN();
+  63:drivers/Src/stm32f767xx_gpio_driver.c **** 		}        
+  64:drivers/Src/stm32f767xx_gpio_driver.c ****     } 
+  65:drivers/Src/stm32f767xx_gpio_driver.c ****     else
+  66:drivers/Src/stm32f767xx_gpio_driver.c ****     {
+  67:drivers/Src/stm32f767xx_gpio_driver.c ****         if(pGPIOx == GPIOA)
+  68:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  69:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOA_PCLK_DI();
+  70:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+  71:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  72:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOB_PCLK_DI();
+  73:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+  74:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  75:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOC_PCLK_DI();
+  76:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+  77:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  78:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOD_PCLK_DI();
+  79:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+  80:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  81:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOE_PCLK_DI();
+  82:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+  83:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  84:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOF_PCLK_DI();
+  85:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+  86:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  87:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOG_PCLK_DI();
+  88:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+  89:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  90:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOH_PCLK_DI();
+  91:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+  92:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  93:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOI_PCLK_DI();
+  94:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+  95:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  96:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOJ_PCLK_DI();
+  97:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+  98:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  99:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOK_PCLK_DI();
+ 100:drivers/Src/stm32f767xx_gpio_driver.c **** 		} 
+ 101:drivers/Src/stm32f767xx_gpio_driver.c ****     }
+ 102:drivers/Src/stm32f767xx_gpio_driver.c **** }
+  58              		.loc 1 102 1
+  59 0026 E5E0     		b	.L24
+  60              	.L3:
+  33:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+  61              		.loc 1 33 12
+  62 0028 7B68     		ldr	r3, [r7, #4]
+  63 002a 774A     		ldr	r2, .L25+8
+  64 002c 9342     		cmp	r3, r2
+  65 002e 06D1     		bne	.L5
+  35:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+  66              		.loc 1 35 4
+  67 0030 744B     		ldr	r3, .L25+4
+  68 0032 1B6B     		ldr	r3, [r3, #48]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 4
+
+
+  69 0034 734A     		ldr	r2, .L25+4
+  70 0036 43F00203 		orr	r3, r3, #2
+  71 003a 1363     		str	r3, [r2, #48]
+  72              		.loc 1 102 1
+  73 003c DAE0     		b	.L24
+  74              	.L5:
+  36:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  75              		.loc 1 36 12
+  76 003e 7B68     		ldr	r3, [r7, #4]
+  77 0040 724A     		ldr	r2, .L25+12
+  78 0042 9342     		cmp	r3, r2
+  79 0044 06D1     		bne	.L6
+  38:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+  80              		.loc 1 38 4
+  81 0046 6F4B     		ldr	r3, .L25+4
+  82 0048 1B6B     		ldr	r3, [r3, #48]
+  83 004a 6E4A     		ldr	r2, .L25+4
+  84 004c 43F00403 		orr	r3, r3, #4
+  85 0050 1363     		str	r3, [r2, #48]
+  86              		.loc 1 102 1
+  87 0052 CFE0     		b	.L24
+  88              	.L6:
+  39:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+  89              		.loc 1 39 12
+  90 0054 7B68     		ldr	r3, [r7, #4]
+  91 0056 6E4A     		ldr	r2, .L25+16
+  92 0058 9342     		cmp	r3, r2
+  93 005a 06D1     		bne	.L7
+  41:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+  94              		.loc 1 41 4
+  95 005c 694B     		ldr	r3, .L25+4
+  96 005e 1B6B     		ldr	r3, [r3, #48]
+  97 0060 684A     		ldr	r2, .L25+4
+  98 0062 43F00803 		orr	r3, r3, #8
+  99 0066 1363     		str	r3, [r2, #48]
+ 100              		.loc 1 102 1
+ 101 0068 C4E0     		b	.L24
+ 102              	.L7:
+  42:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 103              		.loc 1 42 12
+ 104 006a 7B68     		ldr	r3, [r7, #4]
+ 105 006c 694A     		ldr	r2, .L25+20
+ 106 006e 9342     		cmp	r3, r2
+ 107 0070 06D1     		bne	.L8
+  44:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+ 108              		.loc 1 44 4
+ 109 0072 644B     		ldr	r3, .L25+4
+ 110 0074 1B6B     		ldr	r3, [r3, #48]
+ 111 0076 634A     		ldr	r2, .L25+4
+ 112 0078 43F01003 		orr	r3, r3, #16
+ 113 007c 1363     		str	r3, [r2, #48]
+ 114              		.loc 1 102 1
+ 115 007e B9E0     		b	.L24
+ 116              	.L8:
+  45:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 117              		.loc 1 45 12
+ 118 0080 7B68     		ldr	r3, [r7, #4]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 5
+
+
+ 119 0082 654A     		ldr	r2, .L25+24
+ 120 0084 9342     		cmp	r3, r2
+ 121 0086 06D1     		bne	.L9
+  47:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+ 122              		.loc 1 47 4
+ 123 0088 5E4B     		ldr	r3, .L25+4
+ 124 008a 1B6B     		ldr	r3, [r3, #48]
+ 125 008c 5D4A     		ldr	r2, .L25+4
+ 126 008e 43F02003 		orr	r3, r3, #32
+ 127 0092 1363     		str	r3, [r2, #48]
+ 128              		.loc 1 102 1
+ 129 0094 AEE0     		b	.L24
+ 130              	.L9:
+  48:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 131              		.loc 1 48 12
+ 132 0096 7B68     		ldr	r3, [r7, #4]
+ 133 0098 604A     		ldr	r2, .L25+28
+ 134 009a 9342     		cmp	r3, r2
+ 135 009c 06D1     		bne	.L10
+  50:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+ 136              		.loc 1 50 4
+ 137 009e 594B     		ldr	r3, .L25+4
+ 138 00a0 1B6B     		ldr	r3, [r3, #48]
+ 139 00a2 584A     		ldr	r2, .L25+4
+ 140 00a4 43F04003 		orr	r3, r3, #64
+ 141 00a8 1363     		str	r3, [r2, #48]
+ 142              		.loc 1 102 1
+ 143 00aa A3E0     		b	.L24
+ 144              	.L10:
+  51:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 145              		.loc 1 51 12
+ 146 00ac 7B68     		ldr	r3, [r7, #4]
+ 147 00ae 5C4A     		ldr	r2, .L25+32
+ 148 00b0 9342     		cmp	r3, r2
+ 149 00b2 06D1     		bne	.L11
+  53:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+ 150              		.loc 1 53 4
+ 151 00b4 534B     		ldr	r3, .L25+4
+ 152 00b6 1B6B     		ldr	r3, [r3, #48]
+ 153 00b8 524A     		ldr	r2, .L25+4
+ 154 00ba 43F08003 		orr	r3, r3, #128
+ 155 00be 1363     		str	r3, [r2, #48]
+ 156              		.loc 1 102 1
+ 157 00c0 98E0     		b	.L24
+ 158              	.L11:
+  54:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 159              		.loc 1 54 12
+ 160 00c2 7B68     		ldr	r3, [r7, #4]
+ 161 00c4 574A     		ldr	r2, .L25+36
+ 162 00c6 9342     		cmp	r3, r2
+ 163 00c8 06D1     		bne	.L12
+  56:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+ 164              		.loc 1 56 4
+ 165 00ca 4E4B     		ldr	r3, .L25+4
+ 166 00cc 1B6B     		ldr	r3, [r3, #48]
+ 167 00ce 4D4A     		ldr	r2, .L25+4
+ 168 00d0 43F48073 		orr	r3, r3, #256
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 6
+
+
+ 169 00d4 1363     		str	r3, [r2, #48]
+ 170              		.loc 1 102 1
+ 171 00d6 8DE0     		b	.L24
+ 172              	.L12:
+  57:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 173              		.loc 1 57 12
+ 174 00d8 7B68     		ldr	r3, [r7, #4]
+ 175 00da 534A     		ldr	r2, .L25+40
+ 176 00dc 9342     		cmp	r3, r2
+ 177 00de 06D1     		bne	.L13
+  59:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+ 178              		.loc 1 59 4
+ 179 00e0 484B     		ldr	r3, .L25+4
+ 180 00e2 1B6B     		ldr	r3, [r3, #48]
+ 181 00e4 474A     		ldr	r2, .L25+4
+ 182 00e6 43F40073 		orr	r3, r3, #512
+ 183 00ea 1363     		str	r3, [r2, #48]
+ 184              		.loc 1 102 1
+ 185 00ec 82E0     		b	.L24
+ 186              	.L13:
+  60:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 187              		.loc 1 60 12
+ 188 00ee 7B68     		ldr	r3, [r7, #4]
+ 189 00f0 4E4A     		ldr	r2, .L25+44
+ 190 00f2 9342     		cmp	r3, r2
+ 191 00f4 7ED1     		bne	.L24
+  62:drivers/Src/stm32f767xx_gpio_driver.c **** 		}        
+ 192              		.loc 1 62 4
+ 193 00f6 434B     		ldr	r3, .L25+4
+ 194 00f8 1B6B     		ldr	r3, [r3, #48]
+ 195 00fa 424A     		ldr	r2, .L25+4
+ 196 00fc 43F48063 		orr	r3, r3, #1024
+ 197 0100 1363     		str	r3, [r2, #48]
+ 198              		.loc 1 102 1
+ 199 0102 77E0     		b	.L24
+ 200              	.L2:
+  67:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 201              		.loc 1 67 11
+ 202 0104 7B68     		ldr	r3, [r7, #4]
+ 203 0106 3E4A     		ldr	r2, .L25
+ 204 0108 9342     		cmp	r3, r2
+ 205 010a 06D1     		bne	.L14
+  69:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+ 206              		.loc 1 69 4
+ 207 010c 3D4B     		ldr	r3, .L25+4
+ 208 010e 1B6B     		ldr	r3, [r3, #48]
+ 209 0110 3C4A     		ldr	r2, .L25+4
+ 210 0112 23F00103 		bic	r3, r3, #1
+ 211 0116 1363     		str	r3, [r2, #48]
+ 212              		.loc 1 102 1
+ 213 0118 6CE0     		b	.L24
+ 214              	.L14:
+  70:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 215              		.loc 1 70 12
+ 216 011a 7B68     		ldr	r3, [r7, #4]
+ 217 011c 3A4A     		ldr	r2, .L25+8
+ 218 011e 9342     		cmp	r3, r2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 7
+
+
+ 219 0120 06D1     		bne	.L15
+  72:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+ 220              		.loc 1 72 4
+ 221 0122 384B     		ldr	r3, .L25+4
+ 222 0124 1B6B     		ldr	r3, [r3, #48]
+ 223 0126 374A     		ldr	r2, .L25+4
+ 224 0128 23F00203 		bic	r3, r3, #2
+ 225 012c 1363     		str	r3, [r2, #48]
+ 226              		.loc 1 102 1
+ 227 012e 61E0     		b	.L24
+ 228              	.L15:
+  73:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 229              		.loc 1 73 12
+ 230 0130 7B68     		ldr	r3, [r7, #4]
+ 231 0132 364A     		ldr	r2, .L25+12
+ 232 0134 9342     		cmp	r3, r2
+ 233 0136 06D1     		bne	.L16
+  75:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+ 234              		.loc 1 75 4
+ 235 0138 324B     		ldr	r3, .L25+4
+ 236 013a 1B6B     		ldr	r3, [r3, #48]
+ 237 013c 314A     		ldr	r2, .L25+4
+ 238 013e 23F00403 		bic	r3, r3, #4
+ 239 0142 1363     		str	r3, [r2, #48]
+ 240              		.loc 1 102 1
+ 241 0144 56E0     		b	.L24
+ 242              	.L16:
+  76:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 243              		.loc 1 76 12
+ 244 0146 7B68     		ldr	r3, [r7, #4]
+ 245 0148 314A     		ldr	r2, .L25+16
+ 246 014a 9342     		cmp	r3, r2
+ 247 014c 06D1     		bne	.L17
+  78:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+ 248              		.loc 1 78 4
+ 249 014e 2D4B     		ldr	r3, .L25+4
+ 250 0150 1B6B     		ldr	r3, [r3, #48]
+ 251 0152 2C4A     		ldr	r2, .L25+4
+ 252 0154 23F00803 		bic	r3, r3, #8
+ 253 0158 1363     		str	r3, [r2, #48]
+ 254              		.loc 1 102 1
+ 255 015a 4BE0     		b	.L24
+ 256              	.L17:
+  79:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 257              		.loc 1 79 12
+ 258 015c 7B68     		ldr	r3, [r7, #4]
+ 259 015e 2D4A     		ldr	r2, .L25+20
+ 260 0160 9342     		cmp	r3, r2
+ 261 0162 06D1     		bne	.L18
+  81:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+ 262              		.loc 1 81 4
+ 263 0164 274B     		ldr	r3, .L25+4
+ 264 0166 1B6B     		ldr	r3, [r3, #48]
+ 265 0168 264A     		ldr	r2, .L25+4
+ 266 016a 23F01003 		bic	r3, r3, #16
+ 267 016e 1363     		str	r3, [r2, #48]
+ 268              		.loc 1 102 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 8
+
+
+ 269 0170 40E0     		b	.L24
+ 270              	.L18:
+  82:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 271              		.loc 1 82 12
+ 272 0172 7B68     		ldr	r3, [r7, #4]
+ 273 0174 284A     		ldr	r2, .L25+24
+ 274 0176 9342     		cmp	r3, r2
+ 275 0178 06D1     		bne	.L19
+  84:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+ 276              		.loc 1 84 4
+ 277 017a 224B     		ldr	r3, .L25+4
+ 278 017c 1B6B     		ldr	r3, [r3, #48]
+ 279 017e 214A     		ldr	r2, .L25+4
+ 280 0180 23F02003 		bic	r3, r3, #32
+ 281 0184 1363     		str	r3, [r2, #48]
+ 282              		.loc 1 102 1
+ 283 0186 35E0     		b	.L24
+ 284              	.L19:
+  85:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 285              		.loc 1 85 12
+ 286 0188 7B68     		ldr	r3, [r7, #4]
+ 287 018a 244A     		ldr	r2, .L25+28
+ 288 018c 9342     		cmp	r3, r2
+ 289 018e 06D1     		bne	.L20
+  87:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+ 290              		.loc 1 87 4
+ 291 0190 1C4B     		ldr	r3, .L25+4
+ 292 0192 1B6B     		ldr	r3, [r3, #48]
+ 293 0194 1B4A     		ldr	r2, .L25+4
+ 294 0196 23F04003 		bic	r3, r3, #64
+ 295 019a 1363     		str	r3, [r2, #48]
+ 296              		.loc 1 102 1
+ 297 019c 2AE0     		b	.L24
+ 298              	.L20:
+  88:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 299              		.loc 1 88 12
+ 300 019e 7B68     		ldr	r3, [r7, #4]
+ 301 01a0 1F4A     		ldr	r2, .L25+32
+ 302 01a2 9342     		cmp	r3, r2
+ 303 01a4 06D1     		bne	.L21
+  90:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+ 304              		.loc 1 90 4
+ 305 01a6 174B     		ldr	r3, .L25+4
+ 306 01a8 1B6B     		ldr	r3, [r3, #48]
+ 307 01aa 164A     		ldr	r2, .L25+4
+ 308 01ac 23F08003 		bic	r3, r3, #128
+ 309 01b0 1363     		str	r3, [r2, #48]
+ 310              		.loc 1 102 1
+ 311 01b2 1FE0     		b	.L24
+ 312              	.L21:
+  91:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 313              		.loc 1 91 12
+ 314 01b4 7B68     		ldr	r3, [r7, #4]
+ 315 01b6 1B4A     		ldr	r2, .L25+36
+ 316 01b8 9342     		cmp	r3, r2
+ 317 01ba 06D1     		bne	.L22
+  93:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 9
+
+
+ 318              		.loc 1 93 4
+ 319 01bc 114B     		ldr	r3, .L25+4
+ 320 01be 1B6B     		ldr	r3, [r3, #48]
+ 321 01c0 104A     		ldr	r2, .L25+4
+ 322 01c2 23F48073 		bic	r3, r3, #256
+ 323 01c6 1363     		str	r3, [r2, #48]
+ 324              		.loc 1 102 1
+ 325 01c8 14E0     		b	.L24
+ 326              	.L22:
+  94:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 327              		.loc 1 94 12
+ 328 01ca 7B68     		ldr	r3, [r7, #4]
+ 329 01cc 164A     		ldr	r2, .L25+40
+ 330 01ce 9342     		cmp	r3, r2
+ 331 01d0 06D1     		bne	.L23
+  96:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+ 332              		.loc 1 96 4
+ 333 01d2 0C4B     		ldr	r3, .L25+4
+ 334 01d4 1B6B     		ldr	r3, [r3, #48]
+ 335 01d6 0B4A     		ldr	r2, .L25+4
+ 336 01d8 23F40073 		bic	r3, r3, #512
+ 337 01dc 1363     		str	r3, [r2, #48]
+ 338              		.loc 1 102 1
+ 339 01de 09E0     		b	.L24
+ 340              	.L23:
+  97:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 341              		.loc 1 97 12
+ 342 01e0 7B68     		ldr	r3, [r7, #4]
+ 343 01e2 124A     		ldr	r2, .L25+44
+ 344 01e4 9342     		cmp	r3, r2
+ 345 01e6 05D1     		bne	.L24
+  99:drivers/Src/stm32f767xx_gpio_driver.c **** 		} 
+ 346              		.loc 1 99 4
+ 347 01e8 064B     		ldr	r3, .L25+4
+ 348 01ea 1B6B     		ldr	r3, [r3, #48]
+ 349 01ec 054A     		ldr	r2, .L25+4
+ 350 01ee 23F48063 		bic	r3, r3, #1024
+ 351 01f2 1363     		str	r3, [r2, #48]
+ 352              	.L24:
+ 353              		.loc 1 102 1
+ 354 01f4 00BF     		nop
+ 355 01f6 0C37     		adds	r7, r7, #12
+ 356              		.cfi_def_cfa_offset 4
+ 357 01f8 BD46     		mov	sp, r7
+ 358              		.cfi_def_cfa_register 13
+ 359              		@ sp needed
+ 360 01fa 5DF8047B 		ldr	r7, [sp], #4
+ 361              		.cfi_restore 7
+ 362              		.cfi_def_cfa_offset 0
+ 363 01fe 7047     		bx	lr
+ 364              	.L26:
+ 365              		.align	2
+ 366              	.L25:
+ 367 0200 00000240 		.word	1073872896
+ 368 0204 00380240 		.word	1073887232
+ 369 0208 00040240 		.word	1073873920
+ 370 020c 00080240 		.word	1073874944
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 10
+
+
+ 371 0210 000C0240 		.word	1073875968
+ 372 0214 00100240 		.word	1073876992
+ 373 0218 00140240 		.word	1073878016
+ 374 021c 00180240 		.word	1073879040
+ 375 0220 001C0240 		.word	1073880064
+ 376 0224 00200240 		.word	1073881088
+ 377 0228 00240240 		.word	1073882112
+ 378 022c 00280240 		.word	1073883136
+ 379              		.cfi_endproc
+ 380              	.LFE0:
+ 382              		.section	.text.GPIO_Init,"ax",%progbits
+ 383              		.align	1
+ 384              		.global	GPIO_Init
+ 385              		.syntax unified
+ 386              		.thumb
+ 387              		.thumb_func
+ 389              	GPIO_Init:
+ 390              	.LFB1:
+ 103:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 104:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 105:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 106:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_Init
+ 107:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 108:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 109:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 110:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 111:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 112:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 113:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 114:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 115:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 116:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 117:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 118:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 119:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+ 120:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 391              		.loc 1 120 1
+ 392              		.cfi_startproc
+ 393              		@ args = 0, pretend = 0, frame = 24
+ 394              		@ frame_needed = 1, uses_anonymous_args = 0
+ 395 0000 80B5     		push	{r7, lr}
+ 396              		.cfi_def_cfa_offset 8
+ 397              		.cfi_offset 7, -8
+ 398              		.cfi_offset 14, -4
+ 399 0002 86B0     		sub	sp, sp, #24
+ 400              		.cfi_def_cfa_offset 32
+ 401 0004 00AF     		add	r7, sp, #0
+ 402              		.cfi_def_cfa_register 7
+ 403 0006 7860     		str	r0, [r7, #4]
+ 121:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint32_t temp = 0; // temp register
+ 404              		.loc 1 121 11
+ 405 0008 0023     		movs	r3, #0
+ 406 000a 7B61     		str	r3, [r7, #20]
+ 122:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 123:drivers/Src/stm32f767xx_gpio_driver.c **** 	// enable the peripheral clock
+ 124:drivers/Src/stm32f767xx_gpio_driver.c **** 	GPIO_PeriClockControl(pGPIOHandle->pGPIOx, ENABLE);
+ 407              		.loc 1 124 2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 11
+
+
+ 408 000c 7B68     		ldr	r3, [r7, #4]
+ 409 000e 1B68     		ldr	r3, [r3]
+ 410 0010 0121     		movs	r1, #1
+ 411 0012 1846     		mov	r0, r3
+ 412 0014 FFF7FEFF 		bl	GPIO_PeriClockControl
+ 125:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 126:drivers/Src/stm32f767xx_gpio_driver.c **** 	// 1. configure the mode of the GPIO pin
+ 127:drivers/Src/stm32f767xx_gpio_driver.c **** 	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG)
+ 413              		.loc 1 127 32
+ 414 0018 7B68     		ldr	r3, [r7, #4]
+ 415 001a 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 416              		.loc 1 127 4
+ 417 001c 032B     		cmp	r3, #3
+ 418 001e 20D8     		bhi	.L28
+ 128:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 129:drivers/Src/stm32f767xx_gpio_driver.c **** 		temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumb
+ 419              		.loc 1 129 38
+ 420 0020 7B68     		ldr	r3, [r7, #4]
+ 421 0022 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 422 0024 1A46     		mov	r2, r3
+ 423              		.loc 1 129 87
+ 424 0026 7B68     		ldr	r3, [r7, #4]
+ 425 0028 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 426              		.loc 1 129 58
+ 427 002a 5B00     		lsls	r3, r3, #1
+ 428              		.loc 1 129 52
+ 429 002c 02FA03F3 		lsl	r3, r2, r3
+ 430              		.loc 1 129 8
+ 431 0030 7B61     		str	r3, [r7, #20]
+ 130:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOHandle->pGPIOx->MODER &= ~( 0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); //clea
+ 432              		.loc 1 130 14
+ 433 0032 7B68     		ldr	r3, [r7, #4]
+ 434 0034 1B68     		ldr	r3, [r3]
+ 435              		.loc 1 130 30
+ 436 0036 1A68     		ldr	r2, [r3]
+ 437              		.loc 1 130 75
+ 438 0038 7B68     		ldr	r3, [r7, #4]
+ 439 003a 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 440              		.loc 1 130 46
+ 441 003c 5B00     		lsls	r3, r3, #1
+ 442              		.loc 1 130 40
+ 443 003e 0321     		movs	r1, #3
+ 444 0040 01FA03F3 		lsl	r3, r1, r3
+ 445              		.loc 1 130 33
+ 446 0044 DB43     		mvns	r3, r3
+ 447 0046 1946     		mov	r1, r3
+ 448              		.loc 1 130 14
+ 449 0048 7B68     		ldr	r3, [r7, #4]
+ 450 004a 1B68     		ldr	r3, [r3]
+ 451              		.loc 1 130 30
+ 452 004c 0A40     		ands	r2, r2, r1
+ 453 004e 1A60     		str	r2, [r3]
+ 131:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOHandle->pGPIOx->MODER |= temp; //setting
+ 454              		.loc 1 131 14
+ 455 0050 7B68     		ldr	r3, [r7, #4]
+ 456 0052 1B68     		ldr	r3, [r3]
+ 457              		.loc 1 131 30
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 12
+
+
+ 458 0054 1968     		ldr	r1, [r3]
+ 459              		.loc 1 131 14
+ 460 0056 7B68     		ldr	r3, [r7, #4]
+ 461 0058 1B68     		ldr	r3, [r3]
+ 462              		.loc 1 131 30
+ 463 005a 7A69     		ldr	r2, [r7, #20]
+ 464 005c 0A43     		orrs	r2, r2, r1
+ 465 005e 1A60     		str	r2, [r3]
+ 466 0060 DDE0     		b	.L29
+ 467              	.L28:
+ 468              	.LBB2:
+ 132:drivers/Src/stm32f767xx_gpio_driver.c **** 		
+ 133:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 134:drivers/Src/stm32f767xx_gpio_driver.c **** 	else
+ 135:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 136:drivers/Src/stm32f767xx_gpio_driver.c **** 		// interrupt modes
+ 137:drivers/Src/stm32f767xx_gpio_driver.c **** 		if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT)
+ 469              		.loc 1 137 33
+ 470 0062 7B68     		ldr	r3, [r7, #4]
+ 471 0064 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 472              		.loc 1 137 5
+ 473 0066 042B     		cmp	r3, #4
+ 474 0068 17D1     		bne	.L30
+ 138:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 139:drivers/Src/stm32f767xx_gpio_driver.c **** 			// 1. Configure falling trigger selection register FTSR
+ 140:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->FTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 475              		.loc 1 140 15
+ 476 006a 524B     		ldr	r3, .L57
+ 477 006c DB68     		ldr	r3, [r3, #12]
+ 478              		.loc 1 140 51
+ 479 006e 7A68     		ldr	r2, [r7, #4]
+ 480 0070 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 481 0072 1146     		mov	r1, r2
+ 482              		.loc 1 140 21
+ 483 0074 0122     		movs	r2, #1
+ 484 0076 8A40     		lsls	r2, r2, r1
+ 485 0078 1146     		mov	r1, r2
+ 486              		.loc 1 140 15
+ 487 007a 4E4A     		ldr	r2, .L57
+ 488 007c 0B43     		orrs	r3, r3, r1
+ 489 007e D360     		str	r3, [r2, #12]
+ 141:drivers/Src/stm32f767xx_gpio_driver.c **** 			// Clear corresponding RTSR bit (only FTSR should be set)
+ 142:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->RTSR &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 490              		.loc 1 142 15
+ 491 0080 4C4B     		ldr	r3, .L57
+ 492 0082 9B68     		ldr	r3, [r3, #8]
+ 493              		.loc 1 142 52
+ 494 0084 7A68     		ldr	r2, [r7, #4]
+ 495 0086 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 496 0088 1146     		mov	r1, r2
+ 497              		.loc 1 142 22
+ 498 008a 0122     		movs	r2, #1
+ 499 008c 8A40     		lsls	r2, r2, r1
+ 500              		.loc 1 142 18
+ 501 008e D243     		mvns	r2, r2
+ 502 0090 1146     		mov	r1, r2
+ 503              		.loc 1 142 15
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 13
+
+
+ 504 0092 484A     		ldr	r2, .L57
+ 505 0094 0B40     		ands	r3, r3, r1
+ 506 0096 9360     		str	r3, [r2, #8]
+ 507 0098 35E0     		b	.L31
+ 508              	.L30:
+ 143:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 144:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RT)
+ 509              		.loc 1 144 40
+ 510 009a 7B68     		ldr	r3, [r7, #4]
+ 511 009c 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 512              		.loc 1 144 12
+ 513 009e 052B     		cmp	r3, #5
+ 514 00a0 17D1     		bne	.L32
+ 145:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 146:drivers/Src/stm32f767xx_gpio_driver.c **** 			// 1. Configure RTSR
+ 147:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 515              		.loc 1 147 15
+ 516 00a2 444B     		ldr	r3, .L57
+ 517 00a4 9B68     		ldr	r3, [r3, #8]
+ 518              		.loc 1 147 51
+ 519 00a6 7A68     		ldr	r2, [r7, #4]
+ 520 00a8 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 521 00aa 1146     		mov	r1, r2
+ 522              		.loc 1 147 21
+ 523 00ac 0122     		movs	r2, #1
+ 524 00ae 8A40     		lsls	r2, r2, r1
+ 525 00b0 1146     		mov	r1, r2
+ 526              		.loc 1 147 15
+ 527 00b2 404A     		ldr	r2, .L57
+ 528 00b4 0B43     		orrs	r3, r3, r1
+ 529 00b6 9360     		str	r3, [r2, #8]
+ 148:drivers/Src/stm32f767xx_gpio_driver.c **** 			// Clear corresponding FTSR bit (only RTSR should be set)
+ 149:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->FTSR &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 530              		.loc 1 149 15
+ 531 00b8 3E4B     		ldr	r3, .L57
+ 532 00ba DB68     		ldr	r3, [r3, #12]
+ 533              		.loc 1 149 52
+ 534 00bc 7A68     		ldr	r2, [r7, #4]
+ 535 00be 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 536 00c0 1146     		mov	r1, r2
+ 537              		.loc 1 149 22
+ 538 00c2 0122     		movs	r2, #1
+ 539 00c4 8A40     		lsls	r2, r2, r1
+ 540              		.loc 1 149 18
+ 541 00c6 D243     		mvns	r2, r2
+ 542 00c8 1146     		mov	r1, r2
+ 543              		.loc 1 149 15
+ 544 00ca 3A4A     		ldr	r2, .L57
+ 545 00cc 0B40     		ands	r3, r3, r1
+ 546 00ce D360     		str	r3, [r2, #12]
+ 547 00d0 19E0     		b	.L31
+ 548              	.L32:
+ 150:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 151:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 152:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RFT)
+ 549              		.loc 1 152 40
+ 550 00d2 7B68     		ldr	r3, [r7, #4]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 14
+
+
+ 551 00d4 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 552              		.loc 1 152 12
+ 553 00d6 062B     		cmp	r3, #6
+ 554 00d8 15D1     		bne	.L31
+ 153:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 154:drivers/Src/stm32f767xx_gpio_driver.c **** 			// 1. Configure both FTSR and RTSR
+ 155:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 555              		.loc 1 155 15
+ 556 00da 364B     		ldr	r3, .L57
+ 557 00dc 9B68     		ldr	r3, [r3, #8]
+ 558              		.loc 1 155 51
+ 559 00de 7A68     		ldr	r2, [r7, #4]
+ 560 00e0 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 561 00e2 1146     		mov	r1, r2
+ 562              		.loc 1 155 21
+ 563 00e4 0122     		movs	r2, #1
+ 564 00e6 8A40     		lsls	r2, r2, r1
+ 565 00e8 1146     		mov	r1, r2
+ 566              		.loc 1 155 15
+ 567 00ea 324A     		ldr	r2, .L57
+ 568 00ec 0B43     		orrs	r3, r3, r1
+ 569 00ee 9360     		str	r3, [r2, #8]
+ 156:drivers/Src/stm32f767xx_gpio_driver.c **** 			EXTI->FTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 570              		.loc 1 156 15
+ 571 00f0 304B     		ldr	r3, .L57
+ 572 00f2 DB68     		ldr	r3, [r3, #12]
+ 573              		.loc 1 156 51
+ 574 00f4 7A68     		ldr	r2, [r7, #4]
+ 575 00f6 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 576 00f8 1146     		mov	r1, r2
+ 577              		.loc 1 156 21
+ 578 00fa 0122     		movs	r2, #1
+ 579 00fc 8A40     		lsls	r2, r2, r1
+ 580 00fe 1146     		mov	r1, r2
+ 581              		.loc 1 156 15
+ 582 0100 2C4A     		ldr	r2, .L57
+ 583 0102 0B43     		orrs	r3, r3, r1
+ 584 0104 D360     		str	r3, [r2, #12]
+ 585              	.L31:
+ 157:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 158:drivers/Src/stm32f767xx_gpio_driver.c **** 		}
+ 159:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 160:drivers/Src/stm32f767xx_gpio_driver.c **** 		// 2. Configure the GPIO port selection in SYSCFG_EXTICR
+ 161:drivers/Src/stm32f767xx_gpio_driver.c **** 		uint8_t temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
+ 586              		.loc 1 161 46
+ 587 0106 7B68     		ldr	r3, [r7, #4]
+ 588 0108 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 589              		.loc 1 161 11
+ 590 010a 9B08     		lsrs	r3, r3, #2
+ 591 010c FB74     		strb	r3, [r7, #19]
+ 162:drivers/Src/stm32f767xx_gpio_driver.c **** 		uint8_t temp2 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 4;
+ 592              		.loc 1 162 46
+ 593 010e 7B68     		ldr	r3, [r7, #4]
+ 594 0110 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 595              		.loc 1 162 11
+ 596 0112 03F00303 		and	r3, r3, #3
+ 597 0116 BB74     		strb	r3, [r7, #18]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 15
+
+
+ 163:drivers/Src/stm32f767xx_gpio_driver.c **** 		uint8_t portcode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
+ 598              		.loc 1 163 22
+ 599 0118 7B68     		ldr	r3, [r7, #4]
+ 600 011a 1B68     		ldr	r3, [r3]
+ 601              		.loc 1 163 11
+ 602 011c 264A     		ldr	r2, .L57+4
+ 603 011e 9342     		cmp	r3, r2
+ 604 0120 60D0     		beq	.L33
+ 605              		.loc 1 163 22 discriminator 1
+ 606 0122 7B68     		ldr	r3, [r7, #4]
+ 607 0124 1B68     		ldr	r3, [r3]
+ 608              		.loc 1 163 11 discriminator 1
+ 609 0126 254A     		ldr	r2, .L57+8
+ 610 0128 9342     		cmp	r3, r2
+ 611 012a 40D0     		beq	.L34
+ 612              		.loc 1 163 22 discriminator 3
+ 613 012c 7B68     		ldr	r3, [r7, #4]
+ 614 012e 1B68     		ldr	r3, [r3]
+ 615              		.loc 1 163 11 discriminator 3
+ 616 0130 234A     		ldr	r2, .L57+12
+ 617 0132 9342     		cmp	r3, r2
+ 618 0134 39D0     		beq	.L35
+ 619              		.loc 1 163 22 discriminator 5
+ 620 0136 7B68     		ldr	r3, [r7, #4]
+ 621 0138 1B68     		ldr	r3, [r3]
+ 622              		.loc 1 163 11 discriminator 5
+ 623 013a 224A     		ldr	r2, .L57+16
+ 624 013c 9342     		cmp	r3, r2
+ 625 013e 32D0     		beq	.L36
+ 626              		.loc 1 163 22 discriminator 7
+ 627 0140 7B68     		ldr	r3, [r7, #4]
+ 628 0142 1B68     		ldr	r3, [r3]
+ 629              		.loc 1 163 11 discriminator 7
+ 630 0144 204A     		ldr	r2, .L57+20
+ 631 0146 9342     		cmp	r3, r2
+ 632 0148 2BD0     		beq	.L37
+ 633              		.loc 1 163 22 discriminator 9
+ 634 014a 7B68     		ldr	r3, [r7, #4]
+ 635 014c 1B68     		ldr	r3, [r3]
+ 636              		.loc 1 163 11 discriminator 9
+ 637 014e 1F4A     		ldr	r2, .L57+24
+ 638 0150 9342     		cmp	r3, r2
+ 639 0152 24D0     		beq	.L38
+ 640              		.loc 1 163 22 discriminator 11
+ 641 0154 7B68     		ldr	r3, [r7, #4]
+ 642 0156 1B68     		ldr	r3, [r3]
+ 643              		.loc 1 163 11 discriminator 11
+ 644 0158 1D4A     		ldr	r2, .L57+28
+ 645 015a 9342     		cmp	r3, r2
+ 646 015c 1DD0     		beq	.L39
+ 647              		.loc 1 163 22 discriminator 13
+ 648 015e 7B68     		ldr	r3, [r7, #4]
+ 649 0160 1B68     		ldr	r3, [r3]
+ 650              		.loc 1 163 11 discriminator 13
+ 651 0162 1C4A     		ldr	r2, .L57+32
+ 652 0164 9342     		cmp	r3, r2
+ 653 0166 16D0     		beq	.L40
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 16
+
+
+ 654              		.loc 1 163 22 discriminator 15
+ 655 0168 7B68     		ldr	r3, [r7, #4]
+ 656 016a 1B68     		ldr	r3, [r3]
+ 657              		.loc 1 163 11 discriminator 15
+ 658 016c 1A4A     		ldr	r2, .L57+36
+ 659 016e 9342     		cmp	r3, r2
+ 660 0170 0FD0     		beq	.L41
+ 661              		.loc 1 163 22 discriminator 17
+ 662 0172 7B68     		ldr	r3, [r7, #4]
+ 663 0174 1B68     		ldr	r3, [r3]
+ 664              		.loc 1 163 11 discriminator 17
+ 665 0176 194A     		ldr	r2, .L57+40
+ 666 0178 9342     		cmp	r3, r2
+ 667 017a 08D0     		beq	.L42
+ 668              		.loc 1 163 22 discriminator 19
+ 669 017c 7B68     		ldr	r3, [r7, #4]
+ 670 017e 1B68     		ldr	r3, [r3]
+ 671              		.loc 1 163 11 discriminator 19
+ 672 0180 174A     		ldr	r2, .L57+44
+ 673 0182 9342     		cmp	r3, r2
+ 674 0184 01D1     		bne	.L43
+ 675              		.loc 1 163 11 is_stmt 0 discriminator 21
+ 676 0186 0A23     		movs	r3, #10
+ 677 0188 2DE0     		b	.L54
+ 678              	.L43:
+ 679              		.loc 1 163 11 discriminator 22
+ 680 018a 0023     		movs	r3, #0
+ 681 018c 2BE0     		b	.L54
+ 682              	.L42:
+ 683              		.loc 1 163 11 discriminator 20
+ 684 018e 0923     		movs	r3, #9
+ 685 0190 29E0     		b	.L54
+ 686              	.L41:
+ 687              		.loc 1 163 11 discriminator 18
+ 688 0192 0823     		movs	r3, #8
+ 689 0194 27E0     		b	.L54
+ 690              	.L40:
+ 691              		.loc 1 163 11 discriminator 16
+ 692 0196 0723     		movs	r3, #7
+ 693 0198 25E0     		b	.L54
+ 694              	.L39:
+ 695              		.loc 1 163 11 discriminator 14
+ 696 019a 0623     		movs	r3, #6
+ 697 019c 23E0     		b	.L54
+ 698              	.L38:
+ 699              		.loc 1 163 11 discriminator 12
+ 700 019e 0523     		movs	r3, #5
+ 701 01a0 21E0     		b	.L54
+ 702              	.L37:
+ 703              		.loc 1 163 11 discriminator 10
+ 704 01a2 0423     		movs	r3, #4
+ 705 01a4 1FE0     		b	.L54
+ 706              	.L36:
+ 707              		.loc 1 163 11 discriminator 8
+ 708 01a6 0323     		movs	r3, #3
+ 709 01a8 1DE0     		b	.L54
+ 710              	.L35:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 17
+
+
+ 711              		.loc 1 163 11 discriminator 6
+ 712 01aa 0223     		movs	r3, #2
+ 713 01ac 1BE0     		b	.L54
+ 714              	.L34:
+ 715              		.loc 1 163 11 discriminator 4
+ 716 01ae 0123     		movs	r3, #1
+ 717 01b0 19E0     		b	.L54
+ 718              	.L58:
+ 719 01b2 00BF     		.align	2
+ 720              	.L57:
+ 721 01b4 003C0140 		.word	1073822720
+ 722 01b8 00000240 		.word	1073872896
+ 723 01bc 00040240 		.word	1073873920
+ 724 01c0 00080240 		.word	1073874944
+ 725 01c4 000C0240 		.word	1073875968
+ 726 01c8 00100240 		.word	1073876992
+ 727 01cc 00140240 		.word	1073878016
+ 728 01d0 00180240 		.word	1073879040
+ 729 01d4 001C0240 		.word	1073880064
+ 730 01d8 00200240 		.word	1073881088
+ 731 01dc 00240240 		.word	1073882112
+ 732 01e0 00280240 		.word	1073883136
+ 733              	.L33:
+ 734              		.loc 1 163 11 discriminator 2
+ 735 01e4 0023     		movs	r3, #0
+ 736              	.L54:
+ 737              		.loc 1 163 11 discriminator 44
+ 738 01e6 7B74     		strb	r3, [r7, #17]
+ 164:drivers/Src/stm32f767xx_gpio_driver.c **** 		SYSCFG_PCLK_EN();
+ 739              		.loc 1 164 3 is_stmt 1 discriminator 44
+ 740 01e8 594B     		ldr	r3, .L59
+ 741 01ea 5B6C     		ldr	r3, [r3, #68]
+ 742 01ec 584A     		ldr	r2, .L59
+ 743 01ee 43F48043 		orr	r3, r3, #16384
+ 744 01f2 5364     		str	r3, [r2, #68]
+ 165:drivers/Src/stm32f767xx_gpio_driver.c **** 		SYSCFG->EXTICR[temp1] = portcode << ( temp2 * 4);
+ 745              		.loc 1 165 36 discriminator 44
+ 746 01f4 7A7C     		ldrb	r2, [r7, #17]	@ zero_extendqisi2
+ 747              		.loc 1 165 47 discriminator 44
+ 748 01f6 BB7C     		ldrb	r3, [r7, #18]	@ zero_extendqisi2
+ 749 01f8 9B00     		lsls	r3, r3, #2
+ 750              		.loc 1 165 36 discriminator 44
+ 751 01fa 02FA03F1 		lsl	r1, r2, r3
+ 752              		.loc 1 165 9 discriminator 44
+ 753 01fe 554A     		ldr	r2, .L59+4
+ 754              		.loc 1 165 17 discriminator 44
+ 755 0200 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 756              		.loc 1 165 25 discriminator 44
+ 757 0202 0233     		adds	r3, r3, #2
+ 758 0204 42F82310 		str	r1, [r2, r3, lsl #2]
+ 166:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 167:drivers/Src/stm32f767xx_gpio_driver.c **** 		// 3. Enable the EXTI interrupt delivery using IMR
+ 168:drivers/Src/stm32f767xx_gpio_driver.c **** 		EXTI->IMR |= 1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber;
+ 759              		.loc 1 168 13 discriminator 44
+ 760 0208 534B     		ldr	r3, .L59+8
+ 761 020a 1B68     		ldr	r3, [r3]
+ 762              		.loc 1 168 48 discriminator 44
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 18
+
+
+ 763 020c 7A68     		ldr	r2, [r7, #4]
+ 764 020e 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 765 0210 1146     		mov	r1, r2
+ 766              		.loc 1 168 18 discriminator 44
+ 767 0212 0122     		movs	r2, #1
+ 768 0214 8A40     		lsls	r2, r2, r1
+ 769 0216 1146     		mov	r1, r2
+ 770              		.loc 1 168 13 discriminator 44
+ 771 0218 4F4A     		ldr	r2, .L59+8
+ 772 021a 0B43     		orrs	r3, r3, r1
+ 773 021c 1360     		str	r3, [r2]
+ 774              	.L29:
+ 775              	.LBE2:
+ 169:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 170:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 171:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 172:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 173:drivers/Src/stm32f767xx_gpio_driver.c **** 	// 2. configure speed
+ 174:drivers/Src/stm32f767xx_gpio_driver.c **** 	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumb
+ 776              		.loc 1 174 37
+ 777 021e 7B68     		ldr	r3, [r7, #4]
+ 778 0220 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
+ 779 0222 1A46     		mov	r2, r3
+ 780              		.loc 1 174 87
+ 781 0224 7B68     		ldr	r3, [r7, #4]
+ 782 0226 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 783              		.loc 1 174 58
+ 784 0228 5B00     		lsls	r3, r3, #1
+ 785              		.loc 1 174 52
+ 786 022a 02FA03F3 		lsl	r3, r2, r3
+ 787              		.loc 1 174 7
+ 788 022e 7B61     		str	r3, [r7, #20]
+ 175:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->OSPEEDR &= ~( 0x3 << ( 2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); //cl
+ 789              		.loc 1 175 13
+ 790 0230 7B68     		ldr	r3, [r7, #4]
+ 791 0232 1B68     		ldr	r3, [r3]
+ 792              		.loc 1 175 31
+ 793 0234 9A68     		ldr	r2, [r3, #8]
+ 794              		.loc 1 175 77
+ 795 0236 7B68     		ldr	r3, [r7, #4]
+ 796 0238 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 797              		.loc 1 175 48
+ 798 023a 5B00     		lsls	r3, r3, #1
+ 799              		.loc 1 175 41
+ 800 023c 0321     		movs	r1, #3
+ 801 023e 01FA03F3 		lsl	r3, r1, r3
+ 802              		.loc 1 175 34
+ 803 0242 DB43     		mvns	r3, r3
+ 804 0244 1946     		mov	r1, r3
+ 805              		.loc 1 175 13
+ 806 0246 7B68     		ldr	r3, [r7, #4]
+ 807 0248 1B68     		ldr	r3, [r3]
+ 808              		.loc 1 175 31
+ 809 024a 0A40     		ands	r2, r2, r1
+ 810 024c 9A60     		str	r2, [r3, #8]
+ 176:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->OSPEEDR |= temp;
+ 811              		.loc 1 176 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 19
+
+
+ 812 024e 7B68     		ldr	r3, [r7, #4]
+ 813 0250 1B68     		ldr	r3, [r3]
+ 814              		.loc 1 176 31
+ 815 0252 9968     		ldr	r1, [r3, #8]
+ 816              		.loc 1 176 13
+ 817 0254 7B68     		ldr	r3, [r7, #4]
+ 818 0256 1B68     		ldr	r3, [r3]
+ 819              		.loc 1 176 31
+ 820 0258 7A69     		ldr	r2, [r7, #20]
+ 821 025a 0A43     		orrs	r2, r2, r1
+ 822 025c 9A60     		str	r2, [r3, #8]
+ 177:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 178:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 179:drivers/Src/stm32f767xx_gpio_driver.c **** 	// 3. configure pupd settings
+ 180:drivers/Src/stm32f767xx_gpio_driver.c **** 	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_Pi
+ 823              		.loc 1 180 37
+ 824 025e 7B68     		ldr	r3, [r7, #4]
+ 825 0260 DB79     		ldrb	r3, [r3, #7]	@ zero_extendqisi2
+ 826 0262 1A46     		mov	r2, r3
+ 827              		.loc 1 180 92
+ 828 0264 7B68     		ldr	r3, [r7, #4]
+ 829 0266 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 830              		.loc 1 180 63
+ 831 0268 5B00     		lsls	r3, r3, #1
+ 832              		.loc 1 180 57
+ 833 026a 02FA03F3 		lsl	r3, r2, r3
+ 834              		.loc 1 180 7
+ 835 026e 7B61     		str	r3, [r7, #20]
+ 181:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->PUPDR &= ~( 0x3 << ( 2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); //clea
+ 836              		.loc 1 181 13
+ 837 0270 7B68     		ldr	r3, [r7, #4]
+ 838 0272 1B68     		ldr	r3, [r3]
+ 839              		.loc 1 181 29
+ 840 0274 DA68     		ldr	r2, [r3, #12]
+ 841              		.loc 1 181 75
+ 842 0276 7B68     		ldr	r3, [r7, #4]
+ 843 0278 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 844              		.loc 1 181 46
+ 845 027a 5B00     		lsls	r3, r3, #1
+ 846              		.loc 1 181 39
+ 847 027c 0321     		movs	r1, #3
+ 848 027e 01FA03F3 		lsl	r3, r1, r3
+ 849              		.loc 1 181 32
+ 850 0282 DB43     		mvns	r3, r3
+ 851 0284 1946     		mov	r1, r3
+ 852              		.loc 1 181 13
+ 853 0286 7B68     		ldr	r3, [r7, #4]
+ 854 0288 1B68     		ldr	r3, [r3]
+ 855              		.loc 1 181 29
+ 856 028a 0A40     		ands	r2, r2, r1
+ 857 028c DA60     		str	r2, [r3, #12]
+ 182:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->PUPDR |= temp;
+ 858              		.loc 1 182 13
+ 859 028e 7B68     		ldr	r3, [r7, #4]
+ 860 0290 1B68     		ldr	r3, [r3]
+ 861              		.loc 1 182 29
+ 862 0292 D968     		ldr	r1, [r3, #12]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 20
+
+
+ 863              		.loc 1 182 13
+ 864 0294 7B68     		ldr	r3, [r7, #4]
+ 865 0296 1B68     		ldr	r3, [r3]
+ 866              		.loc 1 182 29
+ 867 0298 7A69     		ldr	r2, [r7, #20]
+ 868 029a 0A43     		orrs	r2, r2, r1
+ 869 029c DA60     		str	r2, [r3, #12]
+ 183:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 184:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 185:drivers/Src/stm32f767xx_gpio_driver.c **** 	// 4. configure output type
+ 186:drivers/Src/stm32f767xx_gpio_driver.c **** 	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType<< pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+ 870              		.loc 1 186 37
+ 871 029e 7B68     		ldr	r3, [r7, #4]
+ 872 02a0 1B7A     		ldrb	r3, [r3, #8]	@ zero_extendqisi2
+ 873 02a2 1A46     		mov	r2, r3
+ 874              		.loc 1 186 82
+ 875 02a4 7B68     		ldr	r3, [r7, #4]
+ 876 02a6 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 877              		.loc 1 186 52
+ 878 02a8 02FA03F3 		lsl	r3, r2, r3
+ 879              		.loc 1 186 7
+ 880 02ac 7B61     		str	r3, [r7, #20]
+ 187:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->OTYPER &= ~( 0x1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber); //clearing 1
+ 881              		.loc 1 187 13
+ 882 02ae 7B68     		ldr	r3, [r7, #4]
+ 883 02b0 1B68     		ldr	r3, [r3]
+ 884              		.loc 1 187 30
+ 885 02b2 5A68     		ldr	r2, [r3, #4]
+ 886              		.loc 1 187 70
+ 887 02b4 7B68     		ldr	r3, [r7, #4]
+ 888 02b6 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 889 02b8 1946     		mov	r1, r3
+ 890              		.loc 1 187 40
+ 891 02ba 0123     		movs	r3, #1
+ 892 02bc 8B40     		lsls	r3, r3, r1
+ 893              		.loc 1 187 33
+ 894 02be DB43     		mvns	r3, r3
+ 895 02c0 1946     		mov	r1, r3
+ 896              		.loc 1 187 13
+ 897 02c2 7B68     		ldr	r3, [r7, #4]
+ 898 02c4 1B68     		ldr	r3, [r3]
+ 899              		.loc 1 187 30
+ 900 02c6 0A40     		ands	r2, r2, r1
+ 901 02c8 5A60     		str	r2, [r3, #4]
+ 188:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->OTYPER |= temp;
+ 902              		.loc 1 188 13
+ 903 02ca 7B68     		ldr	r3, [r7, #4]
+ 904 02cc 1B68     		ldr	r3, [r3]
+ 905              		.loc 1 188 30
+ 906 02ce 5968     		ldr	r1, [r3, #4]
+ 907              		.loc 1 188 13
+ 908 02d0 7B68     		ldr	r3, [r7, #4]
+ 909 02d2 1B68     		ldr	r3, [r3]
+ 910              		.loc 1 188 30
+ 911 02d4 7A69     		ldr	r2, [r7, #20]
+ 912 02d6 0A43     		orrs	r2, r2, r1
+ 913 02d8 5A60     		str	r2, [r3, #4]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 21
+
+
+ 189:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 190:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 191:drivers/Src/stm32f767xx_gpio_driver.c **** 	// 5. configure alt functionality
+ 192:drivers/Src/stm32f767xx_gpio_driver.c **** 	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN)
+ 914              		.loc 1 192 32
+ 915 02da 7B68     		ldr	r3, [r7, #4]
+ 916 02dc 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 917              		.loc 1 192 4
+ 918 02de 022B     		cmp	r3, #2
+ 919 02e0 31D1     		bne	.L56
+ 920              	.LBB3:
+ 193:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 194:drivers/Src/stm32f767xx_gpio_driver.c **** 		// config alt function register
+ 195:drivers/Src/stm32f767xx_gpio_driver.c **** 		uint8_t temp1, temp2;
+ 196:drivers/Src/stm32f767xx_gpio_driver.c **** 		temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 8;
+ 921              		.loc 1 196 38
+ 922 02e2 7B68     		ldr	r3, [r7, #4]
+ 923 02e4 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 924              		.loc 1 196 9
+ 925 02e6 DB08     		lsrs	r3, r3, #3
+ 926 02e8 3B74     		strb	r3, [r7, #16]
+ 197:drivers/Src/stm32f767xx_gpio_driver.c **** 		temp2 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8;
+ 927              		.loc 1 197 38
+ 928 02ea 7B68     		ldr	r3, [r7, #4]
+ 929 02ec 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 930              		.loc 1 197 9
+ 931 02ee 03F00703 		and	r3, r3, #7
+ 932 02f2 FB73     		strb	r3, [r7, #15]
+ 198:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOHandle->pGPIOx->AFR[temp1] &= ~(0xF << ( 4 * temp2 ) ); //clearing 4 bits
+ 933              		.loc 1 198 14
+ 934 02f4 7B68     		ldr	r3, [r7, #4]
+ 935 02f6 1B68     		ldr	r3, [r3]
+ 936              		.loc 1 198 35
+ 937 02f8 3A7C     		ldrb	r2, [r7, #16]	@ zero_extendqisi2
+ 938 02fa 0832     		adds	r2, r2, #8
+ 939 02fc 53F82210 		ldr	r1, [r3, r2, lsl #2]
+ 940              		.loc 1 198 51
+ 941 0300 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 942 0302 9B00     		lsls	r3, r3, #2
+ 943              		.loc 1 198 44
+ 944 0304 0F22     		movs	r2, #15
+ 945 0306 02FA03F3 		lsl	r3, r2, r3
+ 946              		.loc 1 198 38
+ 947 030a DB43     		mvns	r3, r3
+ 948 030c 1846     		mov	r0, r3
+ 949              		.loc 1 198 14
+ 950 030e 7B68     		ldr	r3, [r7, #4]
+ 951 0310 1B68     		ldr	r3, [r3]
+ 952              		.loc 1 198 35
+ 953 0312 3A7C     		ldrb	r2, [r7, #16]	@ zero_extendqisi2
+ 954 0314 0140     		ands	r1, r1, r0
+ 955 0316 0832     		adds	r2, r2, #8
+ 956 0318 43F82210 		str	r1, [r3, r2, lsl #2]
+ 199:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOHandle->pGPIOx->AFR[temp1] |= pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode << (4 * temp2);
+ 957              		.loc 1 199 14
+ 958 031c 7B68     		ldr	r3, [r7, #4]
+ 959 031e 1B68     		ldr	r3, [r3]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 22
+
+
+ 960              		.loc 1 199 35
+ 961 0320 3A7C     		ldrb	r2, [r7, #16]	@ zero_extendqisi2
+ 962 0322 0832     		adds	r2, r2, #8
+ 963 0324 53F82210 		ldr	r1, [r3, r2, lsl #2]
+ 964              		.loc 1 199 65
+ 965 0328 7B68     		ldr	r3, [r7, #4]
+ 966 032a 5B7A     		ldrb	r3, [r3, #9]	@ zero_extendqisi2
+ 967 032c 1A46     		mov	r2, r3
+ 968              		.loc 1 199 91
+ 969 032e FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 970 0330 9B00     		lsls	r3, r3, #2
+ 971              		.loc 1 199 85
+ 972 0332 02FA03F3 		lsl	r3, r2, r3
+ 973 0336 1846     		mov	r0, r3
+ 974              		.loc 1 199 14
+ 975 0338 7B68     		ldr	r3, [r7, #4]
+ 976 033a 1B68     		ldr	r3, [r3]
+ 977              		.loc 1 199 35
+ 978 033c 3A7C     		ldrb	r2, [r7, #16]	@ zero_extendqisi2
+ 979 033e 0143     		orrs	r1, r1, r0
+ 980 0340 0832     		adds	r2, r2, #8
+ 981 0342 43F82210 		str	r1, [r3, r2, lsl #2]
+ 982              	.L56:
+ 983              	.LBE3:
+ 200:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 201:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 984              		.loc 1 201 1
+ 985 0346 00BF     		nop
+ 986 0348 1837     		adds	r7, r7, #24
+ 987              		.cfi_def_cfa_offset 8
+ 988 034a BD46     		mov	sp, r7
+ 989              		.cfi_def_cfa_register 13
+ 990              		@ sp needed
+ 991 034c 80BD     		pop	{r7, pc}
+ 992              	.L60:
+ 993 034e 00BF     		.align	2
+ 994              	.L59:
+ 995 0350 00380240 		.word	1073887232
+ 996 0354 00380140 		.word	1073821696
+ 997 0358 003C0140 		.word	1073822720
+ 998              		.cfi_endproc
+ 999              	.LFE1:
+ 1001              		.section	.text.GPIO_DeInit,"ax",%progbits
+ 1002              		.align	1
+ 1003              		.global	GPIO_DeInit
+ 1004              		.syntax unified
+ 1005              		.thumb
+ 1006              		.thumb_func
+ 1008              	GPIO_DeInit:
+ 1009              	.LFB2:
+ 202:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 203:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 204:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_DeInit
+ 205:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 206:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 207:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 208:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 23
+
+
+ 209:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         - 
+ 210:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 211:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 212:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 213:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 214:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 215:drivers/Src/stm32f767xx_gpio_driver.c ****  * 
+ 216:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 217:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
+ 218:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1010              		.loc 1 218 1
+ 1011              		.cfi_startproc
+ 1012              		@ args = 0, pretend = 0, frame = 8
+ 1013              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1014              		@ link register save eliminated.
+ 1015 0000 80B4     		push	{r7}
+ 1016              		.cfi_def_cfa_offset 4
+ 1017              		.cfi_offset 7, -4
+ 1018 0002 83B0     		sub	sp, sp, #12
+ 1019              		.cfi_def_cfa_offset 16
+ 1020 0004 00AF     		add	r7, sp, #0
+ 1021              		.cfi_def_cfa_register 7
+ 1022 0006 7860     		str	r0, [r7, #4]
+ 219:drivers/Src/stm32f767xx_gpio_driver.c **** 	if(pGPIOx == GPIOA)
+ 1023              		.loc 1 219 4
+ 1024 0008 7B68     		ldr	r3, [r7, #4]
+ 1025 000a 5F4A     		ldr	r2, .L74
+ 1026 000c 9342     		cmp	r3, r2
+ 1027 000e 0CD1     		bne	.L62
+ 220:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 221:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOA_REG_RESET();
+ 1028              		.loc 1 221 4
+ 1029 0010 5E4B     		ldr	r3, .L74+4
+ 1030 0012 1B69     		ldr	r3, [r3, #16]
+ 1031 0014 5D4A     		ldr	r2, .L74+4
+ 1032 0016 43F00103 		orr	r3, r3, #1
+ 1033 001a 1361     		str	r3, [r2, #16]
+ 1034 001c 5B4B     		ldr	r3, .L74+4
+ 1035 001e 1B69     		ldr	r3, [r3, #16]
+ 1036 0020 5A4A     		ldr	r2, .L74+4
+ 1037 0022 23F00103 		bic	r3, r3, #1
+ 1038 0026 1361     		str	r3, [r2, #16]
+ 222:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+ 223:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 224:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOB_REG_RESET();
+ 225:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+ 226:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 227:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOC_REG_RESET();
+ 228:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+ 229:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 230:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOD_REG_RESET();
+ 231:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+ 232:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 233:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOE_REG_RESET();
+ 234:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+ 235:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 236:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOF_REG_RESET();
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 24
+
+
+ 237:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+ 238:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 239:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOG_REG_RESET();
+ 240:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+ 241:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 242:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOH_REG_RESET();
+ 243:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+ 244:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 245:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOI_REG_RESET();
+ 246:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+ 247:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 248:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOJ_REG_RESET();
+ 249:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+ 250:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 251:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOK_REG_RESET();
+ 252:drivers/Src/stm32f767xx_gpio_driver.c **** 		}        
+ 253:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1039              		.loc 1 253 1
+ 1040 0028 A8E0     		b	.L73
+ 1041              	.L62:
+ 222:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOB)
+ 1042              		.loc 1 222 12
+ 1043 002a 7B68     		ldr	r3, [r7, #4]
+ 1044 002c 584A     		ldr	r2, .L74+8
+ 1045 002e 9342     		cmp	r3, r2
+ 1046 0030 0CD1     		bne	.L64
+ 224:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOC)
+ 1047              		.loc 1 224 4
+ 1048 0032 564B     		ldr	r3, .L74+4
+ 1049 0034 1B69     		ldr	r3, [r3, #16]
+ 1050 0036 554A     		ldr	r2, .L74+4
+ 1051 0038 43F00203 		orr	r3, r3, #2
+ 1052 003c 1361     		str	r3, [r2, #16]
+ 1053 003e 534B     		ldr	r3, .L74+4
+ 1054 0040 1B69     		ldr	r3, [r3, #16]
+ 1055 0042 524A     		ldr	r2, .L74+4
+ 1056 0044 23F00203 		bic	r3, r3, #2
+ 1057 0048 1361     		str	r3, [r2, #16]
+ 1058              		.loc 1 253 1
+ 1059 004a 97E0     		b	.L73
+ 1060              	.L64:
+ 225:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1061              		.loc 1 225 12
+ 1062 004c 7B68     		ldr	r3, [r7, #4]
+ 1063 004e 514A     		ldr	r2, .L74+12
+ 1064 0050 9342     		cmp	r3, r2
+ 1065 0052 0CD1     		bne	.L65
+ 227:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOD)
+ 1066              		.loc 1 227 4
+ 1067 0054 4D4B     		ldr	r3, .L74+4
+ 1068 0056 1B69     		ldr	r3, [r3, #16]
+ 1069 0058 4C4A     		ldr	r2, .L74+4
+ 1070 005a 43F00403 		orr	r3, r3, #4
+ 1071 005e 1361     		str	r3, [r2, #16]
+ 1072 0060 4A4B     		ldr	r3, .L74+4
+ 1073 0062 1B69     		ldr	r3, [r3, #16]
+ 1074 0064 494A     		ldr	r2, .L74+4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 25
+
+
+ 1075 0066 23F00403 		bic	r3, r3, #4
+ 1076 006a 1361     		str	r3, [r2, #16]
+ 1077              		.loc 1 253 1
+ 1078 006c 86E0     		b	.L73
+ 1079              	.L65:
+ 228:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1080              		.loc 1 228 12
+ 1081 006e 7B68     		ldr	r3, [r7, #4]
+ 1082 0070 494A     		ldr	r2, .L74+16
+ 1083 0072 9342     		cmp	r3, r2
+ 1084 0074 0CD1     		bne	.L66
+ 230:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOE)
+ 1085              		.loc 1 230 4
+ 1086 0076 454B     		ldr	r3, .L74+4
+ 1087 0078 1B69     		ldr	r3, [r3, #16]
+ 1088 007a 444A     		ldr	r2, .L74+4
+ 1089 007c 43F00803 		orr	r3, r3, #8
+ 1090 0080 1361     		str	r3, [r2, #16]
+ 1091 0082 424B     		ldr	r3, .L74+4
+ 1092 0084 1B69     		ldr	r3, [r3, #16]
+ 1093 0086 414A     		ldr	r2, .L74+4
+ 1094 0088 23F00803 		bic	r3, r3, #8
+ 1095 008c 1361     		str	r3, [r2, #16]
+ 1096              		.loc 1 253 1
+ 1097 008e 75E0     		b	.L73
+ 1098              	.L66:
+ 231:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1099              		.loc 1 231 12
+ 1100 0090 7B68     		ldr	r3, [r7, #4]
+ 1101 0092 424A     		ldr	r2, .L74+20
+ 1102 0094 9342     		cmp	r3, r2
+ 1103 0096 0CD1     		bne	.L67
+ 233:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
+ 1104              		.loc 1 233 4
+ 1105 0098 3C4B     		ldr	r3, .L74+4
+ 1106 009a 1B69     		ldr	r3, [r3, #16]
+ 1107 009c 3B4A     		ldr	r2, .L74+4
+ 1108 009e 43F01003 		orr	r3, r3, #16
+ 1109 00a2 1361     		str	r3, [r2, #16]
+ 1110 00a4 394B     		ldr	r3, .L74+4
+ 1111 00a6 1B69     		ldr	r3, [r3, #16]
+ 1112 00a8 384A     		ldr	r2, .L74+4
+ 1113 00aa 23F01003 		bic	r3, r3, #16
+ 1114 00ae 1361     		str	r3, [r2, #16]
+ 1115              		.loc 1 253 1
+ 1116 00b0 64E0     		b	.L73
+ 1117              	.L67:
+ 234:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1118              		.loc 1 234 12
+ 1119 00b2 7B68     		ldr	r3, [r7, #4]
+ 1120 00b4 3A4A     		ldr	r2, .L74+24
+ 1121 00b6 9342     		cmp	r3, r2
+ 1122 00b8 0CD1     		bne	.L68
+ 236:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
+ 1123              		.loc 1 236 4
+ 1124 00ba 344B     		ldr	r3, .L74+4
+ 1125 00bc 1B69     		ldr	r3, [r3, #16]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 26
+
+
+ 1126 00be 334A     		ldr	r2, .L74+4
+ 1127 00c0 43F02003 		orr	r3, r3, #32
+ 1128 00c4 1361     		str	r3, [r2, #16]
+ 1129 00c6 314B     		ldr	r3, .L74+4
+ 1130 00c8 1B69     		ldr	r3, [r3, #16]
+ 1131 00ca 304A     		ldr	r2, .L74+4
+ 1132 00cc 23F02003 		bic	r3, r3, #32
+ 1133 00d0 1361     		str	r3, [r2, #16]
+ 1134              		.loc 1 253 1
+ 1135 00d2 53E0     		b	.L73
+ 1136              	.L68:
+ 237:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1137              		.loc 1 237 12
+ 1138 00d4 7B68     		ldr	r3, [r7, #4]
+ 1139 00d6 334A     		ldr	r2, .L74+28
+ 1140 00d8 9342     		cmp	r3, r2
+ 1141 00da 0CD1     		bne	.L69
+ 239:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOH)
+ 1142              		.loc 1 239 4
+ 1143 00dc 2B4B     		ldr	r3, .L74+4
+ 1144 00de 1B69     		ldr	r3, [r3, #16]
+ 1145 00e0 2A4A     		ldr	r2, .L74+4
+ 1146 00e2 43F04003 		orr	r3, r3, #64
+ 1147 00e6 1361     		str	r3, [r2, #16]
+ 1148 00e8 284B     		ldr	r3, .L74+4
+ 1149 00ea 1B69     		ldr	r3, [r3, #16]
+ 1150 00ec 274A     		ldr	r2, .L74+4
+ 1151 00ee 23F04003 		bic	r3, r3, #64
+ 1152 00f2 1361     		str	r3, [r2, #16]
+ 1153              		.loc 1 253 1
+ 1154 00f4 42E0     		b	.L73
+ 1155              	.L69:
+ 240:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1156              		.loc 1 240 12
+ 1157 00f6 7B68     		ldr	r3, [r7, #4]
+ 1158 00f8 2B4A     		ldr	r2, .L74+32
+ 1159 00fa 9342     		cmp	r3, r2
+ 1160 00fc 0CD1     		bne	.L70
+ 242:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOI)
+ 1161              		.loc 1 242 4
+ 1162 00fe 234B     		ldr	r3, .L74+4
+ 1163 0100 1B69     		ldr	r3, [r3, #16]
+ 1164 0102 224A     		ldr	r2, .L74+4
+ 1165 0104 43F08003 		orr	r3, r3, #128
+ 1166 0108 1361     		str	r3, [r2, #16]
+ 1167 010a 204B     		ldr	r3, .L74+4
+ 1168 010c 1B69     		ldr	r3, [r3, #16]
+ 1169 010e 1F4A     		ldr	r2, .L74+4
+ 1170 0110 23F08003 		bic	r3, r3, #128
+ 1171 0114 1361     		str	r3, [r2, #16]
+ 1172              		.loc 1 253 1
+ 1173 0116 31E0     		b	.L73
+ 1174              	.L70:
+ 243:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1175              		.loc 1 243 12
+ 1176 0118 7B68     		ldr	r3, [r7, #4]
+ 1177 011a 244A     		ldr	r2, .L74+36
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 27
+
+
+ 1178 011c 9342     		cmp	r3, r2
+ 1179 011e 0CD1     		bne	.L71
+ 245:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
+ 1180              		.loc 1 245 4
+ 1181 0120 1A4B     		ldr	r3, .L74+4
+ 1182 0122 1B69     		ldr	r3, [r3, #16]
+ 1183 0124 194A     		ldr	r2, .L74+4
+ 1184 0126 43F48073 		orr	r3, r3, #256
+ 1185 012a 1361     		str	r3, [r2, #16]
+ 1186 012c 174B     		ldr	r3, .L74+4
+ 1187 012e 1B69     		ldr	r3, [r3, #16]
+ 1188 0130 164A     		ldr	r2, .L74+4
+ 1189 0132 23F48073 		bic	r3, r3, #256
+ 1190 0136 1361     		str	r3, [r2, #16]
+ 1191              		.loc 1 253 1
+ 1192 0138 20E0     		b	.L73
+ 1193              	.L71:
+ 246:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1194              		.loc 1 246 12
+ 1195 013a 7B68     		ldr	r3, [r7, #4]
+ 1196 013c 1C4A     		ldr	r2, .L74+40
+ 1197 013e 9342     		cmp	r3, r2
+ 1198 0140 0CD1     		bne	.L72
+ 248:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOK)
+ 1199              		.loc 1 248 4
+ 1200 0142 124B     		ldr	r3, .L74+4
+ 1201 0144 1B69     		ldr	r3, [r3, #16]
+ 1202 0146 114A     		ldr	r2, .L74+4
+ 1203 0148 43F40073 		orr	r3, r3, #512
+ 1204 014c 1361     		str	r3, [r2, #16]
+ 1205 014e 0F4B     		ldr	r3, .L74+4
+ 1206 0150 1B69     		ldr	r3, [r3, #16]
+ 1207 0152 0E4A     		ldr	r2, .L74+4
+ 1208 0154 23F40073 		bic	r3, r3, #512
+ 1209 0158 1361     		str	r3, [r2, #16]
+ 1210              		.loc 1 253 1
+ 1211 015a 0FE0     		b	.L73
+ 1212              	.L72:
+ 249:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1213              		.loc 1 249 12
+ 1214 015c 7B68     		ldr	r3, [r7, #4]
+ 1215 015e 154A     		ldr	r2, .L74+44
+ 1216 0160 9342     		cmp	r3, r2
+ 1217 0162 0BD1     		bne	.L73
+ 251:drivers/Src/stm32f767xx_gpio_driver.c **** 		}        
+ 1218              		.loc 1 251 4
+ 1219 0164 094B     		ldr	r3, .L74+4
+ 1220 0166 1B69     		ldr	r3, [r3, #16]
+ 1221 0168 084A     		ldr	r2, .L74+4
+ 1222 016a 43F48063 		orr	r3, r3, #1024
+ 1223 016e 1361     		str	r3, [r2, #16]
+ 1224 0170 064B     		ldr	r3, .L74+4
+ 1225 0172 1B69     		ldr	r3, [r3, #16]
+ 1226 0174 054A     		ldr	r2, .L74+4
+ 1227 0176 23F48063 		bic	r3, r3, #1024
+ 1228 017a 1361     		str	r3, [r2, #16]
+ 1229              	.L73:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 28
+
+
+ 1230              		.loc 1 253 1
+ 1231 017c 00BF     		nop
+ 1232 017e 0C37     		adds	r7, r7, #12
+ 1233              		.cfi_def_cfa_offset 4
+ 1234 0180 BD46     		mov	sp, r7
+ 1235              		.cfi_def_cfa_register 13
+ 1236              		@ sp needed
+ 1237 0182 5DF8047B 		ldr	r7, [sp], #4
+ 1238              		.cfi_restore 7
+ 1239              		.cfi_def_cfa_offset 0
+ 1240 0186 7047     		bx	lr
+ 1241              	.L75:
+ 1242              		.align	2
+ 1243              	.L74:
+ 1244 0188 00000240 		.word	1073872896
+ 1245 018c 00380240 		.word	1073887232
+ 1246 0190 00040240 		.word	1073873920
+ 1247 0194 00080240 		.word	1073874944
+ 1248 0198 000C0240 		.word	1073875968
+ 1249 019c 00100240 		.word	1073876992
+ 1250 01a0 00140240 		.word	1073878016
+ 1251 01a4 00180240 		.word	1073879040
+ 1252 01a8 001C0240 		.word	1073880064
+ 1253 01ac 00200240 		.word	1073881088
+ 1254 01b0 00240240 		.word	1073882112
+ 1255 01b4 00280240 		.word	1073883136
+ 1256              		.cfi_endproc
+ 1257              	.LFE2:
+ 1259              		.section	.text.GPIO_ReadFromInputPin,"ax",%progbits
+ 1260              		.align	1
+ 1261              		.global	GPIO_ReadFromInputPin
+ 1262              		.syntax unified
+ 1263              		.thumb
+ 1264              		.thumb_func
+ 1266              	GPIO_ReadFromInputPin:
+ 1267              	.LFB3:
+ 254:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 255:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 256:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 257:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 258:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_ReadFromInputPin
+ 259:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 260:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 261:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 262:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 263:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 264:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 265:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 266:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -   0 or 1
+ 267:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 268:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 269:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 270:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 271:drivers/Src/stm32f767xx_gpio_driver.c **** uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+ 272:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1268              		.loc 1 272 1
+ 1269              		.cfi_startproc
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 29
+
+
+ 1270              		@ args = 0, pretend = 0, frame = 16
+ 1271              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1272              		@ link register save eliminated.
+ 1273 0000 80B4     		push	{r7}
+ 1274              		.cfi_def_cfa_offset 4
+ 1275              		.cfi_offset 7, -4
+ 1276 0002 85B0     		sub	sp, sp, #20
+ 1277              		.cfi_def_cfa_offset 24
+ 1278 0004 00AF     		add	r7, sp, #0
+ 1279              		.cfi_def_cfa_register 7
+ 1280 0006 7860     		str	r0, [r7, #4]
+ 1281 0008 0B46     		mov	r3, r1
+ 1282 000a FB70     		strb	r3, [r7, #3]
+ 273:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint8_t value;
+ 274:drivers/Src/stm32f767xx_gpio_driver.c **** 	value = (uint8_t)((pGPIOx->IDR >> PinNumber) & 0x00000001); // bring bit to LSB (position #0) by r
+ 1283              		.loc 1 274 27
+ 1284 000c 7B68     		ldr	r3, [r7, #4]
+ 1285 000e 1A69     		ldr	r2, [r3, #16]
+ 1286              		.loc 1 274 33
+ 1287 0010 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1288 0012 22FA03F3 		lsr	r3, r2, r3
+ 1289              		.loc 1 274 10
+ 1290 0016 DBB2     		uxtb	r3, r3
+ 1291              		.loc 1 274 8
+ 1292 0018 03F00103 		and	r3, r3, #1
+ 1293 001c FB73     		strb	r3, [r7, #15]
+ 275:drivers/Src/stm32f767xx_gpio_driver.c **** 	return value;
+ 1294              		.loc 1 275 9
+ 1295 001e FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 276:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1296              		.loc 1 276 1
+ 1297 0020 1846     		mov	r0, r3
+ 1298 0022 1437     		adds	r7, r7, #20
+ 1299              		.cfi_def_cfa_offset 4
+ 1300 0024 BD46     		mov	sp, r7
+ 1301              		.cfi_def_cfa_register 13
+ 1302              		@ sp needed
+ 1303 0026 5DF8047B 		ldr	r7, [sp], #4
+ 1304              		.cfi_restore 7
+ 1305              		.cfi_def_cfa_offset 0
+ 1306 002a 7047     		bx	lr
+ 1307              		.cfi_endproc
+ 1308              	.LFE3:
+ 1310              		.section	.text.GPIO_ReadFromInputPort,"ax",%progbits
+ 1311              		.align	1
+ 1312              		.global	GPIO_ReadFromInputPort
+ 1313              		.syntax unified
+ 1314              		.thumb
+ 1315              		.thumb_func
+ 1317              	GPIO_ReadFromInputPort:
+ 1318              	.LFB4:
+ 277:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 278:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 279:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_ReadFromInputPort
+ 280:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 281:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 282:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 30
+
+
+ 283:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 284:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 285:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 286:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 287:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 288:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 289:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 290:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 291:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 292:drivers/Src/stm32f767xx_gpio_driver.c **** uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
+ 293:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1319              		.loc 1 293 1
+ 1320              		.cfi_startproc
+ 1321              		@ args = 0, pretend = 0, frame = 16
+ 1322              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1323              		@ link register save eliminated.
+ 1324 0000 80B4     		push	{r7}
+ 1325              		.cfi_def_cfa_offset 4
+ 1326              		.cfi_offset 7, -4
+ 1327 0002 85B0     		sub	sp, sp, #20
+ 1328              		.cfi_def_cfa_offset 24
+ 1329 0004 00AF     		add	r7, sp, #0
+ 1330              		.cfi_def_cfa_register 7
+ 1331 0006 7860     		str	r0, [r7, #4]
+ 294:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint16_t value;
+ 295:drivers/Src/stm32f767xx_gpio_driver.c **** 	value = (uint16_t)pGPIOx->IDR; // entire port
+ 1332              		.loc 1 295 26
+ 1333 0008 7B68     		ldr	r3, [r7, #4]
+ 1334 000a 1B69     		ldr	r3, [r3, #16]
+ 1335              		.loc 1 295 8
+ 1336 000c FB81     		strh	r3, [r7, #14]	@ movhi
+ 296:drivers/Src/stm32f767xx_gpio_driver.c **** 	return value;
+ 1337              		.loc 1 296 9
+ 1338 000e FB89     		ldrh	r3, [r7, #14]
+ 297:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1339              		.loc 1 297 1
+ 1340 0010 1846     		mov	r0, r3
+ 1341 0012 1437     		adds	r7, r7, #20
+ 1342              		.cfi_def_cfa_offset 4
+ 1343 0014 BD46     		mov	sp, r7
+ 1344              		.cfi_def_cfa_register 13
+ 1345              		@ sp needed
+ 1346 0016 5DF8047B 		ldr	r7, [sp], #4
+ 1347              		.cfi_restore 7
+ 1348              		.cfi_def_cfa_offset 0
+ 1349 001a 7047     		bx	lr
+ 1350              		.cfi_endproc
+ 1351              	.LFE4:
+ 1353              		.section	.text.GPIO_WriteToOutputPin,"ax",%progbits
+ 1354              		.align	1
+ 1355              		.global	GPIO_WriteToOutputPin
+ 1356              		.syntax unified
+ 1357              		.thumb
+ 1358              		.thumb_func
+ 1360              	GPIO_WriteToOutputPin:
+ 1361              	.LFB5:
+ 298:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 31
+
+
+ 299:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 300:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 301:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_WriteToOutputPin
+ 302:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 303:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 304:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 305:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 306:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 307:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 308:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 309:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 310:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 311:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 312:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 313:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 314:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
+ 315:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1362              		.loc 1 315 1
+ 1363              		.cfi_startproc
+ 1364              		@ args = 0, pretend = 0, frame = 8
+ 1365              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1366              		@ link register save eliminated.
+ 1367 0000 80B4     		push	{r7}
+ 1368              		.cfi_def_cfa_offset 4
+ 1369              		.cfi_offset 7, -4
+ 1370 0002 83B0     		sub	sp, sp, #12
+ 1371              		.cfi_def_cfa_offset 16
+ 1372 0004 00AF     		add	r7, sp, #0
+ 1373              		.cfi_def_cfa_register 7
+ 1374 0006 7860     		str	r0, [r7, #4]
+ 1375 0008 0B46     		mov	r3, r1
+ 1376 000a FB70     		strb	r3, [r7, #3]
+ 1377 000c 1346     		mov	r3, r2
+ 1378 000e BB70     		strb	r3, [r7, #2]
+ 316:drivers/Src/stm32f767xx_gpio_driver.c **** 	if(Value == GPIO_PIN_SET)
+ 1379              		.loc 1 316 4
+ 1380 0010 BB78     		ldrb	r3, [r7, #2]	@ zero_extendqisi2
+ 1381 0012 012B     		cmp	r3, #1
+ 1382 0014 09D1     		bne	.L81
+ 317:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 318:drivers/Src/stm32f767xx_gpio_driver.c **** 		//write 1 to the output data register at the bit field corresponding to the pin number
+ 319:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOx->ODR |= ( 1 << PinNumber);
+ 1383              		.loc 1 319 15
+ 1384 0016 7B68     		ldr	r3, [r7, #4]
+ 1385 0018 5B69     		ldr	r3, [r3, #20]
+ 1386              		.loc 1 319 22
+ 1387 001a FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1388 001c 0121     		movs	r1, #1
+ 1389 001e 01FA02F2 		lsl	r2, r1, r2
+ 1390              		.loc 1 319 15
+ 1391 0022 1A43     		orrs	r2, r2, r3
+ 1392 0024 7B68     		ldr	r3, [r7, #4]
+ 1393 0026 5A61     		str	r2, [r3, #20]
+ 320:drivers/Src/stm32f767xx_gpio_driver.c **** 	}else
+ 321:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 322:drivers/Src/stm32f767xx_gpio_driver.c **** 		//write 0
+ 323:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOx->ODR &= ~( 1 << PinNumber); // clear bit position
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 32
+
+
+ 324:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 325:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1394              		.loc 1 325 1
+ 1395 0028 09E0     		b	.L83
+ 1396              	.L81:
+ 323:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 1397              		.loc 1 323 15
+ 1398 002a 7B68     		ldr	r3, [r7, #4]
+ 1399 002c 5B69     		ldr	r3, [r3, #20]
+ 323:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 1400              		.loc 1 323 23
+ 1401 002e FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1402 0030 0121     		movs	r1, #1
+ 1403 0032 01FA02F2 		lsl	r2, r1, r2
+ 323:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 1404              		.loc 1 323 18
+ 1405 0036 D243     		mvns	r2, r2
+ 323:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 1406              		.loc 1 323 15
+ 1407 0038 1A40     		ands	r2, r2, r3
+ 1408 003a 7B68     		ldr	r3, [r7, #4]
+ 1409 003c 5A61     		str	r2, [r3, #20]
+ 1410              	.L83:
+ 1411              		.loc 1 325 1
+ 1412 003e 00BF     		nop
+ 1413 0040 0C37     		adds	r7, r7, #12
+ 1414              		.cfi_def_cfa_offset 4
+ 1415 0042 BD46     		mov	sp, r7
+ 1416              		.cfi_def_cfa_register 13
+ 1417              		@ sp needed
+ 1418 0044 5DF8047B 		ldr	r7, [sp], #4
+ 1419              		.cfi_restore 7
+ 1420              		.cfi_def_cfa_offset 0
+ 1421 0048 7047     		bx	lr
+ 1422              		.cfi_endproc
+ 1423              	.LFE5:
+ 1425              		.section	.text.GPIO_WriteToOutputPort,"ax",%progbits
+ 1426              		.align	1
+ 1427              		.global	GPIO_WriteToOutputPort
+ 1428              		.syntax unified
+ 1429              		.thumb
+ 1430              		.thumb_func
+ 1432              	GPIO_WriteToOutputPort:
+ 1433              	.LFB6:
+ 326:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 327:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 328:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 329:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_WriteToOutputPort
+ 330:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 331:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 332:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 333:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 334:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 335:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 336:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 337:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 338:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 33
+
+
+ 339:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 340:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 341:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 342:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
+ 343:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1434              		.loc 1 343 1
+ 1435              		.cfi_startproc
+ 1436              		@ args = 0, pretend = 0, frame = 8
+ 1437              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1438              		@ link register save eliminated.
+ 1439 0000 80B4     		push	{r7}
+ 1440              		.cfi_def_cfa_offset 4
+ 1441              		.cfi_offset 7, -4
+ 1442 0002 83B0     		sub	sp, sp, #12
+ 1443              		.cfi_def_cfa_offset 16
+ 1444 0004 00AF     		add	r7, sp, #0
+ 1445              		.cfi_def_cfa_register 7
+ 1446 0006 7860     		str	r0, [r7, #4]
+ 1447 0008 0B46     		mov	r3, r1
+ 1448 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 344:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOx->ODR  = Value;
+ 1449              		.loc 1 344 15
+ 1450 000c 7A88     		ldrh	r2, [r7, #2]
+ 1451 000e 7B68     		ldr	r3, [r7, #4]
+ 1452 0010 5A61     		str	r2, [r3, #20]
+ 345:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1453              		.loc 1 345 1
+ 1454 0012 00BF     		nop
+ 1455 0014 0C37     		adds	r7, r7, #12
+ 1456              		.cfi_def_cfa_offset 4
+ 1457 0016 BD46     		mov	sp, r7
+ 1458              		.cfi_def_cfa_register 13
+ 1459              		@ sp needed
+ 1460 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1461              		.cfi_restore 7
+ 1462              		.cfi_def_cfa_offset 0
+ 1463 001c 7047     		bx	lr
+ 1464              		.cfi_endproc
+ 1465              	.LFE6:
+ 1467              		.section	.text.GPIO_ToggleOutputPin,"ax",%progbits
+ 1468              		.align	1
+ 1469              		.global	GPIO_ToggleOutputPin
+ 1470              		.syntax unified
+ 1471              		.thumb
+ 1472              		.thumb_func
+ 1474              	GPIO_ToggleOutputPin:
+ 1475              	.LFB7:
+ 346:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 347:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 348:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 349:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_ToggleOutputPin
+ 350:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 351:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 352:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 353:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 354:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 355:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 34
+
+
+ 356:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 357:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 358:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 359:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 360:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 361:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 362:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+ 363:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1476              		.loc 1 363 1
+ 1477              		.cfi_startproc
+ 1478              		@ args = 0, pretend = 0, frame = 8
+ 1479              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1480              		@ link register save eliminated.
+ 1481 0000 80B4     		push	{r7}
+ 1482              		.cfi_def_cfa_offset 4
+ 1483              		.cfi_offset 7, -4
+ 1484 0002 83B0     		sub	sp, sp, #12
+ 1485              		.cfi_def_cfa_offset 16
+ 1486 0004 00AF     		add	r7, sp, #0
+ 1487              		.cfi_def_cfa_register 7
+ 1488 0006 7860     		str	r0, [r7, #4]
+ 1489 0008 0B46     		mov	r3, r1
+ 1490 000a FB70     		strb	r3, [r7, #3]
+ 364:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOx->ODR  ^= ( 1 << PinNumber); // XOR operation
+ 1491              		.loc 1 364 15
+ 1492 000c 7B68     		ldr	r3, [r7, #4]
+ 1493 000e 5B69     		ldr	r3, [r3, #20]
+ 1494              		.loc 1 364 22
+ 1495 0010 FA78     		ldrb	r2, [r7, #3]	@ zero_extendqisi2
+ 1496 0012 0121     		movs	r1, #1
+ 1497 0014 01FA02F2 		lsl	r2, r1, r2
+ 1498              		.loc 1 364 15
+ 1499 0018 5A40     		eors	r2, r2, r3
+ 1500 001a 7B68     		ldr	r3, [r7, #4]
+ 1501 001c 5A61     		str	r2, [r3, #20]
+ 365:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1502              		.loc 1 365 1
+ 1503 001e 00BF     		nop
+ 1504 0020 0C37     		adds	r7, r7, #12
+ 1505              		.cfi_def_cfa_offset 4
+ 1506 0022 BD46     		mov	sp, r7
+ 1507              		.cfi_def_cfa_register 13
+ 1508              		@ sp needed
+ 1509 0024 5DF8047B 		ldr	r7, [sp], #4
+ 1510              		.cfi_restore 7
+ 1511              		.cfi_def_cfa_offset 0
+ 1512 0028 7047     		bx	lr
+ 1513              		.cfi_endproc
+ 1514              	.LFE7:
+ 1516              		.section	.text.GPIO_IRQInterruptConfig,"ax",%progbits
+ 1517              		.align	1
+ 1518              		.global	GPIO_IRQInterruptConfig
+ 1519              		.syntax unified
+ 1520              		.thumb
+ 1521              		.thumb_func
+ 1523              	GPIO_IRQInterruptConfig:
+ 1524              	.LFB8:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 35
+
+
+ 366:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 367:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 368:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 369:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_IRQInterruptConfig
+ 370:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 371:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 372:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 373:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 374:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 375:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 376:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 377:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 378:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 379:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 380:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 381:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 382:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+ 383:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1525              		.loc 1 383 1
+ 1526              		.cfi_startproc
+ 1527              		@ args = 0, pretend = 0, frame = 8
+ 1528              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1529              		@ link register save eliminated.
+ 1530 0000 80B4     		push	{r7}
+ 1531              		.cfi_def_cfa_offset 4
+ 1532              		.cfi_offset 7, -4
+ 1533 0002 83B0     		sub	sp, sp, #12
+ 1534              		.cfi_def_cfa_offset 16
+ 1535 0004 00AF     		add	r7, sp, #0
+ 1536              		.cfi_def_cfa_register 7
+ 1537 0006 0346     		mov	r3, r0
+ 1538 0008 0A46     		mov	r2, r1
+ 1539 000a FB71     		strb	r3, [r7, #7]
+ 1540 000c 1346     		mov	r3, r2
+ 1541 000e BB71     		strb	r3, [r7, #6]
+ 384:drivers/Src/stm32f767xx_gpio_driver.c **** 	if(EnorDi == ENABLE)
+ 1542              		.loc 1 384 4
+ 1543 0010 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 1544 0012 012B     		cmp	r3, #1
+ 1545 0014 4ED1     		bne	.L87
+ 385:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 386:drivers/Src/stm32f767xx_gpio_driver.c **** 		if(IRQNumber <= 31)							// 0 to 31
+ 1546              		.loc 1 386 5
+ 1547 0016 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1548 0018 1F2B     		cmp	r3, #31
+ 1549 001a 0AD8     		bhi	.L88
+ 387:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 388:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ISER0 register
+ 389:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ISER0 |= (1 << IRQNumber);
+ 1550              		.loc 1 389 16
+ 1551 001c 504B     		ldr	r3, .L97
+ 1552 001e 1B68     		ldr	r3, [r3]
+ 1553              		.loc 1 389 22
+ 1554 0020 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1555 0022 0121     		movs	r1, #1
+ 1556 0024 01FA02F2 		lsl	r2, r1, r2
+ 1557 0028 1146     		mov	r1, r2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 36
+
+
+ 1558              		.loc 1 389 16
+ 1559 002a 4D4A     		ldr	r2, .L97
+ 1560 002c 0B43     		orrs	r3, r3, r1
+ 1561 002e 1360     		str	r3, [r2]
+ 390:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 391:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (IRQNumber > 31 && IRQNumber < 64) // 32 to 63
+ 392:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 393:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ISER1 register
+ 394:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ISER1 |= (1 << (IRQNumber % 32));
+ 395:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 396:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (IRQNumber >= 64 && IRQNumber < 96) // 64 to 95
+ 397:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 398:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ISER2 register
+ 399:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ISER2 |= (1 << (IRQNumber % 64));
+ 400:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 401:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (IRQNumber >= 96 && IRQNumber < 128) // 96 to 127 (max is 109 on F767)
+ 402:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 403:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ISER3 register
+ 404:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ISER3 |= (1 << (IRQNumber % 96));
+ 405:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 406:drivers/Src/stm32f767xx_gpio_driver.c **** 		}
+ 407:drivers/Src/stm32f767xx_gpio_driver.c **** 	}else
+ 408:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 409:drivers/Src/stm32f767xx_gpio_driver.c **** 		if(IRQNumber <= 31)
+ 410:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 411:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ICER0 register
+ 412:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ICER0 |= (1 << IRQNumber);
+ 413:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 414:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if(IRQNumber > 31 && IRQNumber < 64 )
+ 415:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 416:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ICER1 register
+ 417:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ICER1 |= (1 << (IRQNumber % 32));
+ 418:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 419:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if(IRQNumber >= 64 && IRQNumber < 96 )
+ 420:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 421:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ICER2 register
+ 422:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ICER2 |= (1 << (IRQNumber % 64));
+ 423:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 424:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (IRQNumber >= 96 && IRQNumber < 128)
+ 425:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 426:drivers/Src/stm32f767xx_gpio_driver.c **** 			//program ICER3 register
+ 427:drivers/Src/stm32f767xx_gpio_driver.c **** 			*NVIC_ICER3 |= (1 << (IRQNumber % 96));
+ 428:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 429:drivers/Src/stm32f767xx_gpio_driver.c **** 		}
+ 430:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 431:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1562              		.loc 1 431 1
+ 1563 0030 8FE0     		b	.L96
+ 1564              	.L88:
+ 391:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1565              		.loc 1 391 12
+ 1566 0032 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1567 0034 1F2B     		cmp	r3, #31
+ 1568 0036 0FD9     		bls	.L90
+ 391:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1569              		.loc 1 391 28 discriminator 1
+ 1570 0038 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 37
+
+
+ 1571 003a 3F2B     		cmp	r3, #63
+ 1572 003c 0CD8     		bhi	.L90
+ 394:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1573              		.loc 1 394 16
+ 1574 003e 494B     		ldr	r3, .L97+4
+ 1575 0040 1B68     		ldr	r3, [r3]
+ 394:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1576              		.loc 1 394 36
+ 1577 0042 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1578 0044 02F01F02 		and	r2, r2, #31
+ 394:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1579              		.loc 1 394 22
+ 1580 0048 0121     		movs	r1, #1
+ 1581 004a 01FA02F2 		lsl	r2, r1, r2
+ 1582 004e 1146     		mov	r1, r2
+ 394:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1583              		.loc 1 394 16
+ 1584 0050 444A     		ldr	r2, .L97+4
+ 1585 0052 0B43     		orrs	r3, r3, r1
+ 1586 0054 1360     		str	r3, [r2]
+ 1587 0056 7CE0     		b	.L92
+ 1588              	.L90:
+ 396:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1589              		.loc 1 396 12
+ 1590 0058 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1591 005a 3F2B     		cmp	r3, #63
+ 1592 005c 0FD9     		bls	.L91
+ 396:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1593              		.loc 1 396 29 discriminator 1
+ 1594 005e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1595 0060 5F2B     		cmp	r3, #95
+ 1596 0062 0CD8     		bhi	.L91
+ 399:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1597              		.loc 1 399 16
+ 1598 0064 404B     		ldr	r3, .L97+8
+ 1599 0066 1B68     		ldr	r3, [r3]
+ 399:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1600              		.loc 1 399 36
+ 1601 0068 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1602 006a 02F03F02 		and	r2, r2, #63
+ 399:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1603              		.loc 1 399 22
+ 1604 006e 0121     		movs	r1, #1
+ 1605 0070 01FA02F2 		lsl	r2, r1, r2
+ 1606 0074 1146     		mov	r1, r2
+ 399:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1607              		.loc 1 399 16
+ 1608 0076 3C4A     		ldr	r2, .L97+8
+ 1609 0078 0B43     		orrs	r3, r3, r1
+ 1610 007a 1360     		str	r3, [r2]
+ 1611 007c 69E0     		b	.L92
+ 1612              	.L91:
+ 401:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1613              		.loc 1 401 12
+ 1614 007e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1615 0080 5F2B     		cmp	r3, #95
+ 1616 0082 66D9     		bls	.L96
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 38
+
+
+ 401:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1617              		.loc 1 401 42 discriminator 1
+ 1618 0084 97F90730 		ldrsb	r3, [r7, #7]
+ 401:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1619              		.loc 1 401 29 discriminator 1
+ 1620 0088 002B     		cmp	r3, #0
+ 1621 008a 62DB     		blt	.L96
+ 404:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1622              		.loc 1 404 16
+ 1623 008c 374B     		ldr	r3, .L97+12
+ 1624 008e 1868     		ldr	r0, [r3]
+ 404:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1625              		.loc 1 404 36
+ 1626 0090 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1627 0092 374B     		ldr	r3, .L97+16
+ 1628 0094 A3FB0213 		umull	r1, r3, r3, r2
+ 1629 0098 9909     		lsrs	r1, r3, #6
+ 1630 009a 0B46     		mov	r3, r1
+ 1631 009c 5B00     		lsls	r3, r3, #1
+ 1632 009e 0B44     		add	r3, r3, r1
+ 1633 00a0 5B01     		lsls	r3, r3, #5
+ 1634 00a2 D31A     		subs	r3, r2, r3
+ 1635 00a4 DBB2     		uxtb	r3, r3
+ 1636 00a6 1A46     		mov	r2, r3
+ 404:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1637              		.loc 1 404 22
+ 1638 00a8 0123     		movs	r3, #1
+ 1639 00aa 9340     		lsls	r3, r3, r2
+ 404:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1640              		.loc 1 404 16
+ 1641 00ac 2F4A     		ldr	r2, .L97+12
+ 1642 00ae 0343     		orrs	r3, r3, r0
+ 1643 00b0 1360     		str	r3, [r2]
+ 1644              		.loc 1 431 1
+ 1645 00b2 4EE0     		b	.L96
+ 1646              	.L87:
+ 409:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1647              		.loc 1 409 5
+ 1648 00b4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1649 00b6 1F2B     		cmp	r3, #31
+ 1650 00b8 0AD8     		bhi	.L93
+ 412:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1651              		.loc 1 412 16
+ 1652 00ba 2E4B     		ldr	r3, .L97+20
+ 1653 00bc 1B68     		ldr	r3, [r3]
+ 412:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1654              		.loc 1 412 22
+ 1655 00be FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1656 00c0 0121     		movs	r1, #1
+ 1657 00c2 01FA02F2 		lsl	r2, r1, r2
+ 1658 00c6 1146     		mov	r1, r2
+ 412:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1659              		.loc 1 412 16
+ 1660 00c8 2A4A     		ldr	r2, .L97+20
+ 1661 00ca 0B43     		orrs	r3, r3, r1
+ 1662 00cc 1360     		str	r3, [r2]
+ 1663              		.loc 1 431 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 39
+
+
+ 1664 00ce 40E0     		b	.L96
+ 1665              	.L93:
+ 414:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1666              		.loc 1 414 11
+ 1667 00d0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1668 00d2 1F2B     		cmp	r3, #31
+ 1669 00d4 0FD9     		bls	.L94
+ 414:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1670              		.loc 1 414 27 discriminator 1
+ 1671 00d6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1672 00d8 3F2B     		cmp	r3, #63
+ 1673 00da 0CD8     		bhi	.L94
+ 417:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1674              		.loc 1 417 16
+ 1675 00dc 264B     		ldr	r3, .L97+24
+ 1676 00de 1B68     		ldr	r3, [r3]
+ 417:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1677              		.loc 1 417 36
+ 1678 00e0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1679 00e2 02F01F02 		and	r2, r2, #31
+ 417:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1680              		.loc 1 417 22
+ 1681 00e6 0121     		movs	r1, #1
+ 1682 00e8 01FA02F2 		lsl	r2, r1, r2
+ 1683 00ec 1146     		mov	r1, r2
+ 417:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1684              		.loc 1 417 16
+ 1685 00ee 224A     		ldr	r2, .L97+24
+ 1686 00f0 0B43     		orrs	r3, r3, r1
+ 1687 00f2 1360     		str	r3, [r2]
+ 1688 00f4 2DE0     		b	.L92
+ 1689              	.L94:
+ 419:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1690              		.loc 1 419 11
+ 1691 00f6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1692 00f8 3F2B     		cmp	r3, #63
+ 1693 00fa 0FD9     		bls	.L95
+ 419:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1694              		.loc 1 419 28 discriminator 1
+ 1695 00fc FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1696 00fe 5F2B     		cmp	r3, #95
+ 1697 0100 0CD8     		bhi	.L95
+ 422:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1698              		.loc 1 422 16
+ 1699 0102 1E4B     		ldr	r3, .L97+28
+ 1700 0104 1B68     		ldr	r3, [r3]
+ 422:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1701              		.loc 1 422 36
+ 1702 0106 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1703 0108 02F03F02 		and	r2, r2, #63
+ 422:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1704              		.loc 1 422 22
+ 1705 010c 0121     		movs	r1, #1
+ 1706 010e 01FA02F2 		lsl	r2, r1, r2
+ 1707 0112 1146     		mov	r1, r2
+ 422:drivers/Src/stm32f767xx_gpio_driver.c **** 			
+ 1708              		.loc 1 422 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 40
+
+
+ 1709 0114 194A     		ldr	r2, .L97+28
+ 1710 0116 0B43     		orrs	r3, r3, r1
+ 1711 0118 1360     		str	r3, [r2]
+ 1712 011a 1AE0     		b	.L92
+ 1713              	.L95:
+ 424:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1714              		.loc 1 424 12
+ 1715 011c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1716 011e 5F2B     		cmp	r3, #95
+ 1717 0120 17D9     		bls	.L96
+ 424:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1718              		.loc 1 424 42 discriminator 1
+ 1719 0122 97F90730 		ldrsb	r3, [r7, #7]
+ 424:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
+ 1720              		.loc 1 424 29 discriminator 1
+ 1721 0126 002B     		cmp	r3, #0
+ 1722 0128 13DB     		blt	.L96
+ 427:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1723              		.loc 1 427 16
+ 1724 012a 154B     		ldr	r3, .L97+32
+ 1725 012c 1868     		ldr	r0, [r3]
+ 427:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1726              		.loc 1 427 36
+ 1727 012e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1728 0130 0F4B     		ldr	r3, .L97+16
+ 1729 0132 A3FB0213 		umull	r1, r3, r3, r2
+ 1730 0136 9909     		lsrs	r1, r3, #6
+ 1731 0138 0B46     		mov	r3, r1
+ 1732 013a 5B00     		lsls	r3, r3, #1
+ 1733 013c 0B44     		add	r3, r3, r1
+ 1734 013e 5B01     		lsls	r3, r3, #5
+ 1735 0140 D31A     		subs	r3, r2, r3
+ 1736 0142 DBB2     		uxtb	r3, r3
+ 1737 0144 1A46     		mov	r2, r3
+ 427:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1738              		.loc 1 427 22
+ 1739 0146 0123     		movs	r3, #1
+ 1740 0148 9340     		lsls	r3, r3, r2
+ 427:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 1741              		.loc 1 427 16
+ 1742 014a 0D4A     		ldr	r2, .L97+32
+ 1743 014c 0343     		orrs	r3, r3, r0
+ 1744 014e 1360     		str	r3, [r2]
+ 1745              		.loc 1 431 1
+ 1746 0150 FFE7     		b	.L96
+ 1747              	.L92:
+ 1748              	.L96:
+ 1749 0152 00BF     		nop
+ 1750 0154 0C37     		adds	r7, r7, #12
+ 1751              		.cfi_def_cfa_offset 4
+ 1752 0156 BD46     		mov	sp, r7
+ 1753              		.cfi_def_cfa_register 13
+ 1754              		@ sp needed
+ 1755 0158 5DF8047B 		ldr	r7, [sp], #4
+ 1756              		.cfi_restore 7
+ 1757              		.cfi_def_cfa_offset 0
+ 1758 015c 7047     		bx	lr
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 41
+
+
+ 1759              	.L98:
+ 1760 015e 00BF     		.align	2
+ 1761              	.L97:
+ 1762 0160 00E100E0 		.word	-536813312
+ 1763 0164 04E100E0 		.word	-536813308
+ 1764 0168 08E100E0 		.word	-536813304
+ 1765 016c 0CE100E0 		.word	-536813300
+ 1766 0170 ABAAAAAA 		.word	-1431655765
+ 1767 0174 80E100E0 		.word	-536813184
+ 1768 0178 84E100E0 		.word	-536813180
+ 1769 017c 88E100E0 		.word	-536813176
+ 1770 0180 8CE100E0 		.word	-536813172
+ 1771              		.cfi_endproc
+ 1772              	.LFE8:
+ 1774              		.section	.text.GPIO_IRQPriorityConfig,"ax",%progbits
+ 1775              		.align	1
+ 1776              		.global	GPIO_IRQPriorityConfig
+ 1777              		.syntax unified
+ 1778              		.thumb
+ 1779              		.thumb_func
+ 1781              	GPIO_IRQPriorityConfig:
+ 1782              	.LFB9:
+ 432:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 433:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 434:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 435:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 436:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 437:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_IRQPriorityConfig
+ 438:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 439:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 440:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 441:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 442:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 443:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 444:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 445:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 446:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 447:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 448:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 449:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 450:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
+ 451:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1783              		.loc 1 451 1
+ 1784              		.cfi_startproc
+ 1785              		@ args = 0, pretend = 0, frame = 16
+ 1786              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1787              		@ link register save eliminated.
+ 1788 0000 80B4     		push	{r7}
+ 1789              		.cfi_def_cfa_offset 4
+ 1790              		.cfi_offset 7, -4
+ 1791 0002 85B0     		sub	sp, sp, #20
+ 1792              		.cfi_def_cfa_offset 24
+ 1793 0004 00AF     		add	r7, sp, #0
+ 1794              		.cfi_def_cfa_register 7
+ 1795 0006 0346     		mov	r3, r0
+ 1796 0008 3960     		str	r1, [r7]
+ 1797 000a FB71     		strb	r3, [r7, #7]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 42
+
+
+ 452:drivers/Src/stm32f767xx_gpio_driver.c **** 	//1. first lets find out the ipr register
+ 453:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint8_t iprx = IRQNumber / 4;
+ 1798              		.loc 1 453 10
+ 1799 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1800 000e 9B08     		lsrs	r3, r3, #2
+ 1801 0010 FB73     		strb	r3, [r7, #15]
+ 454:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint8_t iprx_section  = IRQNumber % 4;
+ 1802              		.loc 1 454 10
+ 1803 0012 FB79     		ldrb	r3, [r7, #7]
+ 1804 0014 03F00303 		and	r3, r3, #3
+ 1805 0018 BB73     		strb	r3, [r7, #14]
+ 455:drivers/Src/stm32f767xx_gpio_driver.c **** 	
+ 456:drivers/Src/stm32f767xx_gpio_driver.c **** 	// !! 16 programmable priority levels (4 bits of interrupt priority are used) Cf. RM 10.1
+ 457:drivers/Src/stm32f767xx_gpio_driver.c **** 	// only 4 MSBits are implemented!
+ 458:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 459:drivers/Src/stm32f767xx_gpio_driver.c **** 	uint8_t shift_amount = (8 * iprx_section) + (8 - NO_PR_BITS_IMPLEMENTED);
+ 1806              		.loc 1 459 44
+ 1807 001a BB7B     		ldrb	r3, [r7, #14]
+ 1808 001c DB00     		lsls	r3, r3, #3
+ 1809 001e DBB2     		uxtb	r3, r3
+ 1810              		.loc 1 459 10
+ 1811 0020 0433     		adds	r3, r3, #4
+ 1812 0022 7B73     		strb	r3, [r7, #13]
+ 460:drivers/Src/stm32f767xx_gpio_driver.c **** 	*(NVIC_PR_BASEADDR + iprx) |= (IRQPriority << shift_amount);
+ 1813              		.loc 1 460 29
+ 1814 0024 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 1815 0026 9A00     		lsls	r2, r3, #2
+ 1816 0028 084B     		ldr	r3, .L100
+ 1817 002a 1344     		add	r3, r3, r2
+ 1818 002c 1968     		ldr	r1, [r3]
+ 1819              		.loc 1 460 45
+ 1820 002e 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 1821 0030 3A68     		ldr	r2, [r7]
+ 1822 0032 9A40     		lsls	r2, r2, r3
+ 1823              		.loc 1 460 29
+ 1824 0034 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 1825 0036 9800     		lsls	r0, r3, #2
+ 1826 0038 044B     		ldr	r3, .L100
+ 1827 003a 0344     		add	r3, r3, r0
+ 1828 003c 0A43     		orrs	r2, r2, r1
+ 1829 003e 1A60     		str	r2, [r3]
+ 461:drivers/Src/stm32f767xx_gpio_driver.c **** }
+ 1830              		.loc 1 461 1
+ 1831 0040 00BF     		nop
+ 1832 0042 1437     		adds	r7, r7, #20
+ 1833              		.cfi_def_cfa_offset 4
+ 1834 0044 BD46     		mov	sp, r7
+ 1835              		.cfi_def_cfa_register 13
+ 1836              		@ sp needed
+ 1837 0046 5DF8047B 		ldr	r7, [sp], #4
+ 1838              		.cfi_restore 7
+ 1839              		.cfi_def_cfa_offset 0
+ 1840 004a 7047     		bx	lr
+ 1841              	.L101:
+ 1842              		.align	2
+ 1843              	.L100:
+ 1844 004c 00E400E0 		.word	-536812544
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 43
+
+
+ 1845              		.cfi_endproc
+ 1846              	.LFE9:
+ 1848              		.section	.text.GPIO_IRQHandling,"ax",%progbits
+ 1849              		.align	1
+ 1850              		.global	GPIO_IRQHandling
+ 1851              		.syntax unified
+ 1852              		.thumb
+ 1853              		.thumb_func
+ 1855              	GPIO_IRQHandling:
+ 1856              	.LFB10:
+ 462:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 463:drivers/Src/stm32f767xx_gpio_driver.c **** /*********************************************************************
+ 464:drivers/Src/stm32f767xx_gpio_driver.c ****  * @fn      		  - GPIO_IRQHandling
+ 465:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 466:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
+ 467:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 468:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 469:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 470:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
+ 471:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 472:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
+ 473:drivers/Src/stm32f767xx_gpio_driver.c ****  *
+ 474:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
+ 475:drivers/Src/stm32f767xx_gpio_driver.c **** 
+ 476:drivers/Src/stm32f767xx_gpio_driver.c ****  */
+ 477:drivers/Src/stm32f767xx_gpio_driver.c **** void GPIO_IRQHandling( uint8_t PinNumber)
+ 478:drivers/Src/stm32f767xx_gpio_driver.c **** {
+ 1857              		.loc 1 478 1
+ 1858              		.cfi_startproc
+ 1859              		@ args = 0, pretend = 0, frame = 8
+ 1860              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1861              		@ link register save eliminated.
+ 1862 0000 80B4     		push	{r7}
+ 1863              		.cfi_def_cfa_offset 4
+ 1864              		.cfi_offset 7, -4
+ 1865 0002 83B0     		sub	sp, sp, #12
+ 1866              		.cfi_def_cfa_offset 16
+ 1867 0004 00AF     		add	r7, sp, #0
+ 1868              		.cfi_def_cfa_register 7
+ 1869 0006 0346     		mov	r3, r0
+ 1870 0008 FB71     		strb	r3, [r7, #7]
+ 479:drivers/Src/stm32f767xx_gpio_driver.c **** 	// clear the EXTI pr register corresponding to the pin number
+ 480:drivers/Src/stm32f767xx_gpio_driver.c **** 	if (EXTI->PR & (1 << PinNumber))
+ 1871              		.loc 1 480 10
+ 1872 000a 0C4B     		ldr	r3, .L105
+ 1873 000c 5B69     		ldr	r3, [r3, #20]
+ 1874              		.loc 1 480 20
+ 1875 000e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1876 0010 0121     		movs	r1, #1
+ 1877 0012 01FA02F2 		lsl	r2, r1, r2
+ 1878              		.loc 1 480 15
+ 1879 0016 1340     		ands	r3, r3, r2
+ 1880              		.loc 1 480 5
+ 1881 0018 002B     		cmp	r3, #0
+ 1882 001a 09D0     		beq	.L104
+ 481:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
+ 482:drivers/Src/stm32f767xx_gpio_driver.c **** 		// clear
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 44
+
+
+ 483:drivers/Src/stm32f767xx_gpio_driver.c **** 		EXTI->PR |= (1 << PinNumber);
+ 1883              		.loc 1 483 12
+ 1884 001c 074B     		ldr	r3, .L105
+ 1885 001e 5B69     		ldr	r3, [r3, #20]
+ 1886              		.loc 1 483 18
+ 1887 0020 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1888 0022 0121     		movs	r1, #1
+ 1889 0024 01FA02F2 		lsl	r2, r1, r2
+ 1890 0028 1146     		mov	r1, r2
+ 1891              		.loc 1 483 12
+ 1892 002a 044A     		ldr	r2, .L105
+ 1893 002c 0B43     		orrs	r3, r3, r1
+ 1894 002e 5361     		str	r3, [r2, #20]
+ 1895              	.L104:
+ 484:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
+ 485:drivers/Src/stm32f767xx_gpio_driver.c **** }...
+ 1896              		.loc 1 485 1
+ 1897 0030 00BF     		nop
+ 1898 0032 0C37     		adds	r7, r7, #12
+ 1899              		.cfi_def_cfa_offset 4
+ 1900 0034 BD46     		mov	sp, r7
+ 1901              		.cfi_def_cfa_register 13
+ 1902              		@ sp needed
+ 1903 0036 5DF8047B 		ldr	r7, [sp], #4
+ 1904              		.cfi_restore 7
+ 1905              		.cfi_def_cfa_offset 0
+ 1906 003a 7047     		bx	lr
+ 1907              	.L106:
+ 1908              		.align	2
+ 1909              	.L105:
+ 1910 003c 003C0140 		.word	1073822720
+ 1911              		.cfi_endproc
+ 1912              	.LFE10:
+ 1914              		.text
+ 1915              	.Letext0:
+ 1916              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 1917              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 1918              		.file 4 "drivers/Inc/stm32f767xx.h"
+ 1919              		.file 5 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s 			page 45
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f767xx_gpio_driver.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:19     .text.GPIO_PeriClockControl:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:25     .text.GPIO_PeriClockControl:0000000000000000 GPIO_PeriClockControl
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:367    .text.GPIO_PeriClockControl:0000000000000200 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:383    .text.GPIO_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:389    .text.GPIO_Init:0000000000000000 GPIO_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:721    .text.GPIO_Init:00000000000001b4 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:735    .text.GPIO_Init:00000000000001e4 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:995    .text.GPIO_Init:0000000000000350 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1002   .text.GPIO_DeInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1008   .text.GPIO_DeInit:0000000000000000 GPIO_DeInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1244   .text.GPIO_DeInit:0000000000000188 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1260   .text.GPIO_ReadFromInputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1266   .text.GPIO_ReadFromInputPin:0000000000000000 GPIO_ReadFromInputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1311   .text.GPIO_ReadFromInputPort:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1317   .text.GPIO_ReadFromInputPort:0000000000000000 GPIO_ReadFromInputPort
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1354   .text.GPIO_WriteToOutputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1360   .text.GPIO_WriteToOutputPin:0000000000000000 GPIO_WriteToOutputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1426   .text.GPIO_WriteToOutputPort:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1432   .text.GPIO_WriteToOutputPort:0000000000000000 GPIO_WriteToOutputPort
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1468   .text.GPIO_ToggleOutputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1474   .text.GPIO_ToggleOutputPin:0000000000000000 GPIO_ToggleOutputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1517   .text.GPIO_IRQInterruptConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1523   .text.GPIO_IRQInterruptConfig:0000000000000000 GPIO_IRQInterruptConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1762   .text.GPIO_IRQInterruptConfig:0000000000000160 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1775   .text.GPIO_IRQPriorityConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1781   .text.GPIO_IRQPriorityConfig:0000000000000000 GPIO_IRQPriorityConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1844   .text.GPIO_IRQPriorityConfig:000000000000004c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1849   .text.GPIO_IRQHandling:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1855   .text.GPIO_IRQHandling:0000000000000000 GPIO_IRQHandling
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cchLlwp9.s:1910   .text.GPIO_IRQHandling:000000000000003c $d
+
+NO UNDEFINED SYMBOLS
