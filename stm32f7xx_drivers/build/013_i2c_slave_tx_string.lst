@@ -1,0 +1,804 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"013_i2c_slave_tx_string.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.delay,"ax",%progbits
+  19              		.align	1
+  20              		.global	delay
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	delay:
+  26              	.LFB3:
+  27              		.file 1 "Src/013_i2c_slave_tx_string.c"
+   1:Src/013_i2c_slave_tx_string.c **** /**
+   2:Src/013_i2c_slave_tx_string.c ****  * @file 013_i2c_slave_tx_string.c
+   3:Src/013_i2c_slave_tx_string.c ****  * @author johannes regnier
+   4:Src/013_i2c_slave_tx_string.c ****  * @brief 
+   5:Src/013_i2c_slave_tx_string.c ****  * @version 0.1
+   6:Src/013_i2c_slave_tx_string.c ****  * @date 2022-10-04
+   7:Src/013_i2c_slave_tx_string.c ****  * 
+   8:Src/013_i2c_slave_tx_string.c ****  * @copyright Copyright (c) 2022
+   9:Src/013_i2c_slave_tx_string.c ****  * 
+  10:Src/013_i2c_slave_tx_string.c ****  */
+  11:Src/013_i2c_slave_tx_string.c **** 
+  12:Src/013_i2c_slave_tx_string.c **** 
+  13:Src/013_i2c_slave_tx_string.c **** #include <string.h>
+  14:Src/013_i2c_slave_tx_string.c **** #include "stm32f767xx.h"
+  15:Src/013_i2c_slave_tx_string.c **** #include <stdio.h>
+  16:Src/013_i2c_slave_tx_string.c **** #include "SEGGER_RTT.h"
+  17:Src/013_i2c_slave_tx_string.c **** 
+  18:Src/013_i2c_slave_tx_string.c **** 
+  19:Src/013_i2c_slave_tx_string.c **** #define MY_ADDR     0x68
+  20:Src/013_i2c_slave_tx_string.c **** 
+  21:Src/013_i2c_slave_tx_string.c **** 
+  22:Src/013_i2c_slave_tx_string.c **** 
+  23:Src/013_i2c_slave_tx_string.c **** void delay(void){
+  28              		.loc 1 23 17
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 2
+
+
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40              	.LBB2:
+  24:Src/013_i2c_slave_tx_string.c ****   for (uint32_t i = 0; i < 200000; i++)
+  41              		.loc 1 24 17
+  42 0006 0023     		movs	r3, #0
+  43 0008 7B60     		str	r3, [r7, #4]
+  44              		.loc 1 24 3
+  45 000a 02E0     		b	.L2
+  46              	.L3:
+  47              		.loc 1 24 37 discriminator 3
+  48 000c 7B68     		ldr	r3, [r7, #4]
+  49 000e 0133     		adds	r3, r3, #1
+  50 0010 7B60     		str	r3, [r7, #4]
+  51              	.L2:
+  52              		.loc 1 24 26 discriminator 1
+  53 0012 7B68     		ldr	r3, [r7, #4]
+  54 0014 044A     		ldr	r2, .L4
+  55 0016 9342     		cmp	r3, r2
+  56 0018 F8D9     		bls	.L3
+  57              	.LBE2:
+  25:Src/013_i2c_slave_tx_string.c ****     ;
+  26:Src/013_i2c_slave_tx_string.c **** }
+  58              		.loc 1 26 1
+  59 001a 00BF     		nop
+  60 001c 00BF     		nop
+  61 001e 0C37     		adds	r7, r7, #12
+  62              		.cfi_def_cfa_offset 4
+  63 0020 BD46     		mov	sp, r7
+  64              		.cfi_def_cfa_register 13
+  65              		@ sp needed
+  66 0022 5DF8047B 		ldr	r7, [sp], #4
+  67              		.cfi_restore 7
+  68              		.cfi_def_cfa_offset 0
+  69 0026 7047     		bx	lr
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0028 3F0D0300 		.word	199999
+  74              		.cfi_endproc
+  75              	.LFE3:
+  77              		.global	I2C2Handle
+  78              		.section	.bss.I2C2Handle,"aw",%nobits
+  79              		.align	2
+  82              	I2C2Handle:
+  83 0000 00000000 		.space	40
+  83      00000000 
+  83      00000000 
+  83      00000000 
+  83      00000000 
+  84              		.global	Tx_buf
+  85              		.section	.data.Tx_buf,"aw"
+  86              		.align	2
+  89              	Tx_buf:
+  90 0000 53544D33 		.ascii	"STM32 slave mode testing....\000"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 3
+
+
+  90      3220736C 
+  90      61766520 
+  90      6D6F6465 
+  90      20746573 
+  91 001d 000000   		.space	3
+  92              		.section	.text.I2C2_GPIOInits,"ax",%progbits
+  93              		.align	1
+  94              		.global	I2C2_GPIOInits
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  99              	I2C2_GPIOInits:
+ 100              	.LFB4:
+  27:Src/013_i2c_slave_tx_string.c **** 
+  28:Src/013_i2c_slave_tx_string.c **** 
+  29:Src/013_i2c_slave_tx_string.c **** 
+  30:Src/013_i2c_slave_tx_string.c **** /* Pins to communicate over I2C1 (Cf. datasheet, alternate function mapping)
+  31:Src/013_i2c_slave_tx_string.c ****  * PB8  ---> I2C1_SCL (CN7 pin 2 on NUCLEO F767)
+  32:Src/013_i2c_slave_tx_string.c ****  * PB9  ---> I2C1_SDA (CN7 pin 4 on NUCLEO F767)
+  33:Src/013_i2c_slave_tx_string.c ****  * ALT function mode: 4
+  34:Src/013_i2c_slave_tx_string.c ****  */
+  35:Src/013_i2c_slave_tx_string.c **** 
+  36:Src/013_i2c_slave_tx_string.c **** /* Pins to communicate over I2C2 (Cf. datasheet, alternate function mapping)
+  37:Src/013_i2c_slave_tx_string.c ****  * PF1  ---> I2C2_SCL (CN9 pin 19 on NUCLEO F767)
+  38:Src/013_i2c_slave_tx_string.c ****  * PF0  ---> I2C2_SDA (CN9 pin 21 on NUCLEO F767)
+  39:Src/013_i2c_slave_tx_string.c ****  * ALT function mode: 4
+  40:Src/013_i2c_slave_tx_string.c ****  */
+  41:Src/013_i2c_slave_tx_string.c **** 
+  42:Src/013_i2c_slave_tx_string.c **** 
+  43:Src/013_i2c_slave_tx_string.c **** 
+  44:Src/013_i2c_slave_tx_string.c **** I2C_Handle_t I2C2Handle;
+  45:Src/013_i2c_slave_tx_string.c **** 
+  46:Src/013_i2c_slave_tx_string.c **** 
+  47:Src/013_i2c_slave_tx_string.c **** // tx buffer
+  48:Src/013_i2c_slave_tx_string.c **** uint8_t Tx_buf[32] = "STM32 slave mode testing....";
+  49:Src/013_i2c_slave_tx_string.c **** 
+  50:Src/013_i2c_slave_tx_string.c **** void I2C2_GPIOInits(void)
+  51:Src/013_i2c_slave_tx_string.c **** {
+ 101              		.loc 1 51 1
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 16
+ 104              		@ frame_needed = 1, uses_anonymous_args = 0
+ 105 0000 80B5     		push	{r7, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 7, -8
+ 108              		.cfi_offset 14, -4
+ 109 0002 84B0     		sub	sp, sp, #16
+ 110              		.cfi_def_cfa_offset 24
+ 111 0004 00AF     		add	r7, sp, #0
+ 112              		.cfi_def_cfa_register 7
+  52:Src/013_i2c_slave_tx_string.c ****     GPIO_Handle_t I2CPins;
+  53:Src/013_i2c_slave_tx_string.c ****     I2CPins.pGPIOx = GPIOF;
+ 113              		.loc 1 53 20
+ 114 0006 0E4B     		ldr	r3, .L7
+ 115 0008 7B60     		str	r3, [r7, #4]
+  54:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
+ 116              		.loc 1 54 41
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 4
+
+
+ 117 000a 0223     		movs	r3, #2
+ 118 000c 7B72     		strb	r3, [r7, #9]
+  55:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_OD;
+ 119              		.loc 1 55 43
+ 120 000e 0123     		movs	r3, #1
+ 121 0010 3B73     		strb	r3, [r7, #12]
+  56:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+ 122              		.loc 1 56 48
+ 123 0012 0123     		movs	r3, #1
+ 124 0014 FB72     		strb	r3, [r7, #11]
+  57:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinAltFunMode = 4;
+ 125              		.loc 1 57 47
+ 126 0016 0423     		movs	r3, #4
+ 127 0018 7B73     		strb	r3, [r7, #13]
+  58:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+ 128              		.loc 1 58 42
+ 129 001a 0223     		movs	r3, #2
+ 130 001c BB72     		strb	r3, [r7, #10]
+  59:Src/013_i2c_slave_tx_string.c **** 
+  60:Src/013_i2c_slave_tx_string.c ****     //SCL
+  61:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_1;
+ 131              		.loc 1 61 43
+ 132 001e 0123     		movs	r3, #1
+ 133 0020 3B72     		strb	r3, [r7, #8]
+  62:Src/013_i2c_slave_tx_string.c ****     GPIO_Init(&I2CPins);
+ 134              		.loc 1 62 5
+ 135 0022 3B1D     		adds	r3, r7, #4
+ 136 0024 1846     		mov	r0, r3
+ 137 0026 FFF7FEFF 		bl	GPIO_Init
+  63:Src/013_i2c_slave_tx_string.c **** 
+  64:Src/013_i2c_slave_tx_string.c ****     //SDA
+  65:Src/013_i2c_slave_tx_string.c ****     I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
+ 138              		.loc 1 65 43
+ 139 002a 0023     		movs	r3, #0
+ 140 002c 3B72     		strb	r3, [r7, #8]
+  66:Src/013_i2c_slave_tx_string.c ****     GPIO_Init(&I2CPins);
+ 141              		.loc 1 66 5
+ 142 002e 3B1D     		adds	r3, r7, #4
+ 143 0030 1846     		mov	r0, r3
+ 144 0032 FFF7FEFF 		bl	GPIO_Init
+  67:Src/013_i2c_slave_tx_string.c **** 
+  68:Src/013_i2c_slave_tx_string.c **** }
+ 145              		.loc 1 68 1
+ 146 0036 00BF     		nop
+ 147 0038 1037     		adds	r7, r7, #16
+ 148              		.cfi_def_cfa_offset 8
+ 149 003a BD46     		mov	sp, r7
+ 150              		.cfi_def_cfa_register 13
+ 151              		@ sp needed
+ 152 003c 80BD     		pop	{r7, pc}
+ 153              	.L8:
+ 154 003e 00BF     		.align	2
+ 155              	.L7:
+ 156 0040 00140240 		.word	1073878016
+ 157              		.cfi_endproc
+ 158              	.LFE4:
+ 160              		.section	.text.I2C2_Inits,"ax",%progbits
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 5
+
+
+ 161              		.align	1
+ 162              		.global	I2C2_Inits
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	I2C2_Inits:
+ 168              	.LFB5:
+  69:Src/013_i2c_slave_tx_string.c **** 
+  70:Src/013_i2c_slave_tx_string.c **** void I2C2_Inits()
+  71:Src/013_i2c_slave_tx_string.c **** {
+ 169              		.loc 1 71 1
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 1, uses_anonymous_args = 0
+ 173 0000 80B5     		push	{r7, lr}
+ 174              		.cfi_def_cfa_offset 8
+ 175              		.cfi_offset 7, -8
+ 176              		.cfi_offset 14, -4
+ 177 0002 00AF     		add	r7, sp, #0
+ 178              		.cfi_def_cfa_register 7
+  72:Src/013_i2c_slave_tx_string.c ****     I2C2Handle.pI2Cx = I2C2;
+ 179              		.loc 1 72 22
+ 180 0004 064B     		ldr	r3, .L10
+ 181 0006 074A     		ldr	r2, .L10+4
+ 182 0008 1A60     		str	r2, [r3]
+  73:Src/013_i2c_slave_tx_string.c ****     I2C2Handle.I2C_Config.I2C_DeviceAddress = MY_ADDR; // only needed if slave mode (@see protocol 
+ 183              		.loc 1 73 45
+ 184 000a 054B     		ldr	r3, .L10
+ 185 000c 6822     		movs	r2, #104
+ 186 000e 1A72     		strb	r2, [r3, #8]
+  74:Src/013_i2c_slave_tx_string.c ****     I2C2Handle.I2C_Config.I2C_SCLSpeed = I2C_SCL_SPEED_SM100K;
+ 187              		.loc 1 74 40
+ 188 0010 034B     		ldr	r3, .L10
+ 189 0012 0122     		movs	r2, #1
+ 190 0014 5A60     		str	r2, [r3, #4]
+  75:Src/013_i2c_slave_tx_string.c **** 
+  76:Src/013_i2c_slave_tx_string.c ****     I2C_Init(&I2C2Handle);
+ 191              		.loc 1 76 5
+ 192 0016 0248     		ldr	r0, .L10
+ 193 0018 FFF7FEFF 		bl	I2C_Init
+  77:Src/013_i2c_slave_tx_string.c **** }
+ 194              		.loc 1 77 1
+ 195 001c 00BF     		nop
+ 196 001e 80BD     		pop	{r7, pc}
+ 197              	.L11:
+ 198              		.align	2
+ 199              	.L10:
+ 200 0020 00000000 		.word	I2C2Handle
+ 201 0024 00580040 		.word	1073764352
+ 202              		.cfi_endproc
+ 203              	.LFE5:
+ 205              		.section	.text.GPIO_ButtonInit,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	GPIO_ButtonInit
+ 208              		.syntax unified
+ 209              		.thumb
+ 210              		.thumb_func
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 6
+
+
+ 212              	GPIO_ButtonInit:
+ 213              	.LFB6:
+  78:Src/013_i2c_slave_tx_string.c **** 
+  79:Src/013_i2c_slave_tx_string.c **** void GPIO_ButtonInit(void)
+  80:Src/013_i2c_slave_tx_string.c **** {
+ 214              		.loc 1 80 1
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 16
+ 217              		@ frame_needed = 1, uses_anonymous_args = 0
+ 218 0000 80B5     		push	{r7, lr}
+ 219              		.cfi_def_cfa_offset 8
+ 220              		.cfi_offset 7, -8
+ 221              		.cfi_offset 14, -4
+ 222 0002 84B0     		sub	sp, sp, #16
+ 223              		.cfi_def_cfa_offset 24
+ 224 0004 00AF     		add	r7, sp, #0
+ 225              		.cfi_def_cfa_register 7
+  81:Src/013_i2c_slave_tx_string.c ****     GPIO_Handle_t GPIOBtn;
+  82:Src/013_i2c_slave_tx_string.c **** 
+  83:Src/013_i2c_slave_tx_string.c ****     GPIOBtn.pGPIOx = GPIOC; // User button is connected to PC13 (Cf. Nucleo User Manual, or check s
+ 226              		.loc 1 83 20
+ 227 0006 094B     		ldr	r3, .L13
+ 228 0008 7B60     		str	r3, [r7, #4]
+  84:Src/013_i2c_slave_tx_string.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+ 229              		.loc 1 84 43
+ 230 000a 0D23     		movs	r3, #13
+ 231 000c 3B72     		strb	r3, [r7, #8]
+  85:Src/013_i2c_slave_tx_string.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+ 232              		.loc 1 85 41
+ 233 000e 0023     		movs	r3, #0
+ 234 0010 7B72     		strb	r3, [r7, #9]
+  86:Src/013_i2c_slave_tx_string.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+ 235              		.loc 1 86 42
+ 236 0012 0023     		movs	r3, #0
+ 237 0014 BB72     		strb	r3, [r7, #10]
+  87:Src/013_i2c_slave_tx_string.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+ 238              		.loc 1 87 48
+ 239 0016 0023     		movs	r3, #0
+ 240 0018 FB72     		strb	r3, [r7, #11]
+  88:Src/013_i2c_slave_tx_string.c **** 
+  89:Src/013_i2c_slave_tx_string.c ****     GPIO_Init(&GPIOBtn);
+ 241              		.loc 1 89 5
+ 242 001a 3B1D     		adds	r3, r7, #4
+ 243 001c 1846     		mov	r0, r3
+ 244 001e FFF7FEFF 		bl	GPIO_Init
+  90:Src/013_i2c_slave_tx_string.c **** }
+ 245              		.loc 1 90 1
+ 246 0022 00BF     		nop
+ 247 0024 1037     		adds	r7, r7, #16
+ 248              		.cfi_def_cfa_offset 8
+ 249 0026 BD46     		mov	sp, r7
+ 250              		.cfi_def_cfa_register 13
+ 251              		@ sp needed
+ 252 0028 80BD     		pop	{r7, pc}
+ 253              	.L14:
+ 254 002a 00BF     		.align	2
+ 255              	.L13:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 7
+
+
+ 256 002c 00080240 		.word	1073874944
+ 257              		.cfi_endproc
+ 258              	.LFE6:
+ 260              		.section	.rodata
+ 261              		.align	2
+ 262              	.LC0:
+ 263 0000 4170706C 		.ascii	"Application is running\000"
+ 263      69636174 
+ 263      696F6E20 
+ 263      69732072 
+ 263      756E6E69 
+ 264              		.section	.text.main,"ax",%progbits
+ 265              		.align	1
+ 266              		.global	main
+ 267              		.syntax unified
+ 268              		.thumb
+ 269              		.thumb_func
+ 271              	main:
+ 272              	.LFB7:
+  91:Src/013_i2c_slave_tx_string.c **** 
+  92:Src/013_i2c_slave_tx_string.c **** 
+  93:Src/013_i2c_slave_tx_string.c **** int main(void)
+  94:Src/013_i2c_slave_tx_string.c **** {
+ 273              		.loc 1 94 1
+ 274              		.cfi_startproc
+ 275              		@ args = 0, pretend = 0, frame = 0
+ 276              		@ frame_needed = 1, uses_anonymous_args = 0
+ 277 0000 80B5     		push	{r7, lr}
+ 278              		.cfi_def_cfa_offset 8
+ 279              		.cfi_offset 7, -8
+ 280              		.cfi_offset 14, -4
+ 281 0002 82B0     		sub	sp, sp, #8
+ 282              		.cfi_def_cfa_offset 16
+ 283 0004 02AF     		add	r7, sp, #8
+ 284              		.cfi_def_cfa 7, 8
+  95:Src/013_i2c_slave_tx_string.c **** 
+  96:Src/013_i2c_slave_tx_string.c ****     SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+ 285              		.loc 1 96 5
+ 286 0006 0223     		movs	r3, #2
+ 287 0008 0093     		str	r3, [sp]
+ 288 000a 0023     		movs	r3, #0
+ 289 000c 0022     		movs	r2, #0
+ 290 000e 0021     		movs	r1, #0
+ 291 0010 0020     		movs	r0, #0
+ 292 0012 FFF7FEFF 		bl	SEGGER_RTT_ConfigUpBuffer
+  97:Src/013_i2c_slave_tx_string.c **** 
+  98:Src/013_i2c_slave_tx_string.c ****     printf("Application is running\n");
+ 293              		.loc 1 98 5
+ 294 0016 0B48     		ldr	r0, .L17
+ 295 0018 FFF7FEFF 		bl	puts
+  99:Src/013_i2c_slave_tx_string.c **** 
+ 100:Src/013_i2c_slave_tx_string.c ****     // GPIO button init
+ 101:Src/013_i2c_slave_tx_string.c ****     GPIO_ButtonInit();
+ 296              		.loc 1 101 5
+ 297 001c FFF7FEFF 		bl	GPIO_ButtonInit
+ 102:Src/013_i2c_slave_tx_string.c **** 
+ 103:Src/013_i2c_slave_tx_string.c ****     // I2C pin inits
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 8
+
+
+ 104:Src/013_i2c_slave_tx_string.c ****     I2C2_GPIOInits();
+ 298              		.loc 1 104 5
+ 299 0020 FFF7FEFF 		bl	I2C2_GPIOInits
+ 105:Src/013_i2c_slave_tx_string.c **** 
+ 106:Src/013_i2c_slave_tx_string.c ****     // I2C peripheral configuration
+ 107:Src/013_i2c_slave_tx_string.c ****     I2C2_Inits();
+ 300              		.loc 1 107 5
+ 301 0024 FFF7FEFF 		bl	I2C2_Inits
+ 108:Src/013_i2c_slave_tx_string.c **** 
+ 109:Src/013_i2c_slave_tx_string.c ****     // I2C IRQ config
+ 110:Src/013_i2c_slave_tx_string.c ****     I2C_IRQInterruptConfig(IRQ_NO_I2C2_EV, ENABLE);
+ 302              		.loc 1 110 5
+ 303 0028 0121     		movs	r1, #1
+ 304 002a 2120     		movs	r0, #33
+ 305 002c FFF7FEFF 		bl	I2C_IRQInterruptConfig
+ 111:Src/013_i2c_slave_tx_string.c ****     // I2C_IRQInterruptConfig(IRQ_NO_I2C2_ER, ENABLE);
+ 112:Src/013_i2c_slave_tx_string.c **** 
+ 113:Src/013_i2c_slave_tx_string.c ****     
+ 114:Src/013_i2c_slave_tx_string.c **** 
+ 115:Src/013_i2c_slave_tx_string.c ****     // enable the I2C peripheral
+ 116:Src/013_i2c_slave_tx_string.c ****     I2C_PeripheralControl(I2C2, ENABLE);
+ 306              		.loc 1 116 5
+ 307 0030 0121     		movs	r1, #1
+ 308 0032 0548     		ldr	r0, .L17+4
+ 309 0034 FFF7FEFF 		bl	I2C_PeripheralControl
+ 117:Src/013_i2c_slave_tx_string.c **** 
+ 118:Src/013_i2c_slave_tx_string.c ****     I2C_SlaveEnableDisableCallbackEvents(I2C2, ENABLE);
+ 310              		.loc 1 118 5
+ 311 0038 0121     		movs	r1, #1
+ 312 003a 0348     		ldr	r0, .L17+4
+ 313 003c FFF7FEFF 		bl	I2C_SlaveEnableDisableCallbackEvents
+ 314              	.L16:
+ 119:Src/013_i2c_slave_tx_string.c **** 
+ 120:Src/013_i2c_slave_tx_string.c ****     while (1);
+ 315              		.loc 1 120 11 discriminator 1
+ 316 0040 FEE7     		b	.L16
+ 317              	.L18:
+ 318 0042 00BF     		.align	2
+ 319              	.L17:
+ 320 0044 00000000 		.word	.LC0
+ 321 0048 00580040 		.word	1073764352
+ 322              		.cfi_endproc
+ 323              	.LFE7:
+ 325              		.section	.text.I2C2_EV_IRQHandler,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	I2C2_EV_IRQHandler
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 332              	I2C2_EV_IRQHandler:
+ 333              	.LFB8:
+ 121:Src/013_i2c_slave_tx_string.c **** }
+ 122:Src/013_i2c_slave_tx_string.c **** 
+ 123:Src/013_i2c_slave_tx_string.c **** 
+ 124:Src/013_i2c_slave_tx_string.c **** 
+ 125:Src/013_i2c_slave_tx_string.c **** 
+ 126:Src/013_i2c_slave_tx_string.c **** void I2C2_EV_IRQHandler(void)
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 9
+
+
+ 127:Src/013_i2c_slave_tx_string.c **** {
+ 334              		.loc 1 127 1
+ 335              		.cfi_startproc
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 1, uses_anonymous_args = 0
+ 338 0000 80B5     		push	{r7, lr}
+ 339              		.cfi_def_cfa_offset 8
+ 340              		.cfi_offset 7, -8
+ 341              		.cfi_offset 14, -4
+ 342 0002 00AF     		add	r7, sp, #0
+ 343              		.cfi_def_cfa_register 7
+ 128:Src/013_i2c_slave_tx_string.c ****     I2C_EV_IRQHandling(&I2C2Handle);
+ 344              		.loc 1 128 5
+ 345 0004 0248     		ldr	r0, .L20
+ 346 0006 FFF7FEFF 		bl	I2C_EV_IRQHandling
+ 129:Src/013_i2c_slave_tx_string.c **** }
+ 347              		.loc 1 129 1
+ 348 000a 00BF     		nop
+ 349 000c 80BD     		pop	{r7, pc}
+ 350              	.L21:
+ 351 000e 00BF     		.align	2
+ 352              	.L20:
+ 353 0010 00000000 		.word	I2C2Handle
+ 354              		.cfi_endproc
+ 355              	.LFE8:
+ 357              		.section	.text.I2C2_ER_IRQHandler,"ax",%progbits
+ 358              		.align	1
+ 359              		.global	I2C2_ER_IRQHandler
+ 360              		.syntax unified
+ 361              		.thumb
+ 362              		.thumb_func
+ 364              	I2C2_ER_IRQHandler:
+ 365              	.LFB9:
+ 130:Src/013_i2c_slave_tx_string.c **** 
+ 131:Src/013_i2c_slave_tx_string.c **** void I2C2_ER_IRQHandler(void)
+ 132:Src/013_i2c_slave_tx_string.c **** {
+ 366              		.loc 1 132 1
+ 367              		.cfi_startproc
+ 368              		@ args = 0, pretend = 0, frame = 0
+ 369              		@ frame_needed = 1, uses_anonymous_args = 0
+ 370 0000 80B5     		push	{r7, lr}
+ 371              		.cfi_def_cfa_offset 8
+ 372              		.cfi_offset 7, -8
+ 373              		.cfi_offset 14, -4
+ 374 0002 00AF     		add	r7, sp, #0
+ 375              		.cfi_def_cfa_register 7
+ 133:Src/013_i2c_slave_tx_string.c ****     I2C_ER_IRQHandling(&I2C2Handle);
+ 376              		.loc 1 133 5
+ 377 0004 0248     		ldr	r0, .L23
+ 378 0006 FFF7FEFF 		bl	I2C_ER_IRQHandling
+ 134:Src/013_i2c_slave_tx_string.c **** }
+ 379              		.loc 1 134 1
+ 380 000a 00BF     		nop
+ 381 000c 80BD     		pop	{r7, pc}
+ 382              	.L24:
+ 383 000e 00BF     		.align	2
+ 384              	.L23:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 10
+
+
+ 385 0010 00000000 		.word	I2C2Handle
+ 386              		.cfi_endproc
+ 387              	.LFE9:
+ 389              		.global	commandCode
+ 390              		.section	.bss.commandCode,"aw",%nobits
+ 393              	commandCode:
+ 394 0000 00       		.space	1
+ 395              		.section	.text.I2C_ApplicationEventCallback,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	I2C_ApplicationEventCallback
+ 398              		.syntax unified
+ 399              		.thumb
+ 400              		.thumb_func
+ 402              	I2C_ApplicationEventCallback:
+ 403              	.LFB10:
+ 135:Src/013_i2c_slave_tx_string.c **** 
+ 136:Src/013_i2c_slave_tx_string.c **** uint8_t commandCode = 0;
+ 137:Src/013_i2c_slave_tx_string.c **** 
+ 138:Src/013_i2c_slave_tx_string.c **** void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEvent)
+ 139:Src/013_i2c_slave_tx_string.c **** {
+ 404              		.loc 1 139 1
+ 405              		.cfi_startproc
+ 406              		@ args = 0, pretend = 0, frame = 8
+ 407              		@ frame_needed = 1, uses_anonymous_args = 0
+ 408 0000 90B5     		push	{r4, r7, lr}
+ 409              		.cfi_def_cfa_offset 12
+ 410              		.cfi_offset 4, -12
+ 411              		.cfi_offset 7, -8
+ 412              		.cfi_offset 14, -4
+ 413 0002 83B0     		sub	sp, sp, #12
+ 414              		.cfi_def_cfa_offset 24
+ 415 0004 00AF     		add	r7, sp, #0
+ 416              		.cfi_def_cfa_register 7
+ 417 0006 7860     		str	r0, [r7, #4]
+ 418 0008 0B46     		mov	r3, r1
+ 419 000a FB70     		strb	r3, [r7, #3]
+ 140:Src/013_i2c_slave_tx_string.c ****     static uint8_t commandCode = 0;
+ 141:Src/013_i2c_slave_tx_string.c ****     static uint8_t Cnt = 0;
+ 142:Src/013_i2c_slave_tx_string.c **** 
+ 143:Src/013_i2c_slave_tx_string.c ****     if(AppEvent == I2C_EV_DATA_REQ)
+ 420              		.loc 1 143 7
+ 421 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 422 000e 042B     		cmp	r3, #4
+ 423 0010 23D1     		bne	.L26
+ 144:Src/013_i2c_slave_tx_string.c ****     {
+ 145:Src/013_i2c_slave_tx_string.c ****         // master requests some data
+ 146:Src/013_i2c_slave_tx_string.c ****         if (commandCode == 0x51)
+ 424              		.loc 1 146 25
+ 425 0012 204B     		ldr	r3, .L31
+ 426 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 427              		.loc 1 146 12
+ 428 0016 512B     		cmp	r3, #81
+ 429 0018 0BD1     		bne	.L27
+ 147:Src/013_i2c_slave_tx_string.c ****         {
+ 148:Src/013_i2c_slave_tx_string.c ****             // send the length information
+ 149:Src/013_i2c_slave_tx_string.c ****             I2C_SlaveSendData(pI2CHandle->pI2Cx, strlen((char *)Tx_buf));
+ 430              		.loc 1 149 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 11
+
+
+ 431 001a 7B68     		ldr	r3, [r7, #4]
+ 432 001c 1C68     		ldr	r4, [r3]
+ 433              		.loc 1 149 50
+ 434 001e 1E48     		ldr	r0, .L31+4
+ 435 0020 FFF7FEFF 		bl	strlen
+ 436 0024 0346     		mov	r3, r0
+ 437              		.loc 1 149 13
+ 438 0026 DBB2     		uxtb	r3, r3
+ 439 0028 1946     		mov	r1, r3
+ 440 002a 2046     		mov	r0, r4
+ 441 002c FFF7FEFF 		bl	I2C_SlaveSendData
+ 150:Src/013_i2c_slave_tx_string.c ****         }else if (commandCode == 0x52)
+ 151:Src/013_i2c_slave_tx_string.c ****         {
+ 152:Src/013_i2c_slave_tx_string.c ****             // send the content of Tx_buf
+ 153:Src/013_i2c_slave_tx_string.c ****             I2C_SlaveSendData(pI2CHandle->pI2Cx, Tx_buf[Cnt++]);
+ 154:Src/013_i2c_slave_tx_string.c **** 
+ 155:Src/013_i2c_slave_tx_string.c ****         }
+ 156:Src/013_i2c_slave_tx_string.c ****     }else if(AppEvent == I2C_EV_DATA_RCV)
+ 157:Src/013_i2c_slave_tx_string.c ****     {
+ 158:Src/013_i2c_slave_tx_string.c ****         // data waiting to be read by the slave
+ 159:Src/013_i2c_slave_tx_string.c ****         commandCode = I2C_SlaveReceiveData(pI2CHandle->pI2Cx);
+ 160:Src/013_i2c_slave_tx_string.c **** 
+ 161:Src/013_i2c_slave_tx_string.c ****     }else if(AppEvent == I2C_EV_STOP)
+ 162:Src/013_i2c_slave_tx_string.c ****     {
+ 163:Src/013_i2c_slave_tx_string.c ****         // master has ended I2C communication
+ 164:Src/013_i2c_slave_tx_string.c ****     }else if(AppEvent == I2C_EV_NACK)
+ 165:Src/013_i2c_slave_tx_string.c ****     {
+ 166:Src/013_i2c_slave_tx_string.c ****         //This happens only during slave txing .
+ 167:Src/013_i2c_slave_tx_string.c **** 		//Master has sent the NACK. so slave should understand that master doesnt need
+ 168:Src/013_i2c_slave_tx_string.c **** 		//more data.
+ 169:Src/013_i2c_slave_tx_string.c **** 		commandCode = 0xff;
+ 170:Src/013_i2c_slave_tx_string.c **** 		Cnt = 0;
+ 171:Src/013_i2c_slave_tx_string.c ****     }
+ 172:Src/013_i2c_slave_tx_string.c **** }
+ 442              		.loc 1 172 1
+ 443 0030 2CE0     		b	.L30
+ 444              	.L27:
+ 150:Src/013_i2c_slave_tx_string.c ****         }else if (commandCode == 0x52)
+ 445              		.loc 1 150 31
+ 446 0032 184B     		ldr	r3, .L31
+ 447 0034 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 150:Src/013_i2c_slave_tx_string.c ****         }else if (commandCode == 0x52)
+ 448              		.loc 1 150 18
+ 449 0036 522B     		cmp	r3, #82
+ 450 0038 28D1     		bne	.L30
+ 153:Src/013_i2c_slave_tx_string.c **** 
+ 451              		.loc 1 153 13
+ 452 003a 7B68     		ldr	r3, [r7, #4]
+ 453 003c 1A68     		ldr	r2, [r3]
+ 153:Src/013_i2c_slave_tx_string.c **** 
+ 454              		.loc 1 153 60
+ 455 003e 174B     		ldr	r3, .L31+8
+ 456 0040 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 457 0042 591C     		adds	r1, r3, #1
+ 458 0044 C8B2     		uxtb	r0, r1
+ 459 0046 1549     		ldr	r1, .L31+8
+ 460 0048 0870     		strb	r0, [r1]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 12
+
+
+ 461 004a 1946     		mov	r1, r3
+ 153:Src/013_i2c_slave_tx_string.c **** 
+ 462              		.loc 1 153 13
+ 463 004c 124B     		ldr	r3, .L31+4
+ 464 004e 5B5C     		ldrb	r3, [r3, r1]	@ zero_extendqisi2
+ 465 0050 1946     		mov	r1, r3
+ 466 0052 1046     		mov	r0, r2
+ 467 0054 FFF7FEFF 		bl	I2C_SlaveSendData
+ 468              		.loc 1 172 1
+ 469 0058 18E0     		b	.L30
+ 470              	.L26:
+ 156:Src/013_i2c_slave_tx_string.c ****     {
+ 471              		.loc 1 156 13
+ 472 005a FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 473 005c 052B     		cmp	r3, #5
+ 474 005e 09D1     		bne	.L29
+ 159:Src/013_i2c_slave_tx_string.c **** 
+ 475              		.loc 1 159 23
+ 476 0060 7B68     		ldr	r3, [r7, #4]
+ 477 0062 1B68     		ldr	r3, [r3]
+ 478 0064 1846     		mov	r0, r3
+ 479 0066 FFF7FEFF 		bl	I2C_SlaveReceiveData
+ 480 006a 0346     		mov	r3, r0
+ 481 006c 1A46     		mov	r2, r3
+ 159:Src/013_i2c_slave_tx_string.c **** 
+ 482              		.loc 1 159 21
+ 483 006e 094B     		ldr	r3, .L31
+ 484 0070 1A70     		strb	r2, [r3]
+ 485              		.loc 1 172 1
+ 486 0072 0BE0     		b	.L30
+ 487              	.L29:
+ 161:Src/013_i2c_slave_tx_string.c ****     {
+ 488              		.loc 1 161 13
+ 489 0074 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 490 0076 022B     		cmp	r3, #2
+ 491 0078 08D0     		beq	.L30
+ 164:Src/013_i2c_slave_tx_string.c ****     {
+ 492              		.loc 1 164 13
+ 493 007a FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 494 007c 032B     		cmp	r3, #3
+ 495 007e 05D1     		bne	.L30
+ 169:Src/013_i2c_slave_tx_string.c **** 		Cnt = 0;
+ 496              		.loc 1 169 15
+ 497 0080 044B     		ldr	r3, .L31
+ 498 0082 FF22     		movs	r2, #255
+ 499 0084 1A70     		strb	r2, [r3]
+ 170:Src/013_i2c_slave_tx_string.c ****     }
+ 500              		.loc 1 170 7
+ 501 0086 054B     		ldr	r3, .L31+8
+ 502 0088 0022     		movs	r2, #0
+ 503 008a 1A70     		strb	r2, [r3]
+ 504              	.L30:
+ 505              		.loc 1 172 1
+ 506 008c 00BF     		nop
+ 507 008e 0C37     		adds	r7, r7, #12
+ 508              		.cfi_def_cfa_offset 12
+ 509 0090 BD46     		mov	sp, r7
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 13
+
+
+ 510              		.cfi_def_cfa_register 13
+ 511              		@ sp needed
+ 512 0092 90BD     		pop	{r4, r7, pc}
+ 513              	.L32:
+ 514              		.align	2
+ 515              	.L31:
+ 516 0094 00000000 		.word	commandCode.1
+ 517 0098 00000000 		.word	Tx_buf
+ 518 009c 00000000 		.word	Cnt.0
+ 519              		.cfi_endproc
+ 520              	.LFE10:
+ 522              		.section	.bss.commandCode.1,"aw",%nobits
+ 525              	commandCode.1:
+ 526 0000 00       		.space	1
+ 527              		.section	.bss.Cnt.0,"aw",%nobits
+ 530              	Cnt.0:
+ 531 0000 00       		.space	1
+ 532              		.text
+ 533              	.Letext0:
+ 534              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 535              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 536              		.file 4 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 537              		.file 5 "drivers/Inc/stm32f767xx.h"
+ 538              		.file 6 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ 539              		.file 7 "drivers/Inc/stm32f767xx_i2c_driver.h"
+ 540              		.file 8 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 541              		.file 9 "Inc/SEGGER_RTT.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 013_i2c_slave_tx_string.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:19     .text.delay:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:25     .text.delay:0000000000000000 delay
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:73     .text.delay:0000000000000028 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:82     .bss.I2C2Handle:0000000000000000 I2C2Handle
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:79     .bss.I2C2Handle:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:89     .data.Tx_buf:0000000000000000 Tx_buf
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:86     .data.Tx_buf:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:93     .text.I2C2_GPIOInits:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:99     .text.I2C2_GPIOInits:0000000000000000 I2C2_GPIOInits
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:156    .text.I2C2_GPIOInits:0000000000000040 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:161    .text.I2C2_Inits:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:167    .text.I2C2_Inits:0000000000000000 I2C2_Inits
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:200    .text.I2C2_Inits:0000000000000020 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:206    .text.GPIO_ButtonInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:212    .text.GPIO_ButtonInit:0000000000000000 GPIO_ButtonInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:256    .text.GPIO_ButtonInit:000000000000002c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:261    .rodata:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:265    .text.main:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:271    .text.main:0000000000000000 main
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:320    .text.main:0000000000000044 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:326    .text.I2C2_EV_IRQHandler:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:332    .text.I2C2_EV_IRQHandler:0000000000000000 I2C2_EV_IRQHandler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:353    .text.I2C2_EV_IRQHandler:0000000000000010 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:358    .text.I2C2_ER_IRQHandler:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:364    .text.I2C2_ER_IRQHandler:0000000000000000 I2C2_ER_IRQHandler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:385    .text.I2C2_ER_IRQHandler:0000000000000010 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:393    .bss.commandCode:0000000000000000 commandCode
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:394    .bss.commandCode:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:396    .text.I2C_ApplicationEventCallback:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:402    .text.I2C_ApplicationEventCallback:0000000000000000 I2C_ApplicationEventCallback
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:516    .text.I2C_ApplicationEventCallback:0000000000000094 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:525    .bss.commandCode.1:0000000000000000 commandCode.1
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:530    .bss.Cnt.0:0000000000000000 Cnt.0
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:526    .bss.commandCode.1:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cch3n9QL.s:531    .bss.Cnt.0:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+GPIO_Init
+I2C_Init
+SEGGER_RTT_ConfigUpBuffer
+puts
+I2C_IRQInterruptConfig
+I2C_PeripheralControl
+I2C_SlaveEnableDisableCallbackEvents
+I2C_EV_IRQHandling
+I2C_ER_IRQHandling
+strlen
+I2C_SlaveSendData
+I2C_SlaveReceiveData

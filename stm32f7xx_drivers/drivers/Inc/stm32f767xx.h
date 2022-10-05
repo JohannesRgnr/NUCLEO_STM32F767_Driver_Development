@@ -576,6 +576,11 @@ typedef struct
 #define I2C_CR2_AUTOEND     25
 #define I2C_CR2_PECBYTE     26
 
+#define I2C_OAR1_OA1_10BIT  0
+#define I2C_OAR1_OA1_7BIT   1
+#define I2C_OAR1_OA1MODE    10
+#define I2C_OAR1_OA1EN      15
+
 #define I2C_TIMINGR_SCLL    0
 #define I2C_TIMINGR_SCLH    8
 #define I2C_TIMINGR_SDADEL  16

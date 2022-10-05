@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Src/012_i2c_master_rx_testing_it.c \
+Src/013_i2c_slave_tx_string.c \
 Src/SEGGER_RTT.c \
 Src/SEGGER_RTT_Syscalls_GCC.c \
 Src/SEGGER_RTT_printf.c \
