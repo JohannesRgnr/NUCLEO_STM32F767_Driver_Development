@@ -6,7 +6,7 @@ Driver code examples for STM32F7, implementing the examples found in the online 
 
 <https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/>
 
-**Partially Implemented features**
+**Partially Implemented features:**
 - RCC
 - GPIO 
 - SPI
