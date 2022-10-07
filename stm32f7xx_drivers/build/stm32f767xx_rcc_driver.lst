@@ -1,0 +1,538 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"stm32f767xx_rcc_driver.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	AHB_PreScaler
+  19              		.section	.data.AHB_PreScaler,"aw"
+  20              		.align	2
+  23              	AHB_PreScaler:
+  24 0000 0200     		.short	2
+  25 0002 0400     		.short	4
+  26 0004 0800     		.short	8
+  27 0006 1000     		.short	16
+  28 0008 4000     		.short	64
+  29 000a 8000     		.short	128
+  30 000c 0001     		.short	256
+  31 000e 0002     		.short	512
+  32              		.global	APB_PreScaler
+  33              		.section	.data.APB_PreScaler,"aw"
+  34              		.align	2
+  37              	APB_PreScaler:
+  38 0000 02040810 		.ascii	"\002\004\010\020"
+  39              		.section	.text.RCC_GetPLLOutputClock,"ax",%progbits
+  40              		.align	1
+  41              		.global	RCC_GetPLLOutputClock
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  46              	RCC_GetPLLOutputClock:
+  47              	.LFB0:
+  48              		.file 1 "drivers/Src/stm32f767xx_rcc_driver.c"
+   1:drivers/Src/stm32f767xx_rcc_driver.c **** /**
+   2:drivers/Src/stm32f767xx_rcc_driver.c ****  * @file stm32f767xx_rcc_driver.c
+   3:drivers/Src/stm32f767xx_rcc_driver.c ****  * @author johannes regnier
+   4:drivers/Src/stm32f767xx_rcc_driver.c ****  * @brief 
+   5:drivers/Src/stm32f767xx_rcc_driver.c ****  * @version 0.1
+   6:drivers/Src/stm32f767xx_rcc_driver.c ****  * @date 2022-10-07
+   7:drivers/Src/stm32f767xx_rcc_driver.c ****  * 
+   8:drivers/Src/stm32f767xx_rcc_driver.c ****  * @copyright Copyright (c) 2022
+   9:drivers/Src/stm32f767xx_rcc_driver.c ****  * 
+  10:drivers/Src/stm32f767xx_rcc_driver.c ****  */
+  11:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  12:drivers/Src/stm32f767xx_rcc_driver.c **** #include "stm32f767xx_rcc_driver.h"
+  13:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  14:drivers/Src/stm32f767xx_rcc_driver.c **** uint16_t AHB_PreScaler[8] = {2, 4, 8, 16, 64, 128, 256, 512};
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 2
+
+
+  15:drivers/Src/stm32f767xx_rcc_driver.c **** uint8_t APB_PreScaler[4] = {2, 4, 8, 16};
+  16:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  17:drivers/Src/stm32f767xx_rcc_driver.c **** /**
+  18:drivers/Src/stm32f767xx_rcc_driver.c ****  * @brief TODO
+  19:drivers/Src/stm32f767xx_rcc_driver.c ****  * 
+  20:drivers/Src/stm32f767xx_rcc_driver.c ****  * @return uint32_t 
+  21:drivers/Src/stm32f767xx_rcc_driver.c ****  */
+  22:drivers/Src/stm32f767xx_rcc_driver.c **** uint32_t RCC_GetPLLOutputClock(void)
+  23:drivers/Src/stm32f767xx_rcc_driver.c **** {
+  49              		.loc 1 23 1
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 8
+  52              		@ frame_needed = 1, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54 0000 80B4     		push	{r7}
+  55              		.cfi_def_cfa_offset 4
+  56              		.cfi_offset 7, -4
+  57 0002 83B0     		sub	sp, sp, #12
+  58              		.cfi_def_cfa_offset 16
+  59 0004 00AF     		add	r7, sp, #0
+  60              		.cfi_def_cfa_register 7
+  24:drivers/Src/stm32f767xx_rcc_driver.c ****     uint32_t PLLOutputClock = 0;
+  61              		.loc 1 24 14
+  62 0006 0023     		movs	r3, #0
+  63 0008 7B60     		str	r3, [r7, #4]
+  25:drivers/Src/stm32f767xx_rcc_driver.c ****     return PLLOutputClock; // TODO
+  64              		.loc 1 25 12
+  65 000a 7B68     		ldr	r3, [r7, #4]
+  26:drivers/Src/stm32f767xx_rcc_driver.c **** }
+  66              		.loc 1 26 1
+  67 000c 1846     		mov	r0, r3
+  68 000e 0C37     		adds	r7, r7, #12
+  69              		.cfi_def_cfa_offset 4
+  70 0010 BD46     		mov	sp, r7
+  71              		.cfi_def_cfa_register 13
+  72              		@ sp needed
+  73 0012 5DF8047B 		ldr	r7, [sp], #4
+  74              		.cfi_restore 7
+  75              		.cfi_def_cfa_offset 0
+  76 0016 7047     		bx	lr
+  77              		.cfi_endproc
+  78              	.LFE0:
+  80              		.section	.text.RCC_GetPCLK1Value,"ax",%progbits
+  81              		.align	1
+  82              		.global	RCC_GetPCLK1Value
+  83              		.syntax unified
+  84              		.thumb
+  85              		.thumb_func
+  87              	RCC_GetPCLK1Value:
+  88              	.LFB1:
+  27:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  28:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  29:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  30:drivers/Src/stm32f767xx_rcc_driver.c **** /**
+  31:drivers/Src/stm32f767xx_rcc_driver.c ****  * @brief Return clock speed of APB1: System Clock--->AHB_prescaler--->APB1_Prescaler--->PCLK1 cloc
+  32:drivers/Src/stm32f767xx_rcc_driver.c ****  * 
+  33:drivers/Src/stm32f767xx_rcc_driver.c ****  * @return uint32_t 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 3
+
+
+  34:drivers/Src/stm32f767xx_rcc_driver.c ****  */
+  35:drivers/Src/stm32f767xx_rcc_driver.c **** uint32_t RCC_GetPCLK1Value(void)
+  36:drivers/Src/stm32f767xx_rcc_driver.c **** {
+  89              		.loc 1 36 1
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 16
+  92              		@ frame_needed = 1, uses_anonymous_args = 0
+  93 0000 80B5     		push	{r7, lr}
+  94              		.cfi_def_cfa_offset 8
+  95              		.cfi_offset 7, -8
+  96              		.cfi_offset 14, -4
+  97 0002 84B0     		sub	sp, sp, #16
+  98              		.cfi_def_cfa_offset 24
+  99 0004 00AF     		add	r7, sp, #0
+ 100              		.cfi_def_cfa_register 7
+  37:drivers/Src/stm32f767xx_rcc_driver.c ****     uint32_t pclk1;
+  38:drivers/Src/stm32f767xx_rcc_driver.c ****     uint32_t SystemClk;
+  39:drivers/Src/stm32f767xx_rcc_driver.c ****     uint16_t ahbp;
+  40:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t abp1p;
+  41:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  42:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t clksource;
+  43:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t temp;
+  44:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  45:drivers/Src/stm32f767xx_rcc_driver.c ****     clksource = (RCC->CFGR >> 2) & 0x3; // check SWS bits 2 and 3 (bring to lsb position and mask)
+ 101              		.loc 1 45 21
+ 102 0006 254B     		ldr	r3, .L12
+ 103 0008 9B68     		ldr	r3, [r3, #8]
+ 104              		.loc 1 45 28
+ 105 000a 9B08     		lsrs	r3, r3, #2
+ 106              		.loc 1 45 34
+ 107 000c DBB2     		uxtb	r3, r3
+ 108              		.loc 1 45 15
+ 109 000e 03F00303 		and	r3, r3, #3
+ 110 0012 3B72     		strb	r3, [r7, #8]
+  46:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  47:drivers/Src/stm32f767xx_rcc_driver.c ****     if (clksource == 0) // clock source is HSI
+ 111              		.loc 1 47 8
+ 112 0014 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 113 0016 002B     		cmp	r3, #0
+ 114 0018 02D1     		bne	.L4
+  48:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  49:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = 16000000;
+ 115              		.loc 1 49 19
+ 116 001a 214B     		ldr	r3, .L12+4
+ 117 001c FB60     		str	r3, [r7, #12]
+ 118 001e 0BE0     		b	.L5
+ 119              	.L4:
+  50:drivers/Src/stm32f767xx_rcc_driver.c ****     }else if (clksource == 1) // clock source is HSE
+ 120              		.loc 1 50 14
+ 121 0020 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 122 0022 012B     		cmp	r3, #1
+ 123 0024 02D1     		bne	.L6
+  51:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  52:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = 8000000;
+ 124              		.loc 1 52 19
+ 125 0026 1F4B     		ldr	r3, .L12+8
+ 126 0028 FB60     		str	r3, [r7, #12]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 4
+
+
+ 127 002a 05E0     		b	.L5
+ 128              	.L6:
+  53:drivers/Src/stm32f767xx_rcc_driver.c ****     }else if (clksource == 2) // clock source is PLL
+ 129              		.loc 1 53 14
+ 130 002c 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 131 002e 022B     		cmp	r3, #2
+ 132 0030 02D1     		bne	.L5
+  54:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  55:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = RCC_GetPLLOutputClock();
+ 133              		.loc 1 55 21
+ 134 0032 FFF7FEFF 		bl	RCC_GetPLLOutputClock
+ 135 0036 F860     		str	r0, [r7, #12]
+ 136              	.L5:
+  56:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+  57:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  58:drivers/Src/stm32f767xx_rcc_driver.c ****     // for AHB prescaler
+  59:drivers/Src/stm32f767xx_rcc_driver.c ****     temp = (RCC->CFGR >> 4) & 0xF;  // check HPRE bits 4 to 7 (bring to lsb position and mask)
+ 137              		.loc 1 59 16
+ 138 0038 184B     		ldr	r3, .L12
+ 139 003a 9B68     		ldr	r3, [r3, #8]
+ 140              		.loc 1 59 23
+ 141 003c 1B09     		lsrs	r3, r3, #4
+ 142              		.loc 1 59 29
+ 143 003e DBB2     		uxtb	r3, r3
+ 144              		.loc 1 59 10
+ 145 0040 03F00F03 		and	r3, r3, #15
+ 146 0044 FB71     		strb	r3, [r7, #7]
+  60:drivers/Src/stm32f767xx_rcc_driver.c ****     if (temp < 8)
+ 147              		.loc 1 60 8
+ 148 0046 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 149 0048 072B     		cmp	r3, #7
+ 150 004a 02D8     		bhi	.L7
+  61:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  62:drivers/Src/stm32f767xx_rcc_driver.c ****         ahbp = 1;
+ 151              		.loc 1 62 14
+ 152 004c 0123     		movs	r3, #1
+ 153 004e 7B81     		strh	r3, [r7, #10]	@ movhi
+ 154 0050 05E0     		b	.L8
+ 155              	.L7:
+  63:drivers/Src/stm32f767xx_rcc_driver.c ****     }else
+  64:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  65:drivers/Src/stm32f767xx_rcc_driver.c ****         ahbp = AHB_PreScaler[temp - 8]; // remove 8 to index to get: 8->2, 9->4, 10->8, ..., 15->51
+ 156              		.loc 1 65 35
+ 157 0052 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 158 0054 083B     		subs	r3, r3, #8
+ 159              		.loc 1 65 14
+ 160 0056 144A     		ldr	r2, .L12+12
+ 161 0058 32F81330 		ldrh	r3, [r2, r3, lsl #1]	@ movhi
+ 162 005c 7B81     		strh	r3, [r7, #10]	@ movhi
+ 163              	.L8:
+  66:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+  67:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  68:drivers/Src/stm32f767xx_rcc_driver.c ****     // for APB1 prescaler
+  69:drivers/Src/stm32f767xx_rcc_driver.c ****     temp = (RCC->CFGR >> 10) & 0x7;  // check PPRE bits 10 to 12 (bring to lsb position and mask)
+ 164              		.loc 1 69 16
+ 165 005e 0F4B     		ldr	r3, .L12
+ 166 0060 9B68     		ldr	r3, [r3, #8]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 5
+
+
+ 167              		.loc 1 69 23
+ 168 0062 9B0A     		lsrs	r3, r3, #10
+ 169              		.loc 1 69 30
+ 170 0064 DBB2     		uxtb	r3, r3
+ 171              		.loc 1 69 10
+ 172 0066 03F00703 		and	r3, r3, #7
+ 173 006a FB71     		strb	r3, [r7, #7]
+  70:drivers/Src/stm32f767xx_rcc_driver.c ****     if (temp < 4)
+ 174              		.loc 1 70 8
+ 175 006c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 176 006e 032B     		cmp	r3, #3
+ 177 0070 02D8     		bhi	.L9
+  71:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  72:drivers/Src/stm32f767xx_rcc_driver.c ****         abp1p = 1;
+ 178              		.loc 1 72 15
+ 179 0072 0123     		movs	r3, #1
+ 180 0074 7B72     		strb	r3, [r7, #9]
+ 181 0076 04E0     		b	.L10
+ 182              	.L9:
+  73:drivers/Src/stm32f767xx_rcc_driver.c ****     }else
+  74:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+  75:drivers/Src/stm32f767xx_rcc_driver.c ****         abp1p = APB_PreScaler[temp - 4]; // remove 4 to index to get: 4->2, 5->4, 6->8, 7->16
+ 183              		.loc 1 75 36
+ 184 0078 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 185 007a 043B     		subs	r3, r3, #4
+ 186              		.loc 1 75 15
+ 187 007c 0B4A     		ldr	r2, .L12+16
+ 188 007e D35C     		ldrb	r3, [r2, r3]
+ 189 0080 7B72     		strb	r3, [r7, #9]
+ 190              	.L10:
+  76:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+  77:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  78:drivers/Src/stm32f767xx_rcc_driver.c ****     pclk1 = (SystemClk / ahbp) / abp1p;
+ 191              		.loc 1 78 24
+ 192 0082 7B89     		ldrh	r3, [r7, #10]
+ 193 0084 FA68     		ldr	r2, [r7, #12]
+ 194 0086 B2FBF3F2 		udiv	r2, r2, r3
+ 195              		.loc 1 78 32
+ 196 008a 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 197              		.loc 1 78 11
+ 198 008c B2FBF3F3 		udiv	r3, r2, r3
+ 199 0090 3B60     		str	r3, [r7]
+  79:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  80:drivers/Src/stm32f767xx_rcc_driver.c ****     return pclk1;
+ 200              		.loc 1 80 12
+ 201 0092 3B68     		ldr	r3, [r7]
+  81:drivers/Src/stm32f767xx_rcc_driver.c **** }
+ 202              		.loc 1 81 1
+ 203 0094 1846     		mov	r0, r3
+ 204 0096 1037     		adds	r7, r7, #16
+ 205              		.cfi_def_cfa_offset 8
+ 206 0098 BD46     		mov	sp, r7
+ 207              		.cfi_def_cfa_register 13
+ 208              		@ sp needed
+ 209 009a 80BD     		pop	{r7, pc}
+ 210              	.L13:
+ 211              		.align	2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 6
+
+
+ 212              	.L12:
+ 213 009c 00380240 		.word	1073887232
+ 214 00a0 0024F400 		.word	16000000
+ 215 00a4 00127A00 		.word	8000000
+ 216 00a8 00000000 		.word	AHB_PreScaler
+ 217 00ac 00000000 		.word	APB_PreScaler
+ 218              		.cfi_endproc
+ 219              	.LFE1:
+ 221              		.section	.text.RCC_GetPCLK2Value,"ax",%progbits
+ 222              		.align	1
+ 223              		.global	RCC_GetPCLK2Value
+ 224              		.syntax unified
+ 225              		.thumb
+ 226              		.thumb_func
+ 228              	RCC_GetPCLK2Value:
+ 229              	.LFB2:
+  82:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  83:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  84:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  85:drivers/Src/stm32f767xx_rcc_driver.c **** /**
+  86:drivers/Src/stm32f767xx_rcc_driver.c ****  * @brief Return clock speed of APB2: System Clock--->AHB_prescaler--->APB2_Prescaler--->PCLK2 cloc
+  87:drivers/Src/stm32f767xx_rcc_driver.c ****  * 
+  88:drivers/Src/stm32f767xx_rcc_driver.c ****  * @return uint32_t 
+  89:drivers/Src/stm32f767xx_rcc_driver.c ****  */
+  90:drivers/Src/stm32f767xx_rcc_driver.c **** uint32_t RCC_GetPCLK2Value(void)
+  91:drivers/Src/stm32f767xx_rcc_driver.c **** {
+ 230              		.loc 1 91 1
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 16
+ 233              		@ frame_needed = 1, uses_anonymous_args = 0
+ 234 0000 80B5     		push	{r7, lr}
+ 235              		.cfi_def_cfa_offset 8
+ 236              		.cfi_offset 7, -8
+ 237              		.cfi_offset 14, -4
+ 238 0002 84B0     		sub	sp, sp, #16
+ 239              		.cfi_def_cfa_offset 24
+ 240 0004 00AF     		add	r7, sp, #0
+ 241              		.cfi_def_cfa_register 7
+  92:drivers/Src/stm32f767xx_rcc_driver.c ****     uint32_t pclk2;
+  93:drivers/Src/stm32f767xx_rcc_driver.c ****     uint32_t SystemClk;
+  94:drivers/Src/stm32f767xx_rcc_driver.c ****     uint16_t ahbp;
+  95:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t abp2p;
+  96:drivers/Src/stm32f767xx_rcc_driver.c **** 
+  97:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t clksource;
+  98:drivers/Src/stm32f767xx_rcc_driver.c ****     uint8_t temp;
+  99:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 100:drivers/Src/stm32f767xx_rcc_driver.c ****     clksource = (RCC->CFGR >> 2) & 0x3; // check SWS bits 2 and 3 (bring to lsb position and mask)
+ 242              		.loc 1 100 21
+ 243 0006 254B     		ldr	r3, .L23
+ 244 0008 9B68     		ldr	r3, [r3, #8]
+ 245              		.loc 1 100 28
+ 246 000a 9B08     		lsrs	r3, r3, #2
+ 247              		.loc 1 100 34
+ 248 000c DBB2     		uxtb	r3, r3
+ 249              		.loc 1 100 15
+ 250 000e 03F00303 		and	r3, r3, #3
+ 251 0012 3B72     		strb	r3, [r7, #8]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 7
+
+
+ 101:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 102:drivers/Src/stm32f767xx_rcc_driver.c ****     if (clksource == 0) // clock source is HSI
+ 252              		.loc 1 102 8
+ 253 0014 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 254 0016 002B     		cmp	r3, #0
+ 255 0018 02D1     		bne	.L15
+ 103:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 104:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = 16000000;
+ 256              		.loc 1 104 19
+ 257 001a 214B     		ldr	r3, .L23+4
+ 258 001c FB60     		str	r3, [r7, #12]
+ 259 001e 0BE0     		b	.L16
+ 260              	.L15:
+ 105:drivers/Src/stm32f767xx_rcc_driver.c ****     }else if (clksource == 1) // clock source is HSE
+ 261              		.loc 1 105 14
+ 262 0020 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 263 0022 012B     		cmp	r3, #1
+ 264 0024 02D1     		bne	.L17
+ 106:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 107:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = 8000000;
+ 265              		.loc 1 107 19
+ 266 0026 1F4B     		ldr	r3, .L23+8
+ 267 0028 FB60     		str	r3, [r7, #12]
+ 268 002a 05E0     		b	.L16
+ 269              	.L17:
+ 108:drivers/Src/stm32f767xx_rcc_driver.c ****     }else if (clksource == 2) // clock source is PLL
+ 270              		.loc 1 108 14
+ 271 002c 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 272 002e 022B     		cmp	r3, #2
+ 273 0030 02D1     		bne	.L16
+ 109:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 110:drivers/Src/stm32f767xx_rcc_driver.c ****         SystemClk = RCC_GetPLLOutputClock();
+ 274              		.loc 1 110 21
+ 275 0032 FFF7FEFF 		bl	RCC_GetPLLOutputClock
+ 276 0036 F860     		str	r0, [r7, #12]
+ 277              	.L16:
+ 111:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+ 112:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 113:drivers/Src/stm32f767xx_rcc_driver.c ****     // for AHB prescaler
+ 114:drivers/Src/stm32f767xx_rcc_driver.c ****     temp = (RCC->CFGR >> 4) & 0xF;  // check HPRE bits 4 to 7 (bring to lsb position and mask)
+ 278              		.loc 1 114 16
+ 279 0038 184B     		ldr	r3, .L23
+ 280 003a 9B68     		ldr	r3, [r3, #8]
+ 281              		.loc 1 114 23
+ 282 003c 1B09     		lsrs	r3, r3, #4
+ 283              		.loc 1 114 29
+ 284 003e DBB2     		uxtb	r3, r3
+ 285              		.loc 1 114 10
+ 286 0040 03F00F03 		and	r3, r3, #15
+ 287 0044 FB71     		strb	r3, [r7, #7]
+ 115:drivers/Src/stm32f767xx_rcc_driver.c ****     if (temp < 8)
+ 288              		.loc 1 115 8
+ 289 0046 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 290 0048 072B     		cmp	r3, #7
+ 291 004a 02D8     		bhi	.L18
+ 116:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 117:drivers/Src/stm32f767xx_rcc_driver.c ****         ahbp = 1;
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 8
+
+
+ 292              		.loc 1 117 14
+ 293 004c 0123     		movs	r3, #1
+ 294 004e 7B81     		strh	r3, [r7, #10]	@ movhi
+ 295 0050 05E0     		b	.L19
+ 296              	.L18:
+ 118:drivers/Src/stm32f767xx_rcc_driver.c ****     }else
+ 119:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 120:drivers/Src/stm32f767xx_rcc_driver.c ****         ahbp = AHB_PreScaler[temp - 8]; // remove 8 to index to get: 8->2, 9->4, 10->8, ..., 15->51
+ 297              		.loc 1 120 35
+ 298 0052 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 299 0054 083B     		subs	r3, r3, #8
+ 300              		.loc 1 120 14
+ 301 0056 144A     		ldr	r2, .L23+12
+ 302 0058 32F81330 		ldrh	r3, [r2, r3, lsl #1]	@ movhi
+ 303 005c 7B81     		strh	r3, [r7, #10]	@ movhi
+ 304              	.L19:
+ 121:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+ 122:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 123:drivers/Src/stm32f767xx_rcc_driver.c ****     // for APB2 prescaler
+ 124:drivers/Src/stm32f767xx_rcc_driver.c ****     temp = (RCC->CFGR >> 13) & 0x7;  // check PPRE bits 13 to 15 (bring to lsb position and mask)
+ 305              		.loc 1 124 16
+ 306 005e 0F4B     		ldr	r3, .L23
+ 307 0060 9B68     		ldr	r3, [r3, #8]
+ 308              		.loc 1 124 23
+ 309 0062 5B0B     		lsrs	r3, r3, #13
+ 310              		.loc 1 124 30
+ 311 0064 DBB2     		uxtb	r3, r3
+ 312              		.loc 1 124 10
+ 313 0066 03F00703 		and	r3, r3, #7
+ 314 006a FB71     		strb	r3, [r7, #7]
+ 125:drivers/Src/stm32f767xx_rcc_driver.c ****     if (temp < 4)
+ 315              		.loc 1 125 8
+ 316 006c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 317 006e 032B     		cmp	r3, #3
+ 318 0070 02D8     		bhi	.L20
+ 126:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 127:drivers/Src/stm32f767xx_rcc_driver.c ****         abp2p = 1;
+ 319              		.loc 1 127 15
+ 320 0072 0123     		movs	r3, #1
+ 321 0074 7B72     		strb	r3, [r7, #9]
+ 322 0076 04E0     		b	.L21
+ 323              	.L20:
+ 128:drivers/Src/stm32f767xx_rcc_driver.c ****     }else
+ 129:drivers/Src/stm32f767xx_rcc_driver.c ****     {
+ 130:drivers/Src/stm32f767xx_rcc_driver.c ****         abp2p = APB_PreScaler[temp - 4]; // remove 4 to index to get: 4->2, 5->4, 6->8, 7->16
+ 324              		.loc 1 130 36
+ 325 0078 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 326 007a 043B     		subs	r3, r3, #4
+ 327              		.loc 1 130 15
+ 328 007c 0B4A     		ldr	r2, .L23+16
+ 329 007e D35C     		ldrb	r3, [r2, r3]
+ 330 0080 7B72     		strb	r3, [r7, #9]
+ 331              	.L21:
+ 131:drivers/Src/stm32f767xx_rcc_driver.c ****     }
+ 132:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 133:drivers/Src/stm32f767xx_rcc_driver.c ****     pclk2 = (SystemClk / ahbp) / abp2p;
+ 332              		.loc 1 133 24
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 9
+
+
+ 333 0082 7B89     		ldrh	r3, [r7, #10]
+ 334 0084 FA68     		ldr	r2, [r7, #12]
+ 335 0086 B2FBF3F2 		udiv	r2, r2, r3
+ 336              		.loc 1 133 32
+ 337 008a 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 338              		.loc 1 133 11
+ 339 008c B2FBF3F3 		udiv	r3, r2, r3
+ 340 0090 3B60     		str	r3, [r7]
+ 134:drivers/Src/stm32f767xx_rcc_driver.c **** 
+ 135:drivers/Src/stm32f767xx_rcc_driver.c ****     return pclk2;
+ 341              		.loc 1 135 12
+ 342 0092 3B68     		ldr	r3, [r7]
+ 136:drivers/Src/stm32f767xx_rcc_driver.c **** }...
+ 343              		.loc 1 136 1
+ 344 0094 1846     		mov	r0, r3
+ 345 0096 1037     		adds	r7, r7, #16
+ 346              		.cfi_def_cfa_offset 8
+ 347 0098 BD46     		mov	sp, r7
+ 348              		.cfi_def_cfa_register 13
+ 349              		@ sp needed
+ 350 009a 80BD     		pop	{r7, pc}
+ 351              	.L24:
+ 352              		.align	2
+ 353              	.L23:
+ 354 009c 00380240 		.word	1073887232
+ 355 00a0 0024F400 		.word	16000000
+ 356 00a4 00127A00 		.word	8000000
+ 357 00a8 00000000 		.word	AHB_PreScaler
+ 358 00ac 00000000 		.word	APB_PreScaler
+ 359              		.cfi_endproc
+ 360              	.LFE2:
+ 362              		.text
+ 363              	.Letext0:
+ 364              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 365              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 366              		.file 4 "drivers/Inc/stm32f767xx.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f767xx_rcc_driver.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:23     .data.AHB_PreScaler:0000000000000000 AHB_PreScaler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:20     .data.AHB_PreScaler:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:37     .data.APB_PreScaler:0000000000000000 APB_PreScaler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:34     .data.APB_PreScaler:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:40     .text.RCC_GetPLLOutputClock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:46     .text.RCC_GetPLLOutputClock:0000000000000000 RCC_GetPLLOutputClock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:81     .text.RCC_GetPCLK1Value:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:87     .text.RCC_GetPCLK1Value:0000000000000000 RCC_GetPCLK1Value
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:213    .text.RCC_GetPCLK1Value:000000000000009c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:222    .text.RCC_GetPCLK2Value:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:228    .text.RCC_GetPCLK2Value:0000000000000000 RCC_GetPCLK2Value
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMoGqR0.s:354    .text.RCC_GetPCLK2Value:000000000000009c $d
+
+NO UNDEFINED SYMBOLS

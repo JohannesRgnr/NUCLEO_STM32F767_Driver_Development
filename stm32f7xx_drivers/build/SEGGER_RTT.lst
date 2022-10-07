@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
   51 0000 5465726D 		.ascii	"Terminal\000"
   51      696E616C 
   51      00
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 2
 
 
   52              		.section	.text._DoInit,"ax",%progbits
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
   47:Src/SEGGER_RTT.c ****           allows real-time communication on targets which support
   48:Src/SEGGER_RTT.c ****           debugger memory accesses while the CPU is running.
   49:Src/SEGGER_RTT.c **** Revision: $Rev: 26642 $
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 3
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 3
 
 
   50:Src/SEGGER_RTT.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  104:Src/SEGGER_RTT.c **** #ifndef   BUFFER_SIZE_UP
  105:Src/SEGGER_RTT.c ****   #define BUFFER_SIZE_UP                                  1024  // Size of the buffer for terminal 
  106:Src/SEGGER_RTT.c **** #endif
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 4
 
 
  107:Src/SEGGER_RTT.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  161:Src/SEGGER_RTT.c ****   #else
  162:Src/SEGGER_RTT.c ****     #define SEGGER_RTT_MEMCPY(pDest, pSrc, NumBytes)      memcpy((pDest), (pSrc), (NumBytes))
  163:Src/SEGGER_RTT.c ****   #endif
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 5
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 5
 
 
  164:Src/SEGGER_RTT.c **** #endif
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  218:Src/SEGGER_RTT.c ****   #define SEGGER_RTT_PUT_SECTION(Var, Section) Var
  219:Src/SEGGER_RTT.c **** #endif
  220:Src/SEGGER_RTT.c **** 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 6
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 6
 
 
  221:Src/SEGGER_RTT.c **** #if SEGGER_RTT_ALIGNMENT
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  275:Src/SEGGER_RTT.c ****     #pragma data_alignment=SEGGER_RTT_CPU_CACHE_LINE_SIZE
  276:Src/SEGGER_RTT.c ****     static char   _acDownBuffer[SEGGER_RTT__ROUND_UP_2_CACHE_LINE_SIZE(BUFFER_SIZE_DOWN)];
  277:Src/SEGGER_RTT.c ****   #else
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 7
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 7
 
 
  278:Src/SEGGER_RTT.c ****     #error "Don't know how to place _SEGGER_RTT, _acUpBuffer, _acDownBuffer cache-line aligned"
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  320:Src/SEGGER_RTT.c ****   //
  321:Src/SEGGER_RTT.c ****   p                     = (volatile SEGGER_RTT_CB*)((char*)&_SEGGER_RTT + SEGGER_RTT_UNCACHED_OFF);
   73              		.loc 1 321 25
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 8
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 8
 
 
   74 0006 264B     		ldr	r3, .L4
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  337:Src/SEGGER_RTT.c ****   p->aDown[0].sName         = "Terminal";
  113              		.loc 1 337 29
  114 0046 3B68     		ldr	r3, [r7]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 9
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 9
 
 
  115 0048 164A     		ldr	r2, .L4+4
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  156 007c D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
  157              		.loc 1 350 16 discriminator 3
  158 007e 3A68     		ldr	r2, [r7]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 10
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 10
 
 
  159 0080 7B68     		ldr	r3, [r7, #4]
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  357:Src/SEGGER_RTT.c **** *       _WriteBlocking()
  358:Src/SEGGER_RTT.c **** *
  359:Src/SEGGER_RTT.c **** *  Function description
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 11
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 11
 
 
  360:Src/SEGGER_RTT.c **** *    Stores a specified number of characters in SEGGER RTT ring buffer
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  387:Src/SEGGER_RTT.c ****     if (RdOff > WrOff) {
  234              		.loc 1 387 8
  235 001c BA69     		ldr	r2, [r7, #24]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 12
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 12
 
 
  236 001e FB69     		ldr	r3, [r7, #28]
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  283 0062 FB69     		ldr	r3, [r7, #28]
  284 0064 1344     		add	r3, r3, r2
  285 0066 7B61     		str	r3, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 13
 
 
  395:Src/SEGGER_RTT.c **** #if SEGGER_RTT_MEMCPY_USE_BYTELOOP
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  322              		.loc 1 412 5
  323              		.syntax unified
  324              	@ 412 "Src/SEGGER_RTT.c" 1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 14
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 14
 
 
  325 00a0 BFF35F8F 		dmb
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  435:Src/SEGGER_RTT.c **** */
  436:Src/SEGGER_RTT.c **** static void _WriteNoCheck(SEGGER_RTT_BUFFER_UP* pRing, const char* pData, unsigned NumBytes) {
  359              		.loc 1 436 94
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 15
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 15
 
 
  360              		.cfi_startproc
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  454:Src/SEGGER_RTT.c ****     RTT__DMB();                     // Force data write to be complete before writing the <WrOff>, 
  455:Src/SEGGER_RTT.c ****     pRing->WrOff = WrOff;
  456:Src/SEGGER_RTT.c **** #else
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 16
 
 
  457:Src/SEGGER_RTT.c ****     SEGGER_RTT_MEMCPY((void*)pDst, pData, NumBytes);
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  418 0046 1FE0     		b	.L15
  419              	.L13:
  479:Src/SEGGER_RTT.c ****     pDst = (pRing->pBuffer + WrOff) + SEGGER_RTT_UNCACHED_OFF;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 17
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 17
 
 
  420              		.loc 1 479 20
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  466 0088 00BF     		nop
  467 008a 2037     		adds	r7, r7, #32
  468              		.cfi_def_cfa_offset 8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 18
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 18
 
 
  469 008c BD46     		mov	sp, r7
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  506              		.loc 1 508 9
  507 0016 7B73     		strb	r3, [r7, #13]
  509:Src/SEGGER_RTT.c ****   _WriteBlocking(pRing, (const char*)ac, 2u);
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 19
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 19
 
 
  508              		.loc 1 509 3
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  547 0004 00AF     		add	r7, sp, #0
  548              		.cfi_def_cfa_register 7
  549 0006 7860     		str	r0, [r7, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 20
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 20
 
 
  527:Src/SEGGER_RTT.c ****   unsigned RdOff;
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  588 003a 1846     		mov	r0, r3
  589 003c 1C37     		adds	r7, r7, #28
  590              		.cfi_def_cfa_offset 4
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 21
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 21
 
 
  591 003e BD46     		mov	sp, r7
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  616              		.cfi_offset 7, -8
  617              		.cfi_offset 14, -4
  618 0002 8CB0     		sub	sp, sp, #48
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 22
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 22
 
 
  619              		.cfi_def_cfa_offset 56
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  659              		.loc 1 587 16
  660 0040 0023     		movs	r3, #0
  661 0042 FB62     		str	r3, [r7, #44]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 23
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 23
 
 
  588:Src/SEGGER_RTT.c ****   //
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  698              		.loc 1 605 18
  699 007e 7A6A     		ldr	r2, [r7, #36]
  700 0080 7B69     		ldr	r3, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 24
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 24
 
 
  701 0082 1344     		add	r3, r3, r2
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  739 00bc 19D0     		beq	.L26
  622:Src/SEGGER_RTT.c ****     pSrc = (pRing->pBuffer + RdOff) + SEGGER_RTT_UNCACHED_OFF;
  740              		.loc 1 622 18
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 25
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 25
 
 
  741 00be FB69     		ldr	r3, [r7, #28]
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  776 00f6 02D0     		beq	.L27
  642:Src/SEGGER_RTT.c ****     pRing->RdOff = RdOff;
  777              		.loc 1 642 18
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 26
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 26
 
 
  778 00f8 FB69     		ldr	r3, [r7, #28]
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  811              		@ frame_needed = 1, uses_anonymous_args = 0
  812 0000 80B5     		push	{r7, lr}
  813              		.cfi_def_cfa_offset 8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 27
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 27
 
 
  814              		.cfi_offset 7, -8
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  855 003c DB68     		ldr	r3, [r3, #12]
  856 003e BB61     		str	r3, [r7, #24]
  679:Src/SEGGER_RTT.c ****   NumBytesRead = 0u;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 28
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 28
 
 
  857              		.loc 1 679 16
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  894 007a 1344     		add	r3, r3, r2
  895 007c FB62     		str	r3, [r7, #44]
  697:Src/SEGGER_RTT.c ****     pBuffer      += NumBytesRem;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 29
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 29
 
 
  896              		.loc 1 697 18
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  934              		.loc 1 713 6
  935 00b8 7B69     		ldr	r3, [r7, #20]
  936 00ba 002B     		cmp	r3, #0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 30
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 30
 
 
  937 00bc 19D0     		beq	.L34
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  974 00f6 02D0     		beq	.L35
  731:Src/SEGGER_RTT.c ****     pRing->RdOff = RdOff;
  975              		.loc 1 731 18
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 31
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 31
 
 
  976 00f8 FB69     		ldr	r3, [r7, #28]
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  758:Src/SEGGER_RTT.c **** *    the read operation, writing is also locked.
  759:Src/SEGGER_RTT.c **** *    If only one consumer reads from the up buffer, 
  760:Src/SEGGER_RTT.c **** *    call sEGGER_RTT_ReadUpBufferNoLock() instead.
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 32
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 32
 
 
  761:Src/SEGGER_RTT.c **** */
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1047              		.syntax unified
  1048              	.LBE4:
  774:Src/SEGGER_RTT.c ****   //
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 33
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 33
 
 
  775:Src/SEGGER_RTT.c ****   return NumBytesRead;
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1085 000a 7A60     		str	r2, [r7, #4]
  1086              	.LBB5:
  795:Src/SEGGER_RTT.c ****   unsigned NumBytesRead;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 34
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 34
 
 
  796:Src/SEGGER_RTT.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1129              		.global	SEGGER_RTT_WriteWithOverwriteNoLock
  1130              		.syntax unified
  1131              		.thumb
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 35
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 35
 
 
  1132              		.thumb_func
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  842:Src/SEGGER_RTT.c ****   pRing = (SEGGER_RTT_BUFFER_UP*)((char*)&_SEGGER_RTT.aUp[BufferIndex] + SEGGER_RTT_UNCACHED_OFF); 
  1154              		.loc 1 842 9
  1155 0010 FB68     		ldr	r3, [r7, #12]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 36
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 36
 
 
  1156 0012 5A1C     		adds	r2, r3, #1
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  850:Src/SEGGER_RTT.c ****   } else {
  851:Src/SEGGER_RTT.c ****     Avail = pRing->RdOff - pRing->WrOff - 1u + pRing->SizeOfBuffer;
  1203              		.loc 1 851 18
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 37
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 37
 
 
  1204 0054 7B69     		ldr	r3, [r7, #20]
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1252 0092 1A69     		ldr	r2, [r3, #16]
  855:Src/SEGGER_RTT.c ****     while (pRing->RdOff >= pRing->SizeOfBuffer) {
  1253              		.loc 1 855 33
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 38
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 38
 
 
  1254 0094 7B69     		ldr	r3, [r7, #20]
@@ -2278,7 +2278,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1286 00be F969     		ldr	r1, [r7, #28]
  1287 00c0 3869     		ldr	r0, [r7, #16]
  1288 00c2 FFF7FEFF 		bl	memcpy
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 39
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 39
 
 
  878:Src/SEGGER_RTT.c ****       RTT__DMB();                     // Force data write to be complete before writing the <WrOff>
@@ -2338,7 +2338,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1324 00f2 1344     		add	r3, r3, r2
  1325 00f4 FB61     		str	r3, [r7, #28]
  897:Src/SEGGER_RTT.c ****       RTT__DMB();                     // Force data write to be complete before writing the <WrOff>
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 40
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 40
 
 
  1326              		.loc 1 897 7
@@ -2398,7 +2398,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1374              		.thumb
  1375              		.thumb_func
  1377              	SEGGER_RTT_WriteDownBufferNoLock:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 41
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 41
 
 
  1378              	.LFB10:
@@ -2458,7 +2458,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  958:Src/SEGGER_RTT.c ****     if (Avail >= NumBytes) {                            // Case 1)?
  959:Src/SEGGER_RTT.c **** CopyStraight:
  960:Src/SEGGER_RTT.c ****       pDst = (pRing->pBuffer + WrOff) + SEGGER_RTT_UNCACHED_OFF;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 42
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 42
 
 
  961:Src/SEGGER_RTT.c ****       memcpy((void*)pDst, pData, NumBytes);
@@ -2518,7 +2518,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1015:Src/SEGGER_RTT.c **** *  Notes
 1016:Src/SEGGER_RTT.c **** *    (1) Data is stored according to buffer flags.
 1017:Src/SEGGER_RTT.c **** *    (2) For performance reasons this function does not call Init()
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 43
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 43
 
 
 1018:Src/SEGGER_RTT.c **** *        and may only be called after RTT has been initialized.
@@ -2578,7 +2578,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1412 0028 29D0     		beq	.L56
  1413 002a 022B     		cmp	r3, #2
  1414 002c 2ED8     		bhi	.L57
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 44
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 44
 
 
  1415 002e 002B     		cmp	r3, #0
@@ -2638,7 +2638,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1449 0060 FFF7FEFF 		bl	_GetAvailWriteSpace
  1450 0064 3861     		str	r0, [r7, #16]
 1057:Src/SEGGER_RTT.c ****     Status = Avail < NumBytes ? Avail : NumBytes;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 45
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 45
 
 
  1451              		.loc 1 1057 12
@@ -2698,7 +2698,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1488              		.cfi_def_cfa_register 13
  1489              		@ sp needed
  1490 009a 80BD     		pop	{r7, pc}
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 46
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 46
 
 
  1491              	.L65:
@@ -2758,7 +2758,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1100:Src/SEGGER_RTT.c ****   unsigned              Status;
 1101:Src/SEGGER_RTT.c ****   unsigned              Avail;
 1102:Src/SEGGER_RTT.c ****   const char*           pData;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 47
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 47
 
 
 1103:Src/SEGGER_RTT.c ****   SEGGER_RTT_BUFFER_UP* pRing;
@@ -2818,7 +2818,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1558              		.loc 1 1120 14
  1559 0048 0023     		movs	r3, #0
  1560 004a FB61     		str	r3, [r7, #28]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 48
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 48
 
 
 1121:Src/SEGGER_RTT.c ****     } else {
@@ -2878,7 +2878,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1595 007e 7A68     		ldr	r2, [r7, #4]
  1596 0080 B969     		ldr	r1, [r7, #24]
  1597 0082 7869     		ldr	r0, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 49
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 49
 
 
  1598 0084 FFF7FEFF 		bl	_WriteBlocking
@@ -2938,7 +2938,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1158:Src/SEGGER_RTT.c **** *    BufferIndex  Index of "Up"-buffer to be used (e.g. 0 for "Terminal").
 1159:Src/SEGGER_RTT.c **** *    pBuffer      Pointer to character array. Does not need to point to a \0 terminated string.
 1160:Src/SEGGER_RTT.c **** *    NumBytes     Number of bytes to be stored in the SEGGER RTT control block.
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 50
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 50
 
 
 1161:Src/SEGGER_RTT.c **** *
@@ -2998,7 +2998,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1670              		
  1671              	@ 0 "" 2
  1672              		.thumb
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 51
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 51
 
 
  1673              		.syntax unified
@@ -3058,7 +3058,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1192:Src/SEGGER_RTT.c **** *
 1193:Src/SEGGER_RTT.c **** *  Parameters
 1194:Src/SEGGER_RTT.c **** *    BufferIndex  Index of "Up"-buffer to be used (e.g. 0 for "Terminal").
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 52
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 52
 
 
 1195:Src/SEGGER_RTT.c **** *    pBuffer      Pointer to character array. Does not need to point to a \0 terminated string.
@@ -3118,7 +3118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1209:Src/SEGGER_RTT.c ****   Status = SEGGER_RTT_WriteNoLock(BufferIndex, pBuffer, NumBytes);  // Call the non-locking write f
  1757              		.loc 1 1209 12
  1758 002c 7A68     		ldr	r2, [r7, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 53
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 53
 
 
  1759 002e B968     		ldr	r1, [r7, #8]
@@ -3178,7 +3178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1226:Src/SEGGER_RTT.c **** *  Return value
 1227:Src/SEGGER_RTT.c **** *    Number of bytes which have been stored in the "Up"-buffer.
 1228:Src/SEGGER_RTT.c **** *
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 54
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 54
 
 
 1229:Src/SEGGER_RTT.c **** *  Notes
@@ -3238,7 +3238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1241:Src/SEGGER_RTT.c **** /*********************************************************************
 1242:Src/SEGGER_RTT.c **** *
 1243:Src/SEGGER_RTT.c **** *       SEGGER_RTT_PutCharSkipNoLock
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 55
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 55
 
 
 1244:Src/SEGGER_RTT.c **** *
@@ -3298,7 +3298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1273:Src/SEGGER_RTT.c ****   //
 1274:Src/SEGGER_RTT.c ****   // Get write position and handle wrap-around if necessary
 1275:Src/SEGGER_RTT.c ****   //
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 56
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 56
 
 
 1276:Src/SEGGER_RTT.c ****   WrOff = pRing->WrOff + 1;
@@ -3358,7 +3358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1287:Src/SEGGER_RTT.c ****     pRing->WrOff = WrOff;
  1911              		.loc 1 1287 18
  1912              		.thumb
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 57
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 57
 
 
  1913              		.syntax unified
@@ -3418,7 +3418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1302:Src/SEGGER_RTT.c **** *
 1303:Src/SEGGER_RTT.c **** *  Parameters
 1304:Src/SEGGER_RTT.c **** *    BufferIndex  Index of "Up"-buffer to be used (e.g. 0 for "Terminal").
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 58
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 58
 
 
 1305:Src/SEGGER_RTT.c **** *    c            Byte to be stored.
@@ -3478,7 +3478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  1990              		
  1991              	@ 0 "" 2
  1992              		.thumb
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 59
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 59
 
 
  1993              		.syntax unified
@@ -3538,7 +3538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2031 0060 5A68     		ldr	r2, [r3, #4]
  2032              		.loc 1 1339 36
  2033 0062 FB68     		ldr	r3, [r7, #12]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 60
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 60
 
 
  2034 0064 DB68     		ldr	r3, [r3, #12]
@@ -3598,7 +3598,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1353:Src/SEGGER_RTT.c **** }
  2075              		.loc 1 1353 1
  2076 008c 1846     		mov	r0, r3
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 61
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 61
 
 
  2077 008e 2037     		adds	r7, r7, #32
@@ -3658,7 +3658,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2113 000a FB70     		strb	r3, [r7, #3]
  2114              	.LBB12:
 1374:Src/SEGGER_RTT.c ****   SEGGER_RTT_BUFFER_UP* pRing;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 62
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 62
 
 
 1375:Src/SEGGER_RTT.c ****   unsigned              WrOff;
@@ -3718,7 +3718,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2153 0042 0133     		adds	r3, r3, #1
  2154 0044 FB61     		str	r3, [r7, #28]
 1391:Src/SEGGER_RTT.c ****   if (WrOff == pRing->SizeOfBuffer) {
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 63
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 63
 
 
  2155              		.loc 1 1391 21
@@ -3778,7 +3778,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2194 0076 FB68     		ldr	r3, [r7, #12]
  2195 0078 DB68     		ldr	r3, [r3, #12]
  2196              		.loc 1 1406 11
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 64
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 64
 
 
  2197 007a 1344     		add	r3, r3, r2
@@ -3838,7 +3838,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2238 00a2 2037     		adds	r7, r7, #32
  2239              		.cfi_def_cfa_offset 8
  2240 00a4 BD46     		mov	sp, r7
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 65
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 65
 
 
  2241              		.cfi_def_cfa_register 13
@@ -3898,7 +3898,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2276 000c 0020     		movs	r0, #0
  2277 000e FFF7FEFF 		bl	SEGGER_RTT_Read
  2278 0012 0346     		mov	r3, r0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 66
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 66
 
 
  2279              		.loc 1 1440 5
@@ -3958,7 +3958,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1459:Src/SEGGER_RTT.c **** *
 1460:Src/SEGGER_RTT.c **** *  Notes
 1461:Src/SEGGER_RTT.c **** *    (1) This function is only specified for accesses to RTT buffer 0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 67
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 67
 
 
 1462:Src/SEGGER_RTT.c **** *    (2) This function is blocking if no character is present in RTT buffer
@@ -4018,7 +4018,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1476:Src/SEGGER_RTT.c **** *
 1477:Src/SEGGER_RTT.c **** *  Function description
 1478:Src/SEGGER_RTT.c **** *    Checks if at least one character for reading is available in the SEGGER RTT buffer.
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 68
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 68
 
 
 1479:Src/SEGGER_RTT.c **** *
@@ -4078,7 +4078,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2396 0028 9A42     		cmp	r2, r3
  2397 002a 02D0     		beq	.L123
 1496:Src/SEGGER_RTT.c ****     r = 1;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 69
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 69
 
 
  2398              		.loc 1 1496 7
@@ -4138,7 +4138,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2435              		.cfi_startproc
  2436              		@ args = 0, pretend = 0, frame = 16
  2437              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 70
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 70
 
 
  2438              		@ link register save eliminated.
@@ -4198,7 +4198,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2486              		.align	1
  2487              		.global	SEGGER_RTT_HasDataUp
  2488              		.syntax unified
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 71
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 71
 
 
  2489              		.thumb
@@ -4258,7 +4258,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2524              		.loc 1 1542 23
  2525 0024 BB68     		ldr	r3, [r7, #8]
  2526 0026 D31A     		subs	r3, r2, r3
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 72
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 72
 
 
 1543:Src/SEGGER_RTT.c **** }
@@ -4318,7 +4318,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2560              		.cfi_offset 7, -8
  2561              		.cfi_offset 14, -4
  2562 0002 88B0     		sub	sp, sp, #32
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 73
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 73
 
 
  2563              		.cfi_def_cfa_offset 40
@@ -4378,7 +4378,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2608 0040 DB00     		lsls	r3, r3, #3
  2609 0042 0B44     		add	r3, r3, r1
  2610 0044 6433     		adds	r3, r3, #100
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 74
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 74
 
 
  2611 0046 1B68     		ldr	r3, [r3]
@@ -4438,7 +4438,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2657 008c 6433     		adds	r3, r3, #100
  2658 008e BA68     		ldr	r2, [r7, #8]
  2659 0090 1A60     		str	r2, [r3]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 75
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 75
 
 
 1582:Src/SEGGER_RTT.c ****     pRTTCB->aDown[BufferIndex].SizeOfBuffer = BufferSize;
@@ -4498,7 +4498,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2709              	@ 0 "" 2
  2710              		.thumb
  2711              		.syntax unified
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 76
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 76
 
 
  2712 00e6 02E0     		b	.L142
@@ -4558,7 +4558,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1601:Src/SEGGER_RTT.c **** *    This includes: Buffer address, size, name, flags, ...
 1602:Src/SEGGER_RTT.c **** *
 1603:Src/SEGGER_RTT.c **** *  Parameters
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 77
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 77
 
 
 1604:Src/SEGGER_RTT.c **** *    sName        Pointer to a constant name string.
@@ -4618,7 +4618,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2792              		.thumb
  2793              		.syntax unified
  2794 002c 7B61     		str	r3, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 78
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 78
 
 
 1620:Src/SEGGER_RTT.c ****   pRTTCB = (volatile SEGGER_RTT_CB*)((unsigned char*)&_SEGGER_RTT + SEGGER_RTT_UNCACHED_OFF);  // A
@@ -4678,7 +4678,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1629:Src/SEGGER_RTT.c ****     pRTTCB->aUp[BufferIndex].sName        = sName;
  2839              		.loc 1 1629 43
  2840 006c 3969     		ldr	r1, [r7, #16]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 79
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 79
 
 
  2841 006e FB69     		ldr	r3, [r7, #28]
@@ -4738,7 +4738,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2891 00ca 0B44     		add	r3, r3, r1
  2892 00cc 2433     		adds	r3, r3, #36
  2893 00ce 0022     		movs	r2, #0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 80
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 80
 
 
  2894 00d0 1A60     		str	r2, [r3]
@@ -4798,7 +4798,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2940              	.L157:
  2941 0102 00BF     		.align	2
  2942              	.L156:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 81
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 81
 
 
  2943 0104 00000000 		.word	_SEGGER_RTT
@@ -4858,7 +4858,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  2971 000c 3B60     		str	r3, [r7]
  2972              	.LBB19:
 1670:Src/SEGGER_RTT.c ****   int r;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 82
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 82
 
 
 1671:Src/SEGGER_RTT.c ****   volatile SEGGER_RTT_CB* pRTTCB;
@@ -4918,7 +4918,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1680:Src/SEGGER_RTT.c ****       pUp->sName        = sName;
  3018              		.loc 1 1680 25
  3019 0050 7B69     		ldr	r3, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 83
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 83
 
 
  3020 0052 BA68     		ldr	r2, [r7, #8]
@@ -4978,7 +4978,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3062              		.loc 1 1692 10
  3063 0086 7B6A     		ldr	r3, [r7, #36]
 1693:Src/SEGGER_RTT.c **** }
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 84
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 84
 
 
  3064              		.loc 1 1693 1
@@ -5038,7 +5038,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3092 0000 80B5     		push	{r7, lr}
  3093              		.cfi_def_cfa_offset 8
  3094              		.cfi_offset 7, -8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 85
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 85
 
 
  3095              		.cfi_offset 14, -4
@@ -5098,7 +5098,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3140 003e 1344     		add	r3, r3, r2
  3141 0040 DB00     		lsls	r3, r3, #3
  3142 0042 6033     		adds	r3, r3, #96
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 86
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 86
 
 
  3143 0044 FA69     		ldr	r2, [r7, #28]
@@ -5158,7 +5158,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3187 007a 83F31188 		msr   basepri, r3  
  3188              		
  3189              	@ 0 "" 2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 87
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 87
 
 
  3190              		.thumb
@@ -5218,7 +5218,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1759:Src/SEGGER_RTT.c **** *
 1760:Src/SEGGER_RTT.c **** *  Return value
 1761:Src/SEGGER_RTT.c **** *    >= 0  O.K.
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 88
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 88
 
 
 1762:Src/SEGGER_RTT.c **** *     < 0  Error
@@ -5278,7 +5278,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3271              		.thumb
  3272              		.syntax unified
  3273 0032 3B61     		str	r3, [r7, #16]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 89
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 89
 
 
 1773:Src/SEGGER_RTT.c ****     pUp = &pRTTCB->aUp[BufferIndex];
@@ -5338,7 +5338,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3319              	.L179:
  3320 0068 00000000 		.word	_SEGGER_RTT
  3321              		.cfi_endproc
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 90
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 90
 
 
  3322              	.LFE27:
@@ -5398,7 +5398,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3355 0016 01D1     		bne	.L182
  3356              		.loc 1 1804 3 is_stmt 0 discriminator 1
  3357 0018 FFF7FEFF 		bl	_DoInit
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 91
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 91
 
 
  3358              	.L182:
@@ -5458,7 +5458,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3405 0054 FB61     		str	r3, [r7, #28]
  3406 0056 02E0     		b	.L184
  3407              	.L183:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 92
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 92
 
 
 1812:Src/SEGGER_RTT.c ****   } else {
@@ -5518,7 +5518,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3440              		@ args = 0, pretend = 0, frame = 32
  3441              		@ frame_needed = 1, uses_anonymous_args = 0
  3442 0000 80B5     		push	{r7, lr}
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 93
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 93
 
 
  3443              		.cfi_def_cfa_offset 8
@@ -5578,7 +5578,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3488 003a 5B00     		lsls	r3, r3, #1
  3489 003c 1344     		add	r3, r3, r2
  3490 003e DB00     		lsls	r3, r3, #3
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 94
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 94
 
 
  3491 0040 7A69     		ldr	r2, [r7, #20]
@@ -5638,7 +5638,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3538              		.thumb
  3539              		.thumb_func
  3541              	SEGGER_RTT_SetFlagsDownBuffer:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 95
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 95
 
 
  3542              	.LFB30:
@@ -5698,7 +5698,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3571 001c 124B     		ldr	r3, .L200
  3572 001e 7B61     		str	r3, [r7, #20]
 1878:Src/SEGGER_RTT.c ****   if (BufferIndex < SEGGER_RTT_MAX_NUM_DOWN_BUFFERS) {
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 96
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 96
 
 
  3573              		.loc 1 1878 6
@@ -5758,7 +5758,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3620 005c FB61     		str	r3, [r7, #28]
  3621              	.L198:
 1886:Src/SEGGER_RTT.c ****   }
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 97
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 97
 
 
 1887:Src/SEGGER_RTT.c ****   return r;
@@ -5818,7 +5818,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3663              		.cfi_endproc
  3664              	.LFE31:
  3666              		.section	.text.SEGGER_RTT_SetTerminal,"ax",%progbits
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 98
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 98
 
 
  3667              		.align	1
@@ -5878,7 +5878,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3697 0016 01D1     		bne	.L204
  3698              		.loc 1 1926 3 is_stmt 0 discriminator 1
  3699 0018 FFF7FEFF 		bl	_DoInit
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 99
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 99
 
 
  3700              	.L204:
@@ -5938,7 +5938,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3745              		.loc 1 1935 7
  3746 0056 07F10803 		add	r3, r7, #8
  3747 005a 0222     		movs	r2, #2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 100
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 100
 
 
  3748 005c 1946     		mov	r1, r3
@@ -5998,7 +5998,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3790 0098 4FF0FF33 		mov	r3, #-1
  3791 009c FB61     		str	r3, [r7, #28]
  3792              	.L209:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 101
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 101
 
 
 1948:Src/SEGGER_RTT.c ****   }
@@ -6058,7 +6058,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3827              		.cfi_def_cfa_offset 8
  3828              		.cfi_offset 7, -8
  3829              		.cfi_offset 14, -4
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 102
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 102
 
 
  3830 0002 88B0     		sub	sp, sp, #32
@@ -6118,7 +6118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
 1992:Src/SEGGER_RTT.c ****     SEGGER_RTT_LOCK();
  3862              		.loc 1 1992 5
  3863              		.syntax unified
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 103
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 103
 
 
  3864              	@ 1992 "Src/SEGGER_RTT.c" 1
@@ -6178,7 +6178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3903              		.loc 1 2007 7
  3904 006e 49E0     		b	.L222
  3905              	.L220:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 104
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 104
 
 
 2003:Src/SEGGER_RTT.c ****         Status = (int)_WriteBlocking(pRing, s, FragLen);
@@ -6238,7 +6238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3941 00a8 7869     		ldr	r0, [r7, #20]
  3942 00aa FFF7FEFF 		bl	_PostTerminalSwitch
 2018:Src/SEGGER_RTT.c ****         _PostTerminalSwitch(pRing, _ActiveTerminal);
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 105
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 105
 
 
  3943              		.loc 1 2018 66
@@ -6298,7 +6298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  3986              		.loc 1 2029 7
  3987 00fa 03E0     		b	.L222
  3988              	.L217:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 106
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 106
 
 
 2030:Src/SEGGER_RTT.c ****     default:
@@ -6358,7 +6358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  4031              		.align	1
  4032              		.global	SEGGER_RTT_GetAvailWriteSpace
  4033              		.syntax unified
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 107
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 107
 
 
  4034              		.thumb
@@ -6418,7 +6418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  4069              		.cfi_def_cfa_offset 8
  4070 0026 BD46     		mov	sp, r7
  4071              		.cfi_def_cfa_register 13
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 108
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 108
 
 
  4072              		@ sp needed
@@ -6478,7 +6478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  4103              		.loc 1 2087 10
  4104 0008 194B     		ldr	r3, .L237
  4105 000a 3B61     		str	r3, [r7, #16]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 109
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 109
 
 
 2088:Src/SEGGER_RTT.c ****   RdOff = pRTTCB->aUp[BufferIndex].RdOff;
@@ -6538,7 +6538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  4154              		.loc 1 2093 7
  4155 005e 1344     		add	r3, r3, r2
  4156 0060 7B61     		str	r3, [r7, #20]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 110
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 110
 
 
  4157              	.L235:
@@ -6577,127 +6577,127 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 1
  4186              		.file 2 "Inc/SEGGER_RTT.h"
  4187              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
  4188              		.file 4 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 111
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 111
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 SEGGER_RTT.c
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:19     .data._aTerminalId:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:22     .data._aTerminalId:0000000000000000 _aTerminalId
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:29     .bss._SEGGER_RTT:0000000000000000 _SEGGER_RTT
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:26     .bss._SEGGER_RTT:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:32     .bss._acUpBuffer:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:35     .bss._acUpBuffer:0000000000000000 _acUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:38     .bss._acDownBuffer:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:41     .bss._acDownBuffer:0000000000000000 _acDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:46     .bss._ActiveTerminal:0000000000000000 _ActiveTerminal
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:47     .bss._ActiveTerminal:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:49     .rodata:0000000000000000 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:53     .text._DoInit:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:58     .text._DoInit:0000000000000000 _DoInit
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:191    .text._DoInit:00000000000000a0 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4182   .rodata._aInitStr.0:0000000000000000 _aInitStr.0
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:200    .text._WriteBlocking:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:205    .text._WriteBlocking:0000000000000000 _WriteBlocking
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:352    .text._WriteNoCheck:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:357    .text._WriteNoCheck:0000000000000000 _WriteNoCheck
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:477    .text._PostTerminalSwitch:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:482    .text._PostTerminalSwitch:0000000000000000 _PostTerminalSwitch
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:525    .text._PostTerminalSwitch:0000000000000030 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:530    .text._GetAvailWriteSpace:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:535    .text._GetAvailWriteSpace:0000000000000000 _GetAvailWriteSpace
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:602    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:608    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000000 SEGGER_RTT_ReadUpBufferNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:795    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000108 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:800    .text.SEGGER_RTT_ReadNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:806    .text.SEGGER_RTT_ReadNoLock:0000000000000000 SEGGER_RTT_ReadNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:993    .text.SEGGER_RTT_ReadNoLock:0000000000000108 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:998    .text.SEGGER_RTT_ReadUpBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1004   .text.SEGGER_RTT_ReadUpBuffer:0000000000000000 SEGGER_RTT_ReadUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1063   .text.SEGGER_RTT_Read:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1069   .text.SEGGER_RTT_Read:0000000000000000 SEGGER_RTT_Read
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1128   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1134   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000000 SEGGER_RTT_WriteWithOverwriteNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1366   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000120 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1371   .text.SEGGER_RTT_WriteDownBufferNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1377   .text.SEGGER_RTT_WriteDownBufferNoLock:0000000000000000 SEGGER_RTT_WriteDownBufferNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1494   .text.SEGGER_RTT_WriteDownBufferNoLock:000000000000009c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1499   .text.SEGGER_RTT_WriteNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1505   .text.SEGGER_RTT_WriteNoLock:0000000000000000 SEGGER_RTT_WriteNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1622   .text.SEGGER_RTT_WriteNoLock:000000000000009c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1627   .text.SEGGER_RTT_WriteDownBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1633   .text.SEGGER_RTT_WriteDownBuffer:0000000000000000 SEGGER_RTT_WriteDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1704   .text.SEGGER_RTT_WriteDownBuffer:0000000000000048 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1709   .text.SEGGER_RTT_Write:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1715   .text.SEGGER_RTT_Write:0000000000000000 SEGGER_RTT_Write
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1786   .text.SEGGER_RTT_Write:0000000000000048 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1791   .text.SEGGER_RTT_WriteString:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1797   .text.SEGGER_RTT_WriteString:0000000000000000 SEGGER_RTT_WriteString
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1835   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1841   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000000 SEGGER_RTT_PutCharSkipNoLock
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1942   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000074 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1947   .text.SEGGER_RTT_PutCharSkip:0000000000000000 $t
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 112
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:19     .data._aTerminalId:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:22     .data._aTerminalId:0000000000000000 _aTerminalId
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:29     .bss._SEGGER_RTT:0000000000000000 _SEGGER_RTT
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:26     .bss._SEGGER_RTT:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:32     .bss._acUpBuffer:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:35     .bss._acUpBuffer:0000000000000000 _acUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:38     .bss._acDownBuffer:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:41     .bss._acDownBuffer:0000000000000000 _acDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:46     .bss._ActiveTerminal:0000000000000000 _ActiveTerminal
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:47     .bss._ActiveTerminal:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:49     .rodata:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:53     .text._DoInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:58     .text._DoInit:0000000000000000 _DoInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:191    .text._DoInit:00000000000000a0 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4182   .rodata._aInitStr.0:0000000000000000 _aInitStr.0
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:200    .text._WriteBlocking:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:205    .text._WriteBlocking:0000000000000000 _WriteBlocking
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:352    .text._WriteNoCheck:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:357    .text._WriteNoCheck:0000000000000000 _WriteNoCheck
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:477    .text._PostTerminalSwitch:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:482    .text._PostTerminalSwitch:0000000000000000 _PostTerminalSwitch
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:525    .text._PostTerminalSwitch:0000000000000030 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:530    .text._GetAvailWriteSpace:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:535    .text._GetAvailWriteSpace:0000000000000000 _GetAvailWriteSpace
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:602    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:608    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000000 SEGGER_RTT_ReadUpBufferNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:795    .text.SEGGER_RTT_ReadUpBufferNoLock:0000000000000108 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:800    .text.SEGGER_RTT_ReadNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:806    .text.SEGGER_RTT_ReadNoLock:0000000000000000 SEGGER_RTT_ReadNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:993    .text.SEGGER_RTT_ReadNoLock:0000000000000108 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:998    .text.SEGGER_RTT_ReadUpBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1004   .text.SEGGER_RTT_ReadUpBuffer:0000000000000000 SEGGER_RTT_ReadUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1063   .text.SEGGER_RTT_Read:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1069   .text.SEGGER_RTT_Read:0000000000000000 SEGGER_RTT_Read
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1128   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1134   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000000 SEGGER_RTT_WriteWithOverwriteNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1366   .text.SEGGER_RTT_WriteWithOverwriteNoLock:0000000000000120 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1371   .text.SEGGER_RTT_WriteDownBufferNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1377   .text.SEGGER_RTT_WriteDownBufferNoLock:0000000000000000 SEGGER_RTT_WriteDownBufferNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1494   .text.SEGGER_RTT_WriteDownBufferNoLock:000000000000009c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1499   .text.SEGGER_RTT_WriteNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1505   .text.SEGGER_RTT_WriteNoLock:0000000000000000 SEGGER_RTT_WriteNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1622   .text.SEGGER_RTT_WriteNoLock:000000000000009c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1627   .text.SEGGER_RTT_WriteDownBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1633   .text.SEGGER_RTT_WriteDownBuffer:0000000000000000 SEGGER_RTT_WriteDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1704   .text.SEGGER_RTT_WriteDownBuffer:0000000000000048 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1709   .text.SEGGER_RTT_Write:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1715   .text.SEGGER_RTT_Write:0000000000000000 SEGGER_RTT_Write
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1786   .text.SEGGER_RTT_Write:0000000000000048 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1791   .text.SEGGER_RTT_WriteString:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1797   .text.SEGGER_RTT_WriteString:0000000000000000 SEGGER_RTT_WriteString
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1835   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1841   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000000 SEGGER_RTT_PutCharSkipNoLock
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1942   .text.SEGGER_RTT_PutCharSkipNoLock:0000000000000074 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1947   .text.SEGGER_RTT_PutCharSkip:0000000000000000 $t
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 112
 
 
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:1953   .text.SEGGER_RTT_PutCharSkip:0000000000000000 SEGGER_RTT_PutCharSkip
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2086   .text.SEGGER_RTT_PutCharSkip:0000000000000094 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2091   .text.SEGGER_RTT_PutChar:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2097   .text.SEGGER_RTT_PutChar:0000000000000000 SEGGER_RTT_PutChar
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2247   .text.SEGGER_RTT_PutChar:00000000000000a8 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2252   .text.SEGGER_RTT_GetKey:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2258   .text.SEGGER_RTT_GetKey:0000000000000000 SEGGER_RTT_GetKey
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2309   .text.SEGGER_RTT_WaitKey:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2315   .text.SEGGER_RTT_WaitKey:0000000000000000 SEGGER_RTT_WaitKey
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2351   .text.SEGGER_RTT_HasKey:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2357   .text.SEGGER_RTT_HasKey:0000000000000000 SEGGER_RTT_HasKey
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2420   .text.SEGGER_RTT_HasKey:0000000000000040 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2426   .text.SEGGER_RTT_HasData:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2432   .text.SEGGER_RTT_HasData:0000000000000000 SEGGER_RTT_HasData
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2481   .text.SEGGER_RTT_HasData:0000000000000034 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2486   .text.SEGGER_RTT_HasDataUp:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2492   .text.SEGGER_RTT_HasDataUp:0000000000000000 SEGGER_RTT_HasDataUp
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2541   .text.SEGGER_RTT_HasDataUp:0000000000000034 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2546   .text.SEGGER_RTT_AllocDownBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2552   .text.SEGGER_RTT_AllocDownBuffer:0000000000000000 SEGGER_RTT_AllocDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2741   .text.SEGGER_RTT_AllocDownBuffer:0000000000000100 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2746   .text.SEGGER_RTT_AllocUpBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2752   .text.SEGGER_RTT_AllocUpBuffer:0000000000000000 SEGGER_RTT_AllocUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2943   .text.SEGGER_RTT_AllocUpBuffer:0000000000000104 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2948   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:2954   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000000 SEGGER_RTT_ConfigUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3075   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000090 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3080   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3086   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000000 SEGGER_RTT_ConfigDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3215   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000094 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3220   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3226   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000000 SEGGER_RTT_SetNameUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3320   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000068 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3325   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3331   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000000 SEGGER_RTT_SetNameDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3425   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000068 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3430   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3436   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000000 SEGGER_RTT_SetFlagsUpBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3530   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000068 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3535   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3541   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000000 SEGGER_RTT_SetFlagsDownBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3635   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000068 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3640   .text.SEGGER_RTT_Init:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3646   .text.SEGGER_RTT_Init:0000000000000000 SEGGER_RTT_Init
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3667   .text.SEGGER_RTT_SetTerminal:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3673   .text.SEGGER_RTT_SetTerminal:0000000000000000 SEGGER_RTT_SetTerminal
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3806   .text.SEGGER_RTT_SetTerminal:00000000000000a8 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3814   .text.SEGGER_RTT_TerminalOut:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:3820   .text.SEGGER_RTT_TerminalOut:0000000000000000 SEGGER_RTT_TerminalOut
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4024   .text.SEGGER_RTT_TerminalOut:000000000000011c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4031   .text.SEGGER_RTT_GetAvailWriteSpace:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4037   .text.SEGGER_RTT_GetAvailWriteSpace:0000000000000000 SEGGER_RTT_GetAvailWriteSpace
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4077   .text.SEGGER_RTT_GetAvailWriteSpace:000000000000002c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4082   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4088   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000000 SEGGER_RTT_GetBytesInBuffer
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4174   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000070 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s:4179   .rodata._aInitStr.0:0000000000000000 $d
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccupj8vY.s 			page 113
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:1953   .text.SEGGER_RTT_PutCharSkip:0000000000000000 SEGGER_RTT_PutCharSkip
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2086   .text.SEGGER_RTT_PutCharSkip:0000000000000094 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2091   .text.SEGGER_RTT_PutChar:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2097   .text.SEGGER_RTT_PutChar:0000000000000000 SEGGER_RTT_PutChar
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2247   .text.SEGGER_RTT_PutChar:00000000000000a8 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2252   .text.SEGGER_RTT_GetKey:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2258   .text.SEGGER_RTT_GetKey:0000000000000000 SEGGER_RTT_GetKey
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2309   .text.SEGGER_RTT_WaitKey:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2315   .text.SEGGER_RTT_WaitKey:0000000000000000 SEGGER_RTT_WaitKey
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2351   .text.SEGGER_RTT_HasKey:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2357   .text.SEGGER_RTT_HasKey:0000000000000000 SEGGER_RTT_HasKey
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2420   .text.SEGGER_RTT_HasKey:0000000000000040 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2426   .text.SEGGER_RTT_HasData:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2432   .text.SEGGER_RTT_HasData:0000000000000000 SEGGER_RTT_HasData
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2481   .text.SEGGER_RTT_HasData:0000000000000034 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2486   .text.SEGGER_RTT_HasDataUp:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2492   .text.SEGGER_RTT_HasDataUp:0000000000000000 SEGGER_RTT_HasDataUp
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2541   .text.SEGGER_RTT_HasDataUp:0000000000000034 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2546   .text.SEGGER_RTT_AllocDownBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2552   .text.SEGGER_RTT_AllocDownBuffer:0000000000000000 SEGGER_RTT_AllocDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2741   .text.SEGGER_RTT_AllocDownBuffer:0000000000000100 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2746   .text.SEGGER_RTT_AllocUpBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2752   .text.SEGGER_RTT_AllocUpBuffer:0000000000000000 SEGGER_RTT_AllocUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2943   .text.SEGGER_RTT_AllocUpBuffer:0000000000000104 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2948   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:2954   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000000 SEGGER_RTT_ConfigUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3075   .text.SEGGER_RTT_ConfigUpBuffer:0000000000000090 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3080   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3086   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000000 SEGGER_RTT_ConfigDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3215   .text.SEGGER_RTT_ConfigDownBuffer:0000000000000094 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3220   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3226   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000000 SEGGER_RTT_SetNameUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3320   .text.SEGGER_RTT_SetNameUpBuffer:0000000000000068 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3325   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3331   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000000 SEGGER_RTT_SetNameDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3425   .text.SEGGER_RTT_SetNameDownBuffer:0000000000000068 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3430   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3436   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000000 SEGGER_RTT_SetFlagsUpBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3530   .text.SEGGER_RTT_SetFlagsUpBuffer:0000000000000068 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3535   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3541   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000000 SEGGER_RTT_SetFlagsDownBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3635   .text.SEGGER_RTT_SetFlagsDownBuffer:0000000000000068 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3640   .text.SEGGER_RTT_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3646   .text.SEGGER_RTT_Init:0000000000000000 SEGGER_RTT_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3667   .text.SEGGER_RTT_SetTerminal:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3673   .text.SEGGER_RTT_SetTerminal:0000000000000000 SEGGER_RTT_SetTerminal
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3806   .text.SEGGER_RTT_SetTerminal:00000000000000a8 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3814   .text.SEGGER_RTT_TerminalOut:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:3820   .text.SEGGER_RTT_TerminalOut:0000000000000000 SEGGER_RTT_TerminalOut
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4024   .text.SEGGER_RTT_TerminalOut:000000000000011c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4031   .text.SEGGER_RTT_GetAvailWriteSpace:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4037   .text.SEGGER_RTT_GetAvailWriteSpace:0000000000000000 SEGGER_RTT_GetAvailWriteSpace
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4077   .text.SEGGER_RTT_GetAvailWriteSpace:000000000000002c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4082   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4088   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000000 SEGGER_RTT_GetBytesInBuffer
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4174   .text.SEGGER_RTT_GetBytesInBuffer:0000000000000070 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s:4179   .rodata._aInitStr.0:0000000000000000 $d
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccUOaZ9Z.s 			page 113
 
 
 

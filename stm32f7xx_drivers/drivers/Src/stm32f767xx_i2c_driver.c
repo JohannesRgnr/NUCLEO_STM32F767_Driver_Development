@@ -12,8 +12,7 @@
 
 #include "stm32f767xx_i2c_driver.h"
 
-uint16_t AHB_PreScaler[8] = {2, 4, 8, 16, 64, 128, 256, 512};
-uint8_t APB1_PreScaler[4] = {2, 4, 8, 16};
+
 
 /*********************************************************************************************
  *   Hard-coded I2C_TIMINGR timing settings depending on the I2C clock
@@ -121,66 +120,6 @@ void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t EnOrDi)
 }
 
 
-uint32_t RCC_GetPLLOutputClock(void)
-{
-    uint32_t PLLOutputClock = 0;
-    return PLLOutputClock; // TODO
-}
-
-
-
-/**
- * @brief Return clock speed of APB1: System Clock--->AHB_prescaler--->APB1_Prescaler--->PCLK1 clock
- * 
- * @return uint32_t 
- */
-uint32_t RCC_GetPCLK1Value(void)
-{
-    uint32_t pclk1;
-    uint32_t SystemClk;
-    uint16_t ahbp;
-    uint8_t abp1p;
-
-    uint8_t clksource;
-    uint8_t temp;
-
-    clksource = (RCC->CFGR >> 2) & 0x3; // check SWS bits 2 and 3 (bring to lsb position and mask)
-
-    if (clksource == 0) // clock source is HSI
-    {
-        SystemClk = 16000000;
-    }else if (clksource == 1) // clock source is HSE
-    {
-        SystemClk = 8000000;
-    }else if (clksource == 2) // clock source is PLL
-    {
-        SystemClk = RCC_GetPLLOutputClock();
-    }
-
-    // for AHB prescaler
-    temp = (RCC->CFGR >> 4) & 0xF;  // check HPRE bits 4 to 7 (bring to lsb position and mask)
-    if (temp < 8)
-    {
-        ahbp = 1;
-    }else
-    {
-        ahbp = AHB_PreScaler[temp - 8]; // remove 8 to index to get: 8->2, 9->4, 10->8, ..., 15->512
-    }
-
-    // for APB1 prescaler
-    temp = (RCC->CFGR >> 10) & 0x7;  // check PPRE bits 10 to 12 (bring to lsb position and mask)
-    if (temp < 4)
-    {
-        abp1p = 1;
-    }else
-    {
-        abp1p = APB1_PreScaler[temp - 4]; // remove 4 to index to get: 4->2, 5->4, 6->8, 7->16
-    }
-
-    pclk1 = (SystemClk / ahbp) / abp1p;
-
-    return pclk1;
-}
 
 
 
@@ -390,7 +329,7 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle, uint8_t *pRxBuffer, uint8_t
  */
 void I2C_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 {
-if(EnorDi == ENABLE)
+    if(EnorDi == ENABLE)
 	{
 		if(IRQNumber <= 31)							// 0 to 31
 		{

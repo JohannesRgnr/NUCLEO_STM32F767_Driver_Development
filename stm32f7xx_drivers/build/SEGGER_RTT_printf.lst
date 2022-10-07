@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
   30:Src/SEGGER_RTT_printf.c **** * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,        *
   31:Src/SEGGER_RTT_printf.c **** * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           *
   32:Src/SEGGER_RTT_printf.c **** * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE           *
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 2
 
 
   33:Src/SEGGER_RTT_printf.c **** * DISCLAIMED. IN NO EVENT SHALL SEGGER Microcontroller BE LIABLE FOR *
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
   87:Src/SEGGER_RTT_printf.c **** 
   88:Src/SEGGER_RTT_printf.c ****   unsigned RTTBufferIndex;
   89:Src/SEGGER_RTT_printf.c **** } SEGGER_RTT_PRINTF_DESC;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 3
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 3
 
 
   90:Src/SEGGER_RTT_printf.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
   57 0020 1A68     		ldr	r2, [r3]
   58              		.loc 1 113 18
   59 0022 FB68     		ldr	r3, [r7, #12]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 4
 
 
   60 0024 1344     		add	r3, r3, r2
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  105              		.loc 1 122 22
  106 0064 7B68     		ldr	r3, [r7, #4]
  107 0066 4FF0FF32 		mov	r2, #-1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 5
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 5
 
 
  108 006a DA60     		str	r2, [r3, #12]
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  134:Src/SEGGER_RTT_printf.c ****   static const char _aV2C[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', '
  135:Src/SEGGER_RTT_printf.c ****   unsigned Div;
  136:Src/SEGGER_RTT_printf.c ****   unsigned Digit;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 6
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 6
 
 
  137:Src/SEGGER_RTT_printf.c ****   unsigned Number;
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  154:Src/SEGGER_RTT_printf.c ****   //
  155:Src/SEGGER_RTT_printf.c ****   // Print leading chars if necessary
  156:Src/SEGGER_RTT_printf.c ****   //
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 7
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 7
 
 
  157:Src/SEGGER_RTT_printf.c ****   if ((FormatFlags & FORMAT_FLAG_LEFT_JUSTIFY) == 0u) {
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  231 007e DB68     		ldr	r3, [r3, #12]
  232              		.loc 1 167 12
  233 0080 002B     		cmp	r3, #0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 8
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 8
 
 
  234 0082 07DB     		blt	.L25
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  270 00b0 B2FBF3F3 		udiv	r3, r2, r3
  271 00b4 7B61     		str	r3, [r7, #20]
  184:Src/SEGGER_RTT_printf.c ****         if (Div < Base) {        // Is our divider big enough to extract the highest digit from val
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 9
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 9
 
 
  272              		.loc 1 184 12
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  312 00f6 DB68     		ldr	r3, [r3, #12]
  313              		.loc 1 197 10
  314 00f8 002B     		cmp	r3, #0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 10
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 10
 
 
  315 00fa 08DB     		blt	.L27
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  355 0134 002B     		cmp	r3, #0
  356 0136 07DB     		blt	.L28
  357              	.L22:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 11
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 11
 
 
  207:Src/SEGGER_RTT_printf.c ****           FieldWidth--;
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  398              		@ args = 8, pretend = 0, frame = 24
  399              		@ frame_needed = 1, uses_anonymous_args = 0
  400 0000 80B5     		push	{r7, lr}
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 12
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 12
 
 
  401              		.cfi_def_cfa_offset 8
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  236:Src/SEGGER_RTT_printf.c ****   }
  237:Src/SEGGER_RTT_printf.c ****   if (NumDigits > Width) {
  441              		.loc 1 237 6
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 13
 
 
  442 0036 3A68     		ldr	r2, [r7]
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  486 0076 17D1     		bne	.L38
  248:Src/SEGGER_RTT_printf.c ****     if (FieldWidth != 0u) {
  487              		.loc 1 248 8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 14
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 14
 
 
  488 0078 3B6A     		ldr	r3, [r7, #32]
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  527 00ac 002B     		cmp	r3, #0
  528 00ae 4ADB     		blt	.L48
  262:Src/SEGGER_RTT_printf.c ****     if (v < 0) {
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 15
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 15
 
 
  529              		.loc 1 262 8
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  571 00f2 1AD1     		bne	.L44
  572              		.loc 1 274 126 discriminator 2
  573 00f4 3B68     		ldr	r3, [r7]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 16
 
 
  574 00f6 002B     		cmp	r3, #0
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  615              		.loc 1 285 10
  616 012e 002B     		cmp	r3, #0
  617 0130 09DB     		blt	.L48
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 17
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 17
 
 
  286:Src/SEGGER_RTT_printf.c ****         //
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  311:Src/SEGGER_RTT_printf.c **** *    sFormat      Pointer to format string
  312:Src/SEGGER_RTT_printf.c **** *    pParamList   Pointer to the list of arguments for the format string
  313:Src/SEGGER_RTT_printf.c **** *
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 18
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 18
 
 
  314:Src/SEGGER_RTT_printf.c **** *  Return values
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  682 0024 1B78     		ldrb	r3, [r3]
  683 0026 87F87F30 		strb	r3, [r7, #127]
  335:Src/SEGGER_RTT_printf.c ****     sFormat++;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 19
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 19
 
 
  684              		.loc 1 335 12
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  726 008c 9D000000 		.word	.L57+1
  727 0090 DD000000 		.word	.L54+1
  728 0094 DD000000 		.word	.L54+1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 20
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 20
 
 
  729 0098 AD000000 		.word	.L55+1
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  778 00de BB67     		str	r3, [r7, #120]
  779              		.loc 1 352 26
  780 00e0 00BF     		nop
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 21
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 21
 
 
  781              	.L60:
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  821 0120 E4E7     		b	.L63
  822              	.L62:
  366:Src/SEGGER_RTT_printf.c ****       } while (1);
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 22
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 22
 
 
  367:Src/SEGGER_RTT_printf.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  862              		.loc 1 381 42
  863 0166 97F87F30 		ldrb	r3, [r7, #127]	@ zero_extendqisi2
  864              		.loc 1 381 39
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 23
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 23
 
 
  865 016a 1344     		add	r3, r3, r2
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  899 019e 252B     		cmp	r3, #37
  900 01a0 00F0D180 		beq	.L69
  901 01a4 252B     		cmp	r3, #37
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 24
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 24
 
 
  902 01a6 C0F2D580 		blt	.L89
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  953 024c 191D     		adds	r1, r3, #4
  954 024e 7A68     		ldr	r2, [r7, #4]
  955 0250 1160     		str	r1, [r2]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 25
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 25
 
 
  956 0252 1B68     		ldr	r3, [r3]
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  413:Src/SEGGER_RTT_printf.c ****         _PrintUnsigned(&BufferDesc, (unsigned)v, 10u, NumDigits, FieldWidth, FormatFlags);
  1000              		.loc 1 413 9
  1001 02a2 B96F     		ldr	r1, [r7, #120]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 26
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 26
 
 
  1002 02a4 07F15000 		add	r0, r7, #80
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  1045 02ee BB6E     		ldr	r3, [r7, #104]
  1046 02f0 1B78     		ldrb	r3, [r3]
  1047 02f2 87F87F30 		strb	r3, [r7, #127]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 27
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 27
 
 
  425:Src/SEGGER_RTT_printf.c ****             s++;
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  1090 0336 0193     		str	r3, [sp, #4]
  1091 0338 0823     		movs	r3, #8
  1092 033a 0093     		str	r3, [sp]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 28
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 28
 
 
  1093 033c 0823     		movs	r3, #8
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  449:Src/SEGGER_RTT_printf.c ****   if (BufferDesc.ReturnValue > 0) {
  1133              		.loc 1 449 17
  1134 037a FB6D     		ldr	r3, [r7, #92]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 29
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 29
 
 
  1135              		.loc 1 449 6
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  461:Src/SEGGER_RTT_printf.c **** /*********************************************************************
  462:Src/SEGGER_RTT_printf.c **** *
  463:Src/SEGGER_RTT_printf.c **** *       SEGGER_RTT_printf
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 30
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 30
 
 
  464:Src/SEGGER_RTT_printf.c **** *
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  497:Src/SEGGER_RTT_printf.c ****   r = SEGGER_RTT_vprintf(BufferIndex, sFormat, &ParamList);
  1201              		.loc 1 497 7
  1202 0010 07F10803 		add	r3, r7, #8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 31
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 31
 
 
  1203 0014 1A46     		mov	r2, r3
@@ -1842,28 +1842,28 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 1
  1238              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
  1239              		.file 3 "<built-in>"
  1240              		.file 4 "Inc/SEGGER_RTT.h"
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s 			page 32
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s 			page 32
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 SEGGER_RTT_printf.c
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:19     .text._StoreChar:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:24     .text._StoreChar:0000000000000000 _StoreChar
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:129    .text._PrintUnsigned:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:134    .text._PrintUnsigned:0000000000000000 _PrintUnsigned
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:384    .text._PrintUnsigned:0000000000000154 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:1234   .rodata._aV2C.0:0000000000000000 _aV2C.0
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:389    .text._PrintInt:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:394    .text._PrintInt:0000000000000000 _PrintInt
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:641    .text.SEGGER_RTT_vprintf:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:647    .text.SEGGER_RTT_vprintf:0000000000000000 SEGGER_RTT_vprintf
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:716    .text.SEGGER_RTT_vprintf:0000000000000064 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:730    .text.SEGGER_RTT_vprintf:000000000000009c $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:914    .text.SEGGER_RTT_vprintf:00000000000001c4 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:947    .text.SEGGER_RTT_vprintf:0000000000000248 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:1172   .text.SEGGER_RTT_printf:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:1178   .text.SEGGER_RTT_printf:0000000000000000 SEGGER_RTT_printf
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccMgFEaX.s:1231   .rodata._aV2C.0:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:19     .text._StoreChar:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:24     .text._StoreChar:0000000000000000 _StoreChar
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:129    .text._PrintUnsigned:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:134    .text._PrintUnsigned:0000000000000000 _PrintUnsigned
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:384    .text._PrintUnsigned:0000000000000154 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:1234   .rodata._aV2C.0:0000000000000000 _aV2C.0
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:389    .text._PrintInt:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:394    .text._PrintInt:0000000000000000 _PrintInt
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:641    .text.SEGGER_RTT_vprintf:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:647    .text.SEGGER_RTT_vprintf:0000000000000000 SEGGER_RTT_vprintf
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:716    .text.SEGGER_RTT_vprintf:0000000000000064 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:730    .text.SEGGER_RTT_vprintf:000000000000009c $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:914    .text.SEGGER_RTT_vprintf:00000000000001c4 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:947    .text.SEGGER_RTT_vprintf:0000000000000248 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:1172   .text.SEGGER_RTT_printf:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:1178   .text.SEGGER_RTT_printf:0000000000000000 SEGGER_RTT_printf
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cc0j6e5R.s:1231   .rodata._aV2C.0:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 SEGGER_RTT_Write

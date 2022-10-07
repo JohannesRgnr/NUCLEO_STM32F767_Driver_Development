@@ -1,0 +1,523 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"015_uart_tx.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.delay,"ax",%progbits
+  19              		.align	1
+  20              		.global	delay
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	delay:
+  26              	.LFB3:
+  27              		.file 1 "Src/015_uart_tx.c"
+   1:Src/015_uart_tx.c **** /**
+   2:Src/015_uart_tx.c ****  * @file 015_uart_tx.c
+   3:Src/015_uart_tx.c ****  * @author johannes regnier
+   4:Src/015_uart_tx.c ****  * @brief 
+   5:Src/015_uart_tx.c ****  * @version 0.1
+   6:Src/015_uart_tx.c ****  * @date 2022-10-07
+   7:Src/015_uart_tx.c ****  * 
+   8:Src/015_uart_tx.c ****  * @copyright Copyright (c) 2022
+   9:Src/015_uart_tx.c ****  * 
+  10:Src/015_uart_tx.c ****  */
+  11:Src/015_uart_tx.c **** 
+  12:Src/015_uart_tx.c **** 
+  13:Src/015_uart_tx.c **** #include <string.h>
+  14:Src/015_uart_tx.c **** #include "stm32f767xx.h"
+  15:Src/015_uart_tx.c **** #include <stdio.h>
+  16:Src/015_uart_tx.c **** #include "SEGGER_RTT.h"
+  17:Src/015_uart_tx.c **** 
+  18:Src/015_uart_tx.c **** 
+  19:Src/015_uart_tx.c **** 
+  20:Src/015_uart_tx.c **** 
+  21:Src/015_uart_tx.c **** void delay(void){
+  28              		.loc 1 21 17
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 2
+
+
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40              	.LBB2:
+  22:Src/015_uart_tx.c ****   for (uint32_t i = 0; i < 200000; i++)
+  41              		.loc 1 22 17
+  42 0006 0023     		movs	r3, #0
+  43 0008 7B60     		str	r3, [r7, #4]
+  44              		.loc 1 22 3
+  45 000a 02E0     		b	.L2
+  46              	.L3:
+  47              		.loc 1 22 37 discriminator 3
+  48 000c 7B68     		ldr	r3, [r7, #4]
+  49 000e 0133     		adds	r3, r3, #1
+  50 0010 7B60     		str	r3, [r7, #4]
+  51              	.L2:
+  52              		.loc 1 22 26 discriminator 1
+  53 0012 7B68     		ldr	r3, [r7, #4]
+  54 0014 044A     		ldr	r2, .L4
+  55 0016 9342     		cmp	r3, r2
+  56 0018 F8D9     		bls	.L3
+  57              	.LBE2:
+  23:Src/015_uart_tx.c ****     ;
+  24:Src/015_uart_tx.c **** }
+  58              		.loc 1 24 1
+  59 001a 00BF     		nop
+  60 001c 00BF     		nop
+  61 001e 0C37     		adds	r7, r7, #12
+  62              		.cfi_def_cfa_offset 4
+  63 0020 BD46     		mov	sp, r7
+  64              		.cfi_def_cfa_register 13
+  65              		@ sp needed
+  66 0022 5DF8047B 		ldr	r7, [sp], #4
+  67              		.cfi_restore 7
+  68              		.cfi_def_cfa_offset 0
+  69 0026 7047     		bx	lr
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0028 3F0D0300 		.word	199999
+  74              		.cfi_endproc
+  75              	.LFE3:
+  77              		.global	usart2_handle
+  78              		.section	.bss.usart2_handle,"aw",%nobits
+  79              		.align	2
+  82              	usart2_handle:
+  83 0000 00000000 		.space	36
+  83      00000000 
+  83      00000000 
+  83      00000000 
+  83      00000000 
+  84              		.global	msg
+  85              		.section	.data.msg,"aw"
+  86              		.align	2
+  89              	msg:
+  90 0000 55534152 		.ascii	"USART Tx testing...........\012\015\000"
+  90      54205478 
+  90      20746573 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 3
+
+
+  90      74696E67 
+  90      2E2E2E2E 
+  91 001e 00000000 		.space	994
+  91      00000000 
+  91      00000000 
+  91      00000000 
+  91      00000000 
+  92              		.section	.text.USART2_GPIOInit,"ax",%progbits
+  93              		.align	1
+  94              		.global	USART2_GPIOInit
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  99              	USART2_GPIOInit:
+ 100              	.LFB4:
+  25:Src/015_uart_tx.c **** 
+  26:Src/015_uart_tx.c **** 
+  27:Src/015_uart_tx.c **** 
+  28:Src/015_uart_tx.c **** 
+  29:Src/015_uart_tx.c **** /* Pins to communicate over USART2 (Cf. datasheet, alternate function mapping)
+  30:Src/015_uart_tx.c ****  * PD5  ---> USART2_TX (CN9 pin 6 on NUCLEO F767)
+  31:Src/015_uart_tx.c ****  * PD6  ---> USART2_RX (CN9 pin 4 on NUCLEO F767)
+  32:Src/015_uart_tx.c ****  * ALT function mode: 7
+  33:Src/015_uart_tx.c ****  */
+  34:Src/015_uart_tx.c **** 
+  35:Src/015_uart_tx.c **** USART_Handle_t usart2_handle;
+  36:Src/015_uart_tx.c **** 
+  37:Src/015_uart_tx.c **** // tx buffer
+  38:Src/015_uart_tx.c **** uint8_t msg[1024] = "USART Tx testing...........\n\r";
+  39:Src/015_uart_tx.c **** 
+  40:Src/015_uart_tx.c **** 
+  41:Src/015_uart_tx.c **** 
+  42:Src/015_uart_tx.c **** void USART2_GPIOInit(void)
+  43:Src/015_uart_tx.c **** {
+ 101              		.loc 1 43 1
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 16
+ 104              		@ frame_needed = 1, uses_anonymous_args = 0
+ 105 0000 80B5     		push	{r7, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 7, -8
+ 108              		.cfi_offset 14, -4
+ 109 0002 84B0     		sub	sp, sp, #16
+ 110              		.cfi_def_cfa_offset 24
+ 111 0004 00AF     		add	r7, sp, #0
+ 112              		.cfi_def_cfa_register 7
+  44:Src/015_uart_tx.c ****     GPIO_Handle_t usart2_pins;
+  45:Src/015_uart_tx.c ****     
+  46:Src/015_uart_tx.c ****     usart2_pins.pGPIOx = GPIOD;
+ 113              		.loc 1 46 24
+ 114 0006 0E4B     		ldr	r3, .L7
+ 115 0008 7B60     		str	r3, [r7, #4]
+  47:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
+ 116              		.loc 1 47 45
+ 117 000a 0223     		movs	r3, #2
+ 118 000c 7B72     		strb	r3, [r7, #9]
+  48:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 4
+
+
+ 119              		.loc 1 48 47
+ 120 000e 0023     		movs	r3, #0
+ 121 0010 3B73     		strb	r3, [r7, #12]
+  49:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+ 122              		.loc 1 49 52
+ 123 0012 0123     		movs	r3, #1
+ 124 0014 FB72     		strb	r3, [r7, #11]
+  50:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinAltFunMode = 7;
+ 125              		.loc 1 50 51
+ 126 0016 0723     		movs	r3, #7
+ 127 0018 7B73     		strb	r3, [r7, #13]
+  51:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+ 128              		.loc 1 51 46
+ 129 001a 0223     		movs	r3, #2
+ 130 001c BB72     		strb	r3, [r7, #10]
+  52:Src/015_uart_tx.c **** 
+  53:Src/015_uart_tx.c ****     //TX
+  54:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_5;
+ 131              		.loc 1 54 47
+ 132 001e 0523     		movs	r3, #5
+ 133 0020 3B72     		strb	r3, [r7, #8]
+  55:Src/015_uart_tx.c ****     GPIO_Init(&usart2_pins);
+ 134              		.loc 1 55 5
+ 135 0022 3B1D     		adds	r3, r7, #4
+ 136 0024 1846     		mov	r0, r3
+ 137 0026 FFF7FEFF 		bl	GPIO_Init
+  56:Src/015_uart_tx.c **** 
+  57:Src/015_uart_tx.c ****     //RX
+  58:Src/015_uart_tx.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_6;
+ 138              		.loc 1 58 47
+ 139 002a 0623     		movs	r3, #6
+ 140 002c 3B72     		strb	r3, [r7, #8]
+  59:Src/015_uart_tx.c ****     GPIO_Init(&usart2_pins);
+ 141              		.loc 1 59 5
+ 142 002e 3B1D     		adds	r3, r7, #4
+ 143 0030 1846     		mov	r0, r3
+ 144 0032 FFF7FEFF 		bl	GPIO_Init
+  60:Src/015_uart_tx.c **** 
+  61:Src/015_uart_tx.c **** }
+ 145              		.loc 1 61 1
+ 146 0036 00BF     		nop
+ 147 0038 1037     		adds	r7, r7, #16
+ 148              		.cfi_def_cfa_offset 8
+ 149 003a BD46     		mov	sp, r7
+ 150              		.cfi_def_cfa_register 13
+ 151              		@ sp needed
+ 152 003c 80BD     		pop	{r7, pc}
+ 153              	.L8:
+ 154 003e 00BF     		.align	2
+ 155              	.L7:
+ 156 0040 000C0240 		.word	1073875968
+ 157              		.cfi_endproc
+ 158              	.LFE4:
+ 160              		.section	.text.USART2_Init,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	USART2_Init
+ 163              		.syntax unified
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 5
+
+
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	USART2_Init:
+ 168              	.LFB5:
+  62:Src/015_uart_tx.c **** 
+  63:Src/015_uart_tx.c **** void USART2_Init()
+  64:Src/015_uart_tx.c **** {
+ 169              		.loc 1 64 1
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 1, uses_anonymous_args = 0
+ 173 0000 80B5     		push	{r7, lr}
+ 174              		.cfi_def_cfa_offset 8
+ 175              		.cfi_offset 7, -8
+ 176              		.cfi_offset 14, -4
+ 177 0002 00AF     		add	r7, sp, #0
+ 178              		.cfi_def_cfa_register 7
+  65:Src/015_uart_tx.c ****     usart2_handle.pUSARTx= USART2;
+ 179              		.loc 1 65 26
+ 180 0004 0D4B     		ldr	r3, .L10
+ 181 0006 0E4A     		ldr	r2, .L10+4
+ 182 0008 1A60     		str	r2, [r3]
+  66:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_Baud = USART_STD_BAUD_115200;
+ 183              		.loc 1 66 43
+ 184 000a 0C4B     		ldr	r3, .L10
+ 185 000c 4FF4E132 		mov	r2, #115200
+ 186 0010 9A60     		str	r2, [r3, #8]
+  67:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_HWFlowControl = USART_HW_FLOW_CTRL_NONE;
+ 187              		.loc 1 67 52
+ 188 0012 0A4B     		ldr	r3, .L10
+ 189 0014 0022     		movs	r2, #0
+ 190 0016 DA73     		strb	r2, [r3, #15]
+  68:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_Mode = USART_MODE_ONLY_TX;
+ 191              		.loc 1 68 43
+ 192 0018 084B     		ldr	r3, .L10
+ 193 001a 0022     		movs	r2, #0
+ 194 001c 1A71     		strb	r2, [r3, #4]
+  69:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_NoOfStopBits = USART_STOPBITS_1;
+ 195              		.loc 1 69 51
+ 196 001e 074B     		ldr	r3, .L10
+ 197 0020 0022     		movs	r2, #0
+ 198 0022 1A73     		strb	r2, [r3, #12]
+  70:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_WordLength = USART_WORDLEN_8BITS;
+ 199              		.loc 1 70 49
+ 200 0024 054B     		ldr	r3, .L10
+ 201 0026 0022     		movs	r2, #0
+ 202 0028 5A73     		strb	r2, [r3, #13]
+  71:Src/015_uart_tx.c ****     usart2_handle.USART_Config.USART_ParityControl = USART_PARITY_DISABLE;
+ 203              		.loc 1 71 52
+ 204 002a 044B     		ldr	r3, .L10
+ 205 002c 0022     		movs	r2, #0
+ 206 002e 9A73     		strb	r2, [r3, #14]
+  72:Src/015_uart_tx.c **** 
+  73:Src/015_uart_tx.c ****     USART_Init(&usart2_handle);
+ 207              		.loc 1 73 5
+ 208 0030 0248     		ldr	r0, .L10
+ 209 0032 FFF7FEFF 		bl	USART_Init
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 6
+
+
+  74:Src/015_uart_tx.c **** }
+ 210              		.loc 1 74 1
+ 211 0036 00BF     		nop
+ 212 0038 80BD     		pop	{r7, pc}
+ 213              	.L11:
+ 214 003a 00BF     		.align	2
+ 215              	.L10:
+ 216 003c 00000000 		.word	usart2_handle
+ 217 0040 00440040 		.word	1073759232
+ 218              		.cfi_endproc
+ 219              	.LFE5:
+ 221              		.section	.text.GPIO_ButtonInit,"ax",%progbits
+ 222              		.align	1
+ 223              		.global	GPIO_ButtonInit
+ 224              		.syntax unified
+ 225              		.thumb
+ 226              		.thumb_func
+ 228              	GPIO_ButtonInit:
+ 229              	.LFB6:
+  75:Src/015_uart_tx.c **** 
+  76:Src/015_uart_tx.c **** 
+  77:Src/015_uart_tx.c **** void GPIO_ButtonInit(void)
+  78:Src/015_uart_tx.c **** {
+ 230              		.loc 1 78 1
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 16
+ 233              		@ frame_needed = 1, uses_anonymous_args = 0
+ 234 0000 80B5     		push	{r7, lr}
+ 235              		.cfi_def_cfa_offset 8
+ 236              		.cfi_offset 7, -8
+ 237              		.cfi_offset 14, -4
+ 238 0002 84B0     		sub	sp, sp, #16
+ 239              		.cfi_def_cfa_offset 24
+ 240 0004 00AF     		add	r7, sp, #0
+ 241              		.cfi_def_cfa_register 7
+  79:Src/015_uart_tx.c ****     GPIO_Handle_t GPIOBtn;
+  80:Src/015_uart_tx.c **** 
+  81:Src/015_uart_tx.c ****     GPIOBtn.pGPIOx = GPIOC; // User button is connected to PC13 (Cf. Nucleo User Manual, or check s
+ 242              		.loc 1 81 20
+ 243 0006 094B     		ldr	r3, .L13
+ 244 0008 7B60     		str	r3, [r7, #4]
+  82:Src/015_uart_tx.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+ 245              		.loc 1 82 43
+ 246 000a 0D23     		movs	r3, #13
+ 247 000c 3B72     		strb	r3, [r7, #8]
+  83:Src/015_uart_tx.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+ 248              		.loc 1 83 41
+ 249 000e 0023     		movs	r3, #0
+ 250 0010 7B72     		strb	r3, [r7, #9]
+  84:Src/015_uart_tx.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+ 251              		.loc 1 84 42
+ 252 0012 0023     		movs	r3, #0
+ 253 0014 BB72     		strb	r3, [r7, #10]
+  85:Src/015_uart_tx.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+ 254              		.loc 1 85 48
+ 255 0016 0023     		movs	r3, #0
+ 256 0018 FB72     		strb	r3, [r7, #11]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 7
+
+
+  86:Src/015_uart_tx.c **** 
+  87:Src/015_uart_tx.c ****     GPIO_Init(&GPIOBtn);
+ 257              		.loc 1 87 5
+ 258 001a 3B1D     		adds	r3, r7, #4
+ 259 001c 1846     		mov	r0, r3
+ 260 001e FFF7FEFF 		bl	GPIO_Init
+  88:Src/015_uart_tx.c **** }
+ 261              		.loc 1 88 1
+ 262 0022 00BF     		nop
+ 263 0024 1037     		adds	r7, r7, #16
+ 264              		.cfi_def_cfa_offset 8
+ 265 0026 BD46     		mov	sp, r7
+ 266              		.cfi_def_cfa_register 13
+ 267              		@ sp needed
+ 268 0028 80BD     		pop	{r7, pc}
+ 269              	.L14:
+ 270 002a 00BF     		.align	2
+ 271              	.L13:
+ 272 002c 00080240 		.word	1073874944
+ 273              		.cfi_endproc
+ 274              	.LFE6:
+ 276              		.section	.text.main,"ax",%progbits
+ 277              		.align	1
+ 278              		.global	main
+ 279              		.syntax unified
+ 280              		.thumb
+ 281              		.thumb_func
+ 283              	main:
+ 284              	.LFB7:
+  89:Src/015_uart_tx.c **** 
+  90:Src/015_uart_tx.c **** 
+  91:Src/015_uart_tx.c **** int main(void)
+  92:Src/015_uart_tx.c **** {
+ 285              		.loc 1 92 1
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 1, uses_anonymous_args = 0
+ 289 0000 80B5     		push	{r7, lr}
+ 290              		.cfi_def_cfa_offset 8
+ 291              		.cfi_offset 7, -8
+ 292              		.cfi_offset 14, -4
+ 293 0002 00AF     		add	r7, sp, #0
+ 294              		.cfi_def_cfa_register 7
+  93:Src/015_uart_tx.c **** 
+  94:Src/015_uart_tx.c ****     //SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+  95:Src/015_uart_tx.c **** 
+  96:Src/015_uart_tx.c ****     //printf("Application is running\n");
+  97:Src/015_uart_tx.c **** 
+  98:Src/015_uart_tx.c ****     // GPIO button init
+  99:Src/015_uart_tx.c ****     GPIO_ButtonInit();
+ 295              		.loc 1 99 5
+ 296 0004 FFF7FEFF 		bl	GPIO_ButtonInit
+ 100:Src/015_uart_tx.c **** 
+ 101:Src/015_uart_tx.c ****     // USART pin inits
+ 102:Src/015_uart_tx.c ****     USART2_GPIOInit();
+ 297              		.loc 1 102 5
+ 298 0008 FFF7FEFF 		bl	USART2_GPIOInit
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 8
+
+
+ 103:Src/015_uart_tx.c **** 
+ 104:Src/015_uart_tx.c ****     // USART peripheral configuration
+ 105:Src/015_uart_tx.c ****     USART2_Init();
+ 299              		.loc 1 105 5
+ 300 000c FFF7FEFF 		bl	USART2_Init
+ 106:Src/015_uart_tx.c **** 
+ 107:Src/015_uart_tx.c ****     USART_PeripheralControl(USART2, ENABLE);
+ 301              		.loc 1 107 5
+ 302 0010 0121     		movs	r1, #1
+ 303 0012 0B48     		ldr	r0, .L18
+ 304 0014 FFF7FEFF 		bl	USART_PeripheralControl
+ 305              	.L17:
+ 108:Src/015_uart_tx.c **** 
+ 109:Src/015_uart_tx.c ****     while (1)
+ 110:Src/015_uart_tx.c ****     {
+ 111:Src/015_uart_tx.c ****         // wait for button press
+ 112:Src/015_uart_tx.c ****         while( ! GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) );
+ 306              		.loc 1 112 14
+ 307 0018 00BF     		nop
+ 308              	.L16:
+ 309              		.loc 1 112 18 discriminator 1
+ 310 001a 0D21     		movs	r1, #13
+ 311 001c 0948     		ldr	r0, .L18+4
+ 312 001e FFF7FEFF 		bl	GPIO_ReadFromInputPin
+ 313 0022 0346     		mov	r3, r0
+ 314              		.loc 1 112 16 discriminator 1
+ 315 0024 002B     		cmp	r3, #0
+ 316 0026 F8D0     		beq	.L16
+ 113:Src/015_uart_tx.c **** 
+ 114:Src/015_uart_tx.c ****         delay();
+ 317              		.loc 1 114 9
+ 318 0028 FFF7FEFF 		bl	delay
+ 115:Src/015_uart_tx.c **** 
+ 116:Src/015_uart_tx.c ****         // send some data to the slave
+ 117:Src/015_uart_tx.c ****         USART_SendData(&usart2_handle, (uint8_t *)msg, strlen((char *)msg));
+ 319              		.loc 1 117 56
+ 320 002c 0648     		ldr	r0, .L18+8
+ 321 002e FFF7FEFF 		bl	strlen
+ 322 0032 0346     		mov	r3, r0
+ 323              		.loc 1 117 9
+ 324 0034 1A46     		mov	r2, r3
+ 325 0036 0449     		ldr	r1, .L18+8
+ 326 0038 0448     		ldr	r0, .L18+12
+ 327 003a FFF7FEFF 		bl	USART_SendData
+ 112:Src/015_uart_tx.c **** 
+ 328              		.loc 1 112 14
+ 329 003e EBE7     		b	.L17
+ 330              	.L19:
+ 331              		.align	2
+ 332              	.L18:
+ 333 0040 00440040 		.word	1073759232
+ 334 0044 00080240 		.word	1073874944
+ 335 0048 00000000 		.word	msg
+ 336 004c 00000000 		.word	usart2_handle
+ 337              		.cfi_endproc
+ 338              	.LFE7:
+ 340              		.text
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 9
+
+
+ 341              	.Letext0:
+ 342              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 343              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 344              		.file 4 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 345              		.file 5 "drivers/Inc/stm32f767xx.h"
+ 346              		.file 6 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ 347              		.file 7 "drivers/Inc/stm32f767xx_usart_driver.h"
+ 348              		.file 8 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 015_uart_tx.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:19     .text.delay:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:25     .text.delay:0000000000000000 delay
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:73     .text.delay:0000000000000028 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:82     .bss.usart2_handle:0000000000000000 usart2_handle
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:79     .bss.usart2_handle:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:89     .data.msg:0000000000000000 msg
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:86     .data.msg:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:93     .text.USART2_GPIOInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:99     .text.USART2_GPIOInit:0000000000000000 USART2_GPIOInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:156    .text.USART2_GPIOInit:0000000000000040 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:161    .text.USART2_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:167    .text.USART2_Init:0000000000000000 USART2_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:216    .text.USART2_Init:000000000000003c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:222    .text.GPIO_ButtonInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:228    .text.GPIO_ButtonInit:0000000000000000 GPIO_ButtonInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:272    .text.GPIO_ButtonInit:000000000000002c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:277    .text.main:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:283    .text.main:0000000000000000 main
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccGcV758.s:333    .text.main:0000000000000040 $d
+
+UNDEFINED SYMBOLS
+GPIO_Init
+USART_Init
+USART_PeripheralControl
+GPIO_ReadFromInputPin
+strlen
+USART_SendData

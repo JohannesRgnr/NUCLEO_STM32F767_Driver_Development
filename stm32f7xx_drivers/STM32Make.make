@@ -36,13 +36,15 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Src/013_i2c_slave_tx_string.c \
+Src/015_uart_tx.c \
 Src/SEGGER_RTT.c \
 Src/SEGGER_RTT_Syscalls_GCC.c \
 Src/SEGGER_RTT_printf.c \
 drivers/Src/stm32f767xx_gpio_driver.c \
 drivers/Src/stm32f767xx_i2c_driver.c \
-drivers/Src/stm32f767xx_spi_driver.c
+drivers/Src/stm32f767xx_rcc_driver.c \
+drivers/Src/stm32f767xx_spi_driver.c \
+drivers/Src/stm32f767xx_usart_driver.c
 
 
 CPP_SOURCES = \
