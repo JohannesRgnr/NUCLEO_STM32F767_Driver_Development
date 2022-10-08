@@ -1,7 +1,7 @@
 # STM32F767 Driver development
 
 
-Driver code examples for STM32F7, implementing the examples found in the online course
+Driver code examples for STM32F767, implementing the examples found in the online course
 **Mastering Microcontroller and Embedded Driver Development (MCU1)** (examples originally for STM32F4)
 
 <https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/>
