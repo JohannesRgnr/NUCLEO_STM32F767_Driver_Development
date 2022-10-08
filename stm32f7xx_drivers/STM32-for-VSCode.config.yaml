@@ -93,7 +93,8 @@ sourceFiles:
 # - Src/012_i2c_master_rx_testing_it.c
 # - Src/013_i2c_slave_tx_string.c
 # - Src/014_i2c_slave_tx_string2.c
-  - Src/015_uart_tx.c
+# - Src/015_uart_tx.c
+  - Src/016_uart_case.c
   - drivers/Src/**
   - Src/SEGGER_RTT.c
   - Src/SEGGER_RTT_printf.c

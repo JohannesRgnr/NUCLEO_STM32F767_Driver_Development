@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
   30              		@ args = 0, pretend = 0, frame = 8
   31              		@ frame_needed = 1, uses_anonymous_args = 0
   32              		@ link register save eliminated.
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 2
 
 
   33 0000 80B4     		push	{r7}
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
   56:drivers/Src/stm32f767xx_usart_driver.c ****     {
   57:drivers/Src/stm32f767xx_usart_driver.c ****         if(pUSARTx == USART1)
   58:drivers/Src/stm32f767xx_usart_driver.c **** 		{
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 3
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 3
 
 
   59:drivers/Src/stm32f767xx_usart_driver.c **** 			USART1_PCLK_DI();
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
   83 004a 4D4A     		ldr	r2, .L19+4
   84 004c 43F48023 		orr	r3, r3, #262144
   85 0050 1364     		str	r3, [r2, #64]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 4
 
 
   86              		.loc 1 83 1
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  133 0098 3F4A     		ldr	r2, .L19+28
  134 009a 9342     		cmp	r3, r2
  135 009c 06D1     		bne	.L10
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 5
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 5
 
 
   49:drivers/Src/stm32f767xx_usart_driver.c **** 		}else if (pUSARTx == UART8)
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  183 00ea 1364     		str	r3, [r2, #64]
  184              		.loc 1 83 1
  185 00ec 40E0     		b	.L18
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 6
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 6
 
 
  186              	.L12:
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  233 0136 06D1     		bne	.L16
   74:drivers/Src/stm32f767xx_usart_driver.c **** 		}else if (pUSARTx == UART7)
  234              		.loc 1 74 4
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 7
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 7
 
 
  235 0138 114B     		ldr	r3, .L19+4
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  285 0184 00440040 		.word	1073759232
  286 0188 00480040 		.word	1073760256
  287 018c 004C0040 		.word	1073761280
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 8
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 8
 
 
  288 0190 00500040 		.word	1073762304
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  325 0014 03D0     		beq	.L22
  326              		.loc 1 102 26 discriminator 1
  327 0016 7B68     		ldr	r3, [r7, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 9
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 9
 
 
  328 0018 1C4A     		ldr	r2, .L27+4
@@ -516,7 +516,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  349 0036 18D0     		beq	.L25
  114:drivers/Src/stm32f767xx_usart_driver.c ****     {
  115:drivers/Src/stm32f767xx_usart_driver.c ****         //OVER8 = 1 , over sampling by 8
- 116:drivers/Src/stm32f767xx_usart_driver.c ****         usartdiv = (((PCLKx * 2) + (BaudRate / 2)) / BaudRate);     // Rounded
+ 116:drivers/Src/stm32f767xx_usart_driver.c ****         usartdiv = (((PCLKx * 2) + (BaudRate / 2)) / BaudRate);     // Rounded up.
  350              		.loc 1 116 29
  351 0038 7B69     		ldr	r3, [r7, #20]
  352 003a 5A00     		lsls	r2, r3, #1
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  366              		.loc 1 118 17
  367 0050 4FF6F073 		movw	r3, #65520
  368 0054 1340     		ands	r3, r3, r2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 10
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 10
 
 
  369 0056 3B61     		str	r3, [r7, #16]
@@ -559,7 +559,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  121:drivers/Src/stm32f767xx_usart_driver.c ****     else
  122:drivers/Src/stm32f767xx_usart_driver.c ****     {
  123:drivers/Src/stm32f767xx_usart_driver.c ****         //over sampling by 16
- 124:drivers/Src/stm32f767xx_usart_driver.c ****         tempreg = ((PCLKx + (BaudRate / 2)) / BaudRate); // BRR = USARTDIV. Rounded.
+ 124:drivers/Src/stm32f767xx_usart_driver.c ****         tempreg = ((PCLKx + (BaudRate / 2)) / BaudRate); // BRR = USARTDIV. Rounded up.
  382              		.loc 1 124 39
  383 006a 3B68     		ldr	r3, [r7]
  384 006c 5A08     		lsrs	r2, r3, #1
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  413              		.section	.text.USART_Init,"ax",%progbits
  414              		.align	1
  415              		.global	USART_Init
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 11
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 11
 
 
  416              		.syntax unified
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  151:drivers/Src/stm32f767xx_usart_driver.c **** 	{
  152:drivers/Src/stm32f767xx_usart_driver.c **** 		// enable Receiver bit field 
  153:drivers/Src/stm32f767xx_usart_driver.c **** 		tempreg|= (1 << USART_CR1_RE);
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 12
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 12
 
 
  450              		.loc 1 153 10
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  169:drivers/Src/stm32f767xx_usart_driver.c ****     //Configuration of parity control bit fields
  170:drivers/Src/stm32f767xx_usart_driver.c **** 	if ( pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_EN_EVEN)
  489              		.loc 1 170 33
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 13
 
 
  490 005a 7B68     		ldr	r3, [r7, #4]
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  523 008c 0023     		movs	r3, #0
  524 008e FB60     		str	r3, [r7, #12]
  192:drivers/Src/stm32f767xx_usart_driver.c **** 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 14
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 14
 
 
  193:drivers/Src/stm32f767xx_usart_driver.c **** 	// configure the number of stop bits inserted during USART frame transmission 
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  210:drivers/Src/stm32f767xx_usart_driver.c **** 	{
  211:drivers/Src/stm32f767xx_usart_driver.c **** 		// enable RTS flow control 
  212:drivers/Src/stm32f767xx_usart_driver.c **** 		tempreg |= ( 1 << USART_CR3_RTSE);
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 15
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 15
 
 
  562              		.loc 1 212 11
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  601              		.cfi_endproc
  602              	.LFE2:
  604              		.section	.text.USART_DeInit,"ax",%progbits
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 16
 
 
  605              		.align	1
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  241:drivers/Src/stm32f767xx_usart_driver.c ****  * @brief USART Peripheral Enable / Disable
  242:drivers/Src/stm32f767xx_usart_driver.c ****  * 
  243:drivers/Src/stm32f767xx_usart_driver.c ****  * @param pUSARTx 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 17
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 17
 
 
  244:drivers/Src/stm32f767xx_usart_driver.c ****  * @param EnOrDi 
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  690              		@ sp needed
  691 0032 5DF8047B 		ldr	r7, [sp], #4
  692              		.cfi_restore 7
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 18
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 18
 
 
  693              		.cfi_def_cfa_offset 0
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  271:drivers/Src/stm32f767xx_usart_driver.c ****     return FLAG_RESET;    
  734              		.loc 1 271 12
  735 001a 0023     		movs	r3, #0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 19
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 19
 
 
  736              	.L45:
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  779 0010 BD46     		mov	sp, r7
  780              		.cfi_def_cfa_register 13
  781              		@ sp needed
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 20
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 20
 
 
  782 0012 5DF8047B 		ldr	r7, [sp], #4
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  303:drivers/Src/stm32f767xx_usart_driver.c **** 		while(! USART_GetFlagStatus(pUSARTHandle->pUSARTx,USART_FLAG_TXE));
  820              		.loc 1 303 8
  821 0012 00BF     		nop
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 21
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 21
 
 
  822              	.L49:
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  862 004c 0133     		adds	r3, r3, #1
  863 004e BB60     		str	r3, [r7, #8]
  318:drivers/Src/stm32f767xx_usart_driver.c **** 				pTxBuffer++;
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 22
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 22
 
 
  864              		.loc 1 318 14
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  335:drivers/Src/stm32f767xx_usart_driver.c **** 	}
  336:drivers/Src/stm32f767xx_usart_driver.c **** 
  337:drivers/Src/stm32f767xx_usart_driver.c **** 	//wait until TC flag is set in the ISR
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 23
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 23
 
 
  338:drivers/Src/stm32f767xx_usart_driver.c **** 	while( ! USART_GetFlagStatus(pUSARTHandle->pUSARTx,USART_FLAG_TC));
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  943              		.cfi_def_cfa_offset 32
  944 0004 00AF     		add	r7, sp, #0
  945              		.cfi_def_cfa_register 7
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 24
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 24
 
 
  946 0006 F860     		str	r0, [r7, #12]
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  982 0036 FB68     		ldr	r3, [r7, #12]
  983 0038 1B68     		ldr	r3, [r3]
  984              		.loc 1 368 54
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 25
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 25
 
 
  985 003a 5B6A     		ldr	r3, [r3, #36]
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1019 006a FB68     		ldr	r3, [r7, #12]
  1020 006c 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
  1021              		.loc 1 388 6
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 26
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 26
 
 
  1022 006e 002B     		cmp	r3, #0
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1057 009c 7B61     		str	r3, [r7, #20]
  1058              	.L56:
  352:drivers/Src/stm32f767xx_usart_driver.c **** 	{
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 27
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 27
 
 
  1059              		.loc 1 352 25 discriminator 1
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1100 000a FB71     		strb	r3, [r7, #7]
  1101 000c 1346     		mov	r3, r2
  1102 000e BB71     		strb	r3, [r7, #6]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 28
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 28
 
 
  422:drivers/Src/stm32f767xx_usart_driver.c ****     if(EnorDi == ENABLE)
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  456:drivers/Src/stm32f767xx_usart_driver.c **** 			
  457:drivers/Src/stm32f767xx_usart_driver.c **** 		}else if(IRQNumber >= 64 && IRQNumber < 96 )
  458:drivers/Src/stm32f767xx_usart_driver.c **** 		{
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 29
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 29
 
 
  459:drivers/Src/stm32f767xx_usart_driver.c **** 			//program ICER2 register
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  437:drivers/Src/stm32f767xx_usart_driver.c **** 			
  1158              		.loc 1 437 16
  1159 0064 404B     		ldr	r3, .L75+8
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 30
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 30
 
 
  1160 0066 1B68     		ldr	r3, [r3]
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1204 00b0 1360     		str	r3, [r2]
  1205              		.loc 1 469 1
  1206 00b2 4EE0     		b	.L74
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 31
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 31
 
 
  1207              	.L65:
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  457:drivers/Src/stm32f767xx_usart_driver.c **** 		{
  1251              		.loc 1 457 11
  1252 00f6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 32
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 32
 
 
  1253 00f8 3F2B     		cmp	r3, #63
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1297 0142 DBB2     		uxtb	r3, r3
  1298 0144 1A46     		mov	r2, r3
  465:drivers/Src/stm32f767xx_usart_driver.c **** 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 33
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 33
 
 
  1299              		.loc 1 465 22
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1344              		.loc 1 479 1
  1345              		.cfi_startproc
  1346              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 34
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 34
 
 
  1347              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1391              		.loc 1 489 1
  1392 0040 00BF     		nop
  1393 0042 1437     		adds	r7, r7, #20
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 35
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 35
 
 
  1394              		.cfi_def_cfa_offset 4
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1436 0012 FB75     		strb	r3, [r7, #23]
  504:drivers/Src/stm32f767xx_usart_driver.c **** 
  505:drivers/Src/stm32f767xx_usart_driver.c **** 	if(txstate != USART_BUSY_IN_TX)
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 36
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 36
 
 
  1437              		.loc 1 505 4
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1476              		.loc 1 520 9
  1477 004e FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
  521:drivers/Src/stm32f767xx_usart_driver.c **** 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 37
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 37
 
 
  522:drivers/Src/stm32f767xx_usart_driver.c **** }
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  536:drivers/Src/stm32f767xx_usart_driver.c **** 
  537:drivers/Src/stm32f767xx_usart_driver.c **** 	if(rxstate != USART_BUSY_IN_RX)
  1520              		.loc 1 537 4
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 38
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 38
 
 
  1521 0014 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
@@ -2276,104 +2276,1046 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 1
  1560 004a 7047     		bx	lr
  1561              		.cfi_endproc
  1562              	.LFE12:
- 1564              		.section	.text.USART_ApplicationEventCallback,"ax",%progbits
+ 1564              		.section	.text.USART_IRQHandling,"ax",%progbits
  1565              		.align	1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 39
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 39
 
 
- 1566              		.weak	USART_ApplicationEventCallback
+ 1566              		.global	USART_IRQHandling
  1567              		.syntax unified
  1568              		.thumb
  1569              		.thumb_func
- 1571              	USART_ApplicationEventCallback:
+ 1571              	USART_IRQHandling:
  1572              	.LFB13:
  551:drivers/Src/stm32f767xx_usart_driver.c **** 
  552:drivers/Src/stm32f767xx_usart_driver.c **** 
- 553:drivers/Src/stm32f767xx_usart_driver.c **** 
- 554:drivers/Src/stm32f767xx_usart_driver.c **** 
- 555:drivers/Src/stm32f767xx_usart_driver.c **** /**
- 556:drivers/Src/stm32f767xx_usart_driver.c ****  * @brief USART Application Event Callback
- 557:drivers/Src/stm32f767xx_usart_driver.c ****  * 
- 558:drivers/Src/stm32f767xx_usart_driver.c ****  * @param pUSARTHandle 
- 559:drivers/Src/stm32f767xx_usart_driver.c ****  * @param AppEv 
- 560:drivers/Src/stm32f767xx_usart_driver.c ****  * @note __weak 
- 561:drivers/Src/stm32f767xx_usart_driver.c ****  */
- 562:drivers/Src/stm32f767xx_usart_driver.c **** __weak void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv)
- 563:drivers/Src/stm32f767xx_usart_driver.c **** {
- 1573              		.loc 1 563 1
+ 553:drivers/Src/stm32f767xx_usart_driver.c **** /**
+ 554:drivers/Src/stm32f767xx_usart_driver.c ****  * @brief USART IRQ Handling
+ 555:drivers/Src/stm32f767xx_usart_driver.c ****  * 
+ 556:drivers/Src/stm32f767xx_usart_driver.c ****  * @param pUSARTHandle 
+ 557:drivers/Src/stm32f767xx_usart_driver.c ****  */
+ 558:drivers/Src/stm32f767xx_usart_driver.c **** void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
+ 559:drivers/Src/stm32f767xx_usart_driver.c **** {
+ 1573              		.loc 1 559 1
  1574              		.cfi_startproc
- 1575              		@ args = 0, pretend = 0, frame = 8
+ 1575              		@ args = 0, pretend = 0, frame = 24
  1576              		@ frame_needed = 1, uses_anonymous_args = 0
- 1577              		@ link register save eliminated.
- 1578 0000 80B4     		push	{r7}
- 1579              		.cfi_def_cfa_offset 4
- 1580              		.cfi_offset 7, -4
- 1581 0002 83B0     		sub	sp, sp, #12
- 1582              		.cfi_def_cfa_offset 16
+ 1577 0000 80B5     		push	{r7, lr}
+ 1578              		.cfi_def_cfa_offset 8
+ 1579              		.cfi_offset 7, -8
+ 1580              		.cfi_offset 14, -4
+ 1581 0002 86B0     		sub	sp, sp, #24
+ 1582              		.cfi_def_cfa_offset 32
  1583 0004 00AF     		add	r7, sp, #0
  1584              		.cfi_def_cfa_register 7
  1585 0006 7860     		str	r0, [r7, #4]
- 1586 0008 0B46     		mov	r3, r1
- 1587 000a FB70     		strb	r3, [r7, #3]
- 564:drivers/Src/stm32f767xx_usart_driver.c ****     // weak implementation --- the application may override this function
- 565:drivers/Src/stm32f767xx_usart_driver.c **** }
- 1588              		.loc 1 565 1
- 1589 000c 00BF     		nop
- 1590 000e 0C37     		adds	r7, r7, #12
- 1591              		.cfi_def_cfa_offset 4
- 1592 0010 BD46     		mov	sp, r7
- 1593              		.cfi_def_cfa_register 13
- 1594              		@ sp needed
- 1595 0012 5DF8047B 		ldr	r7, [sp], #4
- 1596              		.cfi_restore 7
- 1597              		.cfi_def_cfa_offset 0
- 1598 0016 7047     		bx	lr
- 1599              		.cfi_endproc
- 1600              	.LFE13:
- 1602              		.text
- 1603              	.Letext0:
- 1604              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
- 1605              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
- 1606              		.file 4 "drivers/Inc/stm32f767xx.h"
- 1607              		.file 5 "drivers/Inc/stm32f767xx_usart_driver.h"
- 1608              		.file 6 "drivers/Inc/stm32f767xx_rcc_driver.h"
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s 			page 40
+ 560:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 561:drivers/Src/stm32f767xx_usart_driver.c **** 	uint32_t temp1 , temp2;
+ 562:drivers/Src/stm32f767xx_usart_driver.c **** 	uint16_t *pdata;
+ 563:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 564:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for TC flag ********************************************/
+ 565:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 566:drivers/Src/stm32f767xx_usart_driver.c ****     //check the state of TC bit in the SR
+ 567:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & ( 1 << USART_ISR_TC);
+ 1586              		.loc 1 567 22
+ 1587 0008 7B68     		ldr	r3, [r7, #4]
+ 1588 000a 1B68     		ldr	r3, [r3]
+ 1589              		.loc 1 567 31
+ 1590 000c DB69     		ldr	r3, [r3, #28]
+ 1591              		.loc 1 567 8
+ 1592 000e 03F04003 		and	r3, r3, #64
+ 1593 0012 7B61     		str	r3, [r7, #20]
+ 568:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 569:drivers/Src/stm32f767xx_usart_driver.c **** 	 //check the state of TCEIE bit 
+ 570:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR1 & ( 1 << USART_CR1_TCIE);
+ 1594              		.loc 1 570 22
+ 1595 0014 7B68     		ldr	r3, [r7, #4]
+ 1596 0016 1B68     		ldr	r3, [r3]
+ 1597              		.loc 1 570 31
+ 1598 0018 1B68     		ldr	r3, [r3]
+ 1599              		.loc 1 570 8
+ 1600 001a 03F04003 		and	r3, r3, #64
+ 1601 001e 3B61     		str	r3, [r7, #16]
+ 571:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 572:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1 && temp2 )
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 40
+
+
+ 1602              		.loc 1 572 4
+ 1603 0020 7B69     		ldr	r3, [r7, #20]
+ 1604 0022 002B     		cmp	r3, #0
+ 1605 0024 21D0     		beq	.L87
+ 1606              		.loc 1 572 11 discriminator 1
+ 1607 0026 3B69     		ldr	r3, [r7, #16]
+ 1608 0028 002B     		cmp	r3, #0
+ 1609 002a 1ED0     		beq	.L87
+ 573:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 574:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of TC
+ 575:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ 576:drivers/Src/stm32f767xx_usart_driver.c **** 		//close transmission and call application callback if TxLen is zero
+ 577:drivers/Src/stm32f767xx_usart_driver.c **** 		if ( pUSARTHandle->TxBusyState == USART_BUSY_IN_TX)
+ 1610              		.loc 1 577 20
+ 1611 002c 7B68     		ldr	r3, [r7, #4]
+ 1612 002e 93F82030 		ldrb	r3, [r3, #32]	@ zero_extendqisi2
+ 1613              		.loc 1 577 6
+ 1614 0032 022B     		cmp	r3, #2
+ 1615 0034 19D1     		bne	.L87
+ 578:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 579:drivers/Src/stm32f767xx_usart_driver.c **** 			//Check the TxLen . If it is zero then close the data transmission
+ 580:drivers/Src/stm32f767xx_usart_driver.c **** 			if(! pUSARTHandle->TxLen)
+ 1616              		.loc 1 580 21
+ 1617 0036 7B68     		ldr	r3, [r7, #4]
+ 1618 0038 9B69     		ldr	r3, [r3, #24]
+ 1619              		.loc 1 580 6
+ 1620 003a 002B     		cmp	r3, #0
+ 1621 003c 15D1     		bne	.L87
+ 581:drivers/Src/stm32f767xx_usart_driver.c **** 			{
+ 582:drivers/Src/stm32f767xx_usart_driver.c **** 				//clear the TC flag
+ 583:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->pUSARTx->ICR |= ( 1 << USART_ICR_TCCF);
+ 1622              		.loc 1 583 17
+ 1623 003e 7B68     		ldr	r3, [r7, #4]
+ 1624 0040 1B68     		ldr	r3, [r3]
+ 1625              		.loc 1 583 32
+ 1626 0042 1A6A     		ldr	r2, [r3, #32]
+ 1627              		.loc 1 583 17
+ 1628 0044 7B68     		ldr	r3, [r7, #4]
+ 1629 0046 1B68     		ldr	r3, [r3]
+ 1630              		.loc 1 583 32
+ 1631 0048 42F04002 		orr	r2, r2, #64
+ 1632 004c 1A62     		str	r2, [r3, #32]
+ 584:drivers/Src/stm32f767xx_usart_driver.c **** 				
+ 585:drivers/Src/stm32f767xx_usart_driver.c **** 				//Implement the code to clear the TCIE control bit 
+ 586:drivers/Src/stm32f767xx_usart_driver.c **** 				
+ 587:drivers/Src/stm32f767xx_usart_driver.c **** 				//Reset the application state
+ 588:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->TxBusyState = USART_READY;
+ 1633              		.loc 1 588 31
+ 1634 004e 7B68     		ldr	r3, [r7, #4]
+ 1635 0050 0022     		movs	r2, #0
+ 1636 0052 83F82020 		strb	r2, [r3, #32]
+ 589:drivers/Src/stm32f767xx_usart_driver.c **** 				
+ 590:drivers/Src/stm32f767xx_usart_driver.c **** 				//Reset Buffer address to NULL
+ 591:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->pTxBuffer = NULL;
+ 1637              		.loc 1 591 29
+ 1638 0056 7B68     		ldr	r3, [r7, #4]
+ 1639 0058 0022     		movs	r2, #0
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 41
+
+
+ 1640 005a 1A61     		str	r2, [r3, #16]
+ 592:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 593:drivers/Src/stm32f767xx_usart_driver.c **** 				//Reset the length to zero
+ 594:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->TxLen = 0;
+ 1641              		.loc 1 594 25
+ 1642 005c 7B68     		ldr	r3, [r7, #4]
+ 1643 005e 0022     		movs	r2, #0
+ 1644 0060 9A61     		str	r2, [r3, #24]
+ 595:drivers/Src/stm32f767xx_usart_driver.c **** 				
+ 596:drivers/Src/stm32f767xx_usart_driver.c **** 				//Call the applicaton call back with event USART_EVENT_TX_CMPLT
+ 597:drivers/Src/stm32f767xx_usart_driver.c **** 				USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_TX_CMPLT);
+ 1645              		.loc 1 597 5
+ 1646 0062 0021     		movs	r1, #0
+ 1647 0064 7868     		ldr	r0, [r7, #4]
+ 1648 0066 FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 1649              	.L87:
+ 598:drivers/Src/stm32f767xx_usart_driver.c **** 			}
+ 599:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 600:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 601:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 602:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for TXE flag ********************************************/
+ 603:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 604:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the state of TXE bit in the SR
+ 605:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & ( 1 << USART_ISR_TXE);
+ 1650              		.loc 1 605 22
+ 1651 006a 7B68     		ldr	r3, [r7, #4]
+ 1652 006c 1B68     		ldr	r3, [r3]
+ 1653              		.loc 1 605 31
+ 1654 006e DB69     		ldr	r3, [r3, #28]
+ 1655              		.loc 1 605 8
+ 1656 0070 03F08003 		and	r3, r3, #128
+ 1657 0074 7B61     		str	r3, [r7, #20]
+ 606:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 607:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the state of TXEIE bit in CR1
+ 608:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR1 & ( 1 << USART_CR1_TXEIE);
+ 1658              		.loc 1 608 22
+ 1659 0076 7B68     		ldr	r3, [r7, #4]
+ 1660 0078 1B68     		ldr	r3, [r3]
+ 1661              		.loc 1 608 31
+ 1662 007a 1B68     		ldr	r3, [r3]
+ 1663              		.loc 1 608 8
+ 1664 007c 03F08003 		and	r3, r3, #128
+ 1665 0080 3B61     		str	r3, [r7, #16]
+ 609:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 610:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 611:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1 && temp2 )
+ 1666              		.loc 1 611 4
+ 1667 0082 7B69     		ldr	r3, [r7, #20]
+ 1668 0084 002B     		cmp	r3, #0
+ 1669 0086 55D0     		beq	.L88
+ 1670              		.loc 1 611 11 discriminator 1
+ 1671 0088 3B69     		ldr	r3, [r7, #16]
+ 1672 008a 002B     		cmp	r3, #0
+ 1673 008c 52D0     		beq	.L88
+ 612:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 613:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of TXE
+ 614:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 42
+
+
+ 615:drivers/Src/stm32f767xx_usart_driver.c **** 		if(pUSARTHandle->TxBusyState == USART_BUSY_IN_TX)
+ 1674              		.loc 1 615 18
+ 1675 008e 7B68     		ldr	r3, [r7, #4]
+ 1676 0090 93F82030 		ldrb	r3, [r3, #32]	@ zero_extendqisi2
+ 1677              		.loc 1 615 5
+ 1678 0094 022B     		cmp	r3, #2
+ 1679 0096 4DD1     		bne	.L88
+ 616:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 617:drivers/Src/stm32f767xx_usart_driver.c **** 			//Keep sending data until Txlen reaches to zero
+ 618:drivers/Src/stm32f767xx_usart_driver.c **** 			if(pUSARTHandle->TxLen > 0)
+ 1680              		.loc 1 618 19
+ 1681 0098 7B68     		ldr	r3, [r7, #4]
+ 1682 009a 9B69     		ldr	r3, [r3, #24]
+ 1683              		.loc 1 618 6
+ 1684 009c 002B     		cmp	r3, #0
+ 1685 009e 3DD0     		beq	.L89
+ 619:drivers/Src/stm32f767xx_usart_driver.c **** 			{
+ 620:drivers/Src/stm32f767xx_usart_driver.c **** 				//Check the USART_WordLength item for 9BIT or 8BIT in a frame
+ 621:drivers/Src/stm32f767xx_usart_driver.c **** 				if(pUSARTHandle->USART_Config.USART_WordLength == USART_WORDLEN_9BITS)
+ 1686              		.loc 1 621 34
+ 1687 00a0 7B68     		ldr	r3, [r7, #4]
+ 1688 00a2 5B7B     		ldrb	r3, [r3, #13]	@ zero_extendqisi2
+ 1689              		.loc 1 621 7
+ 1690 00a4 012B     		cmp	r3, #1
+ 1691 00a6 29D1     		bne	.L90
+ 622:drivers/Src/stm32f767xx_usart_driver.c **** 				{
+ 623:drivers/Src/stm32f767xx_usart_driver.c **** 					//if 9BIT , load the DR with 2bytes masking the bits other than first 9 bits
+ 624:drivers/Src/stm32f767xx_usart_driver.c **** 					pdata = (uint16_t*) pUSARTHandle->pTxBuffer;
+ 1692              		.loc 1 624 12
+ 1693 00a8 7B68     		ldr	r3, [r7, #4]
+ 1694 00aa 1B69     		ldr	r3, [r3, #16]
+ 1695 00ac FB60     		str	r3, [r7, #12]
+ 625:drivers/Src/stm32f767xx_usart_driver.c **** 					
+ 626:drivers/Src/stm32f767xx_usart_driver.c **** 					//loading only first 9 bits , so we have to mask with the value 0x01FF
+ 627:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->pUSARTx->TDR = (*pdata & (uint16_t)0x01FF);
+ 1696              		.loc 1 627 36
+ 1697 00ae FB68     		ldr	r3, [r7, #12]
+ 1698 00b0 1B88     		ldrh	r3, [r3]
+ 1699              		.loc 1 627 43
+ 1700 00b2 1A46     		mov	r2, r3
+ 1701              		.loc 1 627 18
+ 1702 00b4 7B68     		ldr	r3, [r7, #4]
+ 1703 00b6 1B68     		ldr	r3, [r3]
+ 1704              		.loc 1 627 43
+ 1705 00b8 C2F30802 		ubfx	r2, r2, #0, #9
+ 1706              		.loc 1 627 33
+ 1707 00bc 9A62     		str	r2, [r3, #40]
+ 628:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 629:drivers/Src/stm32f767xx_usart_driver.c **** 					//check for USART_ParityControl
+ 630:drivers/Src/stm32f767xx_usart_driver.c **** 					if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+ 1708              		.loc 1 630 35
+ 1709 00be 7B68     		ldr	r3, [r7, #4]
+ 1710 00c0 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
+ 1711              		.loc 1 630 8
+ 1712 00c2 002B     		cmp	r3, #0
+ 1713 00c4 0FD1     		bne	.L91
+ 631:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 43
+
+
+ 632:drivers/Src/stm32f767xx_usart_driver.c **** 						//No parity is used in this transfer , so, 9bits of user data will be sent
+ 633:drivers/Src/stm32f767xx_usart_driver.c **** 						//increment pTxBuffer twice
+ 634:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->pTxBuffer++;
+ 1714              		.loc 1 634 19
+ 1715 00c6 7B68     		ldr	r3, [r7, #4]
+ 1716 00c8 1B69     		ldr	r3, [r3, #16]
+ 1717              		.loc 1 634 30
+ 1718 00ca 5A1C     		adds	r2, r3, #1
+ 1719 00cc 7B68     		ldr	r3, [r7, #4]
+ 1720 00ce 1A61     		str	r2, [r3, #16]
+ 635:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->pTxBuffer++;
+ 1721              		.loc 1 635 19
+ 1722 00d0 7B68     		ldr	r3, [r7, #4]
+ 1723 00d2 1B69     		ldr	r3, [r3, #16]
+ 1724              		.loc 1 635 30
+ 1725 00d4 5A1C     		adds	r2, r3, #1
+ 1726 00d6 7B68     		ldr	r3, [r7, #4]
+ 1727 00d8 1A61     		str	r2, [r3, #16]
+ 636:drivers/Src/stm32f767xx_usart_driver.c **** 						
+ 637:drivers/Src/stm32f767xx_usart_driver.c **** 						//decrement the length
+ 638:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->TxLen-=2;
+ 1728              		.loc 1 638 26
+ 1729 00da 7B68     		ldr	r3, [r7, #4]
+ 1730 00dc 9B69     		ldr	r3, [r3, #24]
+ 1731 00de 9A1E     		subs	r2, r3, #2
+ 1732 00e0 7B68     		ldr	r3, [r7, #4]
+ 1733 00e2 9A61     		str	r2, [r3, #24]
+ 1734 00e4 1AE0     		b	.L89
+ 1735              	.L91:
+ 639:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 640:drivers/Src/stm32f767xx_usart_driver.c **** 					else
+ 641:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ 642:drivers/Src/stm32f767xx_usart_driver.c **** 						//Parity bit is used in this transfer . so , 8bits of user data will be sent
+ 643:drivers/Src/stm32f767xx_usart_driver.c **** 						//The 9th bit will be replaced by parity bit by the hardware
+ 644:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->pTxBuffer++;
+ 1736              		.loc 1 644 19
+ 1737 00e6 7B68     		ldr	r3, [r7, #4]
+ 1738 00e8 1B69     		ldr	r3, [r3, #16]
+ 1739              		.loc 1 644 30
+ 1740 00ea 5A1C     		adds	r2, r3, #1
+ 1741 00ec 7B68     		ldr	r3, [r7, #4]
+ 1742 00ee 1A61     		str	r2, [r3, #16]
+ 645:drivers/Src/stm32f767xx_usart_driver.c **** 						
+ 646:drivers/Src/stm32f767xx_usart_driver.c **** 						//decrement the length
+ 647:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->TxLen-=1;
+ 1743              		.loc 1 647 26
+ 1744 00f0 7B68     		ldr	r3, [r7, #4]
+ 1745 00f2 9B69     		ldr	r3, [r3, #24]
+ 1746 00f4 5A1E     		subs	r2, r3, #1
+ 1747 00f6 7B68     		ldr	r3, [r7, #4]
+ 1748 00f8 9A61     		str	r2, [r3, #24]
+ 1749 00fa 0FE0     		b	.L89
+ 1750              	.L90:
+ 648:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 649:drivers/Src/stm32f767xx_usart_driver.c **** 				}
+ 650:drivers/Src/stm32f767xx_usart_driver.c **** 				else
+ 651:drivers/Src/stm32f767xx_usart_driver.c **** 				{
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 44
+
+
+ 652:drivers/Src/stm32f767xx_usart_driver.c **** 					//This is 8bit data transfer
+ 653:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->pUSARTx->TDR = (*pUSARTHandle->pTxBuffer  & (uint8_t)0xFF);
+ 1751              		.loc 1 653 49
+ 1752 00fc 7B68     		ldr	r3, [r7, #4]
+ 1753 00fe 1B69     		ldr	r3, [r3, #16]
+ 1754              		.loc 1 653 36
+ 1755 0100 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1756              		.loc 1 653 18
+ 1757 0102 7B68     		ldr	r3, [r7, #4]
+ 1758 0104 1B68     		ldr	r3, [r3]
+ 1759              		.loc 1 653 33
+ 1760 0106 9A62     		str	r2, [r3, #40]
+ 654:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 655:drivers/Src/stm32f767xx_usart_driver.c **** 					//increment the buffer address
+ 656:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->pTxBuffer++;
+ 1761              		.loc 1 656 18
+ 1762 0108 7B68     		ldr	r3, [r7, #4]
+ 1763 010a 1B69     		ldr	r3, [r3, #16]
+ 1764              		.loc 1 656 29
+ 1765 010c 5A1C     		adds	r2, r3, #1
+ 1766 010e 7B68     		ldr	r3, [r7, #4]
+ 1767 0110 1A61     		str	r2, [r3, #16]
+ 657:drivers/Src/stm32f767xx_usart_driver.c **** 					
+ 658:drivers/Src/stm32f767xx_usart_driver.c **** 					//decrement the length
+ 659:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->TxLen-=1;
+ 1768              		.loc 1 659 25
+ 1769 0112 7B68     		ldr	r3, [r7, #4]
+ 1770 0114 9B69     		ldr	r3, [r3, #24]
+ 1771 0116 5A1E     		subs	r2, r3, #1
+ 1772 0118 7B68     		ldr	r3, [r7, #4]
+ 1773 011a 9A61     		str	r2, [r3, #24]
+ 1774              	.L89:
+ 660:drivers/Src/stm32f767xx_usart_driver.c **** 				}
+ 661:drivers/Src/stm32f767xx_usart_driver.c **** 				
+ 662:drivers/Src/stm32f767xx_usart_driver.c **** 			}
+ 663:drivers/Src/stm32f767xx_usart_driver.c **** 			if (pUSARTHandle->TxLen == 0 )
+ 1775              		.loc 1 663 20
+ 1776 011c 7B68     		ldr	r3, [r7, #4]
+ 1777 011e 9B69     		ldr	r3, [r3, #24]
+ 1778              		.loc 1 663 7
+ 1779 0120 002B     		cmp	r3, #0
+ 1780 0122 07D1     		bne	.L88
+ 664:drivers/Src/stm32f767xx_usart_driver.c **** 			{
+ 665:drivers/Src/stm32f767xx_usart_driver.c **** 				//TxLen is zero 
+ 666:drivers/Src/stm32f767xx_usart_driver.c **** 				//clear the TXEIE bit (disable interrupt for TXE flag )
+ 667:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->pUSARTx->CR1 &= ~( 1 << USART_CR1_TXEIE);
+ 1781              		.loc 1 667 17
+ 1782 0124 7B68     		ldr	r3, [r7, #4]
+ 1783 0126 1B68     		ldr	r3, [r3]
+ 1784              		.loc 1 667 32
+ 1785 0128 1A68     		ldr	r2, [r3]
+ 1786              		.loc 1 667 17
+ 1787 012a 7B68     		ldr	r3, [r7, #4]
+ 1788 012c 1B68     		ldr	r3, [r3]
+ 1789              		.loc 1 667 32
+ 1790 012e 22F08002 		bic	r2, r2, #128
+ 1791 0132 1A60     		str	r2, [r3]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 45
+
+
+ 1792              	.L88:
+ 668:drivers/Src/stm32f767xx_usart_driver.c **** 			}
+ 669:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 670:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 671:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 672:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for RXNE flag ********************************************/
+ 673:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 674:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & ( 1 << USART_ISR_RXNE);
+ 1793              		.loc 1 674 22
+ 1794 0134 7B68     		ldr	r3, [r7, #4]
+ 1795 0136 1B68     		ldr	r3, [r3]
+ 1796              		.loc 1 674 31
+ 1797 0138 DB69     		ldr	r3, [r3, #28]
+ 1798              		.loc 1 674 8
+ 1799 013a 03F02003 		and	r3, r3, #32
+ 1800 013e 7B61     		str	r3, [r7, #20]
+ 675:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR1 & ( 1 << USART_CR1_RXNEIE);
+ 1801              		.loc 1 675 22
+ 1802 0140 7B68     		ldr	r3, [r7, #4]
+ 1803 0142 1B68     		ldr	r3, [r3]
+ 1804              		.loc 1 675 31
+ 1805 0144 1B68     		ldr	r3, [r3]
+ 1806              		.loc 1 675 8
+ 1807 0146 03F02003 		and	r3, r3, #32
+ 1808 014a 3B61     		str	r3, [r7, #16]
+ 676:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 677:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 678:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1 && temp2 )
+ 1809              		.loc 1 678 4
+ 1810 014c 7B69     		ldr	r3, [r7, #20]
+ 1811 014e 002B     		cmp	r3, #0
+ 1812 0150 73D0     		beq	.L92
+ 1813              		.loc 1 678 11 discriminator 1
+ 1814 0152 3B69     		ldr	r3, [r7, #16]
+ 1815 0154 002B     		cmp	r3, #0
+ 1816 0156 70D0     		beq	.L92
+ 679:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 680:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of rxne
+ 681:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ 682:drivers/Src/stm32f767xx_usart_driver.c **** 		if(pUSARTHandle->RxBusyState == USART_BUSY_IN_RX)
+ 1817              		.loc 1 682 18
+ 1818 0158 7B68     		ldr	r3, [r7, #4]
+ 1819 015a 93F82130 		ldrb	r3, [r3, #33]	@ zero_extendqisi2
+ 1820              		.loc 1 682 5
+ 1821 015e 012B     		cmp	r3, #1
+ 1822 0160 6BD1     		bne	.L92
+ 683:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 684:drivers/Src/stm32f767xx_usart_driver.c **** 			//TXE is set so send data
+ 685:drivers/Src/stm32f767xx_usart_driver.c **** 			if(pUSARTHandle->RxLen > 0)
+ 1823              		.loc 1 685 19
+ 1824 0162 7B68     		ldr	r3, [r7, #4]
+ 1825 0164 DB69     		ldr	r3, [r3, #28]
+ 1826              		.loc 1 685 6
+ 1827 0166 002B     		cmp	r3, #0
+ 1828 0168 53D0     		beq	.L93
+ 686:drivers/Src/stm32f767xx_usart_driver.c **** 			{
+ 687:drivers/Src/stm32f767xx_usart_driver.c **** 				//Check the USART_WordLength to decide whether we are going to receive 9bit of data in a frame 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 46
+
+
+ 688:drivers/Src/stm32f767xx_usart_driver.c **** 				if(pUSARTHandle->USART_Config.USART_WordLength == USART_WORDLEN_9BITS)
+ 1829              		.loc 1 688 34
+ 1830 016a 7B68     		ldr	r3, [r7, #4]
+ 1831 016c 5B7B     		ldrb	r3, [r3, #13]	@ zero_extendqisi2
+ 1832              		.loc 1 688 7
+ 1833 016e 012B     		cmp	r3, #1
+ 1834 0170 2FD1     		bne	.L94
+ 689:drivers/Src/stm32f767xx_usart_driver.c **** 				{
+ 690:drivers/Src/stm32f767xx_usart_driver.c **** 					//We are going to receive 9bit data in a frame
+ 691:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 692:drivers/Src/stm32f767xx_usart_driver.c **** 					//Now, check are we using USART_ParityControl control or not
+ 693:drivers/Src/stm32f767xx_usart_driver.c **** 					if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+ 1835              		.loc 1 693 35
+ 1836 0172 7B68     		ldr	r3, [r7, #4]
+ 1837 0174 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
+ 1838              		.loc 1 693 8
+ 1839 0176 002B     		cmp	r3, #0
+ 1840 0178 19D1     		bne	.L95
+ 694:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ 695:drivers/Src/stm32f767xx_usart_driver.c **** 						//No parity is used. so, all 9bits will be of user data
+ 696:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 697:drivers/Src/stm32f767xx_usart_driver.c **** 						//read only first 9 bits so mask the DR with 0x01FF
+ 698:drivers/Src/stm32f767xx_usart_driver.c **** 						*((uint16_t*) pUSARTHandle->pRxBuffer) = (pUSARTHandle->pUSARTx->RDR  & (uint16_t)0x01FF);
+ 1841              		.loc 1 698 61
+ 1842 017a 7B68     		ldr	r3, [r7, #4]
+ 1843 017c 1B68     		ldr	r3, [r3]
+ 1844              		.loc 1 698 70
+ 1845 017e 5B6A     		ldr	r3, [r3, #36]
+ 1846              		.loc 1 698 77
+ 1847 0180 9AB2     		uxth	r2, r3
+ 1848              		.loc 1 698 33
+ 1849 0182 7B68     		ldr	r3, [r7, #4]
+ 1850 0184 5B69     		ldr	r3, [r3, #20]
+ 1851              		.loc 1 698 77
+ 1852 0186 C2F30802 		ubfx	r2, r2, #0, #9
+ 1853 018a 92B2     		uxth	r2, r2
+ 1854              		.loc 1 698 46
+ 1855 018c 1A80     		strh	r2, [r3]	@ movhi
+ 699:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 700:drivers/Src/stm32f767xx_usart_driver.c **** 						//increment the pRxBuffer two times
+ 701:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->pRxBuffer++;
+ 1856              		.loc 1 701 19
+ 1857 018e 7B68     		ldr	r3, [r7, #4]
+ 1858 0190 5B69     		ldr	r3, [r3, #20]
+ 1859              		.loc 1 701 30
+ 1860 0192 5A1C     		adds	r2, r3, #1
+ 1861 0194 7B68     		ldr	r3, [r7, #4]
+ 1862 0196 5A61     		str	r2, [r3, #20]
+ 702:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->pRxBuffer++;
+ 1863              		.loc 1 702 19
+ 1864 0198 7B68     		ldr	r3, [r7, #4]
+ 1865 019a 5B69     		ldr	r3, [r3, #20]
+ 1866              		.loc 1 702 30
+ 1867 019c 5A1C     		adds	r2, r3, #1
+ 1868 019e 7B68     		ldr	r3, [r7, #4]
+ 1869 01a0 5A61     		str	r2, [r3, #20]
+ 703:drivers/Src/stm32f767xx_usart_driver.c **** 						
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 47
+
+
+ 704:drivers/Src/stm32f767xx_usart_driver.c **** 						//decrement the length
+ 705:drivers/Src/stm32f767xx_usart_driver.c **** 						pUSARTHandle->RxLen-=2;
+ 1870              		.loc 1 705 26
+ 1871 01a2 7B68     		ldr	r3, [r7, #4]
+ 1872 01a4 DB69     		ldr	r3, [r3, #28]
+ 1873 01a6 9A1E     		subs	r2, r3, #2
+ 1874 01a8 7B68     		ldr	r3, [r7, #4]
+ 1875 01aa DA61     		str	r2, [r3, #28]
+ 1876 01ac 31E0     		b	.L93
+ 1877              	.L95:
+ 706:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 707:drivers/Src/stm32f767xx_usart_driver.c **** 					else
+ 708:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ 709:drivers/Src/stm32f767xx_usart_driver.c **** 						//Parity is used. so, 8bits will be of user data and 1 bit is parity
+ 710:drivers/Src/stm32f767xx_usart_driver.c **** 						 *pUSARTHandle->pRxBuffer = (pUSARTHandle->pUSARTx->RDR  & (uint8_t)0xFF);
+ 1878              		.loc 1 710 48
+ 1879 01ae 7B68     		ldr	r3, [r7, #4]
+ 1880 01b0 1B68     		ldr	r3, [r3]
+ 1881              		.loc 1 710 57
+ 1882 01b2 5A6A     		ldr	r2, [r3, #36]
+ 1883              		.loc 1 710 21
+ 1884 01b4 7B68     		ldr	r3, [r7, #4]
+ 1885 01b6 5B69     		ldr	r3, [r3, #20]
+ 1886              		.loc 1 710 33
+ 1887 01b8 D2B2     		uxtb	r2, r2
+ 1888 01ba 1A70     		strb	r2, [r3]
+ 711:drivers/Src/stm32f767xx_usart_driver.c **** 						 
+ 712:drivers/Src/stm32f767xx_usart_driver.c **** 						 //increment the pRxBuffer
+ 713:drivers/Src/stm32f767xx_usart_driver.c **** 						 pUSARTHandle->pRxBuffer++;
+ 1889              		.loc 1 713 20
+ 1890 01bc 7B68     		ldr	r3, [r7, #4]
+ 1891 01be 5B69     		ldr	r3, [r3, #20]
+ 1892              		.loc 1 713 31
+ 1893 01c0 5A1C     		adds	r2, r3, #1
+ 1894 01c2 7B68     		ldr	r3, [r7, #4]
+ 1895 01c4 5A61     		str	r2, [r3, #20]
+ 714:drivers/Src/stm32f767xx_usart_driver.c **** 						 
+ 715:drivers/Src/stm32f767xx_usart_driver.c **** 						 //Implement the code to decrement the length
+ 716:drivers/Src/stm32f767xx_usart_driver.c **** 						 pUSARTHandle->RxLen-=1;
+ 1896              		.loc 1 716 27
+ 1897 01c6 7B68     		ldr	r3, [r7, #4]
+ 1898 01c8 DB69     		ldr	r3, [r3, #28]
+ 1899 01ca 5A1E     		subs	r2, r3, #1
+ 1900 01cc 7B68     		ldr	r3, [r7, #4]
+ 1901 01ce DA61     		str	r2, [r3, #28]
+ 1902 01d0 1FE0     		b	.L93
+ 1903              	.L94:
+ 717:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 718:drivers/Src/stm32f767xx_usart_driver.c **** 				}
+ 719:drivers/Src/stm32f767xx_usart_driver.c **** 				else
+ 720:drivers/Src/stm32f767xx_usart_driver.c **** 				{
+ 721:drivers/Src/stm32f767xx_usart_driver.c **** 					//We are going to receive 8bit data in a frame
+ 722:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 723:drivers/Src/stm32f767xx_usart_driver.c **** 					//Now, check are we using USART_ParityControl control or not
+ 724:drivers/Src/stm32f767xx_usart_driver.c **** 					if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+ 1904              		.loc 1 724 35
+ 1905 01d2 7B68     		ldr	r3, [r7, #4]
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 48
+
+
+ 1906 01d4 9B7B     		ldrb	r3, [r3, #14]	@ zero_extendqisi2
+ 1907              		.loc 1 724 8
+ 1908 01d6 002B     		cmp	r3, #0
+ 1909 01d8 07D1     		bne	.L96
+ 725:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ 726:drivers/Src/stm32f767xx_usart_driver.c **** 						//No parity is used , so all 8bits will be of user data
+ 727:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 728:drivers/Src/stm32f767xx_usart_driver.c **** 						//read 8 bits from DR
+ 729:drivers/Src/stm32f767xx_usart_driver.c **** 						 *pUSARTHandle->pRxBuffer = (uint8_t) (pUSARTHandle->pUSARTx->RDR  & (uint8_t)0xFF);
+ 1910              		.loc 1 729 58
+ 1911 01da 7B68     		ldr	r3, [r7, #4]
+ 1912 01dc 1B68     		ldr	r3, [r3]
+ 1913              		.loc 1 729 67
+ 1914 01de 5A6A     		ldr	r2, [r3, #36]
+ 1915              		.loc 1 729 21
+ 1916 01e0 7B68     		ldr	r3, [r7, #4]
+ 1917 01e2 5B69     		ldr	r3, [r3, #20]
+ 1918              		.loc 1 729 35
+ 1919 01e4 D2B2     		uxtb	r2, r2
+ 1920              		.loc 1 729 33
+ 1921 01e6 1A70     		strb	r2, [r3]
+ 1922 01e8 09E0     		b	.L97
+ 1923              	.L96:
+ 730:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 731:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 732:drivers/Src/stm32f767xx_usart_driver.c **** 					else
+ 733:drivers/Src/stm32f767xx_usart_driver.c **** 					{
+ 734:drivers/Src/stm32f767xx_usart_driver.c **** 						//Parity is used, so , 7 bits will be of user data and 1 bit is parity
+ 735:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 736:drivers/Src/stm32f767xx_usart_driver.c **** 						//read only 7 bits , hence mask the DR with 0X7F
+ 737:drivers/Src/stm32f767xx_usart_driver.c **** 						 *pUSARTHandle->pRxBuffer = (uint8_t) (pUSARTHandle->pUSARTx->RDR  & (uint8_t)0x7F);
+ 1924              		.loc 1 737 58
+ 1925 01ea 7B68     		ldr	r3, [r7, #4]
+ 1926 01ec 1B68     		ldr	r3, [r3]
+ 1927              		.loc 1 737 67
+ 1928 01ee 5B6A     		ldr	r3, [r3, #36]
+ 1929              		.loc 1 737 35
+ 1930 01f0 DAB2     		uxtb	r2, r3
+ 1931              		.loc 1 737 21
+ 1932 01f2 7B68     		ldr	r3, [r7, #4]
+ 1933 01f4 5B69     		ldr	r3, [r3, #20]
+ 1934              		.loc 1 737 35
+ 1935 01f6 02F07F02 		and	r2, r2, #127
+ 1936 01fa D2B2     		uxtb	r2, r2
+ 1937              		.loc 1 737 33
+ 1938 01fc 1A70     		strb	r2, [r3]
+ 1939              	.L97:
+ 738:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 739:drivers/Src/stm32f767xx_usart_driver.c **** 					}
+ 740:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 741:drivers/Src/stm32f767xx_usart_driver.c **** 					//increment the pRxBuffer
+ 742:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->pRxBuffer++;
+ 1940              		.loc 1 742 18
+ 1941 01fe 7B68     		ldr	r3, [r7, #4]
+ 1942 0200 5B69     		ldr	r3, [r3, #20]
+ 1943              		.loc 1 742 29
+ 1944 0202 5A1C     		adds	r2, r3, #1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 49
+
+
+ 1945 0204 7B68     		ldr	r3, [r7, #4]
+ 1946 0206 5A61     		str	r2, [r3, #20]
+ 743:drivers/Src/stm32f767xx_usart_driver.c **** 					
+ 744:drivers/Src/stm32f767xx_usart_driver.c **** 					//decrement the length
+ 745:drivers/Src/stm32f767xx_usart_driver.c **** 					pUSARTHandle->RxLen-=1;
+ 1947              		.loc 1 745 25
+ 1948 0208 7B68     		ldr	r3, [r7, #4]
+ 1949 020a DB69     		ldr	r3, [r3, #28]
+ 1950 020c 5A1E     		subs	r2, r3, #1
+ 1951 020e 7B68     		ldr	r3, [r7, #4]
+ 1952 0210 DA61     		str	r2, [r3, #28]
+ 1953              	.L93:
+ 746:drivers/Src/stm32f767xx_usart_driver.c **** 				}		
+ 747:drivers/Src/stm32f767xx_usart_driver.c **** 					
+ 748:drivers/Src/stm32f767xx_usart_driver.c **** 					
+ 749:drivers/Src/stm32f767xx_usart_driver.c **** 			}//if of >0
+ 750:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 751:drivers/Src/stm32f767xx_usart_driver.c **** 			if(! pUSARTHandle->RxLen)
+ 1954              		.loc 1 751 21
+ 1955 0212 7B68     		ldr	r3, [r7, #4]
+ 1956 0214 DB69     		ldr	r3, [r3, #28]
+ 1957              		.loc 1 751 6
+ 1958 0216 002B     		cmp	r3, #0
+ 1959 0218 0FD1     		bne	.L92
+ 752:drivers/Src/stm32f767xx_usart_driver.c **** 			{
+ 753:drivers/Src/stm32f767xx_usart_driver.c **** 				//disable the rxne
+ 754:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->pUSARTx->CR1 &= ~( 1 << USART_CR1_RXNEIE );
+ 1960              		.loc 1 754 17
+ 1961 021a 7B68     		ldr	r3, [r7, #4]
+ 1962 021c 1B68     		ldr	r3, [r3]
+ 1963              		.loc 1 754 32
+ 1964 021e 1A68     		ldr	r2, [r3]
+ 1965              		.loc 1 754 17
+ 1966 0220 7B68     		ldr	r3, [r7, #4]
+ 1967 0222 1B68     		ldr	r3, [r3]
+ 1968              		.loc 1 754 32
+ 1969 0224 22F02002 		bic	r2, r2, #32
+ 1970 0228 1A60     		str	r2, [r3]
+ 755:drivers/Src/stm32f767xx_usart_driver.c **** 				pUSARTHandle->RxBusyState = USART_READY;
+ 1971              		.loc 1 755 31
+ 1972 022a 7B68     		ldr	r3, [r7, #4]
+ 1973 022c 0022     		movs	r2, #0
+ 1974 022e 83F82120 		strb	r2, [r3, #33]
+ 756:drivers/Src/stm32f767xx_usart_driver.c **** 				USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_RX_CMPLT);
+ 1975              		.loc 1 756 5
+ 1976 0232 0121     		movs	r1, #1
+ 1977 0234 7868     		ldr	r0, [r7, #4]
+ 1978 0236 FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 1979              	.L92:
+ 757:drivers/Src/stm32f767xx_usart_driver.c **** 			}
+ 758:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 759:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 760:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 761:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 762:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for CTS flag ********************************************/
+ 763:drivers/Src/stm32f767xx_usart_driver.c **** //Note : CTS feature is not applicable for UART4 and UART5
+ 764:drivers/Src/stm32f767xx_usart_driver.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 50
+
+
+ 765:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the status of CTS bit in the SR
+ 766:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & ( 1 << USART_ISR_CTS);
+ 1980              		.loc 1 766 22
+ 1981 023a 7B68     		ldr	r3, [r7, #4]
+ 1982 023c 1B68     		ldr	r3, [r3]
+ 1983              		.loc 1 766 31
+ 1984 023e DB69     		ldr	r3, [r3, #28]
+ 1985              		.loc 1 766 8
+ 1986 0240 03F48063 		and	r3, r3, #1024
+ 1987 0244 7B61     		str	r3, [r7, #20]
+ 767:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 768:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the state of CTSE bit in CR3
+ 769:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_CTSE);
+ 1988              		.loc 1 769 22
+ 1989 0246 7B68     		ldr	r3, [r7, #4]
+ 1990 0248 1B68     		ldr	r3, [r3]
+ 1991              		.loc 1 769 31
+ 1992 024a 9B68     		ldr	r3, [r3, #8]
+ 1993              		.loc 1 769 8
+ 1994 024c 03F40073 		and	r3, r3, #512
+ 1995 0250 3B61     		str	r3, [r7, #16]
+ 770:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 771:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the state of CTSIE bit in CR3 (This bit is not available for UART4 & UART5.)
+ 772:drivers/Src/stm32f767xx_usart_driver.c **** 	// temp3 = pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_CTSIE);
+ 773:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 774:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 775:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1  && temp2 )
+ 1996              		.loc 1 775 4
+ 1997 0252 7B69     		ldr	r3, [r7, #20]
+ 1998 0254 002B     		cmp	r3, #0
+ 1999 0256 0ED0     		beq	.L98
+ 2000              		.loc 1 775 12 discriminator 1
+ 2001 0258 3B69     		ldr	r3, [r7, #16]
+ 2002 025a 002B     		cmp	r3, #0
+ 2003 025c 0BD0     		beq	.L98
+ 776:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 777:drivers/Src/stm32f767xx_usart_driver.c **** 		//clear the CTS flag in SR
+ 778:drivers/Src/stm32f767xx_usart_driver.c **** 		pUSARTHandle->pUSARTx->ICR |= ( 1 << USART_ICR_CTSCF);
+ 2004              		.loc 1 778 15
+ 2005 025e 7B68     		ldr	r3, [r7, #4]
+ 2006 0260 1B68     		ldr	r3, [r3]
+ 2007              		.loc 1 778 30
+ 2008 0262 1A6A     		ldr	r2, [r3, #32]
+ 2009              		.loc 1 778 15
+ 2010 0264 7B68     		ldr	r3, [r7, #4]
+ 2011 0266 1B68     		ldr	r3, [r3]
+ 2012              		.loc 1 778 30
+ 2013 0268 42F40072 		orr	r2, r2, #512
+ 2014 026c 1A62     		str	r2, [r3, #32]
+ 779:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ 780:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of cts
+ 781:drivers/Src/stm32f767xx_usart_driver.c **** 		USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_CTS);
+ 2015              		.loc 1 781 3
+ 2016 026e 0321     		movs	r1, #3
+ 2017 0270 7868     		ldr	r0, [r7, #4]
+ 2018 0272 FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 2019              	.L98:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 51
+
+
+ 782:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 783:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 784:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for IDLE detection flag *******************************************
+ 785:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 786:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the status of IDLE flag bit in the SR
+ 787:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & ( 1 << USART_ISR_IDLE);
+ 2020              		.loc 1 787 22
+ 2021 0276 7B68     		ldr	r3, [r7, #4]
+ 2022 0278 1B68     		ldr	r3, [r3]
+ 2023              		.loc 1 787 31
+ 2024 027a DB69     		ldr	r3, [r3, #28]
+ 2025              		.loc 1 787 8
+ 2026 027c 03F01003 		and	r3, r3, #16
+ 2027 0280 7B61     		str	r3, [r7, #20]
+ 788:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 789:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the state of IDLEIE bit in CR1
+ 790:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR1 & ( 1 << USART_CR1_IDLEIE);
+ 2028              		.loc 1 790 22
+ 2029 0282 7B68     		ldr	r3, [r7, #4]
+ 2030 0284 1B68     		ldr	r3, [r3]
+ 2031              		.loc 1 790 31
+ 2032 0286 1B68     		ldr	r3, [r3]
+ 2033              		.loc 1 790 8
+ 2034 0288 03F01003 		and	r3, r3, #16
+ 2035 028c 3B61     		str	r3, [r7, #16]
+ 791:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 792:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 793:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1 && temp2)
+ 2036              		.loc 1 793 4
+ 2037 028e 7B69     		ldr	r3, [r7, #20]
+ 2038 0290 002B     		cmp	r3, #0
+ 2039 0292 0ED0     		beq	.L99
+ 2040              		.loc 1 793 11 discriminator 1
+ 2041 0294 3B69     		ldr	r3, [r7, #16]
+ 2042 0296 002B     		cmp	r3, #0
+ 2043 0298 0BD0     		beq	.L99
+ 794:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 795:drivers/Src/stm32f767xx_usart_driver.c **** 		//clear the IDLE flag. 
+ 796:drivers/Src/stm32f767xx_usart_driver.c **** 		pUSARTHandle->pUSARTx->ICR |= ( 1 << USART_ICR_IDLECF);
+ 2044              		.loc 1 796 15
+ 2045 029a 7B68     		ldr	r3, [r7, #4]
+ 2046 029c 1B68     		ldr	r3, [r3]
+ 2047              		.loc 1 796 30
+ 2048 029e 1A6A     		ldr	r2, [r3, #32]
+ 2049              		.loc 1 796 15
+ 2050 02a0 7B68     		ldr	r3, [r7, #4]
+ 2051 02a2 1B68     		ldr	r3, [r3]
+ 2052              		.loc 1 796 30
+ 2053 02a4 42F01002 		orr	r2, r2, #16
+ 2054 02a8 1A62     		str	r2, [r3, #32]
+ 797:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ 798:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of idle
+ 799:drivers/Src/stm32f767xx_usart_driver.c **** 		USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_IDLE);
+ 2055              		.loc 1 799 3
+ 2056 02aa 0221     		movs	r1, #2
+ 2057 02ac 7868     		ldr	r0, [r7, #4]
+ 2058 02ae FFF7FEFF 		bl	USART_ApplicationEventCallback
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 52
+
+
+ 2059              	.L99:
+ 800:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 801:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 802:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for Overrun detection flag ****************************************
+ 803:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 804:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the status of ORE flag  in the SR
+ 805:drivers/Src/stm32f767xx_usart_driver.c **** 	temp1 = pUSARTHandle->pUSARTx->ISR & USART_ISR_ORE;
+ 2060              		.loc 1 805 22
+ 2061 02b2 7B68     		ldr	r3, [r7, #4]
+ 2062 02b4 1B68     		ldr	r3, [r3]
+ 2063              		.loc 1 805 31
+ 2064 02b6 DB69     		ldr	r3, [r3, #28]
+ 2065              		.loc 1 805 8
+ 2066 02b8 03F00303 		and	r3, r3, #3
+ 2067 02bc 7B61     		str	r3, [r7, #20]
+ 806:drivers/Src/stm32f767xx_usart_driver.c **** 	
+ 807:drivers/Src/stm32f767xx_usart_driver.c **** 	//check the status of RXNEIE  bit in the CR1
+ 808:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 = pUSARTHandle->pUSARTx->CR1 & USART_CR1_RXNEIE;
+ 2068              		.loc 1 808 22
+ 2069 02be 7B68     		ldr	r3, [r7, #4]
+ 2070 02c0 1B68     		ldr	r3, [r3]
+ 2071              		.loc 1 808 31
+ 2072 02c2 1B68     		ldr	r3, [r3]
+ 2073              		.loc 1 808 8
+ 2074 02c4 03F00503 		and	r3, r3, #5
+ 2075 02c8 3B61     		str	r3, [r7, #16]
+ 809:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 810:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 811:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp1  && temp2 )
+ 2076              		.loc 1 811 4
+ 2077 02ca 7B69     		ldr	r3, [r7, #20]
+ 2078 02cc 002B     		cmp	r3, #0
+ 2079 02ce 06D0     		beq	.L100
+ 2080              		.loc 1 811 12 discriminator 1
+ 2081 02d0 3B69     		ldr	r3, [r7, #16]
+ 2082 02d2 002B     		cmp	r3, #0
+ 2083 02d4 03D0     		beq	.L100
+ 812:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 813:drivers/Src/stm32f767xx_usart_driver.c **** 		//Need not to clear the ORE flag here, instead give an api for the application to clear the ORE f
+ 814:drivers/Src/stm32f767xx_usart_driver.c **** 		
+ 815:drivers/Src/stm32f767xx_usart_driver.c **** 		//this interrupt is because of Overrun error 
+ 816:drivers/Src/stm32f767xx_usart_driver.c **** 		USART_ApplicationEventCallback(pUSARTHandle,USART_ERR_ORE);
+ 2084              		.loc 1 816 3
+ 2085 02d6 0721     		movs	r1, #7
+ 2086 02d8 7868     		ldr	r0, [r7, #4]
+ 2087 02da FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 2088              	.L100:
+ 817:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 818:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 819:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 820:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 821:drivers/Src/stm32f767xx_usart_driver.c **** /*************************Check for Error Flag ********************************************/
+ 822:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 823:drivers/Src/stm32f767xx_usart_driver.c **** //Noise Flag, Overrun error and Framing Error in multibuffer communication
+ 824:drivers/Src/stm32f767xx_usart_driver.c **** //We dont discuss multibuffer communication in this course. please refer to the RM
+ 825:drivers/Src/stm32f767xx_usart_driver.c **** //The blow code will get executed only if multibuffer mode is used. 
+ 826:drivers/Src/stm32f767xx_usart_driver.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 53
+
+
+ 827:drivers/Src/stm32f767xx_usart_driver.c **** 	temp2 =  pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_EIE) ;
+ 2089              		.loc 1 827 23
+ 2090 02de 7B68     		ldr	r3, [r7, #4]
+ 2091 02e0 1B68     		ldr	r3, [r3]
+ 2092              		.loc 1 827 32
+ 2093 02e2 9B68     		ldr	r3, [r3, #8]
+ 2094              		.loc 1 827 8
+ 2095 02e4 03F00103 		and	r3, r3, #1
+ 2096 02e8 3B61     		str	r3, [r7, #16]
+ 828:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 829:drivers/Src/stm32f767xx_usart_driver.c **** 	if(temp2 )
+ 2097              		.loc 1 829 4
+ 2098 02ea 3B69     		ldr	r3, [r7, #16]
+ 2099 02ec 002B     		cmp	r3, #0
+ 2100 02ee 1ED0     		beq	.L104
+ 830:drivers/Src/stm32f767xx_usart_driver.c **** 	{
+ 831:drivers/Src/stm32f767xx_usart_driver.c **** 		temp1 = pUSARTHandle->pUSARTx->ISR;
+ 2101              		.loc 1 831 23
+ 2102 02f0 7B68     		ldr	r3, [r7, #4]
+ 2103 02f2 1B68     		ldr	r3, [r3]
+ 2104              		.loc 1 831 9
+ 2105 02f4 DB69     		ldr	r3, [r3, #28]
+ 2106 02f6 7B61     		str	r3, [r7, #20]
+ 832:drivers/Src/stm32f767xx_usart_driver.c **** 		if(temp1 & ( 1 << USART_ISR_FE))
+ 2107              		.loc 1 832 12
+ 2108 02f8 7B69     		ldr	r3, [r7, #20]
+ 2109 02fa 03F00203 		and	r3, r3, #2
+ 2110              		.loc 1 832 5
+ 2111 02fe 002B     		cmp	r3, #0
+ 2112 0300 03D0     		beq	.L102
+ 833:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 834:drivers/Src/stm32f767xx_usart_driver.c **** 			/*
+ 835:drivers/Src/stm32f767xx_usart_driver.c **** 				This bit is set by hardware when a de-synchronization, excessive noise or a break character
+ 836:drivers/Src/stm32f767xx_usart_driver.c **** 				is detected. It is cleared by software, writing 1 to the FECF bit in the USART_ICR register.
+ 837:drivers/Src/stm32f767xx_usart_driver.c **** 			*/
+ 838:drivers/Src/stm32f767xx_usart_driver.c **** 			USART_ApplicationEventCallback(pUSARTHandle,USART_ERR_FE);
+ 2113              		.loc 1 838 4
+ 2114 0302 0521     		movs	r1, #5
+ 2115 0304 7868     		ldr	r0, [r7, #4]
+ 2116 0306 FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 2117              	.L102:
+ 839:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 840:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 841:drivers/Src/stm32f767xx_usart_driver.c **** 		if(temp1 & ( 1 << USART_ISR_NF) )
+ 2118              		.loc 1 841 12
+ 2119 030a 7B69     		ldr	r3, [r7, #20]
+ 2120 030c 03F00403 		and	r3, r3, #4
+ 2121              		.loc 1 841 5
+ 2122 0310 002B     		cmp	r3, #0
+ 2123 0312 03D0     		beq	.L103
+ 842:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 843:drivers/Src/stm32f767xx_usart_driver.c **** 			/*
+ 844:drivers/Src/stm32f767xx_usart_driver.c **** 				This bit is set by hardware when noise is detected on a received frame. It is cleared by
+ 845:drivers/Src/stm32f767xx_usart_driver.c **** 				software, writing 1 to the NFCF bit in the USART_ICR register.
+ 846:drivers/Src/stm32f767xx_usart_driver.c **** 			*/
+ 847:drivers/Src/stm32f767xx_usart_driver.c **** 			USART_ApplicationEventCallback(pUSARTHandle,USART_ERR_NE);
+ 2124              		.loc 1 847 4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 54
+
+
+ 2125 0314 0621     		movs	r1, #6
+ 2126 0316 7868     		ldr	r0, [r7, #4]
+ 2127 0318 FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 2128              	.L103:
+ 848:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 849:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 850:drivers/Src/stm32f767xx_usart_driver.c **** 		if(temp1 & ( 1 << USART_ISR_ORE) )
+ 2129              		.loc 1 850 12
+ 2130 031c 7B69     		ldr	r3, [r7, #20]
+ 2131 031e 03F00803 		and	r3, r3, #8
+ 2132              		.loc 1 850 5
+ 2133 0322 002B     		cmp	r3, #0
+ 2134 0324 03D0     		beq	.L104
+ 851:drivers/Src/stm32f767xx_usart_driver.c **** 		{
+ 852:drivers/Src/stm32f767xx_usart_driver.c **** 			USART_ApplicationEventCallback(pUSARTHandle,USART_ERR_ORE);
+ 2135              		.loc 1 852 4
+ 2136 0326 0721     		movs	r1, #7
+ 2137 0328 7868     		ldr	r0, [r7, #4]
+ 2138 032a FFF7FEFF 		bl	USART_ApplicationEventCallback
+ 2139              	.L104:
+ 853:drivers/Src/stm32f767xx_usart_driver.c **** 		}
+ 854:drivers/Src/stm32f767xx_usart_driver.c **** 	}
+ 855:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 856:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 857:drivers/Src/stm32f767xx_usart_driver.c **** } 
+ 2140              		.loc 1 857 1
+ 2141 032e 00BF     		nop
+ 2142 0330 1837     		adds	r7, r7, #24
+ 2143              		.cfi_def_cfa_offset 8
+ 2144 0332 BD46     		mov	sp, r7
+ 2145              		.cfi_def_cfa_register 13
+ 2146              		@ sp needed
+ 2147 0334 80BD     		pop	{r7, pc}
+ 2148              		.cfi_endproc
+ 2149              	.LFE13:
+ 2151              		.section	.text.USART_ApplicationEventCallback,"ax",%progbits
+ 2152              		.align	1
+ 2153              		.weak	USART_ApplicationEventCallback
+ 2154              		.syntax unified
+ 2155              		.thumb
+ 2156              		.thumb_func
+ 2158              	USART_ApplicationEventCallback:
+ 2159              	.LFB14:
+ 858:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 859:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 860:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 861:drivers/Src/stm32f767xx_usart_driver.c **** 
+ 862:drivers/Src/stm32f767xx_usart_driver.c **** /**
+ 863:drivers/Src/stm32f767xx_usart_driver.c ****  * @brief USART Application Event Callback
+ 864:drivers/Src/stm32f767xx_usart_driver.c ****  * 
+ 865:drivers/Src/stm32f767xx_usart_driver.c ****  * @param pUSARTHandle 
+ 866:drivers/Src/stm32f767xx_usart_driver.c ****  * @param AppEv 
+ 867:drivers/Src/stm32f767xx_usart_driver.c ****  * @note __weak 
+ 868:drivers/Src/stm32f767xx_usart_driver.c ****  */
+ 869:drivers/Src/stm32f767xx_usart_driver.c **** __weak void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv)
+ 870:drivers/Src/stm32f767xx_usart_driver.c **** {
+ 2160              		.loc 1 870 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 55
+
+
+ 2161              		.cfi_startproc
+ 2162              		@ args = 0, pretend = 0, frame = 8
+ 2163              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2164              		@ link register save eliminated.
+ 2165 0000 80B4     		push	{r7}
+ 2166              		.cfi_def_cfa_offset 4
+ 2167              		.cfi_offset 7, -4
+ 2168 0002 83B0     		sub	sp, sp, #12
+ 2169              		.cfi_def_cfa_offset 16
+ 2170 0004 00AF     		add	r7, sp, #0
+ 2171              		.cfi_def_cfa_register 7
+ 2172 0006 7860     		str	r0, [r7, #4]
+ 2173 0008 0B46     		mov	r3, r1
+ 2174 000a FB70     		strb	r3, [r7, #3]
+ 871:drivers/Src/stm32f767xx_usart_driver.c ****     // weak implementation --- the application may override this function
+ 872:drivers/Src/stm32f767xx_usart_driver.c **** }
+ 2175              		.loc 1 872 1
+ 2176 000c 00BF     		nop
+ 2177 000e 0C37     		adds	r7, r7, #12
+ 2178              		.cfi_def_cfa_offset 4
+ 2179 0010 BD46     		mov	sp, r7
+ 2180              		.cfi_def_cfa_register 13
+ 2181              		@ sp needed
+ 2182 0012 5DF8047B 		ldr	r7, [sp], #4
+ 2183              		.cfi_restore 7
+ 2184              		.cfi_def_cfa_offset 0
+ 2185 0016 7047     		bx	lr
+ 2186              		.cfi_endproc
+ 2187              	.LFE14:
+ 2189              		.text
+ 2190              	.Letext0:
+ 2191              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 2192              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 2193              		.file 4 "drivers/Inc/stm32f767xx.h"
+ 2194              		.file 5 "drivers/Inc/stm32f767xx_usart_driver.h"
+ 2195              		.file 6 "drivers/Inc/stm32f767xx_rcc_driver.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s 			page 56
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f767xx_usart_driver.c
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:19     .text.USART_PeriClockControl:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:25     .text.USART_PeriClockControl:0000000000000000 USART_PeriClockControl
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:283    .text.USART_PeriClockControl:000000000000017c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:296    .text.USART_SetBaudRate:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:302    .text.USART_SetBaudRate:0000000000000000 USART_SetBaudRate
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:408    .text.USART_SetBaudRate:0000000000000088 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:414    .text.USART_Init:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:420    .text.USART_Init:0000000000000000 USART_Init
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:605    .text.USART_DeInit:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:611    .text.USART_DeInit:0000000000000000 USART_DeInit
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:641    .text.USART_PeripheralControl:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:647    .text.USART_PeripheralControl:0000000000000000 USART_PeripheralControl
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:699    .text.USART_GetFlagStatus:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:705    .text.USART_GetFlagStatus:0000000000000000 USART_GetFlagStatus
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:752    .text.USART_ClearFlag:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:758    .text.USART_ClearFlag:0000000000000000 USART_ClearFlag
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:790    .text.USART_SendData:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:796    .text.USART_SendData:0000000000000000 USART_SendData
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:926    .text.USART_ReceiveData:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:932    .text.USART_ReceiveData:0000000000000000 USART_ReceiveData
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1078   .text.USART_IRQInterruptConfig:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1084   .text.USART_IRQInterruptConfig:0000000000000000 USART_IRQInterruptConfig
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1323   .text.USART_IRQInterruptConfig:0000000000000160 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1336   .text.USART_IRQPriorityConfig:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1342   .text.USART_IRQPriorityConfig:0000000000000000 USART_IRQPriorityConfig
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1405   .text.USART_IRQPriorityConfig:000000000000004c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1410   .text.USART_SendDataIT:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1416   .text.USART_SendDataIT:0000000000000000 USART_SendDataIT
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1493   .text.USART_ReceiveDataIT:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1499   .text.USART_ReceiveDataIT:0000000000000000 USART_ReceiveDataIT
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1565   .text.USART_ApplicationEventCallback:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccCAm1GO.s:1571   .text.USART_ApplicationEventCallback:0000000000000000 USART_ApplicationEventCallback
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:19     .text.USART_PeriClockControl:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:25     .text.USART_PeriClockControl:0000000000000000 USART_PeriClockControl
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:283    .text.USART_PeriClockControl:000000000000017c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:296    .text.USART_SetBaudRate:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:302    .text.USART_SetBaudRate:0000000000000000 USART_SetBaudRate
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:408    .text.USART_SetBaudRate:0000000000000088 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:414    .text.USART_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:420    .text.USART_Init:0000000000000000 USART_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:605    .text.USART_DeInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:611    .text.USART_DeInit:0000000000000000 USART_DeInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:641    .text.USART_PeripheralControl:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:647    .text.USART_PeripheralControl:0000000000000000 USART_PeripheralControl
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:699    .text.USART_GetFlagStatus:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:705    .text.USART_GetFlagStatus:0000000000000000 USART_GetFlagStatus
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:752    .text.USART_ClearFlag:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:758    .text.USART_ClearFlag:0000000000000000 USART_ClearFlag
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:790    .text.USART_SendData:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:796    .text.USART_SendData:0000000000000000 USART_SendData
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:926    .text.USART_ReceiveData:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:932    .text.USART_ReceiveData:0000000000000000 USART_ReceiveData
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1078   .text.USART_IRQInterruptConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1084   .text.USART_IRQInterruptConfig:0000000000000000 USART_IRQInterruptConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1323   .text.USART_IRQInterruptConfig:0000000000000160 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1336   .text.USART_IRQPriorityConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1342   .text.USART_IRQPriorityConfig:0000000000000000 USART_IRQPriorityConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1405   .text.USART_IRQPriorityConfig:000000000000004c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1410   .text.USART_SendDataIT:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1416   .text.USART_SendDataIT:0000000000000000 USART_SendDataIT
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1493   .text.USART_ReceiveDataIT:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1499   .text.USART_ReceiveDataIT:0000000000000000 USART_ReceiveDataIT
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1565   .text.USART_IRQHandling:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:1571   .text.USART_IRQHandling:0000000000000000 USART_IRQHandling
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:2158   .text.USART_ApplicationEventCallback:0000000000000000 USART_ApplicationEventCallback
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cciwl352.s:2152   .text.USART_ApplicationEventCallback:0000000000000000 $t
 
 UNDEFINED SYMBOLS
 RCC_GetPCLK2Value

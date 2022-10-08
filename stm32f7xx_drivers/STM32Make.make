@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Src/015_uart_tx.c \
+Src/016_uart_case.c \
 Src/SEGGER_RTT.c \
 Src/SEGGER_RTT_Syscalls_GCC.c \
 Src/SEGGER_RTT_printf.c \

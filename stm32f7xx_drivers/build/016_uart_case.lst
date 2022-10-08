@@ -1,0 +1,861 @@
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"016_uart_case.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.delay,"ax",%progbits
+  19              		.align	1
+  20              		.global	delay
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	delay:
+  26              	.LFB3:
+  27              		.file 1 "Src/016_uart_case.c"
+   1:Src/016_uart_case.c **** /**
+   2:Src/016_uart_case.c ****  * @file 016_uart_case.c
+   3:Src/016_uart_case.c ****  * @author 
+   4:Src/016_uart_case.c ****  * @brief 
+   5:Src/016_uart_case.c ****  * @version 0.1
+   6:Src/016_uart_case.c ****  * @date 2022-10-08
+   7:Src/016_uart_case.c ****  * 
+   8:Src/016_uart_case.c ****  * @copyright Copyright (c) 2022
+   9:Src/016_uart_case.c ****  * 
+  10:Src/016_uart_case.c ****  */
+  11:Src/016_uart_case.c **** 
+  12:Src/016_uart_case.c **** 
+  13:Src/016_uart_case.c **** #include <string.h>
+  14:Src/016_uart_case.c **** #include "stm32f767xx.h"
+  15:Src/016_uart_case.c **** #include <stdio.h>
+  16:Src/016_uart_case.c **** #include "SEGGER_RTT.h"
+  17:Src/016_uart_case.c **** 
+  18:Src/016_uart_case.c **** 
+  19:Src/016_uart_case.c **** 
+  20:Src/016_uart_case.c **** 
+  21:Src/016_uart_case.c **** void delay(void){
+  28              		.loc 1 21 17
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 2
+
+
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40              	.LBB2:
+  22:Src/016_uart_case.c ****   for (uint32_t i = 0; i < 200000; i++)
+  41              		.loc 1 22 17
+  42 0006 0023     		movs	r3, #0
+  43 0008 7B60     		str	r3, [r7, #4]
+  44              		.loc 1 22 3
+  45 000a 02E0     		b	.L2
+  46              	.L3:
+  47              		.loc 1 22 37 discriminator 3
+  48 000c 7B68     		ldr	r3, [r7, #4]
+  49 000e 0133     		adds	r3, r3, #1
+  50 0010 7B60     		str	r3, [r7, #4]
+  51              	.L2:
+  52              		.loc 1 22 26 discriminator 1
+  53 0012 7B68     		ldr	r3, [r7, #4]
+  54 0014 044A     		ldr	r2, .L4
+  55 0016 9342     		cmp	r3, r2
+  56 0018 F8D9     		bls	.L3
+  57              	.LBE2:
+  23:Src/016_uart_case.c ****     ;
+  24:Src/016_uart_case.c **** }
+  58              		.loc 1 24 1
+  59 001a 00BF     		nop
+  60 001c 00BF     		nop
+  61 001e 0C37     		adds	r7, r7, #12
+  62              		.cfi_def_cfa_offset 4
+  63 0020 BD46     		mov	sp, r7
+  64              		.cfi_def_cfa_register 13
+  65              		@ sp needed
+  66 0022 5DF8047B 		ldr	r7, [sp], #4
+  67              		.cfi_restore 7
+  68              		.cfi_def_cfa_offset 0
+  69 0026 7047     		bx	lr
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0028 3F0D0300 		.word	199999
+  74              		.cfi_endproc
+  75              	.LFE3:
+  77              		.global	msg
+  78              		.section	.rodata
+  79              		.align	2
+  80              	.LC0:
+  81 0000 68696869 		.ascii	"hihihihihihi123\000"
+  81      68696869 
+  81      68696869 
+  81      31323300 
+  82              		.align	2
+  83              	.LC1:
+  84 0010 48656C6C 		.ascii	"Hello How are you ?\000"
+  84      6F20486F 
+  84      77206172 
+  84      6520796F 
+  84      75203F00 
+  85              		.align	2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 3
+
+
+  86              	.LC2:
+  87 0024 546F6461 		.ascii	"Today is Monday !\000"
+  87      79206973 
+  87      204D6F6E 
+  87      64617920 
+  87      2100
+  88              		.section	.data.msg,"aw"
+  89              		.align	2
+  92              	msg:
+  93 0000 00000000 		.word	.LC0
+  94 0004 10000000 		.word	.LC1
+  95 0008 24000000 		.word	.LC2
+  96              		.global	rx_buf
+  97              		.section	.bss.rx_buf,"aw",%nobits
+  98              		.align	2
+ 101              	rx_buf:
+ 102 0000 00000000 		.space	1024
+ 102      00000000 
+ 102      00000000 
+ 102      00000000 
+ 102      00000000 
+ 103              		.global	usart2_handle
+ 104              		.section	.bss.usart2_handle,"aw",%nobits
+ 105              		.align	2
+ 108              	usart2_handle:
+ 109 0000 00000000 		.space	36
+ 109      00000000 
+ 109      00000000 
+ 109      00000000 
+ 109      00000000 
+ 110              		.global	rxCmplt
+ 111              		.section	.bss.rxCmplt,"aw",%nobits
+ 114              	rxCmplt:
+ 115 0000 00       		.space	1
+ 116              		.global	g_data
+ 117              		.section	.bss.g_data,"aw",%nobits
+ 120              	g_data:
+ 121 0000 00       		.space	1
+ 122              		.section	.text.USART2_GPIOInit,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	USART2_GPIOInit
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	USART2_GPIOInit:
+ 130              	.LFB4:
+  25:Src/016_uart_case.c **** 
+  26:Src/016_uart_case.c **** 
+  27:Src/016_uart_case.c **** 
+  28:Src/016_uart_case.c **** 
+  29:Src/016_uart_case.c **** /* Pins to communicate over USART2 (Cf. datasheet, alternate function mapping)
+  30:Src/016_uart_case.c ****  * PD5  ---> USART2_TX (CN9 pin 6 on NUCLEO F767)
+  31:Src/016_uart_case.c ****  * PD6  ---> USART2_RX (CN9 pin 4 on NUCLEO F767)
+  32:Src/016_uart_case.c ****  * ALT function mode: 7
+  33:Src/016_uart_case.c ****  */
+  34:Src/016_uart_case.c **** 
+  35:Src/016_uart_case.c **** // 3 different messages that we transmit to arduino
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 4
+
+
+  36:Src/016_uart_case.c **** char *msg[3] = {"hihihihihihi123", "Hello How are you ?" , "Today is Monday !"};
+  37:Src/016_uart_case.c **** 
+  38:Src/016_uart_case.c **** //reply from arduino will be stored here
+  39:Src/016_uart_case.c **** char rx_buf[1024] ;
+  40:Src/016_uart_case.c **** 
+  41:Src/016_uart_case.c **** 
+  42:Src/016_uart_case.c **** USART_Handle_t usart2_handle;
+  43:Src/016_uart_case.c **** 
+  44:Src/016_uart_case.c **** //This flag indicates reception completion
+  45:Src/016_uart_case.c **** uint8_t rxCmplt = RESET;
+  46:Src/016_uart_case.c **** 
+  47:Src/016_uart_case.c **** uint8_t g_data = 0;
+  48:Src/016_uart_case.c **** 
+  49:Src/016_uart_case.c **** 
+  50:Src/016_uart_case.c **** 
+  51:Src/016_uart_case.c **** 
+  52:Src/016_uart_case.c **** void USART2_GPIOInit(void)
+  53:Src/016_uart_case.c **** {
+ 131              		.loc 1 53 1
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 16
+ 134              		@ frame_needed = 1, uses_anonymous_args = 0
+ 135 0000 80B5     		push	{r7, lr}
+ 136              		.cfi_def_cfa_offset 8
+ 137              		.cfi_offset 7, -8
+ 138              		.cfi_offset 14, -4
+ 139 0002 84B0     		sub	sp, sp, #16
+ 140              		.cfi_def_cfa_offset 24
+ 141 0004 00AF     		add	r7, sp, #0
+ 142              		.cfi_def_cfa_register 7
+  54:Src/016_uart_case.c ****     GPIO_Handle_t usart2_pins;
+  55:Src/016_uart_case.c ****     
+  56:Src/016_uart_case.c ****     usart2_pins.pGPIOx = GPIOD;
+ 143              		.loc 1 56 24
+ 144 0006 0E4B     		ldr	r3, .L7
+ 145 0008 7B60     		str	r3, [r7, #4]
+  57:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
+ 146              		.loc 1 57 45
+ 147 000a 0223     		movs	r3, #2
+ 148 000c 7B72     		strb	r3, [r7, #9]
+  58:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+ 149              		.loc 1 58 47
+ 150 000e 0023     		movs	r3, #0
+ 151 0010 3B73     		strb	r3, [r7, #12]
+  59:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+ 152              		.loc 1 59 52
+ 153 0012 0123     		movs	r3, #1
+ 154 0014 FB72     		strb	r3, [r7, #11]
+  60:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinAltFunMode = 7;
+ 155              		.loc 1 60 51
+ 156 0016 0723     		movs	r3, #7
+ 157 0018 7B73     		strb	r3, [r7, #13]
+  61:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+ 158              		.loc 1 61 46
+ 159 001a 0223     		movs	r3, #2
+ 160 001c BB72     		strb	r3, [r7, #10]
+  62:Src/016_uart_case.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 5
+
+
+  63:Src/016_uart_case.c ****     //TX
+  64:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_5;
+ 161              		.loc 1 64 47
+ 162 001e 0523     		movs	r3, #5
+ 163 0020 3B72     		strb	r3, [r7, #8]
+  65:Src/016_uart_case.c ****     GPIO_Init(&usart2_pins);
+ 164              		.loc 1 65 5
+ 165 0022 3B1D     		adds	r3, r7, #4
+ 166 0024 1846     		mov	r0, r3
+ 167 0026 FFF7FEFF 		bl	GPIO_Init
+  66:Src/016_uart_case.c **** 
+  67:Src/016_uart_case.c ****     //RX
+  68:Src/016_uart_case.c ****     usart2_pins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_6;
+ 168              		.loc 1 68 47
+ 169 002a 0623     		movs	r3, #6
+ 170 002c 3B72     		strb	r3, [r7, #8]
+  69:Src/016_uart_case.c ****     GPIO_Init(&usart2_pins);
+ 171              		.loc 1 69 5
+ 172 002e 3B1D     		adds	r3, r7, #4
+ 173 0030 1846     		mov	r0, r3
+ 174 0032 FFF7FEFF 		bl	GPIO_Init
+  70:Src/016_uart_case.c **** 
+  71:Src/016_uart_case.c **** }
+ 175              		.loc 1 71 1
+ 176 0036 00BF     		nop
+ 177 0038 1037     		adds	r7, r7, #16
+ 178              		.cfi_def_cfa_offset 8
+ 179 003a BD46     		mov	sp, r7
+ 180              		.cfi_def_cfa_register 13
+ 181              		@ sp needed
+ 182 003c 80BD     		pop	{r7, pc}
+ 183              	.L8:
+ 184 003e 00BF     		.align	2
+ 185              	.L7:
+ 186 0040 000C0240 		.word	1073875968
+ 187              		.cfi_endproc
+ 188              	.LFE4:
+ 190              		.section	.text.USART2_Init,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	USART2_Init
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	USART2_Init:
+ 198              	.LFB5:
+  72:Src/016_uart_case.c **** 
+  73:Src/016_uart_case.c **** void USART2_Init()
+  74:Src/016_uart_case.c **** {
+ 199              		.loc 1 74 1
+ 200              		.cfi_startproc
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 1, uses_anonymous_args = 0
+ 203 0000 80B5     		push	{r7, lr}
+ 204              		.cfi_def_cfa_offset 8
+ 205              		.cfi_offset 7, -8
+ 206              		.cfi_offset 14, -4
+ 207 0002 00AF     		add	r7, sp, #0
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 6
+
+
+ 208              		.cfi_def_cfa_register 7
+  75:Src/016_uart_case.c ****     usart2_handle.pUSARTx= USART2;
+ 209              		.loc 1 75 26
+ 210 0004 0D4B     		ldr	r3, .L10
+ 211 0006 0E4A     		ldr	r2, .L10+4
+ 212 0008 1A60     		str	r2, [r3]
+  76:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_Baud = USART_STD_BAUD_115200;
+ 213              		.loc 1 76 43
+ 214 000a 0C4B     		ldr	r3, .L10
+ 215 000c 4FF4E132 		mov	r2, #115200
+ 216 0010 9A60     		str	r2, [r3, #8]
+  77:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_HWFlowControl = USART_HW_FLOW_CTRL_NONE;
+ 217              		.loc 1 77 52
+ 218 0012 0A4B     		ldr	r3, .L10
+ 219 0014 0022     		movs	r2, #0
+ 220 0016 DA73     		strb	r2, [r3, #15]
+  78:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_Mode = USART_MODE_TXRX;
+ 221              		.loc 1 78 43
+ 222 0018 084B     		ldr	r3, .L10
+ 223 001a 0222     		movs	r2, #2
+ 224 001c 1A71     		strb	r2, [r3, #4]
+  79:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_NoOfStopBits = USART_STOPBITS_1;
+ 225              		.loc 1 79 51
+ 226 001e 074B     		ldr	r3, .L10
+ 227 0020 0022     		movs	r2, #0
+ 228 0022 1A73     		strb	r2, [r3, #12]
+  80:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_WordLength = USART_WORDLEN_8BITS;
+ 229              		.loc 1 80 49
+ 230 0024 054B     		ldr	r3, .L10
+ 231 0026 0022     		movs	r2, #0
+ 232 0028 5A73     		strb	r2, [r3, #13]
+  81:Src/016_uart_case.c ****     usart2_handle.USART_Config.USART_ParityControl = USART_PARITY_DISABLE;
+ 233              		.loc 1 81 52
+ 234 002a 044B     		ldr	r3, .L10
+ 235 002c 0022     		movs	r2, #0
+ 236 002e 9A73     		strb	r2, [r3, #14]
+  82:Src/016_uart_case.c **** 
+  83:Src/016_uart_case.c ****     USART_Init(&usart2_handle);
+ 237              		.loc 1 83 5
+ 238 0030 0248     		ldr	r0, .L10
+ 239 0032 FFF7FEFF 		bl	USART_Init
+  84:Src/016_uart_case.c **** }
+ 240              		.loc 1 84 1
+ 241 0036 00BF     		nop
+ 242 0038 80BD     		pop	{r7, pc}
+ 243              	.L11:
+ 244 003a 00BF     		.align	2
+ 245              	.L10:
+ 246 003c 00000000 		.word	usart2_handle
+ 247 0040 00440040 		.word	1073759232
+ 248              		.cfi_endproc
+ 249              	.LFE5:
+ 251              		.section	.text.GPIO_ButtonInit,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	GPIO_ButtonInit
+ 254              		.syntax unified
+ 255              		.thumb
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 7
+
+
+ 256              		.thumb_func
+ 258              	GPIO_ButtonInit:
+ 259              	.LFB6:
+  85:Src/016_uart_case.c **** 
+  86:Src/016_uart_case.c **** 
+  87:Src/016_uart_case.c **** void GPIO_ButtonInit(void)
+  88:Src/016_uart_case.c **** {
+ 260              		.loc 1 88 1
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 16
+ 263              		@ frame_needed = 1, uses_anonymous_args = 0
+ 264 0000 80B5     		push	{r7, lr}
+ 265              		.cfi_def_cfa_offset 8
+ 266              		.cfi_offset 7, -8
+ 267              		.cfi_offset 14, -4
+ 268 0002 84B0     		sub	sp, sp, #16
+ 269              		.cfi_def_cfa_offset 24
+ 270 0004 00AF     		add	r7, sp, #0
+ 271              		.cfi_def_cfa_register 7
+  89:Src/016_uart_case.c ****     GPIO_Handle_t GPIOBtn;
+  90:Src/016_uart_case.c **** 
+  91:Src/016_uart_case.c ****     GPIOBtn.pGPIOx = GPIOC; // User button is connected to PC13 (Cf. Nucleo User Manual, or check s
+ 272              		.loc 1 91 20
+ 273 0006 094B     		ldr	r3, .L13
+ 274 0008 7B60     		str	r3, [r7, #4]
+  92:Src/016_uart_case.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+ 275              		.loc 1 92 43
+ 276 000a 0D23     		movs	r3, #13
+ 277 000c 3B72     		strb	r3, [r7, #8]
+  93:Src/016_uart_case.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+ 278              		.loc 1 93 41
+ 279 000e 0023     		movs	r3, #0
+ 280 0010 7B72     		strb	r3, [r7, #9]
+  94:Src/016_uart_case.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+ 281              		.loc 1 94 42
+ 282 0012 0023     		movs	r3, #0
+ 283 0014 BB72     		strb	r3, [r7, #10]
+  95:Src/016_uart_case.c ****     GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+ 284              		.loc 1 95 48
+ 285 0016 0023     		movs	r3, #0
+ 286 0018 FB72     		strb	r3, [r7, #11]
+  96:Src/016_uart_case.c **** 
+  97:Src/016_uart_case.c ****     GPIO_Init(&GPIOBtn);
+ 287              		.loc 1 97 5
+ 288 001a 3B1D     		adds	r3, r7, #4
+ 289 001c 1846     		mov	r0, r3
+ 290 001e FFF7FEFF 		bl	GPIO_Init
+  98:Src/016_uart_case.c **** }
+ 291              		.loc 1 98 1
+ 292 0022 00BF     		nop
+ 293 0024 1037     		adds	r7, r7, #16
+ 294              		.cfi_def_cfa_offset 8
+ 295 0026 BD46     		mov	sp, r7
+ 296              		.cfi_def_cfa_register 13
+ 297              		@ sp needed
+ 298 0028 80BD     		pop	{r7, pc}
+ 299              	.L14:
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 8
+
+
+ 300 002a 00BF     		.align	2
+ 301              	.L13:
+ 302 002c 00080240 		.word	1073874944
+ 303              		.cfi_endproc
+ 304              	.LFE6:
+ 306              		.section	.rodata
+ 307 0036 0000     		.align	2
+ 308              	.LC3:
+ 309 0038 4170706C 		.ascii	"Application is running\000"
+ 309      69636174 
+ 309      696F6E20 
+ 309      69732072 
+ 309      756E6E69 
+ 310 004f 00       		.align	2
+ 311              	.LC4:
+ 312 0050 5472616E 		.ascii	"Transmitted : %s\012\000"
+ 312      736D6974 
+ 312      74656420 
+ 312      3A202573 
+ 312      0A00
+ 313 0062 0000     		.align	2
+ 314              	.LC5:
+ 315 0064 52656365 		.ascii	"Received    : %s\012\000"
+ 315      69766564 
+ 315      20202020 
+ 315      3A202573 
+ 315      0A00
+ 316              		.section	.text.main,"ax",%progbits
+ 317              		.align	1
+ 318              		.global	main
+ 319              		.syntax unified
+ 320              		.thumb
+ 321              		.thumb_func
+ 323              	main:
+ 324              	.LFB7:
+  99:Src/016_uart_case.c **** 
+ 100:Src/016_uart_case.c **** int main(void)
+ 101:Src/016_uart_case.c **** {
+ 325              		.loc 1 101 1
+ 326              		.cfi_startproc
+ 327              		@ args = 0, pretend = 0, frame = 8
+ 328              		@ frame_needed = 1, uses_anonymous_args = 0
+ 329 0000 90B5     		push	{r4, r7, lr}
+ 330              		.cfi_def_cfa_offset 12
+ 331              		.cfi_offset 4, -12
+ 332              		.cfi_offset 7, -8
+ 333              		.cfi_offset 14, -4
+ 334 0002 85B0     		sub	sp, sp, #20
+ 335              		.cfi_def_cfa_offset 32
+ 336 0004 02AF     		add	r7, sp, #8
+ 337              		.cfi_def_cfa 7, 24
+ 102:Src/016_uart_case.c **** 	uint32_t cnt = 0;
+ 338              		.loc 1 102 11
+ 339 0006 0023     		movs	r3, #0
+ 340 0008 7B60     		str	r3, [r7, #4]
+ 103:Src/016_uart_case.c **** 
+ 104:Src/016_uart_case.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 9
+
+
+ 105:Src/016_uart_case.c **** 	SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
+ 341              		.loc 1 105 2
+ 342 000a 0223     		movs	r3, #2
+ 343 000c 0093     		str	r3, [sp]
+ 344 000e 0023     		movs	r3, #0
+ 345 0010 0022     		movs	r2, #0
+ 346 0012 0021     		movs	r1, #0
+ 347 0014 0020     		movs	r0, #0
+ 348 0016 FFF7FEFF 		bl	SEGGER_RTT_ConfigUpBuffer
+ 106:Src/016_uart_case.c **** 
+ 107:Src/016_uart_case.c ****     
+ 108:Src/016_uart_case.c ****     GPIO_ButtonInit();
+ 349              		.loc 1 108 5
+ 350 001a FFF7FEFF 		bl	GPIO_ButtonInit
+ 109:Src/016_uart_case.c **** 	USART2_GPIOInit();
+ 351              		.loc 1 109 2
+ 352 001e FFF7FEFF 		bl	USART2_GPIOInit
+ 110:Src/016_uart_case.c ****     USART2_Init();
+ 353              		.loc 1 110 5
+ 354 0022 FFF7FEFF 		bl	USART2_Init
+ 111:Src/016_uart_case.c **** 
+ 112:Src/016_uart_case.c ****     USART_IRQInterruptConfig(IRQ_NO_USART2,ENABLE);
+ 355              		.loc 1 112 5
+ 356 0026 0121     		movs	r1, #1
+ 357 0028 2620     		movs	r0, #38
+ 358 002a FFF7FEFF 		bl	USART_IRQInterruptConfig
+ 113:Src/016_uart_case.c **** 
+ 114:Src/016_uart_case.c ****     USART_PeripheralControl(USART2,ENABLE);
+ 359              		.loc 1 114 5
+ 360 002e 0121     		movs	r1, #1
+ 361 0030 2F48     		ldr	r0, .L20
+ 362 0032 FFF7FEFF 		bl	USART_PeripheralControl
+ 115:Src/016_uart_case.c **** 
+ 116:Src/016_uart_case.c ****     printf("Application is running\n");
+ 363              		.loc 1 116 5
+ 364 0036 2F48     		ldr	r0, .L20+4
+ 365 0038 FFF7FEFF 		bl	puts
+ 366              	.L19:
+ 117:Src/016_uart_case.c **** 
+ 118:Src/016_uart_case.c ****     //do forever
+ 119:Src/016_uart_case.c ****     while(1)
+ 120:Src/016_uart_case.c ****     {
+ 121:Src/016_uart_case.c **** 		//wait until button is pressed
+ 122:Src/016_uart_case.c **** 		while( ! GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) );
+ 367              		.loc 1 122 8
+ 368 003c 00BF     		nop
+ 369              	.L16:
+ 370              		.loc 1 122 12 discriminator 1
+ 371 003e 0D21     		movs	r1, #13
+ 372 0040 2D48     		ldr	r0, .L20+8
+ 373 0042 FFF7FEFF 		bl	GPIO_ReadFromInputPin
+ 374 0046 0346     		mov	r3, r0
+ 375              		.loc 1 122 10 discriminator 1
+ 376 0048 002B     		cmp	r3, #0
+ 377 004a F8D0     		beq	.L16
+ 123:Src/016_uart_case.c **** 
+ 124:Src/016_uart_case.c **** 		//de-bouncing
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 10
+
+
+ 125:Src/016_uart_case.c **** 		delay();
+ 378              		.loc 1 125 3
+ 379 004c FFF7FEFF 		bl	delay
+ 126:Src/016_uart_case.c **** 
+ 127:Src/016_uart_case.c **** 		// Next message index ; make sure that cnt value doesn't cross 2
+ 128:Src/016_uart_case.c **** 		cnt = cnt % 3;
+ 380              		.loc 1 128 7
+ 381 0050 7A68     		ldr	r2, [r7, #4]
+ 382 0052 2A4B     		ldr	r3, .L20+12
+ 383 0054 A3FB0213 		umull	r1, r3, r3, r2
+ 384 0058 5908     		lsrs	r1, r3, #1
+ 385 005a 0B46     		mov	r3, r1
+ 386 005c 5B00     		lsls	r3, r3, #1
+ 387 005e 0B44     		add	r3, r3, r1
+ 388 0060 D31A     		subs	r3, r2, r3
+ 389 0062 7B60     		str	r3, [r7, #4]
+ 129:Src/016_uart_case.c **** 
+ 130:Src/016_uart_case.c **** 		//First lets enable the reception in interrupt mode
+ 131:Src/016_uart_case.c **** 		//this code enables the receive interrupt
+ 132:Src/016_uart_case.c **** 		while ( USART_ReceiveDataIT(&usart2_handle,rx_buf,strlen(msg[cnt])) != USART_READY );
+ 390              		.loc 1 132 9
+ 391 0064 00BF     		nop
+ 392              	.L17:
+ 393              		.loc 1 132 63 discriminator 1
+ 394 0066 264A     		ldr	r2, .L20+16
+ 395 0068 7B68     		ldr	r3, [r7, #4]
+ 396 006a 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 397              		.loc 1 132 53 discriminator 1
+ 398 006e 1846     		mov	r0, r3
+ 399 0070 FFF7FEFF 		bl	strlen
+ 400 0074 0346     		mov	r3, r0
+ 401              		.loc 1 132 11 discriminator 1
+ 402 0076 1A46     		mov	r2, r3
+ 403 0078 2249     		ldr	r1, .L20+20
+ 404 007a 2348     		ldr	r0, .L20+24
+ 405 007c FFF7FEFF 		bl	USART_ReceiveDataIT
+ 406 0080 0346     		mov	r3, r0
+ 407              		.loc 1 132 71 discriminator 1
+ 408 0082 002B     		cmp	r3, #0
+ 409 0084 EFD1     		bne	.L17
+ 133:Src/016_uart_case.c **** 
+ 134:Src/016_uart_case.c **** 		//Send the msg indexed by cnt in blocking mode
+ 135:Src/016_uart_case.c ****     	USART_SendData(&usart2_handle,(uint8_t*)msg[cnt],strlen(msg[cnt]));
+ 410              		.loc 1 135 49
+ 411 0086 1E4A     		ldr	r2, .L20+16
+ 412 0088 7B68     		ldr	r3, [r7, #4]
+ 413 008a 52F82340 		ldr	r4, [r2, r3, lsl #2]
+ 414              		.loc 1 135 65
+ 415 008e 1C4A     		ldr	r2, .L20+16
+ 416 0090 7B68     		ldr	r3, [r7, #4]
+ 417 0092 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 418              		.loc 1 135 55
+ 419 0096 1846     		mov	r0, r3
+ 420 0098 FFF7FEFF 		bl	strlen
+ 421 009c 0346     		mov	r3, r0
+ 422              		.loc 1 135 6
+ 423 009e 1A46     		mov	r2, r3
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 11
+
+
+ 424 00a0 2146     		mov	r1, r4
+ 425 00a2 1948     		ldr	r0, .L20+24
+ 426 00a4 FFF7FEFF 		bl	USART_SendData
+ 136:Src/016_uart_case.c **** 
+ 137:Src/016_uart_case.c ****     	printf("Transmitted : %s\n",msg[cnt]);
+ 427              		.loc 1 137 6
+ 428 00a8 154A     		ldr	r2, .L20+16
+ 429 00aa 7B68     		ldr	r3, [r7, #4]
+ 430 00ac 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 431 00b0 1946     		mov	r1, r3
+ 432 00b2 1648     		ldr	r0, .L20+28
+ 433 00b4 FFF7FEFF 		bl	printf
+ 138:Src/016_uart_case.c **** 
+ 139:Src/016_uart_case.c **** 
+ 140:Src/016_uart_case.c ****     	//Now lets wait until all the bytes are received from the arduino .
+ 141:Src/016_uart_case.c ****     	//When all the bytes are received rxCmplt will be SET in application callback
+ 142:Src/016_uart_case.c ****     	while(rxCmplt != SET);
+ 434              		.loc 1 142 11
+ 435 00b8 00BF     		nop
+ 436              	.L18:
+ 437              		.loc 1 142 20 discriminator 1
+ 438 00ba 154B     		ldr	r3, .L20+32
+ 439 00bc 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 440 00be 012B     		cmp	r3, #1
+ 441 00c0 FBD1     		bne	.L18
+ 143:Src/016_uart_case.c **** 
+ 144:Src/016_uart_case.c ****     	//just make sure that last byte should be null otherwise %s fails while printing
+ 145:Src/016_uart_case.c ****     	rx_buf[strlen(msg[cnt])+ 1] = '\0';
+ 442              		.loc 1 145 23
+ 443 00c2 0F4A     		ldr	r2, .L20+16
+ 444 00c4 7B68     		ldr	r3, [r7, #4]
+ 445 00c6 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 446              		.loc 1 145 13
+ 447 00ca 1846     		mov	r0, r3
+ 448 00cc FFF7FEFF 		bl	strlen
+ 449 00d0 0346     		mov	r3, r0
+ 450              		.loc 1 145 29
+ 451 00d2 0133     		adds	r3, r3, #1
+ 452              		.loc 1 145 34
+ 453 00d4 0B4A     		ldr	r2, .L20+20
+ 454 00d6 0021     		movs	r1, #0
+ 455 00d8 D154     		strb	r1, [r2, r3]
+ 146:Src/016_uart_case.c **** 
+ 147:Src/016_uart_case.c ****     	//Print what we received from the arduino
+ 148:Src/016_uart_case.c ****     	printf("Received    : %s\n",rx_buf);
+ 456              		.loc 1 148 6
+ 457 00da 0A49     		ldr	r1, .L20+20
+ 458 00dc 0D48     		ldr	r0, .L20+36
+ 459 00de FFF7FEFF 		bl	printf
+ 149:Src/016_uart_case.c **** 
+ 150:Src/016_uart_case.c ****     	//invalidate the flag
+ 151:Src/016_uart_case.c ****     	rxCmplt = RESET;
+ 460              		.loc 1 151 14
+ 461 00e2 0B4B     		ldr	r3, .L20+32
+ 462 00e4 0022     		movs	r2, #0
+ 463 00e6 1A70     		strb	r2, [r3]
+ 152:Src/016_uart_case.c **** 
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 12
+
+
+ 153:Src/016_uart_case.c ****     	//move on to next message indexed in msg[]
+ 154:Src/016_uart_case.c ****     	cnt ++;
+ 464              		.loc 1 154 10
+ 465 00e8 7B68     		ldr	r3, [r7, #4]
+ 466 00ea 0133     		adds	r3, r3, #1
+ 467 00ec 7B60     		str	r3, [r7, #4]
+ 122:Src/016_uart_case.c **** 
+ 468              		.loc 1 122 8
+ 469 00ee A5E7     		b	.L19
+ 470              	.L21:
+ 471              		.align	2
+ 472              	.L20:
+ 473 00f0 00440040 		.word	1073759232
+ 474 00f4 38000000 		.word	.LC3
+ 475 00f8 00080240 		.word	1073874944
+ 476 00fc ABAAAAAA 		.word	-1431655765
+ 477 0100 00000000 		.word	msg
+ 478 0104 00000000 		.word	rx_buf
+ 479 0108 00000000 		.word	usart2_handle
+ 480 010c 50000000 		.word	.LC4
+ 481 0110 00000000 		.word	rxCmplt
+ 482 0114 64000000 		.word	.LC5
+ 483              		.cfi_endproc
+ 484              	.LFE7:
+ 486              		.section	.text.USART2_IRQHandler,"ax",%progbits
+ 487              		.align	1
+ 488              		.global	USART2_IRQHandler
+ 489              		.syntax unified
+ 490              		.thumb
+ 491              		.thumb_func
+ 493              	USART2_IRQHandler:
+ 494              	.LFB8:
+ 155:Src/016_uart_case.c ****     }
+ 156:Src/016_uart_case.c **** 
+ 157:Src/016_uart_case.c **** 
+ 158:Src/016_uart_case.c **** 	return 0;
+ 159:Src/016_uart_case.c **** }
+ 160:Src/016_uart_case.c **** 
+ 161:Src/016_uart_case.c **** 
+ 162:Src/016_uart_case.c **** void USART2_IRQHandler(void)
+ 163:Src/016_uart_case.c **** {
+ 495              		.loc 1 163 1
+ 496              		.cfi_startproc
+ 497              		@ args = 0, pretend = 0, frame = 0
+ 498              		@ frame_needed = 1, uses_anonymous_args = 0
+ 499 0000 80B5     		push	{r7, lr}
+ 500              		.cfi_def_cfa_offset 8
+ 501              		.cfi_offset 7, -8
+ 502              		.cfi_offset 14, -4
+ 503 0002 00AF     		add	r7, sp, #0
+ 504              		.cfi_def_cfa_register 7
+ 164:Src/016_uart_case.c **** 	USART_IRQHandling(&usart2_handle);
+ 505              		.loc 1 164 2
+ 506 0004 0248     		ldr	r0, .L23
+ 507 0006 FFF7FEFF 		bl	USART_IRQHandling
+ 165:Src/016_uart_case.c **** }
+ 508              		.loc 1 165 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 13
+
+
+ 509 000a 00BF     		nop
+ 510 000c 80BD     		pop	{r7, pc}
+ 511              	.L24:
+ 512 000e 00BF     		.align	2
+ 513              	.L23:
+ 514 0010 00000000 		.word	usart2_handle
+ 515              		.cfi_endproc
+ 516              	.LFE8:
+ 518              		.section	.text.USART_ApplicationEventCallback,"ax",%progbits
+ 519              		.align	1
+ 520              		.global	USART_ApplicationEventCallback
+ 521              		.syntax unified
+ 522              		.thumb
+ 523              		.thumb_func
+ 525              	USART_ApplicationEventCallback:
+ 526              	.LFB9:
+ 166:Src/016_uart_case.c **** 
+ 167:Src/016_uart_case.c **** 
+ 168:Src/016_uart_case.c **** 
+ 169:Src/016_uart_case.c **** 
+ 170:Src/016_uart_case.c **** 
+ 171:Src/016_uart_case.c **** void USART_ApplicationEventCallback( USART_Handle_t *pUSARTHandle,uint8_t ApEv)
+ 172:Src/016_uart_case.c **** {
+ 527              		.loc 1 172 1
+ 528              		.cfi_startproc
+ 529              		@ args = 0, pretend = 0, frame = 8
+ 530              		@ frame_needed = 1, uses_anonymous_args = 0
+ 531              		@ link register save eliminated.
+ 532 0000 80B4     		push	{r7}
+ 533              		.cfi_def_cfa_offset 4
+ 534              		.cfi_offset 7, -4
+ 535 0002 83B0     		sub	sp, sp, #12
+ 536              		.cfi_def_cfa_offset 16
+ 537 0004 00AF     		add	r7, sp, #0
+ 538              		.cfi_def_cfa_register 7
+ 539 0006 7860     		str	r0, [r7, #4]
+ 540 0008 0B46     		mov	r3, r1
+ 541 000a FB70     		strb	r3, [r7, #3]
+ 173:Src/016_uart_case.c ****    if(ApEv == USART_EVENT_RX_CMPLT)
+ 542              		.loc 1 173 6
+ 543 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 544 000e 012B     		cmp	r3, #1
+ 545 0010 02D1     		bne	.L27
+ 174:Src/016_uart_case.c ****    {
+ 175:Src/016_uart_case.c **** 			rxCmplt = SET;
+ 546              		.loc 1 175 12
+ 547 0012 044B     		ldr	r3, .L28
+ 548 0014 0122     		movs	r2, #1
+ 549 0016 1A70     		strb	r2, [r3]
+ 550              	.L27:
+ 176:Src/016_uart_case.c **** 
+ 177:Src/016_uart_case.c ****    }else if (ApEv == USART_EVENT_TX_CMPLT)
+ 178:Src/016_uart_case.c ****    {
+ 179:Src/016_uart_case.c **** 	   ;
+ 180:Src/016_uart_case.c ****    }
+ 181:Src/016_uart_case.c **** }
+ 551              		.loc 1 181 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 14
+
+
+ 552 0018 00BF     		nop
+ 553 001a 0C37     		adds	r7, r7, #12
+ 554              		.cfi_def_cfa_offset 4
+ 555 001c BD46     		mov	sp, r7
+ 556              		.cfi_def_cfa_register 13
+ 557              		@ sp needed
+ 558 001e 5DF8047B 		ldr	r7, [sp], #4
+ 559              		.cfi_restore 7
+ 560              		.cfi_def_cfa_offset 0
+ 561 0022 7047     		bx	lr
+ 562              	.L29:
+ 563              		.align	2
+ 564              	.L28:
+ 565 0024 00000000 		.word	rxCmplt
+ 566              		.cfi_endproc
+ 567              	.LFE9:
+ 569              		.text
+ 570              	.Letext0:
+ 571              		.file 2 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 572              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 573              		.file 4 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 574              		.file 5 "drivers/Inc/stm32f767xx.h"
+ 575              		.file 6 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ 576              		.file 7 "drivers/Inc/stm32f767xx_usart_driver.h"
+ 577              		.file 8 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 578              		.file 9 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
+ 579              		.file 10 "Inc/SEGGER_RTT.h"
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 016_uart_case.c
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:19     .text.delay:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:25     .text.delay:0000000000000000 delay
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:73     .text.delay:0000000000000028 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:92     .data.msg:0000000000000000 msg
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:79     .rodata:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:89     .data.msg:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:101    .bss.rx_buf:0000000000000000 rx_buf
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:98     .bss.rx_buf:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:108    .bss.usart2_handle:0000000000000000 usart2_handle
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:105    .bss.usart2_handle:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:114    .bss.rxCmplt:0000000000000000 rxCmplt
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:115    .bss.rxCmplt:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:120    .bss.g_data:0000000000000000 g_data
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:121    .bss.g_data:0000000000000000 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:123    .text.USART2_GPIOInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:129    .text.USART2_GPIOInit:0000000000000000 USART2_GPIOInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:186    .text.USART2_GPIOInit:0000000000000040 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:191    .text.USART2_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:197    .text.USART2_Init:0000000000000000 USART2_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:246    .text.USART2_Init:000000000000003c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:252    .text.GPIO_ButtonInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:258    .text.GPIO_ButtonInit:0000000000000000 GPIO_ButtonInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:302    .text.GPIO_ButtonInit:000000000000002c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:317    .text.main:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:323    .text.main:0000000000000000 main
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:473    .text.main:00000000000000f0 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:487    .text.USART2_IRQHandler:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:493    .text.USART2_IRQHandler:0000000000000000 USART2_IRQHandler
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:514    .text.USART2_IRQHandler:0000000000000010 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:519    .text.USART_ApplicationEventCallback:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:525    .text.USART_ApplicationEventCallback:0000000000000000 USART_ApplicationEventCallback
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//cctGp6AJ.s:565    .text.USART_ApplicationEventCallback:0000000000000024 $d
+
+UNDEFINED SYMBOLS
+GPIO_Init
+USART_Init
+SEGGER_RTT_ConfigUpBuffer
+USART_IRQInterruptConfig
+USART_PeripheralControl
+puts
+GPIO_ReadFromInputPin
+strlen
+USART_ReceiveDataIT
+USART_SendData
+printf
+USART_IRQHandling

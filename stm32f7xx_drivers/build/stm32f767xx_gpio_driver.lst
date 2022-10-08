@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 8
   31              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 2
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 2
 
 
   32              		@ link register save eliminated.
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
   56:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOI_PCLK_EN();
   57:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
   58:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 3
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 3
 
 
   59:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOJ_PCLK_EN();
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
   66              		.loc 1 35 4
   67 0030 744B     		ldr	r3, .L25+4
   68 0032 1B6B     		ldr	r3, [r3, #48]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 4
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 4
 
 
   69 0034 734A     		ldr	r2, .L25+4
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
   45:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
  117              		.loc 1 45 12
  118 0080 7B68     		ldr	r3, [r7, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 5
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 5
 
 
  119 0082 654A     		ldr	r2, .L25+24
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  166 00cc 1B6B     		ldr	r3, [r3, #48]
  167 00ce 4D4A     		ldr	r2, .L25+4
  168 00d0 43F48073 		orr	r3, r3, #256
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 6
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 6
 
 
  169 00d4 1363     		str	r3, [r2, #48]
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  216 011a 7B68     		ldr	r3, [r7, #4]
  217 011c 3A4A     		ldr	r2, .L25+8
  218 011e 9342     		cmp	r3, r2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 7
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 7
 
 
  219 0120 06D1     		bne	.L15
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  266 016a 23F01003 		bic	r3, r3, #16
  267 016e 1363     		str	r3, [r2, #48]
  268              		.loc 1 102 1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 8
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 8
 
 
  269 0170 40E0     		b	.L24
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  316 01b8 9342     		cmp	r3, r2
  317 01ba 06D1     		bne	.L22
   93:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOJ)
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 9
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 9
 
 
  318              		.loc 1 93 4
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  368 0204 00380240 		.word	1073887232
  369 0208 00040240 		.word	1073873920
  370 020c 00080240 		.word	1073874944
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 10
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 10
 
 
  371 0210 000C0240 		.word	1073875968
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  123:drivers/Src/stm32f767xx_gpio_driver.c **** 	// enable the peripheral clock
  124:drivers/Src/stm32f767xx_gpio_driver.c **** 	GPIO_PeriClockControl(pGPIOHandle->pGPIOx, ENABLE);
  407              		.loc 1 124 2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 11
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 11
 
 
  408 000c 7B68     		ldr	r3, [r7, #4]
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  455 0050 7B68     		ldr	r3, [r7, #4]
  456 0052 1B68     		ldr	r3, [r3]
  457              		.loc 1 131 30
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 12
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 12
 
 
  458 0054 1968     		ldr	r1, [r3]
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  501 008e D243     		mvns	r2, r2
  502 0090 1146     		mov	r1, r2
  503              		.loc 1 142 15
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 13
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 13
 
 
  504 0092 484A     		ldr	r2, .L57
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  152:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RFT)
  549              		.loc 1 152 40
  550 00d2 7B68     		ldr	r3, [r7, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 14
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 14
 
 
  551 00d4 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  595              		.loc 1 162 11
  596 0112 03F00303 		and	r3, r3, #3
  597 0116 BB74     		strb	r3, [r7, #18]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 15
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 15
 
 
  163:drivers/Src/stm32f767xx_gpio_driver.c **** 		uint8_t portcode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  651 0162 1C4A     		ldr	r2, .L57+32
  652 0164 9342     		cmp	r3, r2
  653 0166 16D0     		beq	.L40
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 16
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 16
 
 
  654              		.loc 1 163 22 discriminator 15
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  708 01a6 0323     		movs	r3, #3
  709 01a8 1DE0     		b	.L54
  710              	.L35:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 17
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 17
 
 
  711              		.loc 1 163 11 discriminator 6
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  760 0208 534B     		ldr	r3, .L59+8
  761 020a 1B68     		ldr	r3, [r3]
  762              		.loc 1 168 48 discriminator 44
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 18
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 18
 
 
  763 020c 7A68     		ldr	r2, [r7, #4]
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  810 024c 9A60     		str	r2, [r3, #8]
  176:drivers/Src/stm32f767xx_gpio_driver.c **** 	pGPIOHandle->pGPIOx->OSPEEDR |= temp;
  811              		.loc 1 176 13
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 19
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 19
 
 
  812 024e 7B68     		ldr	r3, [r7, #4]
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  860 0290 1B68     		ldr	r3, [r3]
  861              		.loc 1 182 29
  862 0292 D968     		ldr	r1, [r3, #12]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 20
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 20
 
 
  863              		.loc 1 182 13
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  911 02d4 7A69     		ldr	r2, [r7, #20]
  912 02d6 0A43     		orrs	r2, r2, r1
  913 02d8 5A60     		str	r2, [r3, #4]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 21
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 21
 
 
  189:drivers/Src/stm32f767xx_gpio_driver.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  957              		.loc 1 199 14
  958 031c 7B68     		ldr	r3, [r7, #4]
  959 031e 1B68     		ldr	r3, [r3]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 22
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 22
 
 
  960              		.loc 1 199 35
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  206:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
  207:drivers/Src/stm32f767xx_gpio_driver.c ****  *
  208:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 23
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 23
 
 
  209:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         - 
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  234:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOF)
  235:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
  236:drivers/Src/stm32f767xx_gpio_driver.c **** 			GPIOF_REG_RESET();
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 24
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 24
 
 
  237:drivers/Src/stm32f767xx_gpio_driver.c **** 		}else if (pGPIOx == GPIOG)
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1072 0060 4A4B     		ldr	r3, .L74+4
  1073 0062 1B69     		ldr	r3, [r3, #16]
  1074 0064 494A     		ldr	r2, .L74+4
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 25
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 25
 
 
  1075 0066 23F00403 		bic	r3, r3, #4
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1123              		.loc 1 236 4
  1124 00ba 344B     		ldr	r3, .L74+4
  1125 00bc 1B69     		ldr	r3, [r3, #16]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 26
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 26
 
 
  1126 00be 334A     		ldr	r2, .L74+4
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1175              		.loc 1 243 12
  1176 0118 7B68     		ldr	r3, [r7, #4]
  1177 011a 244A     		ldr	r2, .L74+36
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 27
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 27
 
 
  1178 011c 9342     		cmp	r3, r2
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1227 0176 23F48063 		bic	r3, r3, #1024
  1228 017a 1361     		str	r3, [r2, #16]
  1229              	.L73:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 28
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 28
 
 
  1230              		.loc 1 253 1
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  272:drivers/Src/stm32f767xx_gpio_driver.c **** {
  1268              		.loc 1 272 1
  1269              		.cfi_startproc
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 29
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 29
 
 
  1270              		@ args = 0, pretend = 0, frame = 16
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  280:drivers/Src/stm32f767xx_gpio_driver.c ****  *
  281:drivers/Src/stm32f767xx_gpio_driver.c ****  * @brief             -
  282:drivers/Src/stm32f767xx_gpio_driver.c ****  *
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 30
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 30
 
 
  283:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1360              	GPIO_WriteToOutputPin:
  1361              	.LFB5:
  298:drivers/Src/stm32f767xx_gpio_driver.c **** 
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 31
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 31
 
 
  299:drivers/Src/stm32f767xx_gpio_driver.c **** 
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  321:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
  322:drivers/Src/stm32f767xx_gpio_driver.c **** 		//write 0
  323:drivers/Src/stm32f767xx_gpio_driver.c **** 		pGPIOx->ODR &= ~( 1 << PinNumber); // clear bit position
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 32
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 32
 
 
  324:drivers/Src/stm32f767xx_gpio_driver.c **** 	}
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  336:drivers/Src/stm32f767xx_gpio_driver.c ****  *
  337:drivers/Src/stm32f767xx_gpio_driver.c ****  * @return            -
  338:drivers/Src/stm32f767xx_gpio_driver.c ****  *
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 33
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 33
 
 
  339:drivers/Src/stm32f767xx_gpio_driver.c ****  * @Note              -
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  353:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
  354:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
  355:drivers/Src/stm32f767xx_gpio_driver.c ****  * @param[in]         -
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 34
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 34
 
 
  356:drivers/Src/stm32f767xx_gpio_driver.c ****  *
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1521              		.thumb_func
  1523              	GPIO_IRQInterruptConfig:
  1524              	.LFB8:
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 35
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 35
 
 
  366:drivers/Src/stm32f767xx_gpio_driver.c **** 
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1555 0022 0121     		movs	r1, #1
  1556 0024 01FA02F2 		lsl	r2, r1, r2
  1557 0028 1146     		mov	r1, r2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 36
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 36
 
 
  1558              		.loc 1 389 16
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  391:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
  1569              		.loc 1 391 28 discriminator 1
  1570 0038 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 37
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 37
 
 
  1571 003a 3F2B     		cmp	r3, #63
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1614 007e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  1615 0080 5F2B     		cmp	r3, #95
  1616 0082 66D9     		bls	.L96
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 38
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 38
 
 
  401:drivers/Src/stm32f767xx_gpio_driver.c **** 		{
@@ -2278,7 +2278,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1661 00ca 0B43     		orrs	r3, r3, r1
  1662 00cc 1360     		str	r3, [r2]
  1663              		.loc 1 431 1
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 39
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 39
 
 
  1664 00ce 40E0     		b	.L96
@@ -2338,7 +2338,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1707 0112 1146     		mov	r1, r2
  422:drivers/Src/stm32f767xx_gpio_driver.c **** 			
  1708              		.loc 1 422 16
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 40
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 40
 
 
  1709 0114 194A     		ldr	r2, .L97+28
@@ -2398,7 +2398,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1756              		.cfi_restore 7
  1757              		.cfi_def_cfa_offset 0
  1758 015c 7047     		bx	lr
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 41
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 41
 
 
  1759              	.L98:
@@ -2458,7 +2458,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1795 0006 0346     		mov	r3, r0
  1796 0008 3960     		str	r1, [r7]
  1797 000a FB71     		strb	r3, [r7, #7]
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 42
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 42
 
 
  452:drivers/Src/stm32f767xx_gpio_driver.c **** 	//1. first lets find out the ipr register
@@ -2518,7 +2518,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1842              		.align	2
  1843              	.L100:
  1844 004c 00E400E0 		.word	-536812544
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 43
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 43
 
 
  1845              		.cfi_endproc
@@ -2578,7 +2578,7 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1882 001a 09D0     		beq	.L104
  481:drivers/Src/stm32f767xx_gpio_driver.c **** 	{
  482:drivers/Src/stm32f767xx_gpio_driver.c **** 		// clear
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 44
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 44
 
 
  483:drivers/Src/stm32f767xx_gpio_driver.c **** 		EXTI->PR |= (1 << PinNumber);
@@ -2620,40 +2620,40 @@ ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 1
  1917              		.file 3 "/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/
  1918              		.file 4 "drivers/Inc/stm32f767xx.h"
  1919              		.file 5 "drivers/Inc/stm32f767xx_gpio_driver.h"
-ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s 			page 45
+ARM GAS  /var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f767xx_gpio_driver.c
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:19     .text.GPIO_PeriClockControl:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:25     .text.GPIO_PeriClockControl:0000000000000000 GPIO_PeriClockControl
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:367    .text.GPIO_PeriClockControl:0000000000000200 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:383    .text.GPIO_Init:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:389    .text.GPIO_Init:0000000000000000 GPIO_Init
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:721    .text.GPIO_Init:00000000000001b4 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:735    .text.GPIO_Init:00000000000001e4 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:995    .text.GPIO_Init:0000000000000350 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1002   .text.GPIO_DeInit:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1008   .text.GPIO_DeInit:0000000000000000 GPIO_DeInit
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1244   .text.GPIO_DeInit:0000000000000188 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1260   .text.GPIO_ReadFromInputPin:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1266   .text.GPIO_ReadFromInputPin:0000000000000000 GPIO_ReadFromInputPin
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1311   .text.GPIO_ReadFromInputPort:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1317   .text.GPIO_ReadFromInputPort:0000000000000000 GPIO_ReadFromInputPort
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1354   .text.GPIO_WriteToOutputPin:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1360   .text.GPIO_WriteToOutputPin:0000000000000000 GPIO_WriteToOutputPin
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1426   .text.GPIO_WriteToOutputPort:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1432   .text.GPIO_WriteToOutputPort:0000000000000000 GPIO_WriteToOutputPort
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1468   .text.GPIO_ToggleOutputPin:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1474   .text.GPIO_ToggleOutputPin:0000000000000000 GPIO_ToggleOutputPin
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1517   .text.GPIO_IRQInterruptConfig:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1523   .text.GPIO_IRQInterruptConfig:0000000000000000 GPIO_IRQInterruptConfig
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1762   .text.GPIO_IRQInterruptConfig:0000000000000160 $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1775   .text.GPIO_IRQPriorityConfig:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1781   .text.GPIO_IRQPriorityConfig:0000000000000000 GPIO_IRQPriorityConfig
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1844   .text.GPIO_IRQPriorityConfig:000000000000004c $d
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1849   .text.GPIO_IRQHandling:0000000000000000 $t
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1855   .text.GPIO_IRQHandling:0000000000000000 GPIO_IRQHandling
-/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccVnAc8j.s:1910   .text.GPIO_IRQHandling:000000000000003c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:19     .text.GPIO_PeriClockControl:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:25     .text.GPIO_PeriClockControl:0000000000000000 GPIO_PeriClockControl
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:367    .text.GPIO_PeriClockControl:0000000000000200 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:383    .text.GPIO_Init:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:389    .text.GPIO_Init:0000000000000000 GPIO_Init
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:721    .text.GPIO_Init:00000000000001b4 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:735    .text.GPIO_Init:00000000000001e4 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:995    .text.GPIO_Init:0000000000000350 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1002   .text.GPIO_DeInit:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1008   .text.GPIO_DeInit:0000000000000000 GPIO_DeInit
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1244   .text.GPIO_DeInit:0000000000000188 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1260   .text.GPIO_ReadFromInputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1266   .text.GPIO_ReadFromInputPin:0000000000000000 GPIO_ReadFromInputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1311   .text.GPIO_ReadFromInputPort:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1317   .text.GPIO_ReadFromInputPort:0000000000000000 GPIO_ReadFromInputPort
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1354   .text.GPIO_WriteToOutputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1360   .text.GPIO_WriteToOutputPin:0000000000000000 GPIO_WriteToOutputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1426   .text.GPIO_WriteToOutputPort:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1432   .text.GPIO_WriteToOutputPort:0000000000000000 GPIO_WriteToOutputPort
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1468   .text.GPIO_ToggleOutputPin:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1474   .text.GPIO_ToggleOutputPin:0000000000000000 GPIO_ToggleOutputPin
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1517   .text.GPIO_IRQInterruptConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1523   .text.GPIO_IRQInterruptConfig:0000000000000000 GPIO_IRQInterruptConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1762   .text.GPIO_IRQInterruptConfig:0000000000000160 $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1775   .text.GPIO_IRQPriorityConfig:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1781   .text.GPIO_IRQPriorityConfig:0000000000000000 GPIO_IRQPriorityConfig
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1844   .text.GPIO_IRQPriorityConfig:000000000000004c $d
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1849   .text.GPIO_IRQHandling:0000000000000000 $t
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1855   .text.GPIO_IRQHandling:0000000000000000 GPIO_IRQHandling
+/var/folders/0z/tsy30v1j4xl4_7kw94k978ww0000gn/T//ccTdip2L.s:1910   .text.GPIO_IRQHandling:000000000000003c $d
 
 NO UNDEFINED SYMBOLS
