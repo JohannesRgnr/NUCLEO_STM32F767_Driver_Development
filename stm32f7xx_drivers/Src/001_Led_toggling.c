@@ -3,7 +3,7 @@
 
 
 void delay(void){
-  for (uint32_t i = 0; i < 100000; i++)
+  for (uint32_t i = 0; i < 800000; i++)
     ;
 }
 

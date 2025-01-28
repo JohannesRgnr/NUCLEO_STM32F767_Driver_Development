@@ -1,0 +1,195 @@
+ARM GAS  /var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"001_Led_toggling.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "Src/001_Led_toggling.c"
+  19              		.section	.text.delay,"ax",%progbits
+  20              		.align	1
+  21              		.global	delay
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	delay:
+  27              	.LFB0:
+   1:Src/001_Led_toggling.c **** 
+   2:Src/001_Led_toggling.c **** #include "stm32f767xx.h"
+   3:Src/001_Led_toggling.c **** 
+   4:Src/001_Led_toggling.c **** 
+   5:Src/001_Led_toggling.c **** void delay(void){
+  28              		.loc 1 5 17
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40              	.LBB2:
+   6:Src/001_Led_toggling.c ****   for (uint32_t i = 0; i < 800000; i++)
+  41              		.loc 1 6 17
+  42 0006 0023     		movs	r3, #0
+  43 0008 7B60     		str	r3, [r7, #4]
+  44              		.loc 1 6 3
+  45 000a 02E0     		b	.L2
+  46              	.L3:
+  47              		.loc 1 6 37 discriminator 3
+  48 000c 7B68     		ldr	r3, [r7, #4]
+  49 000e 0133     		adds	r3, r3, #1
+  50 0010 7B60     		str	r3, [r7, #4]
+  51              	.L2:
+  52              		.loc 1 6 26 discriminator 1
+ARM GAS  /var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s 			page 2
+
+
+  53 0012 7B68     		ldr	r3, [r7, #4]
+  54 0014 044A     		ldr	r2, .L4
+  55 0016 9342     		cmp	r3, r2
+  56 0018 F8D9     		bls	.L3
+  57              	.LBE2:
+   7:Src/001_Led_toggling.c ****     ;
+   8:Src/001_Led_toggling.c **** }
+  58              		.loc 1 8 1
+  59 001a 00BF     		nop
+  60 001c 00BF     		nop
+  61 001e 0C37     		adds	r7, r7, #12
+  62              		.cfi_def_cfa_offset 4
+  63 0020 BD46     		mov	sp, r7
+  64              		.cfi_def_cfa_register 13
+  65              		@ sp needed
+  66 0022 5DF8047B 		ldr	r7, [sp], #4
+  67              		.cfi_restore 7
+  68              		.cfi_def_cfa_offset 0
+  69 0026 7047     		bx	lr
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0028 FF340C00 		.word	799999
+  74              		.cfi_endproc
+  75              	.LFE0:
+  77              		.section	.text.main,"ax",%progbits
+  78              		.align	1
+  79              		.global	main
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  84              	main:
+  85              	.LFB1:
+   9:Src/001_Led_toggling.c **** 
+  10:Src/001_Led_toggling.c **** int main(void){
+  86              		.loc 1 10 15
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 16
+  89              		@ frame_needed = 1, uses_anonymous_args = 0
+  90 0000 80B5     		push	{r7, lr}
+  91              		.cfi_def_cfa_offset 8
+  92              		.cfi_offset 7, -8
+  93              		.cfi_offset 14, -4
+  94 0002 84B0     		sub	sp, sp, #16
+  95              		.cfi_def_cfa_offset 24
+  96 0004 00AF     		add	r7, sp, #0
+  97              		.cfi_def_cfa_register 7
+  11:Src/001_Led_toggling.c **** 
+  12:Src/001_Led_toggling.c ****   GPIO_Handle_t GpioLed;
+  13:Src/001_Led_toggling.c **** 
+  14:Src/001_Led_toggling.c ****   GpioLed.pGPIOx = GPIOB; // LED1 is on PB0 (Cf. Nucleo User Manual, or check schematics)
+  98              		.loc 1 14 18
+  99 0006 0E4B     		ldr	r3, .L8
+ 100 0008 7B60     		str	r3, [r7, #4]
+  15:Src/001_Led_toggling.c ****   GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
+ 101              		.loc 1 15 41
+ 102 000a 0023     		movs	r3, #0
+ARM GAS  /var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s 			page 3
+
+
+ 103 000c 3B72     		strb	r3, [r7, #8]
+  16:Src/001_Led_toggling.c ****   GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
+ 104              		.loc 1 16 39
+ 105 000e 0123     		movs	r3, #1
+ 106 0010 7B72     		strb	r3, [r7, #9]
+  17:Src/001_Led_toggling.c ****   GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+ 107              		.loc 1 17 40
+ 108 0012 0023     		movs	r3, #0
+ 109 0014 BB72     		strb	r3, [r7, #10]
+  18:Src/001_Led_toggling.c ****   GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+ 110              		.loc 1 18 41
+ 111 0016 0023     		movs	r3, #0
+ 112 0018 3B73     		strb	r3, [r7, #12]
+  19:Src/001_Led_toggling.c ****   GpioLed.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+ 113              		.loc 1 19 46
+ 114 001a 0023     		movs	r3, #0
+ 115 001c FB72     		strb	r3, [r7, #11]
+  20:Src/001_Led_toggling.c **** 
+  21:Src/001_Led_toggling.c ****   GPIO_PeriClockControl(GPIOB, ENABLE);
+ 116              		.loc 1 21 3
+ 117 001e 0121     		movs	r1, #1
+ 118 0020 0748     		ldr	r0, .L8
+ 119 0022 FFF7FEFF 		bl	GPIO_PeriClockControl
+  22:Src/001_Led_toggling.c ****   GPIO_Init(&GpioLed);
+ 120              		.loc 1 22 3
+ 121 0026 3B1D     		adds	r3, r7, #4
+ 122 0028 1846     		mov	r0, r3
+ 123 002a FFF7FEFF 		bl	GPIO_Init
+ 124              	.L7:
+  23:Src/001_Led_toggling.c **** 
+  24:Src/001_Led_toggling.c ****   while(1)
+  25:Src/001_Led_toggling.c ****   {
+  26:Src/001_Led_toggling.c ****     GPIO_ToggleOutputPin(GPIOB, GPIO_PIN_NO_0);
+ 125              		.loc 1 26 5
+ 126 002e 0021     		movs	r1, #0
+ 127 0030 0348     		ldr	r0, .L8
+ 128 0032 FFF7FEFF 		bl	GPIO_ToggleOutputPin
+  27:Src/001_Led_toggling.c ****     delay();
+ 129              		.loc 1 27 5 discriminator 1
+ 130 0036 FFF7FEFF 		bl	delay
+  26:Src/001_Led_toggling.c ****     delay();
+ 131              		.loc 1 26 5
+ 132 003a 00BF     		nop
+ 133 003c F7E7     		b	.L7
+ 134              	.L9:
+ 135 003e 00BF     		.align	2
+ 136              	.L8:
+ 137 0040 00040240 		.word	1073873920
+ 138              		.cfi_endproc
+ 139              	.LFE1:
+ 141              		.text
+ 142              	.Letext0:
+ 143              		.file 2 "/Users/jr/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack
+ 144              		.file 3 "/Users/jr/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack
+ 145              		.file 4 "drivers/Inc/stm32f767xx.h"
+ 146              		.file 5 "drivers/Inc/stm32f767xx_gpio_driver.h"
+ARM GAS  /var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 001_Led_toggling.c
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:20     .text.delay:00000000 $t
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:26     .text.delay:00000000 delay
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:73     .text.delay:00000028 $d
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:78     .text.main:00000000 $t
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:84     .text.main:00000000 main
+/var/folders/lp/x54gwt890xv47sdkqj1k04q40000gn/T//ccelzqPO.s:137    .text.main:00000040 $d
+
+UNDEFINED SYMBOLS
+GPIO_PeriClockControl
+GPIO_Init
+GPIO_ToggleOutputPin

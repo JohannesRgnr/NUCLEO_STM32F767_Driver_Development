@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Src/016_uart_case.c \
+Src/001_Led_toggling.c \
 Src/SEGGER_RTT.c \
 Src/SEGGER_RTT_Syscalls_GCC.c \
 Src/SEGGER_RTT_printf.c \
@@ -63,7 +63,7 @@ PREFIX = arm-none-eabi-
 POSTFIX = "
 # The gcc compiler bin path can be either defined in make command via GCC_PATH variable (> make GCC_PATH=xxx)
 # either it can be added to the PATH environment variable.
-GCC_PATH="/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/11.2.1-1.2.2/.content/bin
+GCC_PATH="/Users/jr/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin
 ifdef GCC_PATH
 CXX = $(GCC_PATH)/$(PREFIX)g++$(POSTFIX)
 CC = $(GCC_PATH)/$(PREFIX)gcc$(POSTFIX)
@@ -171,8 +171,13 @@ vpath %.cpp $(sort $(dir $(CPP_SOURCES)))
 # list of C objects
 OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(C_SOURCES:.c=.o)))
 vpath %.c $(sort $(dir $(C_SOURCES)))
+
 # list of ASM program objects
-OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
+UPPER_CASE_ASM_SOURCES = $(filter %.S,$(ASM_SOURCES))
+LOWER_CASE_ASM_SOURCES = $(filter %.s,$(ASM_SOURCES))
+
+OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(UPPER_CASE_ASM_SOURCES:.S=.o)))
+OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(LOWER_CASE_ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
 $(BUILD_DIR)/%.o: %.cpp STM32Make.make | $(BUILD_DIR) 
@@ -185,6 +190,9 @@ $(BUILD_DIR)/%.o: %.c STM32Make.make | $(BUILD_DIR)
 	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.s STM32Make.make | $(BUILD_DIR)
+	$(AS) -c $(CFLAGS) $< -o $@
+
+$(BUILD_DIR)/%.o: %.S STM32Make.make | $(BUILD_DIR)
 	$(AS) -c $(CFLAGS) $< -o $@
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) STM32Make.make
@@ -204,13 +212,13 @@ $(BUILD_DIR):
 # flash
 #######################################
 flash: $(BUILD_DIR)/$(TARGET).elf
-	"/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/openocd/0.11.0-4.1/.content/bin/openocd" -f ./openocd.cfg -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
+	"/Users/jr/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/openocd/0.12.0-3.1/.content/bin/openocd" -f ./openocd.cfg -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 
 #######################################
 # erase
 #######################################
 erase: $(BUILD_DIR)/$(TARGET).elf
-	"/Users/johannes/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/openocd/0.11.0-4.1/.content/bin/openocd" -f ./openocd.cfg -c "init; reset halt; stm32f7x mass_erase 0; exit"
+	"/Users/jr/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/openocd/0.12.0-3.1/.content/bin/openocd" -f ./openocd.cfg -c "init; reset halt; stm32f7x mass_erase 0; exit"
 
 #######################################
 # clean up

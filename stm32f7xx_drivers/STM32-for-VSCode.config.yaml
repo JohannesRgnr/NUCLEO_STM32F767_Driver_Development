@@ -83,6 +83,7 @@ includeDirectories:
 # these should be escaped with a: \ or the name should be in double quotes e.g. "HARDWARE_DRIVER*.c"
 sourceFiles:  
   - startup_stm32f767xx.s
+  - Src/001_Led_toggling.c
 # - Src/005_Button_interrupt.c
 # - Src/006_spi_tx_test.c
 # - Src/007_spi_txonly_arduino.c
@@ -94,7 +95,7 @@ sourceFiles:
 # - Src/013_i2c_slave_tx_string.c
 # - Src/014_i2c_slave_tx_string2.c
 # - Src/015_uart_tx.c
-  - Src/016_uart_case.c
+#  - Src/016_uart_case.c
   - drivers/Src/**
   - Src/SEGGER_RTT.c
   - Src/SEGGER_RTT_printf.c
